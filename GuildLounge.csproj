@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{445D729E-F4D5-42CD-B7A9-C094B88E6D98}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GuildLounge</RootNamespace>
+    <AssemblyName>GuildLounge</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ExtraMethods.cs" />
+    <Compile Include="Classes\AddOnUpdater.cs" />
+    <Compile Include="Classes\APIEntry.cs" />
+    <Compile Include="Classes\HttpRequestHandler.cs" />
+    <Compile Include="Classes\RequestObjects.cs" />
+    <Compile Include="Controls\GL_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GL_Button.Designer.cs">
+      <DependentUpon>GL_Button.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GL_NavigationButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GL_NavigationButton.Designer.cs">
+      <DependentUpon>GL_NavigationButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GL_GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GL_GroupBox.Designer.cs">
+      <DependentUpon>GL_GroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GL_MenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GL_MenuStrip.Designer.cs">
+      <DependentUpon>GL_MenuStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GL_PictureBoxEncounter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GL_PictureBoxEncounter.Designer.cs">
+      <DependentUpon>GL_PictureBoxEncounter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GL_HorizontalLine.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GL_HorizontalLine.Designer.cs">
+      <DependentUpon>GL_HorizontalLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GL_ToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GL_ToolTip.Designer.cs">
+      <DependentUpon>GL_ToolTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\UserControl_APIKeys.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl_APIKeys.Designer.cs">
+      <DependentUpon>UserControl_APIKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl_Guides.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl_Guides.Designer.cs">
+      <DependentUpon>UserControl_Guides.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl_LFG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl_LFG.Designer.cs">
+      <DependentUpon>UserControl_LFG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl_Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl_Dashboard.Designer.cs">
+      <DependentUpon>UserControl_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl_Raids.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl_Raids.Designer.cs">
+      <DependentUpon>UserControl_Raids.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl_Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl_Settings.Designer.cs">
+      <DependentUpon>UserControl_Settings.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\GL_Button.resx">
+      <DependentUpon>GL_Button.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GL_NavigationButton.resx">
+      <DependentUpon>GL_NavigationButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GL_GroupBox.resx">
+      <DependentUpon>GL_GroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GL_MenuStrip.resx">
+      <DependentUpon>GL_MenuStrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GL_PictureBoxEncounter.resx">
+      <DependentUpon>GL_PictureBoxEncounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GL_ToolTip.resx">
+      <DependentUpon>GL_ToolTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl_APIKeys.resx">
+      <DependentUpon>UserControl_APIKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl_Guides.resx">
+      <DependentUpon>UserControl_Guides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl_LFG.resx">
+      <DependentUpon>UserControl_LFG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl_Dashboard.resx">
+      <DependentUpon>UserControl_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl_Raids.resx">
+      <DependentUpon>UserControl_Raids.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl_Settings.resx">
+      <DependentUpon>UserControl_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_gaetingcrystal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_ld.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_li.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_magnetiteshard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\news_placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\1_spiritvale\icon_gorseval.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\1_spiritvale\icon_sabetha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\1_spiritvale\icon_valeguardian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\2_salvationpass\icon_matthias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\2_salvationpass\icon_slothasor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\3_strongholdofthefaithful\icon_escort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\3_strongholdofthefaithful\icon_keepconstruct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\3_strongholdofthefaithful\icon_xera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\4_bastionofthepenitent\icon_cairn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\4_bastionofthepenitent\icon_deimos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\4_bastionofthepenitent\icon_mursaatoverseer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\4_bastionofthepenitent\icon_samarog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\5_hallofchains\icon_dhuum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\5_hallofchains\icon_soullesshorror.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\6_mythwrightgambit\icon_largostwins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\6_mythwrightgambit\icon_qadim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo\logo_hot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo\logo_pof.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menubar\ui_minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigation\ui_arrow_dn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigation\ui_arrow_lt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigation\ui_arrow_rt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigation\ui_arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigation\ui_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menubar\ui_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_fractalrelic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_pristinefractalrelic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category\icon_raids.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category\icon_fractals.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category\icon_recommendedfractals.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category\icon_pvp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category\icon_wvw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_pvpleagueticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_wvwskirmishticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_ascendedshardofglory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_badgeofhonor.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

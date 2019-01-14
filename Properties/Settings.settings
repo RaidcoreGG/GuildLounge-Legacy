@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GuildLounge.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="GameDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Guild Wars 2</Value>
+    </Setting>
+    <Setting Name="LaunchBehavior" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MINIMIZE</Value>
+    </Setting>
+    <Setting Name="UpdateAddOns" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="StartParams" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
