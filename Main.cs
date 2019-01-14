@@ -207,11 +207,13 @@ namespace GuildLounge
                 comboBoxAccount.SelectedIndex = 0;
 
                 comboBoxAccount.Enabled = true;
+                buttonRefresh.Enabled = true;
             }
             else
             {
                 ActiveAPIEntry = null;
                 comboBoxAccount.Enabled = false;
+                buttonRefresh.Enabled = false;
             }
 
             //SET NEW KEY FOR RAIDS TAB
