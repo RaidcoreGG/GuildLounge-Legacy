@@ -166,7 +166,6 @@ namespace GuildLounge
             catch (Exception exc)
             {
                 labelError.Text = exc.Message;
-                labelError.Visible = true;
                 ErrorInfo.TimeoutToDisappear(labelError);
             }
         }
@@ -183,7 +182,6 @@ namespace GuildLounge
             else
             {
                 labelError.Text = "Select a add-on to edit first!";
-                labelError.Visible = true;
                 ErrorInfo.TimeoutToDisappear(labelError);
             }
         }

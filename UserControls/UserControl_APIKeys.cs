@@ -79,7 +79,6 @@ namespace GuildLounge
             }
             catch (Exception exc)
             {
-                labelError.Visible = true;
                 labelError.Text = exc.Message;
                 ErrorInfo.TimeoutToDisappear(labelError);
             }
@@ -98,7 +97,6 @@ namespace GuildLounge
             else
             {
                 labelError.Text = "Select a key to edit first!";
-                labelError.Visible = true;
                 ErrorInfo.TimeoutToDisappear(labelError);
             }
         }
