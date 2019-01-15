@@ -1,4 +1,2 @@
-$ git rm --cached bin
-$ git rm --cached obj
 bin/
 obj/
