@@ -16,6 +16,13 @@ namespace GuildLounge
             
         }
 
+        public async Task<T[]> GetApiResponse<T>(string endpoint)
+        {
+            string response = await _client.GetStringAsync(endpoint);
+            T[] result = new JavaScriptSerializer().Deserialize<List<T>>(response).ToArray();
+            return result;
+        }
+
         public async Task<string> FetchWeeklyRaidEncounterProgress(APIEntry apiEntry)
         {
             Console.WriteLine("[API: FETCHING RAIDS]");
@@ -30,97 +37,78 @@ namespace GuildLounge
 
             //MAGNETITE & GAETING
             Console.WriteLine("[API: FETCHING WALLET]");
-            string curr = await _client.GetStringAsync("https://api.guildwars2.com/v2/account/wallet?access_token=" + apiEntry.Key);
-            CurrencyObject[] currencies = new JavaScriptSerializer().Deserialize<List<CurrencyObject>>(curr).ToArray();
+            CurrencyObject[] currencies = await GetApiResponse<CurrencyObject>("https://api.guildwars2.com/v2/account/wallet?access_token=" + apiEntry.Key);
             ov.wallet = new AccountWallet();
-
-            //raids
-            bool mag = false;
-            bool gae = false;
-
-            //fractals
-            bool fr = false;
-            bool pfr = false;
-
-            //wvw
-            bool boh = false;
-            bool sct = false;
-
-            //pvp
-            bool asog = false;
-            bool lt = false;
+            
             for (int i = 0; i < currencies.Length; i++)
             {
                 switch (currencies[i].id)
                 {
                     case 28:
                         ov.wallet.magnetite = currencies[i].value;
-                        mag = true;
                         break;
                     case 39:
                         ov.wallet.gaeting = currencies[i].value;
-                        gae = true;
                         break;
                     case 7:
                         ov.wallet.fractalrelic = currencies[i].value;
-                        fr = true;
                         break;
                     case 24:
                         ov.wallet.pristinefractalrelic = currencies[i].value;
-                        pfr = true;
                         break;
                     case 15:
                         ov.wallet.badgeofhonor = currencies[i].value;
-                        boh = true;
                         break;
                     case 26:
                         ov.wallet.wvwskirmishticket = currencies[i].value;
-                        sct = true;
                         break;
                     case 33:
                         ov.wallet.ascendedshardsofglory = currencies[i].value;
-                        asog = true;
                         break;
                     case 30:
                         ov.wallet.pvpleagueticket = currencies[i].value;
-                        lt = true;
                         break;
                 }
-
-                if (mag && gae
-                    && fr && pfr
-                    && boh && sct
-                    && asog && lt)
-                    break;
             }
 
             //LI & LD
             Console.WriteLine("[API: FETCHING MATERIALS]");
-            string mats = await _client.GetStringAsync("https://api.guildwars2.com/v2/account/materials?access_token=" + apiEntry.Key);
-            MaterialObject[] materials = new JavaScriptSerializer().Deserialize<List<MaterialObject>>(mats).ToArray();
-            bool LI = false;
-            bool LD = false;
+            MaterialObject[] materials = await GetApiResponse<MaterialObject>("https://api.guildwars2.com/v2/account/materials?access_token=" + apiEntry.Key);
+
+            bool LI_found = false;
+            bool LD_found = false;
             for (int i = 0; i < materials.Length; i++)
             {
+                switch (materials[i].id)
+                {
+                    case 77302: // LI
+                        ov.materialLI = materials[i].count;
+                        LI_found = true;
+                        break;
+                    case 88485: // LD
+                        ov.materialLD = materials[i].count;
+                        LD_found = true;
+                        break;
+                }
                 if (materials[i].id == 77302)
                 {
                     ov.materialLI = materials[i].count;
-                    LI = true;
+                    LI_found = true;
                 }
 
                 if (materials[i].id == 88485)
                 {
                     ov.materialLD = materials[i].count;
-                    LD = true;
+                    LD_found = true;
                 }
-                if (LI && LD)
+                if (LI_found && LD_found)
                     break;
             }
 
             //CRAWLING CHARACTERS FOR ITEMS
             Console.WriteLine("[API: FETCHING CHARACTERS]");
-            string chars = await _client.GetStringAsync("https://api.guildwars2.com/v2/characters?page=0&page_size=200&access_token=" + apiEntry.Key);
-            Character[] characters = new JavaScriptSerializer().Deserialize<List<Character>>(chars).ToArray();
+            Character[] characters = await GetApiResponse<Character>("https://api.guildwars2.com/v2/characters?page=0&page_size=200&access_token=" + apiEntry.Key);
+
             int li_id = 77302;
             int gop_id = 78989;
             int ei_id = 80516;
@@ -167,8 +155,7 @@ namespace GuildLounge
 
             //CRAWLING BANK FOR ITEMS
             Console.WriteLine("[API: FETCHING BANK]");
-            string vault = await _client.GetStringAsync("https://api.guildwars2.com/v2/account/bank?access_token=" + apiEntry.Key);
-            BankItem[] bank = new JavaScriptSerializer().Deserialize<List<BankItem>>(vault).ToArray();
+            BankItem[] bank = await GetApiResponse<BankItem>("https://api.guildwars2.com/v2/account/bank?access_token=" + apiEntry.Key);
 
             foreach (BankItem bi in bank)
             {
