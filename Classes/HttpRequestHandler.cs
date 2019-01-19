@@ -90,31 +90,23 @@ namespace GuildLounge
                         LD_found = true;
                         break;
                 }
-                if (materials[i].id == 77302)
-                {
-                    ov.materialLI = materials[i].count;
-                    LI_found = true;
-                }
 
-                if (materials[i].id == 88485)
-                {
-                    ov.materialLD = materials[i].count;
-                    LD_found = true;
-                }
                 if (LI_found && LD_found)
+                {
                     break;
+                }
             }
 
             //CRAWLING CHARACTERS FOR ITEMS
             Console.WriteLine("[API: FETCHING CHARACTERS]");
             Character[] characters = await GetApiResponse<Character>("https://api.guildwars2.com/v2/characters?page=0&page_size=200&access_token=" + apiEntry.Key);
 
-            int li_id = 77302;
-            int gop_id = 78989;
-            int ei_id = 80516;
+            const int li_id = 77302;
+            const int ld_id = 88485;
+            const int gop_id = 78989;
+            const int ei_id = 80516;
             int[] legy_armor_ids = { 80111, 80131, 80145, 80161, 80190, 80205, 80248, 80252, 80254, 80277, 80281, 80296, 80356, 80384, 80399, 80435, 80557, 80578 };
             int[] ref_armor_ids = { 80177, 80648, 80441, 80673, 80460, 80127, 80387, 80607, 80675, 80264, 80634, 80275, 80236, 80583, 80366, 80427, 80658, 80120 };
-            int ld_id = 88485;
             foreach (Character c in characters)
             {
                 foreach (EqItem eq in c.equipment)
@@ -122,9 +114,13 @@ namespace GuildLounge
                     if(eq != null)
                     {
                         if (legy_armor_ids.Contains(eq.id))
+                        {
                             ov.legendary_armor += 50;
+                        }
                         else if (ref_armor_ids.Contains(eq.id))
+                        {
                             ov.refined_armor += 25;
+                        }
                     }
                 }
                 foreach (Bag b in c.bags)
@@ -135,18 +131,31 @@ namespace GuildLounge
                         {
                             if (it != null)
                             {
-                                if (it.id == ld_id)
-                                    ov.materialLD += it.count;
-                                else if (it.id == li_id)
-                                    ov.materialLI += it.count;
-                                else if (it.id ==  gop_id)
-                                    ov.gift_of_prowess += 25 * it.count;
-                                else if (it.id == ei_id)
-                                    ov.envoy_insignia += 25 * it.count;
-                                else if (legy_armor_ids.Contains(it.id))
-                                    ov.legendary_armor += 50;
-                                else if (ref_armor_ids.Contains(it.id))
-                                    ov.refined_armor += 25;
+                                switch (it.id)
+                                {
+                                    case ld_id:
+                                        ov.materialLD += it.count;
+                                        break;
+                                    case li_id:
+                                        ov.materialLI += it.count;
+                                        break;
+                                    case gop_id:
+                                        ov.gift_of_prowess += 25 * it.count;
+                                        break;
+                                    case ei_id:
+                                        ov.envoy_insignia += 25 * it.count;
+                                        break;
+                                    default:
+                                        if (legy_armor_ids.Contains(it.id))
+                                        {
+                                            ov.legendary_armor += 50;
+                                        }
+                                        else if (ref_armor_ids.Contains(it.id))
+                                        {
+                                            ov.refined_armor += 25;
+                                        }
+                                        break;
+                                }
                             }
                         }
                     }
@@ -161,24 +170,39 @@ namespace GuildLounge
             {
                 if(bi != null)
                 {
-                    if (bi.id == ld_id)
-                        ov.materialLD += bi.count;
-                    else if (bi.id == li_id)
-                        ov.materialLI += bi.count;
-                    else if (bi.id == gop_id)
-                        ov.gift_of_prowess += 25 * bi.count;
-                    else if (bi.id == ei_id)
-                        ov.envoy_insignia += 25 * bi.count;
-                    else if (legy_armor_ids.Contains(bi.id))
-                        ov.legendary_armor += 50;
-                    else if (ref_armor_ids.Contains(bi.id))
-                        ov.refined_armor += 25;
+                    switch (bi.id)
+                    {
+                        case ld_id:
+                            ov.materialLD += bi.count;
+                            break;
+                        case li_id:
+                            ov.materialLI += bi.count;
+                            break;
+                        case gop_id:
+                            ov.gift_of_prowess += 25 * bi.count;
+                            break;
+                        case ei_id:
+                            ov.envoy_insignia += 25 * bi.count;
+                            break;
+                        default:
+                            if (legy_armor_ids.Contains(bi.id))
+                            {
+                                ov.legendary_armor += 50;
+                            }
+                            else if (ref_armor_ids.Contains(bi.id))
+                            {
+                                ov.refined_armor += 25;
+                            }
+                            break;
+                    }
                 }
             }
 
             //CORRECT LI FOR LEGY/REF ARMOR
             if (ov.legendary_armor >= 300)
+            {
                 ov.legendary_armor -= 150;
+            }
             else
             {
                 ov.legendary_armor -= (ov.legendary_armor / 50 * 25);
