@@ -21,7 +21,7 @@ namespace GuildLounge
 
         public Task UpdateAddOns(AddOn[] addOns, bool checkForLastModified)
         {
-            Console.WriteLine("[UPDATING ADDONS]");
+            Console.WriteLine("[ADDONS: INIT]");
             DateTime dt = DateTime.Now;
             bool arc = false;
 
@@ -91,7 +91,7 @@ namespace GuildLounge
                     arc = true;
             }
             AddOns = addOns;
-            Console.WriteLine("[ADDONS: PROCESSED - " + (DateTime.Now - dt) + "]");
+            Console.WriteLine("[ADDONS: " + (DateTime.Now - dt).TotalSeconds + "]");
             return Task.FromResult(0);
         }
     }

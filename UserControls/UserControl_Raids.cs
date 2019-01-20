@@ -7,9 +7,9 @@ namespace GuildLounge
 {
     public partial class UserControl_Raids : UserControl
     {
-        private static HttpRequestHandler _client = new HttpRequestHandler();
-        private APIEntry m_oActiveKey;
-        public APIEntry ActiveAPIEntry
+        private static readonly ApiHandler _api = new ApiHandler();
+        private ApiEntry m_oActiveKey;
+        public ApiEntry ActiveAPIEntry
         {
             get { return m_oActiveKey; }
             set
@@ -32,7 +32,7 @@ namespace GuildLounge
             try
             {
                 //GET RAID ENCOUNTER PROGRESS
-                string APIResponse = await _client.FetchWeeklyRaidEncounterProgress(ActiveAPIEntry);
+                string[] APIResponse = await _api.GetResponseArray<string>("account/raids", ActiveAPIEntry.Key);
 
                 //UPDATE ACCORDING TO DATA
                 UpdatePictureBoxes(APIResponse);
@@ -47,7 +47,7 @@ namespace GuildLounge
             Refresh();
         }
         
-        private void UpdatePictureBoxes(string APIResponse)
+        private void UpdatePictureBoxes(string[] APIResponse)
         {
             //TERRIBLE CLOWNFIESTA INCOMING
 
@@ -86,7 +86,7 @@ namespace GuildLounge
             pictureBoxQadim.EncounterFinished = APIResponse.Contains("qadim");
         }
         
-        private void UpdateLabels(string APIResponse)
+        private void UpdateLabels(string[] APIResponse)
         {
             //COUNT LEGENDARY INSIGHTS PROGRESS
             byte LI = 0;

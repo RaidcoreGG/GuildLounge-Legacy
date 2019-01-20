@@ -35,9 +35,9 @@ namespace GuildLounge
         private UserControl SettingsTab;
 
         //API STUFF
-        private static HttpRequestHandler _client;
-        public APIEntry[] APIEntries { get; set; }
-        private APIEntry ActiveAPIEntry { get; set; }
+        private static readonly ApiHandler _api = new ApiHandler();
+        public ApiEntry[] APIEntries { get; set; }
+        private ApiEntry ActiveAPIEntry { get; set; }
 
         //LI/LD OVERVIEW
         private GL_ToolTip ToolTipLI;
@@ -106,7 +106,6 @@ namespace GuildLounge
                 //CREATE OBJECTS FOR REQUEST MANAGEMENT
                 ToolTipLI = new GL_ToolTip();
                 ToolTipLD = new GL_ToolTip();
-                _client = new HttpRequestHandler();
 
                 //REQUEST&PROCESS DATA FROM API
                 UpdateAccountOverview();
@@ -228,7 +227,7 @@ namespace GuildLounge
 
             try
             {
-                AccountOverview APIResponse = await _client.GetAccountOverview(ActiveAPIEntry);
+                AccountOverview APIResponse = await _api.FetchAccountOverview(ActiveAPIEntry.Key);
 
                 var w = APIResponse.wallet;
 
@@ -237,6 +236,8 @@ namespace GuildLounge
                 labelLD.Text = APIResponse.sumLD.ToString();
                 labelMagnetiteShard.Text = w.magnetite.ToString();
                 labelGaetingCrystal.Text = w.gaeting.ToString();
+
+                SetToolTipTexts(APIResponse);
 
                 //FRACTALS
                 labelFractalRelics.Text = w.fractalrelic.ToString();
@@ -249,8 +250,7 @@ namespace GuildLounge
                 //PVP
                 labelAscendedShardsOfGlory.Text = w.ascendedshardsofglory.ToString();
                 labelPvPLeagueTicket.Text = w.pvpleagueticket.ToString();
-
-                SetToolTipTexts(APIResponse);
+                
             }
             catch (Exception exc)
             {
@@ -305,6 +305,7 @@ namespace GuildLounge
 
         private void LI_OnMouseLeave(object sender, EventArgs e)
         {
+            ToolTipLI.RemoveAll();
             ToolTipLI.Hide(this);
         }
 
@@ -316,6 +317,7 @@ namespace GuildLounge
 
         private void LD_OnMouseLeave(object sender, EventArgs e)
         {
+            ToolTipLD.RemoveAll();
             ToolTipLD.Hide(this);
         }
         #endregion
