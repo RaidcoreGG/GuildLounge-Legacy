@@ -40,6 +40,35 @@ namespace GuildLounge
             return await _client.GetStringAsync("https://api.guildwars2.com/v2/" + endPoint + "?access_token=" + accessToken + param);
         }
 
+        public async Task<string> FetchRaidProgress(string accessToken)
+        {
+            return await GetResponse("account/raids", accessToken);
+        }
+
+        public async Task<AccountOverview> FetchAccountOverview(string accessToken)
+        {
+            Console.WriteLine("[OVERVIEW: INIT]");
+            DateTime dt = DateTime.Now;
+
+            await ProcessWallet(accessToken);
+            await ProcessMaterialStorage(accessToken);
+            await ProcessCharacters(accessToken);
+            await ProcessVault(accessToken);
+
+            //CORRECT LI DUE TO DISCOUNT FOR FIRST SET
+            if (AccOverview.legendary_armor >= 300)
+                AccOverview.legendary_armor -= 150;
+            else
+            {
+                AccOverview.legendary_armor -= (AccOverview.legendary_armor / 50 * 25);
+                AccOverview.refined_armor -= (AccOverview.refined_armor / 25 * 25);
+            }
+
+            GC.Collect();
+            Console.WriteLine("[OVERVIEW: "+ (DateTime.Now - dt).TotalSeconds + "]");
+            return AccOverview;
+        }
+
         private async Task ProcessWallet(string accessToken)
         {
             string curr = await GetResponse("account/wallet", accessToken);
@@ -189,35 +218,6 @@ namespace GuildLounge
                         AccOverview.refined_armor += 25;
                 }
             }
-        }
-
-        public async Task<string> FetchRaidProgress(string accessToken)
-        {
-            return await GetResponse("account/raids", accessToken);
-        }
-
-        public async Task<AccountOverview> FetchAccountOverview(string accessToken)
-        {
-            Console.WriteLine("[OVERVIEW: INIT]");
-            DateTime dt = DateTime.Now;
-
-            await ProcessWallet(accessToken);
-            await ProcessMaterialStorage(accessToken);
-            await ProcessCharacters(accessToken);
-            await ProcessVault(accessToken);
-
-            //CORRECT LI DUE TO DISCOUNT FOR FIRST SET
-            if (AccOverview.legendary_armor >= 300)
-                AccOverview.legendary_armor -= 150;
-            else
-            {
-                AccOverview.legendary_armor -= (AccOverview.legendary_armor / 50 * 25);
-                AccOverview.refined_armor -= (AccOverview.refined_armor / 25 * 25);
-            }
-
-            GC.Collect();
-            Console.WriteLine("[OVERVIEW: "+ (DateTime.Now - dt).TotalSeconds + "]");
-            return AccOverview;
         }
     }
 }
