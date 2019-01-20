@@ -12,12 +12,6 @@ namespace GuildLounge
         private static readonly HttpClient _client = new HttpClient();
         private AccountOverview AccOverview;
 
-        public ApiHandler()
-        {
-            AccOverview = new AccountOverview();
-            AccOverview.wallet = new AccountWallet();
-        }
-
         private async Task<string> GetResponse(string endPoint, string accessToken)
         {
             Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
@@ -49,6 +43,9 @@ namespace GuildLounge
         {
             Console.WriteLine("[OVERVIEW: INIT]");
             DateTime dt = DateTime.Now;
+
+            AccOverview = new AccountOverview();
+            AccOverview.wallet = new AccountWallet();
 
             await ProcessWallet(accessToken);
             await ProcessMaterialStorage(accessToken);

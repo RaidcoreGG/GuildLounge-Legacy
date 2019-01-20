@@ -253,6 +253,8 @@
             // groupBoxPvP
             // 
             this.groupBoxPvP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.groupBoxPvP.BorderColor = System.Drawing.Color.Gray;
+            this.groupBoxPvP.BorderSize = 1;
             this.groupBoxPvP.Controls.Add(this.labelPvPLeagueTicket);
             this.groupBoxPvP.Controls.Add(this.pictureBoxPvPLeagueTicket);
             this.groupBoxPvP.Controls.Add(this.labelAscendedShardsOfGlory);
@@ -269,7 +271,7 @@
             this.labelPvPLeagueTicket.AutoSize = true;
             this.labelPvPLeagueTicket.BackColor = System.Drawing.Color.Transparent;
             this.labelPvPLeagueTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelPvPLeagueTicket.Location = new System.Drawing.Point(128, 8);
+            this.labelPvPLeagueTicket.Location = new System.Drawing.Point(125, 8);
             this.labelPvPLeagueTicket.Name = "labelPvPLeagueTicket";
             this.labelPvPLeagueTicket.Size = new System.Drawing.Size(18, 20);
             this.labelPvPLeagueTicket.TabIndex = 0;
@@ -291,7 +293,7 @@
             this.labelAscendedShardsOfGlory.AutoSize = true;
             this.labelAscendedShardsOfGlory.BackColor = System.Drawing.Color.Transparent;
             this.labelAscendedShardsOfGlory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelAscendedShardsOfGlory.Location = new System.Drawing.Point(36, 8);
+            this.labelAscendedShardsOfGlory.Location = new System.Drawing.Point(33, 8);
             this.labelAscendedShardsOfGlory.Name = "labelAscendedShardsOfGlory";
             this.labelAscendedShardsOfGlory.Size = new System.Drawing.Size(18, 20);
             this.labelAscendedShardsOfGlory.TabIndex = 0;
@@ -333,6 +335,8 @@
             // groupBoxWvW
             // 
             this.groupBoxWvW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.groupBoxWvW.BorderColor = System.Drawing.Color.Gray;
+            this.groupBoxWvW.BorderSize = 1;
             this.groupBoxWvW.Controls.Add(this.labelWvWSkirmishTicket);
             this.groupBoxWvW.Controls.Add(this.pictureBoxWvWSkirmishTicket);
             this.groupBoxWvW.Controls.Add(this.labelBadgeOfHonor);
@@ -349,7 +353,7 @@
             this.labelWvWSkirmishTicket.AutoSize = true;
             this.labelWvWSkirmishTicket.BackColor = System.Drawing.Color.Transparent;
             this.labelWvWSkirmishTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelWvWSkirmishTicket.Location = new System.Drawing.Point(128, 8);
+            this.labelWvWSkirmishTicket.Location = new System.Drawing.Point(125, 8);
             this.labelWvWSkirmishTicket.Name = "labelWvWSkirmishTicket";
             this.labelWvWSkirmishTicket.Size = new System.Drawing.Size(18, 20);
             this.labelWvWSkirmishTicket.TabIndex = 0;
@@ -371,7 +375,7 @@
             this.labelBadgeOfHonor.AutoSize = true;
             this.labelBadgeOfHonor.BackColor = System.Drawing.Color.Transparent;
             this.labelBadgeOfHonor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelBadgeOfHonor.Location = new System.Drawing.Point(36, 8);
+            this.labelBadgeOfHonor.Location = new System.Drawing.Point(33, 8);
             this.labelBadgeOfHonor.Name = "labelBadgeOfHonor";
             this.labelBadgeOfHonor.Size = new System.Drawing.Size(18, 20);
             this.labelBadgeOfHonor.TabIndex = 0;
@@ -454,6 +458,8 @@
             // groupBoxFractals
             // 
             this.groupBoxFractals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.groupBoxFractals.BorderColor = System.Drawing.Color.Gray;
+            this.groupBoxFractals.BorderSize = 1;
             this.groupBoxFractals.Controls.Add(this.labelPristineFractalRelics);
             this.groupBoxFractals.Controls.Add(this.pictureBoxPristineFractalRelics);
             this.groupBoxFractals.Controls.Add(this.labelFractalRelics);
@@ -470,7 +476,7 @@
             this.labelPristineFractalRelics.AutoSize = true;
             this.labelPristineFractalRelics.BackColor = System.Drawing.Color.Transparent;
             this.labelPristineFractalRelics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelPristineFractalRelics.Location = new System.Drawing.Point(128, 8);
+            this.labelPristineFractalRelics.Location = new System.Drawing.Point(125, 8);
             this.labelPristineFractalRelics.Name = "labelPristineFractalRelics";
             this.labelPristineFractalRelics.Size = new System.Drawing.Size(18, 20);
             this.labelPristineFractalRelics.TabIndex = 0;
@@ -492,7 +498,7 @@
             this.labelFractalRelics.AutoSize = true;
             this.labelFractalRelics.BackColor = System.Drawing.Color.Transparent;
             this.labelFractalRelics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelFractalRelics.Location = new System.Drawing.Point(36, 8);
+            this.labelFractalRelics.Location = new System.Drawing.Point(33, 8);
             this.labelFractalRelics.Name = "labelFractalRelics";
             this.labelFractalRelics.Size = new System.Drawing.Size(18, 20);
             this.labelFractalRelics.TabIndex = 0;
@@ -547,6 +553,8 @@
             // groupBoxRaids
             // 
             this.groupBoxRaids.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.groupBoxRaids.BorderColor = System.Drawing.Color.Gray;
+            this.groupBoxRaids.BorderSize = 1;
             this.groupBoxRaids.Controls.Add(this.labelGaetingCrystal);
             this.groupBoxRaids.Controls.Add(this.labelMagnetiteShard);
             this.groupBoxRaids.Controls.Add(this.pictureBoxGaetingCrystal);
@@ -567,7 +575,7 @@
             this.labelGaetingCrystal.AutoSize = true;
             this.labelGaetingCrystal.BackColor = System.Drawing.Color.Transparent;
             this.labelGaetingCrystal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelGaetingCrystal.Location = new System.Drawing.Point(128, 37);
+            this.labelGaetingCrystal.Location = new System.Drawing.Point(125, 37);
             this.labelGaetingCrystal.Name = "labelGaetingCrystal";
             this.labelGaetingCrystal.Size = new System.Drawing.Size(18, 20);
             this.labelGaetingCrystal.TabIndex = 0;
@@ -578,7 +586,7 @@
             this.labelMagnetiteShard.AutoSize = true;
             this.labelMagnetiteShard.BackColor = System.Drawing.Color.Transparent;
             this.labelMagnetiteShard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelMagnetiteShard.Location = new System.Drawing.Point(36, 37);
+            this.labelMagnetiteShard.Location = new System.Drawing.Point(33, 37);
             this.labelMagnetiteShard.Name = "labelMagnetiteShard";
             this.labelMagnetiteShard.Size = new System.Drawing.Size(18, 20);
             this.labelMagnetiteShard.TabIndex = 0;
@@ -611,7 +619,7 @@
             this.labelLD.AutoSize = true;
             this.labelLD.BackColor = System.Drawing.Color.Transparent;
             this.labelLD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelLD.Location = new System.Drawing.Point(128, 8);
+            this.labelLD.Location = new System.Drawing.Point(125, 8);
             this.labelLD.Name = "labelLD";
             this.labelLD.Size = new System.Drawing.Size(18, 20);
             this.labelLD.TabIndex = 0;
@@ -622,7 +630,7 @@
             this.labelLI.AutoSize = true;
             this.labelLI.BackColor = System.Drawing.Color.Transparent;
             this.labelLI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelLI.Location = new System.Drawing.Point(36, 8);
+            this.labelLI.Location = new System.Drawing.Point(33, 8);
             this.labelLI.Name = "labelLI";
             this.labelLI.Size = new System.Drawing.Size(18, 20);
             this.labelLI.TabIndex = 0;
