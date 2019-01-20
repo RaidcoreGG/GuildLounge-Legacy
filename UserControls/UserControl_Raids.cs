@@ -32,7 +32,7 @@ namespace GuildLounge
             try
             {
                 //GET RAID ENCOUNTER PROGRESS
-                string APIResponse = await _api.FetchRaidProgress(ActiveAPIEntry.Key);
+                string[] APIResponse = await _api.GetResponseArray<string>("account/raids", ActiveAPIEntry.Key);
 
                 //UPDATE ACCORDING TO DATA
                 UpdatePictureBoxes(APIResponse);
@@ -47,7 +47,7 @@ namespace GuildLounge
             Refresh();
         }
         
-        private void UpdatePictureBoxes(string APIResponse)
+        private void UpdatePictureBoxes(string[] APIResponse)
         {
             //TERRIBLE CLOWNFIESTA INCOMING
 
@@ -86,7 +86,7 @@ namespace GuildLounge
             pictureBoxQadim.EncounterFinished = APIResponse.Contains("qadim");
         }
         
-        private void UpdateLabels(string APIResponse)
+        private void UpdateLabels(string[] APIResponse)
         {
             //COUNT LEGENDARY INSIGHTS PROGRESS
             byte LI = 0;

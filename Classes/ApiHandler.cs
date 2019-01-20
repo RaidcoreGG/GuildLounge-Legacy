@@ -9,36 +9,42 @@ namespace GuildLounge
 {
     public class ApiHandler
     {
+        private const string API_BASE = "https://api.guildwars2.com/v2/";
         private static readonly HttpClient _client = new HttpClient();
         private AccountOverview AccOverview;
 
-        private async Task<string> GetResponse(string endPoint, string accessToken)
+        public async Task<T> GetResponse<T>(string endPoint, string accessToken)
         {
             Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
-            return await _client.GetStringAsync("https://api.guildwars2.com/v2/" + endPoint + "?access_token=" + accessToken);
+            string response = await _client.GetStringAsync(API_BASE + endPoint + "?access_token=" + accessToken);
+            return new JavaScriptSerializer().Deserialize<T>(response);
         }
 
-        private async Task<string> GetResponse(string endPoint, string accessToken, string parameter)
+        public async Task<T[]> GetResponseArray<T>(string endPoint, string accessToken)
         {
             Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
-            return await _client.GetStringAsync("https://api.guildwars2.com/v2/" + endPoint + "?access_token=" + accessToken + "&" + parameter);
+            string response = await _client.GetStringAsync(API_BASE + endPoint + "?access_token=" + accessToken);
+            return new JavaScriptSerializer().Deserialize<List<T>>(response).ToArray();
         }
 
-        private async Task<string> GetResponse(string endPoint, string accessToken, string[] parameters)
+        public async Task<T[]> GetResponseArray<T>(string endPoint, string accessToken, string parameter)
+        {
+            Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
+            string response =  await _client.GetStringAsync(API_BASE + endPoint + "?access_token=" + accessToken + "&" + parameter);
+            return new JavaScriptSerializer().Deserialize<List<T>>(response).ToArray();
+        }
+
+        public async Task<T[]> GetResponseArray<T>(string endPoint, string accessToken, string[] parameters)
         {
             Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
             string param = "";
             foreach (string p in parameters)
                 param += "&" + p;
 
-            return await _client.GetStringAsync("https://api.guildwars2.com/v2/" + endPoint + "?access_token=" + accessToken + param);
+            string response = await _client.GetStringAsync(API_BASE + endPoint + "?access_token=" + accessToken + param);
+            return new JavaScriptSerializer().Deserialize<List<T>>(response).ToArray();
         }
-
-        public async Task<string> FetchRaidProgress(string accessToken)
-        {
-            return await GetResponse("account/raids", accessToken);
-        }
-
+        
         public async Task<AccountOverview> FetchAccountOverview(string accessToken)
         {
             Console.WriteLine("[OVERVIEW: INIT]");
@@ -68,8 +74,7 @@ namespace GuildLounge
 
         private async Task ProcessWallet(string accessToken)
         {
-            string curr = await GetResponse("account/wallet", accessToken);
-            CurrencyObject[] currencies = new JavaScriptSerializer().Deserialize<List<CurrencyObject>>(curr).ToArray();
+            CurrencyObject[] currencies = await GetResponseArray<CurrencyObject>("account/wallet", accessToken);
 
             for (int i = 0; i < currencies.Length; i++)
             {
@@ -105,8 +110,7 @@ namespace GuildLounge
 
         private async Task ProcessMaterialStorage(string accessToken)
         {
-            string mats = await GetResponse("account/materials", accessToken);
-            MaterialObject[] materials = new JavaScriptSerializer().Deserialize<List<MaterialObject>>(mats).ToArray();
+            MaterialObject[] materials = await GetResponseArray<MaterialObject>("account/materials", accessToken);
 
             bool LI = false;
             bool LD = false;
@@ -133,8 +137,7 @@ namespace GuildLounge
         private async Task ProcessCharacters(string accessToken)
         {
             //CRAWLING CHARACTERS FOR ITEMS
-            string chars = await GetResponse("characters", accessToken, new string[] { "page=0", "page_size=200" });
-            Character[] characters = new JavaScriptSerializer().Deserialize<List<Character>>(chars).ToArray();
+            Character[] characters = await GetResponseArray<Character>("characters", accessToken, new string[] { "page=0", "page_size=200" });
 
             int liId = 77302;
             int gopId = 78989;
@@ -186,8 +189,7 @@ namespace GuildLounge
         private async Task ProcessVault(string accessToken)
         {
             //CRAWLING BANK FOR ITEMS
-            string vlt = await GetResponse("account/bank", accessToken);
-            BankItem[] vault = new JavaScriptSerializer().Deserialize<List<BankItem>>(vlt).ToArray();
+            BankItem[] vault = await GetResponseArray<BankItem>("account/bank", accessToken);
 
             int li_id = 77302;
             int gop_id = 78989;
