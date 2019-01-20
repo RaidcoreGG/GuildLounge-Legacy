@@ -69,10 +69,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ExtraMethods.cs" />
+    <Compile Include="Classes\UtilityMethods.cs" />
     <Compile Include="Classes\AddOnUpdater.cs" />
-    <Compile Include="Classes\APIEntry.cs" />
-    <Compile Include="Classes\HttpRequestHandler.cs" />
+    <Compile Include="Classes\ApiEntry.cs" />
+    <Compile Include="Classes\ApiHandler.cs" />
     <Compile Include="Classes\RequestObjects.cs" />
     <Compile Include="Controls\GL_Button.cs">
       <SubType>Component</SubType>

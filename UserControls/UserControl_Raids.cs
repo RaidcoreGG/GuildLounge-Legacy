@@ -7,9 +7,9 @@ namespace GuildLounge
 {
     public partial class UserControl_Raids : UserControl
     {
-        private static HttpRequestHandler _client = new HttpRequestHandler();
-        private APIEntry m_oActiveKey;
-        public APIEntry ActiveAPIEntry
+        private static readonly ApiHandler _api = new ApiHandler();
+        private ApiEntry m_oActiveKey;
+        public ApiEntry ActiveAPIEntry
         {
             get { return m_oActiveKey; }
             set
@@ -32,7 +32,7 @@ namespace GuildLounge
             try
             {
                 //GET RAID ENCOUNTER PROGRESS
-                string APIResponse = await _client.FetchWeeklyRaidEncounterProgress(ActiveAPIEntry);
+                string APIResponse = await _api.FetchRaidProgress(ActiveAPIEntry.Key);
 
                 //UPDATE ACCORDING TO DATA
                 UpdatePictureBoxes(APIResponse);

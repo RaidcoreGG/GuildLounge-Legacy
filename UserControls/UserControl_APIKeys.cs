@@ -9,7 +9,7 @@ namespace GuildLounge
     public partial class UserControl_APIKeys : UserControl
     {
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
-        public APIEntry[] APIEntries { get; set; }
+        public ApiEntry[] APIEntries { get; set; }
 
         public UserControl_APIKeys()
         {
@@ -28,7 +28,7 @@ namespace GuildLounge
         public void LoadAPIKeys()
         {
             //READ API KEYS FROM FILE AND ADD THEM TO THE LISTBOX
-            APIEntries = new JavaScriptSerializer().Deserialize<List<APIEntry>>(File.ReadAllText(Path.Combine(_appdata, "api_keys.json"))).ToArray();
+            APIEntries = new JavaScriptSerializer().Deserialize<List<ApiEntry>>(File.ReadAllText(Path.Combine(_appdata, "api_keys.json"))).ToArray();
             listBoxAPIKeys.Items.AddRange(APIEntries);
         }
 
@@ -37,9 +37,9 @@ namespace GuildLounge
             if (listBoxAPIKeys.Items.Count > 0)
             {
                 //REINITIALIZE ARRAY WITH EDITED/UPDATED VALUES FROM THE LISTBOX
-                APIEntries = new APIEntry[listBoxAPIKeys.Items.Count];
+                APIEntries = new ApiEntry[listBoxAPIKeys.Items.Count];
                 for (int i = 0; i < listBoxAPIKeys.Items.Count; i++)
-                    APIEntries[i] = (APIEntry)listBoxAPIKeys.Items[i];
+                    APIEntries[i] = (ApiEntry)listBoxAPIKeys.Items[i];
 
                 //PARSE TO JSON AND WRITE TO FILE
                 string parsedKeys = new JavaScriptSerializer().Serialize(APIEntries);
@@ -72,7 +72,7 @@ namespace GuildLounge
         {
             try
             {
-                listBoxAPIKeys.Items.Add(new APIEntry { Name = textBoxKeyName.Text, Key = textBoxKey.Text });
+                listBoxAPIKeys.Items.Add(new ApiEntry { Name = textBoxKeyName.Text, Key = textBoxKey.Text });
                 textBoxKeyName.Clear();
                 textBoxKey.Clear();
                 SaveAPIKeys();
@@ -88,7 +88,7 @@ namespace GuildLounge
         {
             if (listBoxAPIKeys.SelectedIndex >= 0)
             {
-                var obj = (APIEntry)listBoxAPIKeys.Items[listBoxAPIKeys.SelectedIndex];
+                var obj = (ApiEntry)listBoxAPIKeys.Items[listBoxAPIKeys.SelectedIndex];
                 textBoxKeyName.Text = obj.Name;
                 textBoxKey.Text = obj.Key;
                 listBoxAPIKeys.Items.Remove(obj);
