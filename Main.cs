@@ -237,6 +237,8 @@ namespace GuildLounge
                 labelMagnetiteShard.Text = w.magnetite.ToString();
                 labelGaetingCrystal.Text = w.gaeting.ToString();
 
+                SetToolTipTexts(APIResponse);
+
                 //FRACTALS
                 labelFractalRelics.Text = w.fractalrelic.ToString();
                 labelPristineFractalRelics.Text = w.pristinefractalrelic.ToString();
@@ -248,8 +250,7 @@ namespace GuildLounge
                 //PVP
                 labelAscendedShardsOfGlory.Text = w.ascendedshardsofglory.ToString();
                 labelPvPLeagueTicket.Text = w.pvpleagueticket.ToString();
-
-                SetToolTipTexts(APIResponse);
+                
             }
             catch (Exception exc)
             {
@@ -304,6 +305,7 @@ namespace GuildLounge
 
         private void LI_OnMouseLeave(object sender, EventArgs e)
         {
+            ToolTipLI.RemoveAll();
             ToolTipLI.Hide(this);
         }
 
@@ -315,6 +317,7 @@ namespace GuildLounge
 
         private void LD_OnMouseLeave(object sender, EventArgs e)
         {
+            ToolTipLD.RemoveAll();
             ToolTipLD.Hide(this);
         }
         #endregion
