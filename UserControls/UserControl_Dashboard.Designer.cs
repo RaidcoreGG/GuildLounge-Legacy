@@ -40,11 +40,13 @@
             this.pictureBoxNews.BackgroundImage = global::GuildLounge.Properties.Resources.news_placeholder1;
             this.pictureBoxNews.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBoxNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxNews.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxNews.Location = new System.Drawing.Point(98, 12);
             this.pictureBoxNews.Name = "pictureBoxNews";
             this.pictureBoxNews.Size = new System.Drawing.Size(544, 164);
             this.pictureBoxNews.TabIndex = 0;
             this.pictureBoxNews.TabStop = false;
+            this.pictureBoxNews.Click += new System.EventHandler(this.pictureBoxNews_Click);
             // 
             // buttonNewsNext
             // 

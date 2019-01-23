@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace GuildLounge
 {
@@ -19,9 +20,9 @@ namespace GuildLounge
         {
             InitializeComponent();
             News = new NewsObject[3];
-            News[0] = new NewsObject { Link = "", HeaderImage = Properties.Resources.news_placeholder1 };
-            News[1] = new NewsObject { Link = "", HeaderImage = Properties.Resources.news_placeholder2 };
-            News[2] = new NewsObject { Link = "", HeaderImage = Properties.Resources.news_placeholder3 };
+            News[0] = new NewsObject { Link = "www.guildlounge.com", HeaderImage = Properties.Resources.news_placeholder1 };
+            News[1] = new NewsObject { Link = "www.guildlounge.com", HeaderImage = Properties.Resources.news_placeholder2 };
+            News[2] = new NewsObject { Link = "www.guildlounge.com", HeaderImage = Properties.Resources.news_placeholder3 };
             NewsIndex = 0;
         }
 
@@ -39,6 +40,12 @@ namespace GuildLounge
             if (NewsIndex > News.Length - 1)
                 NewsIndex = 0;
             pictureBoxNews.BackgroundImage = News[NewsIndex].HeaderImage;
+        }
+
+        private void pictureBoxNews_Click(object sender, EventArgs e)
+        {
+            if(Regex.IsMatch(News[NewsIndex].Link, @"(http(s)?:\/\/)?(www.)?[\w-_\/]"))
+                System.Diagnostics.Process.Start(News[NewsIndex].Link);
         }
     }
 
