@@ -1,0 +1,11 @@
+-Dashboard
+--News Panel
+-blur + loading symbol or any indication for loading
+-Dailies
+-coins module
+-TP pickup module
+-Additional Buttonstyle (e.g. RefreshButton GL_AnimatedButton mayhaps?) for the rotating loading icon
+-module support
+-LFG
+-Guides
+-AUTOMATED LFG CM

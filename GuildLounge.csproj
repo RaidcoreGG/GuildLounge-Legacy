@@ -360,5 +360,14 @@
   <ItemGroup>
     <None Include="Resources\currencies\icon_badgeofhonor.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\news_placeholder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\news_placeholder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\news_placeholder3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

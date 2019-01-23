@@ -220,6 +220,15 @@
   <data name="news_placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\news_placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="news_placeholder1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\news_placeholder1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="news_placeholder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\news_placeholder2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="news_placeholder3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\news_placeholder3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ui_arrow_dn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\navigation\ui_arrow_dn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

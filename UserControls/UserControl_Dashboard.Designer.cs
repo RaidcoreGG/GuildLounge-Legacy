@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNews = new System.Windows.Forms.PictureBox();
             this.buttonNewsNext = new System.Windows.Forms.Button();
             this.buttonNewsPrevious = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNews)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxNews
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.pictureBox1.BackgroundImage = global::GuildLounge.Properties.Resources.news_placeholder;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(98, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(544, 164);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxNews.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pictureBoxNews.BackgroundImage = global::GuildLounge.Properties.Resources.news_placeholder1;
+            this.pictureBoxNews.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxNews.Location = new System.Drawing.Point(98, 12);
+            this.pictureBoxNews.Name = "pictureBoxNews";
+            this.pictureBoxNews.Size = new System.Drawing.Size(544, 164);
+            this.pictureBoxNews.TabIndex = 0;
+            this.pictureBoxNews.TabStop = false;
             // 
             // buttonNewsNext
             // 
@@ -62,6 +62,7 @@
             this.buttonNewsNext.Size = new System.Drawing.Size(80, 164);
             this.buttonNewsNext.TabIndex = 15;
             this.buttonNewsNext.UseVisualStyleBackColor = false;
+            this.buttonNewsNext.Click += new System.EventHandler(this.buttonNewsNext_Click);
             // 
             // buttonNewsPrevious
             // 
@@ -78,6 +79,7 @@
             this.buttonNewsPrevious.Size = new System.Drawing.Size(80, 164);
             this.buttonNewsPrevious.TabIndex = 14;
             this.buttonNewsPrevious.UseVisualStyleBackColor = false;
+            this.buttonNewsPrevious.Click += new System.EventHandler(this.buttonNewsPrevious_Click);
             // 
             // UserControl_Dashboard
             // 
@@ -86,18 +88,18 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.Controls.Add(this.buttonNewsNext);
             this.Controls.Add(this.buttonNewsPrevious);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxNews);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "UserControl_Dashboard";
             this.Size = new System.Drawing.Size(740, 436);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNews)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxNews;
         private System.Windows.Forms.Button buttonNewsPrevious;
         private System.Windows.Forms.Button buttonNewsNext;
     }

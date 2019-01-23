@@ -403,6 +403,36 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap news_placeholder1 {
+            get {
+                object obj = ResourceManager.GetObject("news_placeholder1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap news_placeholder2 {
+            get {
+                object obj = ResourceManager.GetObject("news_placeholder2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap news_placeholder3 {
+            get {
+                object obj = ResourceManager.GetObject("news_placeholder3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ui_arrow_dn {
             get {
                 object obj = ResourceManager.GetObject("ui_arrow_dn", resourceCulture);

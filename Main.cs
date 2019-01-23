@@ -262,7 +262,7 @@ namespace GuildLounge
                     labelAPIError.Text = "Please add an API-Key.";
                 else
                     labelAPIError.Text = exc.Message;
-                ErrorInfo.TimeoutToDisappear(labelAPIError);
+                Utility.TimeoutToDisappear(labelAPIError);
             }
             finally
             {
@@ -403,7 +403,7 @@ namespace GuildLounge
                     labelLaunchError.Text = "Invalid Game Directory.";
                 else
                     labelLaunchError.Text = exc.Message;
-                ErrorInfo.TimeoutToDisappear(labelLaunchError);
+                Utility.TimeoutToDisappear(labelLaunchError);
             }
         }
     }

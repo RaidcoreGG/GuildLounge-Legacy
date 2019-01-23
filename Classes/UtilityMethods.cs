@@ -4,17 +4,15 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    class ErrorInfo
+    class Utility
     {
         public static void TimeoutToDisappear(Control c)
         {
             Task.Run(async () =>
             {
-                //Console.WriteLine("Hiding " + c.Parent.Name + "." + c.Name + " in 7s.");
                 c.Invoke(new Action(() => c.Visible = true));
                 await Task.Delay(7000);
                 c.Invoke(new Action(() => c.Visible = false));
-                //Console.WriteLine("Hidden.");
             });
         }
     }
