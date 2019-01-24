@@ -12,26 +12,15 @@ namespace GuildLounge
         private const string API_BASE = "https://api.guildwars2.com/v2/";
         private static readonly HttpClient _client = new HttpClient();
         private AccountOverview AccOverview;
-
-        private async Task<string> SendRequest(string endPoint, string accessToken, params string[] parameters)
-        {
-            Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
-            return await _client.GetStringAsync(String.Format("{0}{1}?access_token={2}&{3}", API_BASE, 
-                                                                                             endPoint,
-                                                                                             accessToken,
-                                                                                             String.Join("&", parameters)));
-        }
-
+        
         public async Task<T> GetResponse<T>(string endPoint, string accessToken, params string[] parameters)
         {
-            string response = await SendRequest(endPoint, accessToken, parameters);
+            Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
+            string response =  await _client.GetStringAsync(String.Format("{0}{1}?access_token={2}&{3}", API_BASE,
+                                                                                                         endPoint,
+                                                                                                         accessToken,
+                                                                                                         String.Join("&", parameters)));
             return new JavaScriptSerializer().Deserialize<T>(response);
-        }
-        
-        public async Task<T[]> GetResponseArray<T>(string endPoint, string accessToken, params string[] parameters)
-        {
-            string response = await SendRequest(endPoint, accessToken, parameters);
-            return new JavaScriptSerializer().Deserialize<List<T>>(response).ToArray();
         }
         
         public async Task<AccountOverview> FetchAccountOverview(string accessToken)
@@ -63,7 +52,7 @@ namespace GuildLounge
 
         private async Task ProcessWallet(string accessToken)
         {
-            CurrencyObject[] currencies = await GetResponseArray<CurrencyObject>("account/wallet", accessToken);
+            CurrencyObject[] currencies = await GetResponse<CurrencyObject[]>("account/wallet", accessToken);
 
             for (int i = 0; i < currencies.Length; i++)
             {
@@ -99,7 +88,7 @@ namespace GuildLounge
 
         private async Task ProcessMaterialStorage(string accessToken)
         {
-            MaterialObject[] materials = await GetResponseArray<MaterialObject>("account/materials", accessToken);
+            MaterialObject[] materials = await GetResponse<MaterialObject[]>("account/materials", accessToken);
 
             bool LI = false;
             bool LD = false;
@@ -126,7 +115,7 @@ namespace GuildLounge
         private async Task ProcessCharacters(string accessToken)
         {
             //CRAWLING CHARACTERS FOR ITEMS
-            Character[] characters = await GetResponseArray<Character>("characters", accessToken, "page=0", "page_size=200");
+            Character[] characters = await GetResponse<Character[]>("characters", accessToken, "page=0", "page_size=200");
 
             int liId = 77302;
             int gopId = 78989;
@@ -178,7 +167,7 @@ namespace GuildLounge
         private async Task ProcessVault(string accessToken)
         {
             //CRAWLING BANK FOR ITEMS
-            BankItem[] vault = await GetResponseArray<BankItem>("account/bank", accessToken);
+            BankItem[] vault = await GetResponse<BankItem[]>("account/bank", accessToken);
 
             int li_id = 77302;
             int gop_id = 78989;
