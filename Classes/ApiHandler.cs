@@ -13,35 +13,24 @@ namespace GuildLounge
         private static readonly HttpClient _client = new HttpClient();
         private AccountOverview AccOverview;
 
-        public async Task<T> GetResponse<T>(string endPoint, string accessToken)
+        private async Task<string> SendRequest(string endPoint, string accessToken, params string[] parameters)
         {
             Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
-            string response = await _client.GetStringAsync(API_BASE + endPoint + "?access_token=" + accessToken);
+            return await _client.GetStringAsync(String.Format("{0}{1}?access_token={2}&{3}", API_BASE, 
+                                                                                             endPoint,
+                                                                                             accessToken,
+                                                                                             String.Join("&", parameters)));
+        }
+
+        public async Task<T> GetResponse<T>(string endPoint, string accessToken, params string[] parameters)
+        {
+            string response = await SendRequest(endPoint, accessToken, parameters);
             return new JavaScriptSerializer().Deserialize<T>(response);
         }
-
-        public async Task<T[]> GetResponseArray<T>(string endPoint, string accessToken)
+        
+        public async Task<T[]> GetResponseArray<T>(string endPoint, string accessToken, params string[] parameters)
         {
-            Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
-            string response = await _client.GetStringAsync(API_BASE + endPoint + "?access_token=" + accessToken);
-            return new JavaScriptSerializer().Deserialize<List<T>>(response).ToArray();
-        }
-
-        public async Task<T[]> GetResponseArray<T>(string endPoint, string accessToken, string parameter)
-        {
-            Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
-            string response =  await _client.GetStringAsync(API_BASE + endPoint + "?access_token=" + accessToken + "&" + parameter);
-            return new JavaScriptSerializer().Deserialize<List<T>>(response).ToArray();
-        }
-
-        public async Task<T[]> GetResponseArray<T>(string endPoint, string accessToken, string[] parameters)
-        {
-            Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
-            string param = "";
-            foreach (string p in parameters)
-                param += "&" + p;
-
-            string response = await _client.GetStringAsync(API_BASE + endPoint + "?access_token=" + accessToken + param);
+            string response = await SendRequest(endPoint, accessToken, parameters);
             return new JavaScriptSerializer().Deserialize<List<T>>(response).ToArray();
         }
         
@@ -137,7 +126,7 @@ namespace GuildLounge
         private async Task ProcessCharacters(string accessToken)
         {
             //CRAWLING CHARACTERS FOR ITEMS
-            Character[] characters = await GetResponseArray<Character>("characters", accessToken, new string[] { "page=0", "page_size=200" });
+            Character[] characters = await GetResponseArray<Character>("characters", accessToken, "page=0", "page_size=200");
 
             int liId = 77302;
             int gopId = 78989;
