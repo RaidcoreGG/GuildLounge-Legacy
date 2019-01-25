@@ -40,6 +40,7 @@ namespace GuildLounge
         private ApiEntry ActiveAPIEntry { get; set; }
         #endregion
 
+
         public Main()
         {
             InitializeComponent();
