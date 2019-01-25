@@ -13,7 +13,7 @@ namespace GuildLounge
         private static readonly HttpClient _client = new HttpClient();
         private AccountOverview AccOverview;
 
-        public async Task<T> GetResponse<T>(string endPoint, string[] args)
+        public async Task<T> GetResponse<T>(string endPoint, params string[] args)
         {
             Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
             //Console.WriteLine(String.Join("?", (_apiBase + endPoint), String.Join("&", args)));
@@ -50,7 +50,7 @@ namespace GuildLounge
 
         private async Task ProcessWallet(string accessToken)
         {
-            CurrencyObject[] currencies = await GetResponse<CurrencyObject[]>("account/wallet", new string[] { "access_token=" + accessToken } );
+            CurrencyObject[] currencies = await GetResponse<CurrencyObject[]>("account/wallet", "access_token=" + accessToken );
 
             for (int i = 0; i < currencies.Length; i++)
             {
@@ -86,7 +86,7 @@ namespace GuildLounge
 
         private async Task ProcessMaterialStorage(string accessToken)
         {
-            MaterialObject[] materials = await GetResponse<MaterialObject[]>("account/materials", new string[] { "access_token=" + accessToken } );
+            MaterialObject[] materials = await GetResponse<MaterialObject[]>("account/materials", "access_token=" + accessToken);
 
             bool LI = false;
             bool LD = false;
@@ -113,7 +113,7 @@ namespace GuildLounge
         private async Task ProcessCharacters(string accessToken)
         {
             //CRAWLING CHARACTERS FOR ITEMS
-            Character[] characters = await GetResponse<Character[]>("characters", new string[] { "access_token=" + accessToken, "page=0", "page_size=200"} );
+            Character[] characters = await GetResponse<Character[]>("characters", "access_token=" + accessToken, "page=0", "page_size=200");
 
             int liId = 77302;
             int gopId = 78989;
@@ -165,7 +165,7 @@ namespace GuildLounge
         private async Task ProcessVault(string accessToken)
         {
             //CRAWLING BANK FOR ITEMS
-            BankItem[] vault = await GetResponse<BankItem[]>("account/bank", new string[] { "access_token=" + accessToken } );
+            BankItem[] vault = await GetResponse<BankItem[]>("account/bank", "access_token=" + accessToken);
 
             int li_id = 77302;
             int gop_id = 78989;

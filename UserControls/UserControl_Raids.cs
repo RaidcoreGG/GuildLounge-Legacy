@@ -32,7 +32,7 @@ namespace GuildLounge
             try
             {
                 //GET RAID ENCOUNTER PROGRESS
-                string[] APIResponse = await _api.GetResponse<string[]>("account/raids", new string[] { "access_token=" + ActiveAPIEntry.Key } );
+                string[] APIResponse = await _api.GetResponse<string[]>("account/raids", "access_token=" + ActiveAPIEntry.Key);
 
                 //UPDATE ACCORDING TO DATA
                 UpdatePictureBoxes(APIResponse);
