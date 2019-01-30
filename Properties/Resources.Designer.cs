@@ -83,9 +83,49 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_basecurrencies {
+            get {
+                object obj = ResourceManager.GetObject("icon_basecurrencies", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_cairn {
             get {
                 object obj = ResourceManager.GetObject("icon_cairn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_coinscopper {
+            get {
+                object obj = ResourceManager.GetObject("icon_coinscopper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_coinsgold {
+            get {
+                object obj = ResourceManager.GetObject("icon_coinsgold", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_coinssilver {
+            get {
+                object obj = ResourceManager.GetObject("icon_coinssilver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +196,16 @@ namespace GuildLounge.Properties {
         internal static System.Drawing.Bitmap icon_gorseval {
             get {
                 object obj = ResourceManager.GetObject("icon_gorseval", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_karma {
+            get {
+                object obj = ResourceManager.GetObject("icon_karma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -506,6 +556,16 @@ namespace GuildLounge.Properties {
         internal static System.Drawing.Bitmap ui_refresh {
             get {
                 object obj = ResourceManager.GetObject("ui_refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ui_refresh_ani {
+            get {
+                object obj = ResourceManager.GetObject("ui_refresh_ani", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

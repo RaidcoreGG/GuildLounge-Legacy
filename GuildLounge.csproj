@@ -122,6 +122,42 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\ModuleBaseCurrencies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ModuleBaseCurrencies.Designer.cs">
+      <DependentUpon>ModuleBaseCurrencies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ModuleFractals.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ModuleFractals.Designer.cs">
+      <DependentUpon>ModuleFractals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ModulePvP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ModulePvP.Designer.cs">
+      <DependentUpon>ModulePvP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ModuleRaids.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ModuleRaids.Designer.cs">
+      <DependentUpon>ModuleRaids.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ModuleTPPickup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ModuleTPPickup.Designer.cs">
+      <DependentUpon>ModuleTPPickup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ModuleWvW.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ModuleWvW.Designer.cs">
+      <DependentUpon>ModuleWvW.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\UserControl_APIKeys.cs">
@@ -180,6 +216,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ModuleBaseCurrencies.resx">
+      <DependentUpon>ModuleBaseCurrencies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ModuleFractals.resx">
+      <DependentUpon>ModuleFractals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ModulePvP.resx">
+      <DependentUpon>ModulePvP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ModuleRaids.resx">
+      <DependentUpon>ModuleRaids.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ModuleTPPickup.resx">
+      <DependentUpon>ModuleTPPickup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ModuleWvW.resx">
+      <DependentUpon>ModuleWvW.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -368,6 +422,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\news_placeholder3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigation\ui_refresh_ani.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category\icon_basecurrencies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_coinscopper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_coinsgold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_coinssilver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_karma.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

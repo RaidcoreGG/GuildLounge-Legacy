@@ -38,15 +38,17 @@ namespace GuildLounge
         private static readonly ApiHandler _api = new ApiHandler();
         public ApiEntry[] APIEntries { get; set; }
         private ApiEntry ActiveAPIEntry { get; set; }
-
-        //LI/LD OVERVIEW
-        private GL_ToolTip ToolTipLI;
-        private GL_ToolTip ToolTipLD;
         #endregion
+
 
         public Main()
         {
             InitializeComponent();
+
+            //DISABLE HORIZONTAL SCROLL FOR MODULES PANEL
+            panelOverview.HorizontalScroll.Maximum = 0;
+            panelOverview.VerticalScroll.Visible = false;
+            panelOverview.AutoScroll = true;
 
             //INITIALIZING TABS
             DashboardTab = new UserControl_Dashboard();
@@ -103,19 +105,8 @@ namespace GuildLounge
                 //GET KEYS FROM API KEYS TAB
                 RefreshKeys();
 
-                //CREATE OBJECTS FOR REQUEST MANAGEMENT
-                ToolTipLI = new GL_ToolTip();
-                ToolTipLD = new GL_ToolTip();
-
                 //REQUEST&PROCESS DATA FROM API
                 UpdateAccountOverview();
-
-                //ADD INFO TOOLTIPS TO LI & LD ON HOVER
-                //THESE WON'T BE CREATED IF THERE IS NO API KEY PRESENT AS THIS CODE WON'T BE REACHED DUE TO A THROWN EXCEPTION
-                this.pictureBoxLI.MouseEnter += new System.EventHandler(this.LI_OnMouseEnter);
-                this.pictureBoxLI.MouseLeave += new System.EventHandler(this.LI_OnMouseLeave);
-                this.pictureBoxLD.MouseEnter += new System.EventHandler(this.LD_OnMouseEnter);
-                this.pictureBoxLD.MouseLeave += new System.EventHandler(this.LD_OnMouseLeave);
             }
             catch (Exception exc)
             {
@@ -232,24 +223,28 @@ namespace GuildLounge
                 var w = APIResponse.wallet;
 
                 //RAIDS
-                labelLI.Text = APIResponse.sumLI.ToString();
-                labelLD.Text = APIResponse.sumLD.ToString();
-                labelMagnetiteShard.Text = w.magnetite.ToString();
-                labelGaetingCrystal.Text = w.gaeting.ToString();
+                moduleRaids.LegendaryInsights = APIResponse.sumLI;
+                moduleRaids.LegendaryDivinations = APIResponse.sumLD;
+                moduleRaids.MagnetiteShards = w.magnetite;
+                moduleRaids.GaetingCrystals = w.gaeting;
 
                 SetToolTipTexts(APIResponse);
 
                 //FRACTALS
-                labelFractalRelics.Text = w.fractalrelic.ToString();
-                labelPristineFractalRelics.Text = w.pristinefractalrelic.ToString();
+                moduleFractals.FractalRelics = w.fractalrelic;
+                moduleFractals.PristineFractalRelics = w.pristinefractalrelic;
 
                 //WVW
-                labelBadgeOfHonor.Text = w.badgeofhonor.ToString();
-                labelWvWSkirmishTicket.Text = w.wvwskirmishticket.ToString();
+                moduleWvW.BadgesOfHonor = w.badgeofhonor;
+                moduleWvW.SkirmishTickets = w.wvwskirmishticket;
 
                 //PVP
-                labelAscendedShardsOfGlory.Text = w.ascendedshardsofglory.ToString();
-                labelPvPLeagueTicket.Text = w.pvpleagueticket.ToString();
+                modulePvP.AscendedShardsOfGlory = w.ascendedshardsofglory;
+                modulePvP.LeagueTicket = w.pvpleagueticket;
+
+                //COINS
+                moduleBaseCurrencies.Coins = w.coins;
+                moduleBaseCurrencies.Karma = w.karma;
                 
             }
             catch (Exception exc)
@@ -273,9 +268,7 @@ namespace GuildLounge
                 }
             }
         }
-
-        #region infoToolTips
-
+        
         private void SetToolTipTexts(AccountOverview APIResponse)
         {
             string detailedInfo = "";
@@ -289,38 +282,13 @@ namespace GuildLounge
                 detailedInfo += "In Gifts of Prowess: " + APIResponse.gift_of_prowess + "\n";
             if (APIResponse.envoy_insignia > 0)
                 detailedInfo += "In Envoy Insignias: " + APIResponse.envoy_insignia + "\n";
-            ToolTipLI.Text = detailedInfo;
+            moduleRaids.LIDetail = detailedInfo;
 
             detailedInfo = "";
             if (APIResponse.materialLD > 0)
                 detailedInfo += "On hand: " + APIResponse.materialLD + "\n";
-            ToolTipLD.Text = detailedInfo;
+            moduleRaids.LDDetail = detailedInfo;
         }
-
-        private void LI_OnMouseEnter(object sender, EventArgs e)
-        {
-            var obj = (PictureBox)sender;
-            ToolTipLI.Show(ToolTipLI.Text, obj, 0, obj.Height);
-        }
-
-        private void LI_OnMouseLeave(object sender, EventArgs e)
-        {
-            ToolTipLI.RemoveAll();
-            ToolTipLI.Hide(this);
-        }
-
-        private void LD_OnMouseEnter(object sender, EventArgs e)
-        {
-            var obj = (PictureBox)sender;
-            ToolTipLD.Show(ToolTipLD.Text, obj, 0, obj.Height);
-        }
-
-        private void LD_OnMouseLeave(object sender, EventArgs e)
-        {
-            ToolTipLD.RemoveAll();
-            ToolTipLD.Hide(this);
-        }
-        #endregion
 
         #region menustrip
         private void toolStripMenuItemClose_Click(object sender, EventArgs e)
@@ -376,7 +344,6 @@ namespace GuildLounge
         
         private void buttonLaunch_Click(object sender, EventArgs e)
         {
-            //CREATING PROCESS WITH PATH AND PARAMETERS FROM SETTINGS
             Process GW2 = new Process();
             GW2.StartInfo = new ProcessStartInfo(Path.Combine(Properties.Settings.Default.GameDir, "Gw2-64.exe"));
             GW2.StartInfo.Arguments = Properties.Settings.Default.StartParams;

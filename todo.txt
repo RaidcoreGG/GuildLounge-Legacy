@@ -2,10 +2,7 @@
 --News Panel
 -blur + loading symbol or any indication for loading
 -Dailies
--coins module
 -TP pickup module
--Additional Buttonstyle (e.g. RefreshButton GL_AnimatedButton mayhaps?) for the rotating loading icon
--module support
--LFG
+-rework of modules (custom control for modules, expand/collapse) AND/OR custom scrollbar for panel
 -Guides
 -AUTOMATED LFG CM
