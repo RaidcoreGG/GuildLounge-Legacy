@@ -26,6 +26,8 @@
 
     public class AccountWallet
     {
+        public int coins { get; set; }
+        public int karma { get; set; }
         public int magnetite { get; set; }
         public int gaeting { get; set; }
         public int fractalrelic { get; set; }

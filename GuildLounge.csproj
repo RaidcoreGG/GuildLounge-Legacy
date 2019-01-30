@@ -426,6 +426,20 @@
   <ItemGroup>
     <None Include="Resources\navigation\ui_refresh_ani.gif" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\category\icon_basecurrencies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_coinscopper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_coinsgold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_coinssilver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_karma.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

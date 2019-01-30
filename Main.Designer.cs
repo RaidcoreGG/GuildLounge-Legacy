@@ -35,6 +35,7 @@
             this.buttonLFG = new GuildLounge.GL_NavigationButton();
             this.buttonDashboard = new GuildLounge.GL_NavigationButton();
             this.panelOverview = new System.Windows.Forms.Panel();
+            this.moduleBaseCurrencies = new GuildLounge.ModuleBaseCurrencies();
             this.modulePvP = new GuildLounge.ModulePvP();
             this.moduleWvW = new GuildLounge.ModuleWvW();
             this.moduleFractals = new GuildLounge.ModuleFractals();
@@ -160,8 +161,8 @@
             // 
             // panelOverview
             // 
-            this.panelOverview.AutoScroll = true;
             this.panelOverview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panelOverview.Controls.Add(this.moduleBaseCurrencies);
             this.panelOverview.Controls.Add(this.modulePvP);
             this.panelOverview.Controls.Add(this.moduleWvW);
             this.panelOverview.Controls.Add(this.moduleFractals);
@@ -170,6 +171,17 @@
             this.panelOverview.Name = "panelOverview";
             this.panelOverview.Size = new System.Drawing.Size(220, 366);
             this.panelOverview.TabIndex = 0;
+            // 
+            // moduleBaseCurrencies
+            // 
+            this.moduleBaseCurrencies.BackColor = System.Drawing.Color.Transparent;
+            this.moduleBaseCurrencies.Coins = 0;
+            this.moduleBaseCurrencies.ForeColor = System.Drawing.Color.White;
+            this.moduleBaseCurrencies.Karma = 0;
+            this.moduleBaseCurrencies.Location = new System.Drawing.Point(12, 352);
+            this.moduleBaseCurrencies.Name = "moduleBaseCurrencies";
+            this.moduleBaseCurrencies.Size = new System.Drawing.Size(196, 94);
+            this.moduleBaseCurrencies.TabIndex = 28;
             // 
             // modulePvP
             // 
@@ -425,6 +437,7 @@
         private ModuleFractals moduleFractals;
         private ModuleWvW moduleWvW;
         private ModulePvP modulePvP;
+        private ModuleBaseCurrencies moduleBaseCurrencies;
     }
 }
 

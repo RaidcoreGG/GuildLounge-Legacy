@@ -2,7 +2,7 @@
 --News Panel
 -blur + loading symbol or any indication for loading
 -Dailies
--coins module
 -TP pickup module
+-rework of modules (custom control for modules, expand/collapse) AND/OR custom scrollbar for panel
 -Guides
 -AUTOMATED LFG CM

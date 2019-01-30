@@ -56,6 +56,12 @@ namespace GuildLounge
             {
                 switch (currencies[i].id)
                 {
+                    case 1:
+                        AccOverview.wallet.coins = currencies[i].value;
+                        break;
+                    case 2:
+                        AccOverview.wallet.karma = currencies[i].value;
+                        break;
                     case 28:
                         AccOverview.wallet.magnetite = currencies[i].value;
                         break;

@@ -45,6 +45,11 @@ namespace GuildLounge
         {
             InitializeComponent();
 
+            //DISABLE HORIZONTAL SCROLL FOR MODULES PANEL
+            panelOverview.HorizontalScroll.Maximum = 0;
+            panelOverview.VerticalScroll.Visible = false;
+            panelOverview.AutoScroll = true;
+
             //INITIALIZING TABS
             DashboardTab = new UserControl_Dashboard();
             LFGTab = new UserControl_LFG();
@@ -236,6 +241,10 @@ namespace GuildLounge
                 //PVP
                 modulePvP.AscendedShardsOfGlory = w.ascendedshardsofglory;
                 modulePvP.LeagueTicket = w.pvpleagueticket;
+
+                //COINS
+                moduleBaseCurrencies.Coins = w.coins;
+                moduleBaseCurrencies.Karma = w.karma;
                 
             }
             catch (Exception exc)
