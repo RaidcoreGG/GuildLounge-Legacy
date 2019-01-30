@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.labelBaseCurrencies = new System.Windows.Forms.Label();
+            this.pictureBoxBaseCurrencies = new System.Windows.Forms.PictureBox();
             this.groupBoxBaseCurrencies = new GuildLounge.GL_GroupBox();
+            this.labelKarma = new System.Windows.Forms.Label();
             this.pictureBoxKarma = new System.Windows.Forms.PictureBox();
             this.labelSilver = new System.Windows.Forms.Label();
             this.pictureBoxSilver = new System.Windows.Forms.PictureBox();
@@ -37,14 +39,12 @@
             this.pictureBoxCopper = new System.Windows.Forms.PictureBox();
             this.labelGold = new System.Windows.Forms.Label();
             this.pictureBoxGold = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBaseCurrencies = new System.Windows.Forms.PictureBox();
-            this.labelKarma = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBaseCurrencies)).BeginInit();
             this.groupBoxBaseCurrencies.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKarma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSilver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCopper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGold)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBaseCurrencies)).BeginInit();
             this.SuspendLayout();
             // 
             // labelBaseCurrencies
@@ -57,6 +57,17 @@
             this.labelBaseCurrencies.Size = new System.Drawing.Size(53, 20);
             this.labelBaseCurrencies.TabIndex = 22;
             this.labelBaseCurrencies.Text = "Wallet";
+            // 
+            // pictureBoxBaseCurrencies
+            // 
+            this.pictureBoxBaseCurrencies.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBaseCurrencies.BackgroundImage = global::GuildLounge.Properties.Resources.icon_basecurrencies;
+            this.pictureBoxBaseCurrencies.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBaseCurrencies.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxBaseCurrencies.Name = "pictureBoxBaseCurrencies";
+            this.pictureBoxBaseCurrencies.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxBaseCurrencies.TabIndex = 21;
+            this.pictureBoxBaseCurrencies.TabStop = false;
             // 
             // groupBoxBaseCurrencies
             // 
@@ -77,6 +88,17 @@
             this.groupBoxBaseCurrencies.Size = new System.Drawing.Size(196, 64);
             this.groupBoxBaseCurrencies.TabIndex = 20;
             this.groupBoxBaseCurrencies.TabStop = false;
+            // 
+            // labelKarma
+            // 
+            this.labelKarma.AutoSize = true;
+            this.labelKarma.BackColor = System.Drawing.Color.Transparent;
+            this.labelKarma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelKarma.Location = new System.Drawing.Point(33, 37);
+            this.labelKarma.Name = "labelKarma";
+            this.labelKarma.Size = new System.Drawing.Size(18, 20);
+            this.labelKarma.TabIndex = 16;
+            this.labelKarma.Text = "0";
             // 
             // pictureBoxKarma
             // 
@@ -155,28 +177,6 @@
             this.pictureBoxGold.TabIndex = 8;
             this.pictureBoxGold.TabStop = false;
             // 
-            // pictureBoxBaseCurrencies
-            // 
-            this.pictureBoxBaseCurrencies.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBaseCurrencies.BackgroundImage = global::GuildLounge.Properties.Resources.icon_basecurrencies;
-            this.pictureBoxBaseCurrencies.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBaseCurrencies.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxBaseCurrencies.Name = "pictureBoxBaseCurrencies";
-            this.pictureBoxBaseCurrencies.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxBaseCurrencies.TabIndex = 21;
-            this.pictureBoxBaseCurrencies.TabStop = false;
-            // 
-            // labelKarma
-            // 
-            this.labelKarma.AutoSize = true;
-            this.labelKarma.BackColor = System.Drawing.Color.Transparent;
-            this.labelKarma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelKarma.Location = new System.Drawing.Point(33, 37);
-            this.labelKarma.Name = "labelKarma";
-            this.labelKarma.Size = new System.Drawing.Size(18, 20);
-            this.labelKarma.TabIndex = 16;
-            this.labelKarma.Text = "0";
-            // 
             // ModuleBaseCurrencies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,13 +188,13 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ModuleBaseCurrencies";
             this.Size = new System.Drawing.Size(196, 94);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBaseCurrencies)).EndInit();
             this.groupBoxBaseCurrencies.ResumeLayout(false);
             this.groupBoxBaseCurrencies.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKarma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSilver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCopper)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGold)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBaseCurrencies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

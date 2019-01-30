@@ -22,9 +22,10 @@ namespace GuildLounge
             set
             {
                 m_iCoins = value;
-                labelGold.Text = (m_iCoins / 100 / 100).ToString();
-                labelSilver.Text = (m_iCoins % 10000 / 100).ToString();
-                labelCopper.Text = (m_iCoins % 100).ToString();
+                var srtd = Utility.SortCoins(m_iCoins);
+                labelGold.Text = srtd.Gold.ToString();
+                labelSilver.Text = srtd.Silver.ToString();
+                labelCopper.Text = srtd.Copper.ToString();
             }
         }
 
@@ -43,6 +44,13 @@ namespace GuildLounge
         public ModuleBaseCurrencies()
         {
             InitializeComponent();
+
+            labelGold.TextChanged += new System.EventHandler(labelGold_OnTextChanged);
+        }
+
+        private void labelGold_OnTextChanged(object sender, EventArgs e)
+        {
+            Utility.ResizeFontOnWidthThreshold(labelGold, 45);
         }
     }
 }
