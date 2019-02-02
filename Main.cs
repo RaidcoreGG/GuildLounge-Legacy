@@ -221,7 +221,6 @@ namespace GuildLounge
                 AccountOverview APIResponse = await _api.FetchAccountOverview(ActiveAPIEntry.Key);
 
                 var w = APIResponse.wallet;
-                var tp = APIResponse.tradingpost;
 
                 //RAIDS
                 moduleRaids.LegendaryInsights = APIResponse.sumLI;
@@ -246,10 +245,6 @@ namespace GuildLounge
                 //COINS
                 moduleBaseCurrencies.Coins = w.coins;
                 moduleBaseCurrencies.Karma = w.karma;
-
-                //TP PICKUP
-                moduleTPPickup.Coins = tp.coins;
-                moduleTPPickup.Items = tp.items.Length;
                 
             }
             catch (Exception exc)
