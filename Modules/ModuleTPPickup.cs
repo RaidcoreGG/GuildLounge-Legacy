@@ -12,9 +12,45 @@ namespace GuildLounge
 {
     public partial class ModuleTPPickup : UserControl
     {
+        private int m_iCoins;
+        public int Coins
+        {
+            get
+            {
+                return m_iCoins;
+            }
+            set
+            {
+                m_iCoins = value;
+                var srtd = Utility.SortCoins(m_iCoins);
+                labelGold.Text = srtd.Gold.ToString();
+                labelSilver.Text = srtd.Silver.ToString();
+                labelCopper.Text = srtd.Copper.ToString();
+            }
+        }
+
+        public int Items
+        {
+            get
+            {
+                return Convert.ToInt32(labelItems.Text);
+            }
+            set
+            {
+                labelItems.Text = value.ToString();
+            }
+        }
+
         public ModuleTPPickup()
         {
             InitializeComponent();
+
+            labelGold.TextChanged += new System.EventHandler(labelGold_OnTextChanged);
+        }
+
+        private void labelGold_OnTextChanged(object sender, EventArgs e)
+        {
+            Utility.ResizeFontOnWidthThreshold(labelGold, 45);
         }
     }
 }
