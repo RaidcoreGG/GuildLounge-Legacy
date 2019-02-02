@@ -19,10 +19,10 @@ namespace GuildLounge
         {
             var dailies = await _api.GetResponse<AchievementObject>("achievements/daily");
 
-            var pveDailies = await _api.GetResponse<List<AchievementDetail>>("achievements", GetAchievementParam(dailies.pve));
-            var pvpDailies = await _api.GetResponse<List<AchievementDetail>>("achievements", GetAchievementParam(dailies.pvp));
-            var wvwDailies = await _api.GetResponse<List<AchievementDetail>>("achievements", GetAchievementParam(dailies.wvw));
-            var fractalDailies = await _api.GetResponse<List<AchievementDetail>>("achievements", GetAchievementParam(dailies.fractals));
+            var pveDailies = await _api.GetResponse<List<Achievement>>("achievements", GetAchievementParam(dailies.pve));
+            var pvpDailies = await _api.GetResponse<List<Achievement>>("achievements", GetAchievementParam(dailies.pvp));
+            var wvwDailies = await _api.GetResponse<List<Achievement>>("achievements", GetAchievementParam(dailies.wvw));
+            var fractalDailies = await _api.GetResponse<List<Achievement>>("achievements", GetAchievementParam(dailies.fractals));
 
             foreach (var a in pveDailies)
             {

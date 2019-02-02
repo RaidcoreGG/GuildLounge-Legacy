@@ -88,6 +88,7 @@ namespace GuildLounge
     public class Achievement
     {
         public int id { get; set; }
+        public string name { get; set; }
     }
     public class AchievementObject
     {
@@ -96,18 +97,6 @@ namespace GuildLounge
         public List<Achievement> wvw { get; set; }
         public List<Achievement> fractals { get; set; }
         public List<Achievement> special { get; set; }
-    }
-    public class AchievementTier
-    {
-        public int count { get; set; }
-        public int points { get; set; }
-    }
-    public class AchievementDetail
-    {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string requirement { get; set; }
-        public AchievementTier[] achievementTiers { get; set; }
     }
     #endregion
 }

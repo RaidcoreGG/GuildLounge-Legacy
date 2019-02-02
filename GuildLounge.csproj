@@ -128,12 +128,6 @@
     <Compile Include="Modules\ModuleBaseCurrencies.Designer.cs">
       <DependentUpon>ModuleBaseCurrencies.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ModuleDailies.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Modules\ModuleDailies.Designer.cs">
-      <DependentUpon>ModuleDailies.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modules\ModuleFractals.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -231,9 +225,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ModuleBaseCurrencies.resx">
       <DependentUpon>ModuleBaseCurrencies.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ModuleDailies.resx">
-      <DependentUpon>ModuleDailies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ModuleFractals.resx">
       <DependentUpon>ModuleFractals.cs</DependentUpon>
