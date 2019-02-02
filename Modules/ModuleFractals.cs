@@ -30,6 +30,13 @@ namespace GuildLounge
         public ModuleFractals()
         {
             InitializeComponent();
+
+            labelFractalRelics.TextChanged += new System.EventHandler(labelFractalRelics_OnTextChanged);
+        }
+        
+        private void labelFractalRelics_OnTextChanged(object sender, EventArgs e)
+        {
+            Utility.ResizeFontOnWidthThreshold(labelFractalRelics, 63);
         }
     }
 }

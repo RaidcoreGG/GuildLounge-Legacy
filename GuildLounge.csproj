@@ -441,5 +441,8 @@
   <ItemGroup>
     <None Include="Resources\currencies\icon_karma.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category\icon_tppickup.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
