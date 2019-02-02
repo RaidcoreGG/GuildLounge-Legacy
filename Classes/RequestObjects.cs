@@ -5,8 +5,6 @@
     {
         //WALLET
         public AccountWallet wallet { get; set; }
-        //TRADING POST
-        public AccountTradingPost tradingpost { get; set; }
         //LI
         public int materialLI { get; set; }
         public int legendary_armor { get; set; }
@@ -38,12 +36,6 @@
         public int wvwskirmishticket { get; set; }
         public int ascendedshardsofglory { get; set; }
         public int pvpleagueticket { get; set; }
-    }
-
-    public class AccountTradingPost
-    {
-        public int coins { get; set; }
-        public Item[] items { get; set; }
     }
     #endregion
 
