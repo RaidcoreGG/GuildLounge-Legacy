@@ -128,6 +128,12 @@
     <Compile Include="Modules\ModuleBaseCurrencies.Designer.cs">
       <DependentUpon>ModuleBaseCurrencies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\ModuleDailies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ModuleDailies.Designer.cs">
+      <DependentUpon>ModuleDailies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\ModuleFractals.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,6 +171,12 @@
     </Compile>
     <Compile Include="UserControls\UserControl_APIKeys.Designer.cs">
       <DependentUpon>UserControl_APIKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl_Dailies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl_Dailies.Designer.cs">
+      <DependentUpon>UserControl_Dailies.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControl_Guides.cs">
       <SubType>UserControl</SubType>
@@ -220,6 +232,9 @@
     <EmbeddedResource Include="Modules\ModuleBaseCurrencies.resx">
       <DependentUpon>ModuleBaseCurrencies.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ModuleDailies.resx">
+      <DependentUpon>ModuleDailies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\ModuleFractals.resx">
       <DependentUpon>ModuleFractals.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl_APIKeys.resx">
       <DependentUpon>UserControl_APIKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl_Dailies.resx">
+      <DependentUpon>UserControl_Dailies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl_Guides.resx">
       <DependentUpon>UserControl_Guides.cs</DependentUpon>
@@ -440,6 +458,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\currencies\icon_karma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category\icon_pve.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
