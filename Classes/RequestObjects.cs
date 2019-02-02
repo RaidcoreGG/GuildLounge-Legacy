@@ -90,7 +90,7 @@ namespace GuildLounge
         public int id { get; set; }
         public string name { get; set; }
     }
-    public class AchievementObject
+    public class DailyAchievementObject
     {
         public List<Achievement> pve { get; set; }
         public List<Achievement> pvp { get; set; }

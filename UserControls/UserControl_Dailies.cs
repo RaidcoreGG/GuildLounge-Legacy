@@ -17,7 +17,7 @@ namespace GuildLounge
                 
         private async void UpdateDailies()
         {
-            var dailies = await _api.GetResponse<AchievementObject>("achievements/daily");
+            var dailies = await _api.GetResponse<DailyAchievementObject>("achievements/daily");
 
             var pveDailies = await _api.GetResponse<List<Achievement>>("achievements", GetAchievementParam(dailies.pve));
             var pvpDailies = await _api.GetResponse<List<Achievement>>("achievements", GetAchievementParam(dailies.pvp));
