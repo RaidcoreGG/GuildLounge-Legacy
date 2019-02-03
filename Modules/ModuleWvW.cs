@@ -30,13 +30,6 @@ namespace GuildLounge
         public ModuleWvW()
         {
             InitializeComponent();
-
-            labelBadgeOfHonor.TextChanged += new System.EventHandler(labelBadgeOfHonor_OnTextChanged);
-        }
-
-        private void labelBadgeOfHonor_OnTextChanged(object sender, EventArgs e)
-        {
-            Utility.ResizeFontOnWidthThreshold(labelBadgeOfHonor, 63);
         }
     }
 }

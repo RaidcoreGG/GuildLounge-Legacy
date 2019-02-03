@@ -75,10 +75,8 @@ namespace GuildLounge
 
             AccOverview = new AccountOverview();
             AccOverview.wallet = new AccountWallet();
-            AccOverview.tradingpost = new AccountTradingPost();
 
             await ProcessWallet(accessToken);
-            await ProcessTradingPost(accessToken);
             await ProcessMaterialStorage(accessToken);
             await ProcessCharacters(accessToken);
             await ProcessVault(accessToken);
@@ -137,12 +135,6 @@ namespace GuildLounge
                         break;
                 }
             }
-        }
-
-        private async Task ProcessTradingPost(string accessToken)
-        {
-            AccountTradingPost tradingpost = await GetResponse<AccountTradingPost>("commerce/delivery", "access_token=" + accessToken);
-            AccOverview.tradingpost = tradingpost;
         }
 
         private async Task ProcessMaterialStorage(string accessToken)

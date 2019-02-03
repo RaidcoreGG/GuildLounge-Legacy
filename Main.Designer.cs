@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panelNavigation = new System.Windows.Forms.Panel();
+            this.gL_NavigationButton1 = new GuildLounge.GL_NavigationButton();
             this.gL_HorizontalLine1 = new GuildLounge.GL_HorizontalLine();
-            this.buttonGuides = new GuildLounge.GL_NavigationButton();
+            this.buttonDailies = new GuildLounge.GL_NavigationButton();
             this.buttonRaids = new GuildLounge.GL_NavigationButton();
             this.buttonLFG = new GuildLounge.GL_NavigationButton();
             this.buttonDashboard = new GuildLounge.GL_NavigationButton();
             this.panelOverview = new System.Windows.Forms.Panel();
-            this.moduleTPPickup = new GuildLounge.ModuleTPPickup();
             this.moduleBaseCurrencies = new GuildLounge.ModuleBaseCurrencies();
             this.modulePvP = new GuildLounge.ModulePvP();
             this.moduleWvW = new GuildLounge.ModuleWvW();
@@ -63,8 +63,9 @@
             // panelNavigation
             // 
             this.panelNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.panelNavigation.Controls.Add(this.gL_NavigationButton1);
             this.panelNavigation.Controls.Add(this.gL_HorizontalLine1);
-            this.panelNavigation.Controls.Add(this.buttonGuides);
+            this.panelNavigation.Controls.Add(this.buttonDailies);
             this.panelNavigation.Controls.Add(this.buttonRaids);
             this.panelNavigation.Controls.Add(this.buttonLFG);
             this.panelNavigation.Controls.Add(this.buttonDashboard);
@@ -72,6 +73,25 @@
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(740, 80);
             this.panelNavigation.TabIndex = 0;
+            // 
+            // gL_NavigationButton1
+            // 
+            this.gL_NavigationButton1.Active = false;
+            this.gL_NavigationButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gL_NavigationButton1.Enabled = false;
+            this.gL_NavigationButton1.FlatAppearance.BorderSize = 0;
+            this.gL_NavigationButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.gL_NavigationButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.gL_NavigationButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.gL_NavigationButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gL_NavigationButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.gL_NavigationButton1.ForeColor = System.Drawing.Color.Gray;
+            this.gL_NavigationButton1.Location = new System.Drawing.Point(522, 19);
+            this.gL_NavigationButton1.Name = "gL_NavigationButton1";
+            this.gL_NavigationButton1.Size = new System.Drawing.Size(110, 40);
+            this.gL_NavigationButton1.TabIndex = 6;
+            this.gL_NavigationButton1.Text = "Guides";
+            this.gL_NavigationButton1.UseVisualStyleBackColor = false;
             // 
             // gL_HorizontalLine1
             // 
@@ -82,25 +102,24 @@
             this.gL_HorizontalLine1.TabIndex = 5;
             this.gL_HorizontalLine1.Text = "gL_HorizontalLine1";
             // 
-            // buttonGuides
+            // buttonDailies
             // 
-            this.buttonGuides.Active = false;
-            this.buttonGuides.BackColor = System.Drawing.Color.Transparent;
-            this.buttonGuides.Enabled = false;
-            this.buttonGuides.FlatAppearance.BorderSize = 0;
-            this.buttonGuides.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonGuides.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonGuides.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonGuides.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGuides.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonGuides.ForeColor = System.Drawing.Color.Gray;
-            this.buttonGuides.Location = new System.Drawing.Point(560, 19);
-            this.buttonGuides.Name = "buttonGuides";
-            this.buttonGuides.Size = new System.Drawing.Size(110, 40);
-            this.buttonGuides.TabIndex = 4;
-            this.buttonGuides.Text = "Guides";
-            this.buttonGuides.UseVisualStyleBackColor = false;
-            this.buttonGuides.Click += new System.EventHandler(this.buttonGuides_Click);
+            this.buttonDailies.Active = false;
+            this.buttonDailies.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDailies.FlatAppearance.BorderSize = 0;
+            this.buttonDailies.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonDailies.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonDailies.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonDailies.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDailies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonDailies.ForeColor = System.Drawing.Color.Gray;
+            this.buttonDailies.Location = new System.Drawing.Point(406, 19);
+            this.buttonDailies.Name = "buttonDailies";
+            this.buttonDailies.Size = new System.Drawing.Size(110, 40);
+            this.buttonDailies.TabIndex = 4;
+            this.buttonDailies.Text = "Dailies";
+            this.buttonDailies.UseVisualStyleBackColor = false;
+            this.buttonDailies.Click += new System.EventHandler(this.buttonDailies_Click);
             // 
             // buttonRaids
             // 
@@ -113,7 +132,7 @@
             this.buttonRaids.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRaids.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonRaids.ForeColor = System.Drawing.Color.Gray;
-            this.buttonRaids.Location = new System.Drawing.Point(405, 19);
+            this.buttonRaids.Location = new System.Drawing.Point(290, 19);
             this.buttonRaids.Name = "buttonRaids";
             this.buttonRaids.Size = new System.Drawing.Size(110, 40);
             this.buttonRaids.TabIndex = 3;
@@ -133,7 +152,7 @@
             this.buttonLFG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLFG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonLFG.ForeColor = System.Drawing.Color.Gray;
-            this.buttonLFG.Location = new System.Drawing.Point(250, 19);
+            this.buttonLFG.Location = new System.Drawing.Point(174, 19);
             this.buttonLFG.Name = "buttonLFG";
             this.buttonLFG.Size = new System.Drawing.Size(110, 40);
             this.buttonLFG.TabIndex = 2;
@@ -163,7 +182,6 @@
             // panelOverview
             // 
             this.panelOverview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.panelOverview.Controls.Add(this.moduleTPPickup);
             this.panelOverview.Controls.Add(this.moduleBaseCurrencies);
             this.panelOverview.Controls.Add(this.modulePvP);
             this.panelOverview.Controls.Add(this.moduleWvW);
@@ -173,17 +191,6 @@
             this.panelOverview.Name = "panelOverview";
             this.panelOverview.Size = new System.Drawing.Size(220, 366);
             this.panelOverview.TabIndex = 0;
-            // 
-            // moduleTPPickup
-            // 
-            this.moduleTPPickup.BackColor = System.Drawing.Color.Transparent;
-            this.moduleTPPickup.Coins = 0;
-            this.moduleTPPickup.ForeColor = System.Drawing.Color.White;
-            this.moduleTPPickup.Items = 0;
-            this.moduleTPPickup.Location = new System.Drawing.Point(12, 458);
-            this.moduleTPPickup.Name = "moduleTPPickup";
-            this.moduleTPPickup.Size = new System.Drawing.Size(196, 94);
-            this.moduleTPPickup.TabIndex = 3;
             // 
             // moduleBaseCurrencies
             // 
@@ -432,7 +439,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClose;
         private System.Windows.Forms.Panel panelNavigation;
         private System.Windows.Forms.Panel panelOverview;
-        private GL_NavigationButton buttonGuides;
+        private GL_NavigationButton buttonDailies;
         private GL_NavigationButton buttonRaids;
         private GL_NavigationButton buttonLFG;
         private GL_NavigationButton buttonDashboard;
@@ -451,7 +458,7 @@
         private ModuleWvW moduleWvW;
         private ModulePvP modulePvP;
         private ModuleBaseCurrencies moduleBaseCurrencies;
-        private ModuleTPPickup moduleTPPickup;
+        private GL_NavigationButton gL_NavigationButton1;
     }
 }
 
