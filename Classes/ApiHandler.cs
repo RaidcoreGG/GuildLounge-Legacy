@@ -111,6 +111,12 @@ namespace GuildLounge
                     case 2:
                         AccOverview.wallet.karma = currencies[i].value;
                         break;
+                    case 3:
+                        AccOverview.wallet.laurels = currencies[i].value;
+                        break;
+                    case 4:
+                        AccOverview.wallet.gems = currencies[i].value;
+                        break;
                     case 28:
                         AccOverview.wallet.magnetite = currencies[i].value;
                         break;

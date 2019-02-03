@@ -41,6 +41,30 @@ namespace GuildLounge
             }
         }
 
+        public int Laurels
+        {
+            get
+            {
+                return Convert.ToInt32(labelLaurels.Text);
+            }
+            set
+            {
+                labelLaurels.Text = value.ToString();
+            }
+        }
+
+        public int Gems
+        {
+            get
+            {
+                return Convert.ToInt32(labelGems.Text);
+            }
+            set
+            {
+                labelGems.Text = value.ToString();
+            }
+        }
+
         public ModuleBaseCurrencies()
         {
             InitializeComponent();

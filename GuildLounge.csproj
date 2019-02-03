@@ -450,5 +450,14 @@
   <ItemGroup>
     <None Include="Resources\bosses\icon_cm.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_gems.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currencies\icon_laurels.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

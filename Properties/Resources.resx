@@ -163,6 +163,9 @@
   <data name="icon_gaetingcrystal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\currencies\icon_gaetingcrystal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_gems" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_gems.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_gorseval" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bosses\1_spiritvale\icon_gorseval.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -174,6 +177,9 @@
   </data>
   <data name="icon_largostwins" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bosses\6_mythwrightgambit\icon_largostwins.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_laurels" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_laurels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_ld" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\currencies\icon_ld.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

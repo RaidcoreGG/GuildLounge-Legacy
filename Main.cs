@@ -246,6 +246,8 @@ namespace GuildLounge
                 //COINS
                 moduleBaseCurrencies.Coins = w.coins;
                 moduleBaseCurrencies.Karma = w.karma;
+                moduleBaseCurrencies.Laurels = w.laurels;
+                moduleBaseCurrencies.Gems = w.gems;
 
                 //TP PICKUP
                 moduleTPPickup.Coins = tp.coins;

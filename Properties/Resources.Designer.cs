@@ -213,6 +213,16 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_gems {
+            get {
+                object obj = ResourceManager.GetObject("icon_gems", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_gorseval {
             get {
                 object obj = ResourceManager.GetObject("icon_gorseval", resourceCulture);
@@ -246,6 +256,16 @@ namespace GuildLounge.Properties {
         internal static System.Drawing.Bitmap icon_largostwins {
             get {
                 object obj = ResourceManager.GetObject("icon_largostwins", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_laurels {
+            get {
+                object obj = ResourceManager.GetObject("icon_laurels", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
