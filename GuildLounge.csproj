@@ -110,6 +110,12 @@
     <Compile Include="Controls\GL_HorizontalLine.Designer.cs">
       <DependentUpon>GL_HorizontalLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\GL_TableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GL_TableLayoutPanel.Designer.cs">
+      <DependentUpon>GL_TableLayoutPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\GL_ToolTip.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\GL_PictureBoxEncounter.resx">
       <DependentUpon>GL_PictureBoxEncounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GL_TableLayoutPanel.resx">
+      <DependentUpon>GL_TableLayoutPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\GL_ToolTip.resx">
       <DependentUpon>GL_ToolTip.cs</DependentUpon>
@@ -452,6 +461,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\category\icon_pve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\category\icon_fractals_daily_highres.png" />
+    <Content Include="Resources\category\icon_fractals_highres.png" />
+    <Content Include="Resources\category\icon_pve_highres.png" />
+    <Content Include="Resources\category\icon_pvp_daily_highres.png" />
+    <Content Include="Resources\category\icon_pvp_highres.png" />
+    <Content Include="Resources\category\icon_wvw_daily_highres.png" />
+    <Content Include="Resources\category\icon_wvw_highres.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,24 +28,27 @@ namespace GuildLounge
             {
                 Label achievementName = new Label();
                 achievementName.Text = a.name;
+                achievementName.BackColor = Color.Transparent;
                 achievementName.AutoSize = true;
-                tableLayoutPvEDailies.Controls.Add(achievementName);
+                GL_TableLayoutPvE.Controls.Add(achievementName);
             }
 
             foreach (var a in pvpDailies)
             {
                 Label achievementName = new Label();
                 achievementName.Text = a.name;
+                achievementName.BackColor = Color.Transparent;
                 achievementName.AutoSize = true;
-                tableLayoutPvPDailies.Controls.Add(achievementName);
+                GL_TableLayoutPvP.Controls.Add(achievementName);
             }
 
             foreach (var a in wvwDailies)
             {
                 Label achievementName = new Label();
                 achievementName.Text = a.name;
+                achievementName.BackColor = Color.Transparent;
                 achievementName.AutoSize = true;
-                tableLayoutWvWDailies.Controls.Add(achievementName);
+                GL_TableLayoutWvW.Controls.Add(achievementName);
             }
 
             HashSet<string> reducedFractalDailies = new HashSet<string>();
@@ -68,8 +71,9 @@ namespace GuildLounge
             {
                 Label achievementName = new Label();
                 achievementName.Text = a;
+                achievementName.BackColor = Color.Transparent;
                 achievementName.AutoSize = true;
-                tableLayoutFractalDailies.Controls.Add(achievementName);
+                GL_TableLayoutFractals.Controls.Add(achievementName);
             }
         }
 
@@ -82,6 +86,10 @@ namespace GuildLounge
         public UserControl_Dailies()
         {
             InitializeComponent();
+            GL_TableLayoutPvE.BorderStyle = BorderStyle.FixedSingle;
+            GL_TableLayoutPvP.BorderStyle = BorderStyle.FixedSingle;
+            GL_TableLayoutWvW.BorderStyle = BorderStyle.FixedSingle;
+            GL_TableLayoutFractals.BorderStyle = BorderStyle.FixedSingle;
             UpdateDailies();
         }
     }
