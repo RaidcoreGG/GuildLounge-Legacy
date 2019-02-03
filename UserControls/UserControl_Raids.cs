@@ -37,6 +37,7 @@ namespace GuildLounge
                 //UPDATE ACCORDING TO DATA
                 UpdatePictureBoxes(APIResponse);
                 UpdateLabels(APIResponse);
+                UpdateCMFlags();
             }
             catch (Exception exc)
             {
@@ -132,6 +133,59 @@ namespace GuildLounge
                         l.ForeColor = Color.White;
                 }
             }
+        }
+
+        private async void UpdateCMFlags()
+        {
+            try
+            {
+                RaidCMs APIResponse = await _api.FetchRaidCMs(ActiveAPIEntry.Key);
+
+                //W3
+                pictureBoxKeepConstruct.DoneCM = APIResponse.KeepConstruct;
+
+                //W4
+                pictureBoxCairn.DoneCM = APIResponse.Cairn;
+                pictureBoxMursaatOverseer.DoneCM = APIResponse.MursaatOverseer;
+                pictureBoxSamarog.DoneCM = APIResponse.Samarog;
+                pictureBoxDeimos.DoneCM = APIResponse.Deimos;
+
+                //W5
+                pictureBoxSoullessHorror.DoneCM = APIResponse.SoullessHorror;
+                pictureBoxStatuesofGrenth.DoneCM = APIResponse.Statues;
+                pictureBoxDhuum.DoneCM = APIResponse.Dhuum;
+
+                //W6
+                pictureBoxConjuredAmalgamate.DoneCM = APIResponse.ConjuredAmalgamate;
+                pictureBoxLargosTwins.DoneCM = APIResponse.LargosTwins;
+                pictureBoxQadim.DoneCM = APIResponse.Qadim;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+
+                //W3
+                pictureBoxKeepConstruct.DoneCM = false;
+
+                //W4
+                pictureBoxCairn.DoneCM = false;
+                pictureBoxMursaatOverseer.DoneCM = false;
+                pictureBoxSamarog.DoneCM = false;
+                pictureBoxDeimos.DoneCM = false;
+
+                //W5
+                pictureBoxSoullessHorror.DoneCM = false;
+                pictureBoxStatuesofGrenth.DoneCM = false;
+                pictureBoxDhuum.DoneCM = false;
+
+                //W6
+                pictureBoxConjuredAmalgamate.DoneCM = false;
+                pictureBoxLargosTwins.DoneCM = false;
+                pictureBoxQadim.DoneCM = false;
+            }
+
+            //REDRAW
+            Refresh();
         }
     }
 }

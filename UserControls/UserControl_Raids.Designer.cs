@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl_Raids));
             this.labelTotalWeeklyLI = new System.Windows.Forms.Label();
             this.labelTotalWeeklyLD = new System.Windows.Forms.Label();
             this.pictureBoxHoT = new System.Windows.Forms.PictureBox();
@@ -141,6 +142,8 @@
             // gL_GroupBox6
             // 
             this.gL_GroupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.gL_GroupBox6.BorderColor = System.Drawing.Color.Gray;
+            this.gL_GroupBox6.BorderSize = 1;
             this.gL_GroupBox6.Controls.Add(this.labelW6);
             this.gL_GroupBox6.Controls.Add(this.pictureBoxConjuredAmalgamate);
             this.gL_GroupBox6.Controls.Add(this.pictureBoxLargosTwins);
@@ -167,6 +170,12 @@
             this.pictureBoxConjuredAmalgamate.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxConjuredAmalgamate.BackgroundImage = global::GuildLounge.Properties.Resources.icon_ld;
             this.pictureBoxConjuredAmalgamate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxConjuredAmalgamate.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxConjuredAmalgamate.BorderSize = 2;
+            this.pictureBoxConjuredAmalgamate.DoneCM = false;
+            this.pictureBoxConjuredAmalgamate.EncounterFinished = false;
+            this.pictureBoxConjuredAmalgamate.HasCM = true;
+            this.pictureBoxConjuredAmalgamate.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConjuredAmalgamate.Image")));
             this.pictureBoxConjuredAmalgamate.Location = new System.Drawing.Point(6, 22);
             this.pictureBoxConjuredAmalgamate.Name = "pictureBoxConjuredAmalgamate";
             this.pictureBoxConjuredAmalgamate.Size = new System.Drawing.Size(48, 48);
@@ -178,6 +187,12 @@
             this.pictureBoxLargosTwins.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLargosTwins.BackgroundImage = global::GuildLounge.Properties.Resources.icon_largostwins;
             this.pictureBoxLargosTwins.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxLargosTwins.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxLargosTwins.BorderSize = 2;
+            this.pictureBoxLargosTwins.DoneCM = false;
+            this.pictureBoxLargosTwins.EncounterFinished = false;
+            this.pictureBoxLargosTwins.HasCM = true;
+            this.pictureBoxLargosTwins.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLargosTwins.Image")));
             this.pictureBoxLargosTwins.Location = new System.Drawing.Point(60, 22);
             this.pictureBoxLargosTwins.Name = "pictureBoxLargosTwins";
             this.pictureBoxLargosTwins.Size = new System.Drawing.Size(48, 48);
@@ -189,6 +204,12 @@
             this.pictureBoxQadim.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxQadim.BackgroundImage = global::GuildLounge.Properties.Resources.icon_qadim;
             this.pictureBoxQadim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxQadim.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxQadim.BorderSize = 2;
+            this.pictureBoxQadim.DoneCM = false;
+            this.pictureBoxQadim.EncounterFinished = false;
+            this.pictureBoxQadim.HasCM = true;
+            this.pictureBoxQadim.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxQadim.Image")));
             this.pictureBoxQadim.Location = new System.Drawing.Point(114, 22);
             this.pictureBoxQadim.Name = "pictureBoxQadim";
             this.pictureBoxQadim.Size = new System.Drawing.Size(48, 48);
@@ -198,6 +219,8 @@
             // gL_GroupBox5
             // 
             this.gL_GroupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.gL_GroupBox5.BorderColor = System.Drawing.Color.Gray;
+            this.gL_GroupBox5.BorderSize = 1;
             this.gL_GroupBox5.Controls.Add(this.labelW5);
             this.gL_GroupBox5.Controls.Add(this.pictureBoxDhuum);
             this.gL_GroupBox5.Controls.Add(this.pictureBoxStatuesofGrenth);
@@ -225,6 +248,12 @@
             this.pictureBoxDhuum.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxDhuum.BackgroundImage = global::GuildLounge.Properties.Resources.icon_dhuum;
             this.pictureBoxDhuum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxDhuum.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxDhuum.BorderSize = 2;
+            this.pictureBoxDhuum.DoneCM = false;
+            this.pictureBoxDhuum.EncounterFinished = false;
+            this.pictureBoxDhuum.HasCM = true;
+            this.pictureBoxDhuum.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxDhuum.Image")));
             this.pictureBoxDhuum.Location = new System.Drawing.Point(168, 22);
             this.pictureBoxDhuum.Name = "pictureBoxDhuum";
             this.pictureBoxDhuum.Size = new System.Drawing.Size(48, 48);
@@ -236,6 +265,12 @@
             this.pictureBoxStatuesofGrenth.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxStatuesofGrenth.BackgroundImage = global::GuildLounge.Properties.Resources.icon_ld;
             this.pictureBoxStatuesofGrenth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxStatuesofGrenth.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxStatuesofGrenth.BorderSize = 2;
+            this.pictureBoxStatuesofGrenth.DoneCM = false;
+            this.pictureBoxStatuesofGrenth.EncounterFinished = false;
+            this.pictureBoxStatuesofGrenth.HasCM = true;
+            this.pictureBoxStatuesofGrenth.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxStatuesofGrenth.Image")));
             this.pictureBoxStatuesofGrenth.Location = new System.Drawing.Point(114, 22);
             this.pictureBoxStatuesofGrenth.Name = "pictureBoxStatuesofGrenth";
             this.pictureBoxStatuesofGrenth.Size = new System.Drawing.Size(48, 48);
@@ -247,6 +282,11 @@
             this.pictureBoxRiverofSouls.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxRiverofSouls.BackgroundImage = global::GuildLounge.Properties.Resources.icon_ld;
             this.pictureBoxRiverofSouls.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxRiverofSouls.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxRiverofSouls.BorderSize = 2;
+            this.pictureBoxRiverofSouls.DoneCM = false;
+            this.pictureBoxRiverofSouls.EncounterFinished = false;
+            this.pictureBoxRiverofSouls.HasCM = false;
             this.pictureBoxRiverofSouls.Location = new System.Drawing.Point(60, 22);
             this.pictureBoxRiverofSouls.Name = "pictureBoxRiverofSouls";
             this.pictureBoxRiverofSouls.Size = new System.Drawing.Size(48, 48);
@@ -258,6 +298,12 @@
             this.pictureBoxSoullessHorror.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxSoullessHorror.BackgroundImage = global::GuildLounge.Properties.Resources.icon_soullesshorror;
             this.pictureBoxSoullessHorror.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxSoullessHorror.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxSoullessHorror.BorderSize = 2;
+            this.pictureBoxSoullessHorror.DoneCM = false;
+            this.pictureBoxSoullessHorror.EncounterFinished = false;
+            this.pictureBoxSoullessHorror.HasCM = true;
+            this.pictureBoxSoullessHorror.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSoullessHorror.Image")));
             this.pictureBoxSoullessHorror.Location = new System.Drawing.Point(6, 22);
             this.pictureBoxSoullessHorror.Name = "pictureBoxSoullessHorror";
             this.pictureBoxSoullessHorror.Size = new System.Drawing.Size(48, 48);
@@ -267,6 +313,8 @@
             // gL_GroupBox4
             // 
             this.gL_GroupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.gL_GroupBox4.BorderColor = System.Drawing.Color.Gray;
+            this.gL_GroupBox4.BorderSize = 1;
             this.gL_GroupBox4.Controls.Add(this.labelW4);
             this.gL_GroupBox4.Controls.Add(this.pictureBoxCairn);
             this.gL_GroupBox4.Controls.Add(this.pictureBoxMursaatOverseer);
@@ -294,6 +342,12 @@
             this.pictureBoxCairn.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxCairn.BackgroundImage = global::GuildLounge.Properties.Resources.icon_cairn;
             this.pictureBoxCairn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCairn.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxCairn.BorderSize = 2;
+            this.pictureBoxCairn.DoneCM = false;
+            this.pictureBoxCairn.EncounterFinished = false;
+            this.pictureBoxCairn.HasCM = true;
+            this.pictureBoxCairn.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCairn.Image")));
             this.pictureBoxCairn.Location = new System.Drawing.Point(6, 22);
             this.pictureBoxCairn.Name = "pictureBoxCairn";
             this.pictureBoxCairn.Size = new System.Drawing.Size(48, 48);
@@ -305,6 +359,12 @@
             this.pictureBoxMursaatOverseer.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMursaatOverseer.BackgroundImage = global::GuildLounge.Properties.Resources.icon_mursaatoverseer;
             this.pictureBoxMursaatOverseer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxMursaatOverseer.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxMursaatOverseer.BorderSize = 2;
+            this.pictureBoxMursaatOverseer.DoneCM = false;
+            this.pictureBoxMursaatOverseer.EncounterFinished = false;
+            this.pictureBoxMursaatOverseer.HasCM = true;
+            this.pictureBoxMursaatOverseer.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMursaatOverseer.Image")));
             this.pictureBoxMursaatOverseer.Location = new System.Drawing.Point(60, 22);
             this.pictureBoxMursaatOverseer.Name = "pictureBoxMursaatOverseer";
             this.pictureBoxMursaatOverseer.Size = new System.Drawing.Size(48, 48);
@@ -316,6 +376,12 @@
             this.pictureBoxSamarog.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxSamarog.BackgroundImage = global::GuildLounge.Properties.Resources.icon_samarog;
             this.pictureBoxSamarog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxSamarog.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxSamarog.BorderSize = 2;
+            this.pictureBoxSamarog.DoneCM = false;
+            this.pictureBoxSamarog.EncounterFinished = false;
+            this.pictureBoxSamarog.HasCM = true;
+            this.pictureBoxSamarog.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSamarog.Image")));
             this.pictureBoxSamarog.Location = new System.Drawing.Point(114, 22);
             this.pictureBoxSamarog.Name = "pictureBoxSamarog";
             this.pictureBoxSamarog.Size = new System.Drawing.Size(48, 48);
@@ -327,6 +393,12 @@
             this.pictureBoxDeimos.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxDeimos.BackgroundImage = global::GuildLounge.Properties.Resources.icon_deimos;
             this.pictureBoxDeimos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxDeimos.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxDeimos.BorderSize = 2;
+            this.pictureBoxDeimos.DoneCM = false;
+            this.pictureBoxDeimos.EncounterFinished = false;
+            this.pictureBoxDeimos.HasCM = true;
+            this.pictureBoxDeimos.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxDeimos.Image")));
             this.pictureBoxDeimos.Location = new System.Drawing.Point(168, 22);
             this.pictureBoxDeimos.Name = "pictureBoxDeimos";
             this.pictureBoxDeimos.Size = new System.Drawing.Size(48, 48);
@@ -336,6 +408,8 @@
             // gL_GroupBox3
             // 
             this.gL_GroupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.gL_GroupBox3.BorderColor = System.Drawing.Color.Gray;
+            this.gL_GroupBox3.BorderSize = 1;
             this.gL_GroupBox3.Controls.Add(this.labelW3);
             this.gL_GroupBox3.Controls.Add(this.pictureBoxXera);
             this.gL_GroupBox3.Controls.Add(this.pictureBoxTwistedCastle);
@@ -363,6 +437,11 @@
             this.pictureBoxXera.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxXera.BackgroundImage = global::GuildLounge.Properties.Resources.icon_xera;
             this.pictureBoxXera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxXera.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxXera.BorderSize = 2;
+            this.pictureBoxXera.DoneCM = false;
+            this.pictureBoxXera.EncounterFinished = false;
+            this.pictureBoxXera.HasCM = false;
             this.pictureBoxXera.Location = new System.Drawing.Point(168, 22);
             this.pictureBoxXera.Name = "pictureBoxXera";
             this.pictureBoxXera.Size = new System.Drawing.Size(48, 48);
@@ -374,6 +453,11 @@
             this.pictureBoxTwistedCastle.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxTwistedCastle.BackgroundImage = global::GuildLounge.Properties.Resources.icon_li;
             this.pictureBoxTwistedCastle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTwistedCastle.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxTwistedCastle.BorderSize = 2;
+            this.pictureBoxTwistedCastle.DoneCM = false;
+            this.pictureBoxTwistedCastle.EncounterFinished = false;
+            this.pictureBoxTwistedCastle.HasCM = false;
             this.pictureBoxTwistedCastle.Location = new System.Drawing.Point(114, 22);
             this.pictureBoxTwistedCastle.Name = "pictureBoxTwistedCastle";
             this.pictureBoxTwistedCastle.Size = new System.Drawing.Size(48, 48);
@@ -385,6 +469,12 @@
             this.pictureBoxKeepConstruct.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxKeepConstruct.BackgroundImage = global::GuildLounge.Properties.Resources.icon_keepconstruct;
             this.pictureBoxKeepConstruct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxKeepConstruct.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxKeepConstruct.BorderSize = 2;
+            this.pictureBoxKeepConstruct.DoneCM = false;
+            this.pictureBoxKeepConstruct.EncounterFinished = false;
+            this.pictureBoxKeepConstruct.HasCM = true;
+            this.pictureBoxKeepConstruct.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxKeepConstruct.Image")));
             this.pictureBoxKeepConstruct.Location = new System.Drawing.Point(60, 22);
             this.pictureBoxKeepConstruct.Name = "pictureBoxKeepConstruct";
             this.pictureBoxKeepConstruct.Size = new System.Drawing.Size(48, 48);
@@ -396,6 +486,11 @@
             this.pictureBoxEscort.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxEscort.BackgroundImage = global::GuildLounge.Properties.Resources.icon_escort;
             this.pictureBoxEscort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEscort.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxEscort.BorderSize = 2;
+            this.pictureBoxEscort.DoneCM = false;
+            this.pictureBoxEscort.EncounterFinished = false;
+            this.pictureBoxEscort.HasCM = false;
             this.pictureBoxEscort.Location = new System.Drawing.Point(6, 22);
             this.pictureBoxEscort.Name = "pictureBoxEscort";
             this.pictureBoxEscort.Size = new System.Drawing.Size(48, 48);
@@ -405,6 +500,8 @@
             // gL_GroupBox2
             // 
             this.gL_GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.gL_GroupBox2.BorderColor = System.Drawing.Color.Gray;
+            this.gL_GroupBox2.BorderSize = 1;
             this.gL_GroupBox2.Controls.Add(this.labelW2);
             this.gL_GroupBox2.Controls.Add(this.pictureBoxMatthias);
             this.gL_GroupBox2.Controls.Add(this.pictureBoxTrio);
@@ -431,6 +528,11 @@
             this.pictureBoxMatthias.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMatthias.BackgroundImage = global::GuildLounge.Properties.Resources.icon_matthias;
             this.pictureBoxMatthias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxMatthias.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxMatthias.BorderSize = 2;
+            this.pictureBoxMatthias.DoneCM = false;
+            this.pictureBoxMatthias.EncounterFinished = false;
+            this.pictureBoxMatthias.HasCM = false;
             this.pictureBoxMatthias.Location = new System.Drawing.Point(114, 22);
             this.pictureBoxMatthias.Name = "pictureBoxMatthias";
             this.pictureBoxMatthias.Size = new System.Drawing.Size(48, 48);
@@ -442,6 +544,11 @@
             this.pictureBoxTrio.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxTrio.BackgroundImage = global::GuildLounge.Properties.Resources.icon_li;
             this.pictureBoxTrio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTrio.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxTrio.BorderSize = 2;
+            this.pictureBoxTrio.DoneCM = false;
+            this.pictureBoxTrio.EncounterFinished = false;
+            this.pictureBoxTrio.HasCM = false;
             this.pictureBoxTrio.Location = new System.Drawing.Point(60, 22);
             this.pictureBoxTrio.Name = "pictureBoxTrio";
             this.pictureBoxTrio.Size = new System.Drawing.Size(48, 48);
@@ -453,6 +560,11 @@
             this.pictureBoxSlothasor.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxSlothasor.BackgroundImage = global::GuildLounge.Properties.Resources.icon_slothasor;
             this.pictureBoxSlothasor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxSlothasor.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxSlothasor.BorderSize = 2;
+            this.pictureBoxSlothasor.DoneCM = false;
+            this.pictureBoxSlothasor.EncounterFinished = false;
+            this.pictureBoxSlothasor.HasCM = false;
             this.pictureBoxSlothasor.Location = new System.Drawing.Point(6, 22);
             this.pictureBoxSlothasor.Name = "pictureBoxSlothasor";
             this.pictureBoxSlothasor.Size = new System.Drawing.Size(48, 48);
@@ -462,6 +574,8 @@
             // gL_GroupBox1
             // 
             this.gL_GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.gL_GroupBox1.BorderColor = System.Drawing.Color.Gray;
+            this.gL_GroupBox1.BorderSize = 1;
             this.gL_GroupBox1.Controls.Add(this.labelW1);
             this.gL_GroupBox1.Controls.Add(this.pictureBoxSabetha);
             this.gL_GroupBox1.Controls.Add(this.pictureBoxGorseval);
@@ -489,6 +603,11 @@
             this.pictureBoxSabetha.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxSabetha.BackgroundImage = global::GuildLounge.Properties.Resources.icon_sabetha;
             this.pictureBoxSabetha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxSabetha.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxSabetha.BorderSize = 2;
+            this.pictureBoxSabetha.DoneCM = false;
+            this.pictureBoxSabetha.EncounterFinished = false;
+            this.pictureBoxSabetha.HasCM = false;
             this.pictureBoxSabetha.Location = new System.Drawing.Point(168, 22);
             this.pictureBoxSabetha.Name = "pictureBoxSabetha";
             this.pictureBoxSabetha.Size = new System.Drawing.Size(48, 48);
@@ -500,6 +619,11 @@
             this.pictureBoxGorseval.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxGorseval.BackgroundImage = global::GuildLounge.Properties.Resources.icon_gorseval;
             this.pictureBoxGorseval.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxGorseval.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxGorseval.BorderSize = 2;
+            this.pictureBoxGorseval.DoneCM = false;
+            this.pictureBoxGorseval.EncounterFinished = false;
+            this.pictureBoxGorseval.HasCM = false;
             this.pictureBoxGorseval.Location = new System.Drawing.Point(114, 22);
             this.pictureBoxGorseval.Name = "pictureBoxGorseval";
             this.pictureBoxGorseval.Size = new System.Drawing.Size(48, 48);
@@ -511,6 +635,11 @@
             this.pictureBoxSpiritWoods.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxSpiritWoods.BackgroundImage = global::GuildLounge.Properties.Resources.icon_li;
             this.pictureBoxSpiritWoods.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxSpiritWoods.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxSpiritWoods.BorderSize = 2;
+            this.pictureBoxSpiritWoods.DoneCM = false;
+            this.pictureBoxSpiritWoods.EncounterFinished = false;
+            this.pictureBoxSpiritWoods.HasCM = false;
             this.pictureBoxSpiritWoods.Location = new System.Drawing.Point(60, 22);
             this.pictureBoxSpiritWoods.Name = "pictureBoxSpiritWoods";
             this.pictureBoxSpiritWoods.Size = new System.Drawing.Size(48, 48);
@@ -522,6 +651,11 @@
             this.pictureBoxValeGuardian.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxValeGuardian.BackgroundImage = global::GuildLounge.Properties.Resources.icon_valeguardian;
             this.pictureBoxValeGuardian.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxValeGuardian.BorderColor = System.Drawing.Color.Red;
+            this.pictureBoxValeGuardian.BorderSize = 2;
+            this.pictureBoxValeGuardian.DoneCM = false;
+            this.pictureBoxValeGuardian.EncounterFinished = false;
+            this.pictureBoxValeGuardian.HasCM = false;
             this.pictureBoxValeGuardian.Location = new System.Drawing.Point(6, 22);
             this.pictureBoxValeGuardian.Name = "pictureBoxValeGuardian";
             this.pictureBoxValeGuardian.Size = new System.Drawing.Size(48, 48);

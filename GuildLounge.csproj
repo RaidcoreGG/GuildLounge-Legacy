@@ -444,5 +444,11 @@
   <ItemGroup>
     <None Include="Resources\category\icon_tppickup.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\icon_cmdone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosses\icon_cm.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

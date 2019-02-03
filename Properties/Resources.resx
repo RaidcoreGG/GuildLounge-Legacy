@@ -130,6 +130,12 @@
   <data name="icon_cairn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bosses\4_bastionofthepenitent\icon_cairn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_cm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\icon_cm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_cmdone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\icon_cmdone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_coinscopper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\currencies\icon_coinscopper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

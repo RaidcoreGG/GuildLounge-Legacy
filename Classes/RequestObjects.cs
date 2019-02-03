@@ -86,10 +86,29 @@
         public int category { get; set; }
         public int count { get; set; }
     }
-    public class BankItem
+
+    public class RaidCMs
+    {
+        public bool KeepConstruct { get; set; }
+        public bool Cairn { get; set; }
+        public bool MursaatOverseer { get; set; }
+        public bool Samarog { get; set; }
+        public bool Deimos { get; set; }
+        public bool SoullessHorror { get; set; }
+        public bool Statues { get; set; }
+        public bool Dhuum { get; set; }
+        public bool ConjuredAmalgamate { get; set; }
+        public bool LargosTwins { get; set; }
+        public bool Qadim { get; set; }
+    }
+
+    public class AchievementObject
     {
         public int id { get; set; }
-        public int count { get; set; }
+        public string name { get; set; }
+        public int[] bits { get; set; }
+        //ONLY FOR ACCOUNT ACHIEVEMENTS
+        public bool done { get; set; }
     }
     #endregion
 }

@@ -21,6 +21,53 @@ namespace GuildLounge
             return new JavaScriptSerializer().Deserialize<T>(response);
         }
         
+        public async Task<RaidCMs> FetchRaidCMs(string accessToken)
+        {
+            RaidCMs resp = new RaidCMs();
+
+            AchievementObject[] achievements = await GetResponse<AchievementObject[]>("account/achievements", "access_token=" + accessToken, "ids=3019,3334,3287,3342,3292,3392,3993,4037,3979,4416,4429,4355");
+            
+            foreach (AchievementObject a in achievements)
+            {
+                switch (a.id)
+                {
+                    case 3019:
+                        resp.KeepConstruct = a.done;
+                        break;
+                    case 3392:
+                        if (a.bits.Contains(0))
+                            resp.Cairn = true;
+                        if (a.bits.Contains(1))
+                            resp.MursaatOverseer = true;
+                        if (a.bits.Contains(2))
+                            resp.Samarog = true;
+                        if (a.bits.Contains(3))
+                            resp.Deimos = true;
+                        break;
+                    case 3993:
+                        resp.SoullessHorror = a.done;
+                        break;
+                    case 4037:
+                        resp.Statues = a.done;
+                        break;
+                    case 3979:
+                        resp.Dhuum = a.done;
+                        break;
+                    case 4416:
+                        resp.ConjuredAmalgamate = a.done;
+                        break;
+                    case 4429:
+                        resp.LargosTwins = a.done;
+                        break;
+                    case 4355:
+                        resp.Qadim = a.done;
+                        break;
+                }
+            }
+
+            return resp;
+        }
+
         public async Task<AccountOverview> FetchAccountOverview(string accessToken)
         {
             Console.WriteLine("[OVERVIEW: INIT]");
@@ -179,7 +226,7 @@ namespace GuildLounge
         private async Task ProcessVault(string accessToken)
         {
             //CRAWLING BANK FOR ITEMS
-            BankItem[] vault = await GetResponse<BankItem[]>("account/bank", "access_token=" + accessToken);
+            Item[] vault = await GetResponse<Item[]>("account/bank", "access_token=" + accessToken);
 
             int li_id = 77302;
             int gop_id = 78989;
@@ -189,7 +236,7 @@ namespace GuildLounge
 
             int ld_id = 88485;
 
-            foreach (BankItem bi in vault)
+            foreach (Item bi in vault)
             {
                 if (bi != null)
                 {

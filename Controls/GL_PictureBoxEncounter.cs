@@ -9,6 +9,40 @@ namespace GuildLounge
         public int BorderSize { get; set; }
         public Color BorderColor { get; set; }
         public bool EncounterFinished { get; set; }
+        private bool m_bHasCM { get; set; }
+        public bool HasCM
+        {
+            get
+            {
+                return m_bHasCM;
+            }
+            set
+            {
+                m_bHasCM = value;
+                if (m_bHasCM)
+                    Image = Properties.Resources.icon_cm;
+                else
+                    Image = null;
+            }
+        }
+        private bool m_bDoneCM { get; set; }
+        public bool DoneCM
+        {
+            get
+            {
+                return m_bDoneCM;
+            }
+            set
+            {
+                m_bDoneCM = value;
+                if (m_bDoneCM && m_bHasCM)
+                    Image = Properties.Resources.icon_cmdone;
+                else if (!m_bDoneCM && m_bHasCM)
+                    Image = Properties.Resources.icon_cm;
+                else if (!m_bHasCM)
+                    Image = null;
+            }
+        }
         private GL_ToolTip ToolTipEncounterName { get; set; }
 
         public GL_PictureBoxEncounter()
@@ -16,7 +50,6 @@ namespace GuildLounge
             InitializeComponent();
 
             BorderSize = 2;
-            EncounterFinished = false;
             ToolTipEncounterName = new GL_ToolTip();
         }
 
