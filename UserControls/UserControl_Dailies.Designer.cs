@@ -89,7 +89,7 @@
             this.GL_TableLayoutWvW.AutoSize = true;
             this.GL_TableLayoutWvW.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.GL_TableLayoutWvW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.GL_TableLayoutWvW.BackgroundImage = global::GuildLounge.Properties.Resources.icon_wvw_daily_highres;
+            this.GL_TableLayoutWvW.BackgroundImage = global::GuildLounge.Properties.Resources.icon_wvw_highres;
             this.GL_TableLayoutWvW.BackgroundScale = 0.4D;
             this.GL_TableLayoutWvW.ColumnCount = 1;
             this.GL_TableLayoutWvW.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
