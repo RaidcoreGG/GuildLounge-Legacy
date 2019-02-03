@@ -11,7 +11,7 @@ namespace GuildLounge
     {
         private const string _apiBase = "https://api.guildwars2.com/v2/";
         private static readonly HttpClient _client = new HttpClient();
-        private AccountOverview AccOverview;
+        private ModuleData AccOverview;
 
         public async Task<T> GetResponse<T>(string endPoint, params string[] args)
         {
@@ -25,9 +25,9 @@ namespace GuildLounge
         {
             RaidCMs resp = new RaidCMs();
 
-            AchievementObject[] achievements = await GetResponse<AchievementObject[]>("account/achievements", "access_token=" + accessToken, "ids=3019,3334,3287,3342,3292,3392,3993,4037,3979,4416,4429,4355");
+            Achievement[] achievements = await GetResponse<Achievement[]>("account/achievements", "access_token=" + accessToken, "ids=3019,3334,3287,3342,3292,3392,3993,4037,3979,4416,4429,4355");
             
-            foreach (AchievementObject a in achievements)
+            foreach (Achievement a in achievements)
             {
                 switch (a.id)
                 {
@@ -68,12 +68,12 @@ namespace GuildLounge
             return resp;
         }
 
-        public async Task<AccountOverview> FetchAccountOverview(string accessToken)
+        public async Task<ModuleData> FetchAccountOverview(string accessToken)
         {
             Console.WriteLine("[OVERVIEW: INIT]");
             DateTime dt = DateTime.Now;
 
-            AccOverview = new AccountOverview();
+            AccOverview = new ModuleData();
             AccOverview.wallet = new AccountWallet();
             AccOverview.tradingpost = new AccountTradingPost();
 
@@ -99,7 +99,7 @@ namespace GuildLounge
 
         private async Task ProcessWallet(string accessToken)
         {
-            CurrencyObject[] currencies = await GetResponse<CurrencyObject[]>("account/wallet", "access_token=" + accessToken );
+            WalletItem[] currencies = await GetResponse<WalletItem[]>("account/wallet", "access_token=" + accessToken );
 
             for (int i = 0; i < currencies.Length; i++)
             {
@@ -147,7 +147,7 @@ namespace GuildLounge
 
         private async Task ProcessMaterialStorage(string accessToken)
         {
-            MaterialObject[] materials = await GetResponse<MaterialObject[]>("account/materials", "access_token=" + accessToken);
+            MaterialItem[] materials = await GetResponse<MaterialItem[]>("account/materials", "access_token=" + accessToken);
 
             bool LI = false;
             bool LD = false;
@@ -186,7 +186,7 @@ namespace GuildLounge
 
             foreach (Character c in characters)
             {
-                foreach (EqItem eq in c.equipment)
+                foreach (Item eq in c.equipment)
                 {
                     if (eq != null)
                     {

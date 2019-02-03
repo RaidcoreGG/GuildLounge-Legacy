@@ -218,7 +218,7 @@ namespace GuildLounge
 
             try
             {
-                AccountOverview APIResponse = await _api.FetchAccountOverview(ActiveAPIEntry.Key);
+                ModuleData APIResponse = await _api.FetchAccountOverview(ActiveAPIEntry.Key);
 
                 var w = APIResponse.wallet;
                 var tp = APIResponse.tradingpost;
@@ -274,7 +274,7 @@ namespace GuildLounge
             }
         }
         
-        private void SetToolTipTexts(AccountOverview APIResponse)
+        private void SetToolTipTexts(ModuleData APIResponse)
         {
             string detailedInfo = "";
             if (APIResponse.materialLI > 0)

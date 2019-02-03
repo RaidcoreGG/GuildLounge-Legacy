@@ -1,7 +1,7 @@
 ﻿namespace GuildLounge
 {
     #region overviews
-    public class AccountOverview
+    public class ModuleData
     {
         //WALLET
         public AccountWallet wallet { get; set; }
@@ -51,7 +51,7 @@
     public class Character
     {
         public string name { get; set; }
-        public EqItem[] equipment { get; set; }
+        public Item[] equipment { get; set; }
         public Bag[] bags { get; set; }
     }
 
@@ -66,21 +66,16 @@
         public int id { get; set; }
         public int count { get; set; }
     }
-
-    public class EqItem
-    {
-        public int id { get; set; }
-    }
     #endregion
 
     #region misc
-    public class CurrencyObject
+    public class WalletItem
     {
         public int id { get; set; }
         public int value { get; set; }
     }
     
-    public class MaterialObject
+    public class MaterialItem
     {
         public int id { get; set; }
         public int category { get; set; }
@@ -102,7 +97,7 @@
         public bool Qadim { get; set; }
     }
 
-    public class AchievementObject
+    public class Achievement
     {
         public int id { get; set; }
         public string name { get; set; }
