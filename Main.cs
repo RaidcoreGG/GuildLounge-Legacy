@@ -30,6 +30,7 @@ namespace GuildLounge
         private UserControl DashboardTab;
         private UserControl LFGTab;
         private UserControl RaidsTab;
+        private UserControl DailiesTab;
         private UserControl GuidesTab;
         private UserControl APIKeysTab;
         private UserControl SettingsTab;
@@ -54,6 +55,7 @@ namespace GuildLounge
             DashboardTab = new UserControl_Dashboard();
             LFGTab = new UserControl_LFG();
             RaidsTab = new UserControl_Raids();
+            DailiesTab = new UserControl_Dailies();
             GuidesTab = new UserControl_Guides();
             APIKeysTab = new UserControl_APIKeys();
             SettingsTab = new UserControl_Settings();
@@ -71,6 +73,7 @@ namespace GuildLounge
             DashboardTab.Location
                 = LFGTab.Location
                 = RaidsTab.Location
+                = DailiesTab.Location
                 = GuidesTab.Location
                 = APIKeysTab.Location
                 = SettingsTab.Location
@@ -82,6 +85,7 @@ namespace GuildLounge
                 DashboardTab,
                 LFGTab,
                 RaidsTab,
+                DailiesTab,
                 GuidesTab,
                 APIKeysTab,
                 SettingsTab
@@ -162,6 +166,11 @@ namespace GuildLounge
             SetActiveTab(RaidsTab, sender);
         }
 
+        private void buttonDailies_Click(object sender, EventArgs e)
+        {
+            SetActiveTab(DailiesTab, sender);
+        }
+
         private void buttonGuides_Click(object sender, EventArgs e)
         {
             SetActiveTab(GuidesTab, sender);
@@ -206,9 +215,8 @@ namespace GuildLounge
                 buttonRefresh.Enabled = false;
             }
 
-            //SET NEW KEY FOR RAIDS TAB
-            var obj2 = (UserControl_Raids)RaidsTab;
-            obj2.ActiveAPIEntry = ActiveAPIEntry;
+            //SET NEW API KEYS FOR TABS
+            ((UserControl_Raids) RaidsTab).ActiveAPIEntry = ActiveAPIEntry;
         }
 
         private async void UpdateAccountOverview()

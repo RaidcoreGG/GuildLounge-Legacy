@@ -118,68 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icon_ascendedshardofglory" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_ascendedshardofglory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_badgeofhonor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_badgeofhonor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_basecurrencies" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\category\icon_basecurrencies.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_cairn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\4_bastionofthepenitent\icon_cairn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_coinscopper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_coinscopper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_coinsgold" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_coinsgold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_coinssilver" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_coinssilver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_deimos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\4_bastionofthepenitent\icon_deimos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_dhuum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\5_hallofchains\icon_dhuum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_escort" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\3_strongholdofthefaithful\icon_escort.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_fractalrelic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_fractalrelic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_fractals" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\category\icon_fractals.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_gaetingcrystal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_gaetingcrystal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_gorseval" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\1_spiritvale\icon_gorseval.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_karma" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_karma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_keepconstruct" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\3_strongholdofthefaithful\icon_keepconstruct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_largostwins" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\6_mythwrightgambit\icon_largostwins.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_ld" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_ld.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_li" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_li.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_magnetiteshard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_magnetiteshard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_matthias" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\2_salvationpass\icon_matthias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_pvpleagueticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_pvpleagueticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_mursaatoverseer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bosses\4_bastionofthepenitent\icon_mursaatoverseer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,88 +127,172 @@
   <data name="icon_pristinefractalrelic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\currencies\icon_pristinefractalrelic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_pvp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\category\icon_pvp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_pvpleagueticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_pvpleagueticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_qadim" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\6_mythwrightgambit\icon_qadim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_raids" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\category\icon_raids.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_sabetha" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\1_spiritvale\icon_sabetha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_samarog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\4_bastionofthepenitent\icon_samarog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_slothasor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\2_salvationpass\icon_slothasor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_soullesshorror" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\5_hallofchains\icon_soullesshorror.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_valeguardian" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\1_spiritvale\icon_valeguardian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_wvw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\category\icon_wvw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_wvwskirmishticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currencies\icon_wvwskirmishticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_xera" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bosses\3_strongholdofthefaithful\icon_xera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo_hot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo\logo_hot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo_pof" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo\logo_pof.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="news_placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\news_placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="news_placeholder1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\news_placeholder1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="news_placeholder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\news_placeholder2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="news_placeholder3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\news_placeholder3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_arrow_dn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\navigation\ui_arrow_dn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_arrow_lt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\navigation\ui_arrow_lt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_arrow_rt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\navigation\ui_arrow_rt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_arrow_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\navigation\ui_arrow_up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_fractals_daily_highres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_fractals_daily_highres.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ui_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menubar\ui_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ui_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navigation\ui_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_wvwskirmishticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_wvwskirmishticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_fractals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_fractals.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_largostwins" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\6_mythwrightgambit\icon_largostwins.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_samarog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\4_bastionofthepenitent\icon_samarog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_pvp_daily_highres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_pvp_daily_highres.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_pvp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_pvp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_cairn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\4_bastionofthepenitent\icon_cairn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_matthias" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\2_salvationpass\icon_matthias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_coinsgold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_coinsgold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ui_close1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menubar\ui_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_gorseval" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\1_spiritvale\icon_gorseval.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_deimos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\4_bastionofthepenitent\icon_deimos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_xera" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\3_strongholdofthefaithful\icon_xera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_basecurrencies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_basecurrencies.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_sabetha" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\1_spiritvale\icon_sabetha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_magnetiteshard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_magnetiteshard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_soullesshorror" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\5_hallofchains\icon_soullesshorror.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_karma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_karma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_coinssilver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_coinssilver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="news_placeholder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\news_placeholder2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_escort" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\3_strongholdofthefaithful\icon_escort.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_fractalrelic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_fractalrelic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_slothasor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\2_salvationpass\icon_slothasor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="news_placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\news_placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_badgeofhonor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_badgeofhonor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_fractals_highres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_fractals_highres.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ui_arrow_lt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navigation\ui_arrow_lt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_hot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo\logo_hot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ui_arrow_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navigation\ui_arrow_up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_ld" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_ld.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_wvw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_wvw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_qadim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\6_mythwrightgambit\icon_qadim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_pvp_highres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_pvp_highres.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_gaetingcrystal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_gaetingcrystal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_ascendedshardofglory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_ascendedshardofglory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ui_arrow_rt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navigation\ui_arrow_rt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_pve_highres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_pve_highres.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_li" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_li.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ui_arrow_dn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navigation\ui_arrow_dn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_coinscopper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currencies\icon_coinscopper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_wvw_highres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_wvw_highres.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_raids" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_raids.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_dhuum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\5_hallofchains\icon_dhuum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ui_minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menubar\ui_minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ui_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\navigation\ui_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_keepconstruct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\3_strongholdofthefaithful\icon_keepconstruct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_pve" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_pve.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_valeguardian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bosses\1_spiritvale\icon_valeguardian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="news_placeholder3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\news_placeholder3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_pof" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo\logo_pof.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ui_refresh_ani" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\navigation\ui_refresh_ani.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_wvw_daily_highres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\category\icon_wvw_daily_highres.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

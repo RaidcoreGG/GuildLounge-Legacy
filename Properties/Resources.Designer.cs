@@ -183,6 +183,26 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_fractals_daily_highres {
+            get {
+                object obj = ResourceManager.GetObject("icon_fractals_daily_highres", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_fractals_highres {
+            get {
+                object obj = ResourceManager.GetObject("icon_fractals_highres", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_gaetingcrystal {
             get {
                 object obj = ResourceManager.GetObject("icon_gaetingcrystal", resourceCulture);
@@ -293,9 +313,49 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_pve {
+            get {
+                object obj = ResourceManager.GetObject("icon_pve", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_pve_highres {
+            get {
+                object obj = ResourceManager.GetObject("icon_pve_highres", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_pvp {
             get {
                 object obj = ResourceManager.GetObject("icon_pvp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_pvp_daily_highres {
+            get {
+                object obj = ResourceManager.GetObject("icon_pvp_daily_highres", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_pvp_highres {
+            get {
+                object obj = ResourceManager.GetObject("icon_pvp_highres", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,6 +446,26 @@ namespace GuildLounge.Properties {
         internal static System.Drawing.Bitmap icon_wvw {
             get {
                 object obj = ResourceManager.GetObject("icon_wvw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_wvw_daily_highres {
+            get {
+                object obj = ResourceManager.GetObject("icon_wvw_daily_highres", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_wvw_highres {
+            get {
+                object obj = ResourceManager.GetObject("icon_wvw_highres", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

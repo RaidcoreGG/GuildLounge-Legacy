@@ -1,4 +1,6 @@
-﻿namespace GuildLounge
+﻿using System.Collections.Generic;
+
+namespace GuildLounge
 {
     #region overviews
     public class AccountOverview
@@ -82,6 +84,19 @@
     {
         public int id { get; set; }
         public int count { get; set; }
+    }
+    public class Achievement
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+    public class DailyAchievementObject
+    {
+        public List<Achievement> pve { get; set; }
+        public List<Achievement> pvp { get; set; }
+        public List<Achievement> wvw { get; set; }
+        public List<Achievement> fractals { get; set; }
+        public List<Achievement> special { get; set; }
     }
     #endregion
 }
