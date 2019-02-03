@@ -16,6 +16,12 @@ namespace GuildLounge
         NewsObject[] News;
         int NewsIndex;
 
+        class NewsObject
+        {
+            public string Link { get; set; }
+            public Image HeaderImage { get; set; }
+        }
+
         public UserControl_Dashboard()
         {
             InitializeComponent();
@@ -47,11 +53,42 @@ namespace GuildLounge
             if(Regex.IsMatch(News[NewsIndex].Link, @"(http(s)?:\/\/)?(www.)?[\w-_\/]"))
                 System.Diagnostics.Process.Start(News[NewsIndex].Link);
         }
-    }
 
-    class NewsObject
-    {
-        public string Link { get; set; }
-        public Image HeaderImage { get; set; }
+        #region links
+        private void linkLabelGLReleaseNotes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://guildlounge.com/");
+        }
+
+        private void linkLabelGLIdeaSubmission_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://guildlounge.com/ask");
+        }
+
+        private void linkLabelGLDiscord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://discord.gg/bkwWcCb");
+        }
+
+        private void linkLabelGW2Efficiency_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://gw2efficiency.com");
+        }
+
+        private void linkLabelGW2Wiki_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://wiki.guildwars2.com/wiki/Main_Page");
+        }
+
+        private void linkLabelGW2ReleaseNotes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://en-forum.guildwars2.com/categories/game-release-notes/");
+        }
+
+        private void linkLabelGW2Forums_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://forum.guildwars2.com");
+        }
+        #endregion
     }
 }
