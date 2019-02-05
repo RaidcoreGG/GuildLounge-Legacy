@@ -85,5 +85,10 @@ namespace GuildLounge
             base.OnMouseUp(mevent);
             hr.BackColor = Color.Red;
         }
+
+        public override void NotifyDefault(bool value)
+        {
+            base.NotifyDefault(false);
+        }
     }
 }
