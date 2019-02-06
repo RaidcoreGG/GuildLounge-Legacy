@@ -24,8 +24,8 @@ namespace GuildLounge
         public async Task<RaidCMs> FetchRaidCMs(string accessToken)
         {
             RaidCMs resp = new RaidCMs();
-
-            Achievement[] achievements = await GetResponse<Achievement[]>("account/achievements", "access_token=" + accessToken, "ids=3019,3334,3287,3342,3292,3392,3993,4037,3979,4416,4429,4355");
+            //ID 247 = DUMMY ACHIEVEMENT, GLADIATOR IS BOUND TO EVERY ACCOUNT
+            Achievement[] achievements = await GetResponse<Achievement[]>("account/achievements", "access_token=" + accessToken, "ids=247,3019,3334,3287,3342,3292,3392,3993,4037,3979,4416,4429,4355");
             
             foreach (Achievement a in achievements)
             {

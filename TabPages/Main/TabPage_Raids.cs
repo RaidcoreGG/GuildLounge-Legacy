@@ -137,8 +137,8 @@ namespace GuildLounge
 
         private async void UpdateCMFlags()
         {
-            try
-            {
+            //try
+            //{
                 RaidCMs APIResponse = await _api.FetchRaidCMs(ActiveAPIEntry.Key);
 
                 //W3
@@ -159,7 +159,7 @@ namespace GuildLounge
                 pictureBoxConjuredAmalgamate.DoneCM = APIResponse.ConjuredAmalgamate;
                 pictureBoxLargosTwins.DoneCM = APIResponse.LargosTwins;
                 pictureBoxQadim.DoneCM = APIResponse.Qadim;
-            }
+            /*}
             catch (Exception exc)
             {
                 Console.WriteLine(exc.Message);
@@ -182,7 +182,7 @@ namespace GuildLounge
                 pictureBoxConjuredAmalgamate.DoneCM = false;
                 pictureBoxLargosTwins.DoneCM = false;
                 pictureBoxQadim.DoneCM = false;
-            }
+            }*/
 
             //REDRAW
             Refresh();
