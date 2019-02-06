@@ -269,8 +269,7 @@
             this.pictureBoxStatuesofGrenth.BorderSize = 2;
             this.pictureBoxStatuesofGrenth.DoneCM = false;
             this.pictureBoxStatuesofGrenth.EncounterFinished = false;
-            this.pictureBoxStatuesofGrenth.HasCM = true;
-            this.pictureBoxStatuesofGrenth.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxStatuesofGrenth.Image")));
+            this.pictureBoxStatuesofGrenth.HasCM = false;
             this.pictureBoxStatuesofGrenth.Location = new System.Drawing.Point(114, 22);
             this.pictureBoxStatuesofGrenth.Name = "pictureBoxStatuesofGrenth";
             this.pictureBoxStatuesofGrenth.Size = new System.Drawing.Size(48, 48);
@@ -662,7 +661,7 @@
             this.pictureBoxValeGuardian.TabIndex = 14;
             this.pictureBoxValeGuardian.TabStop = false;
             // 
-            // UserControl_Raids
+            // TabPage_Raids
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -678,7 +677,7 @@
             this.Controls.Add(this.labelTotalWeeklyLD);
             this.Controls.Add(this.labelTotalWeeklyLI);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "UserControl_Raids";
+            this.Name = "TabPage_Raids";
             this.Size = new System.Drawing.Size(740, 436);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).EndInit();
