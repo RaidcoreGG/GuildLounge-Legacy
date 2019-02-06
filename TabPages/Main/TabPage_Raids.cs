@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class UserControl_Raids : UserControl
+    public partial class TabPage_Raids : UserControl
     {
         private static readonly ApiHandler _api = new ApiHandler();
         private ApiEntry m_oActiveKey;
@@ -22,7 +22,7 @@ namespace GuildLounge
             }
         }
 
-        public UserControl_Raids()
+        public TabPage_Raids()
         {
             InitializeComponent();
         }

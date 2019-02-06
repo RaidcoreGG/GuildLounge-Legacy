@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge
 {
-    partial class UserControl_Dashboard
+    partial class TabPage_Dashboard
     {
         /// <summary> 
         /// Required designer variable.

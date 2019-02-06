@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge
 {
-    partial class UserControl_APIKeys
+    partial class TabPage_APIKeys
     {
         /// <summary> 
         /// Required designer variable.

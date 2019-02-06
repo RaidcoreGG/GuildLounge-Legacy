@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class UserControl_LFG : UserControl
+    public partial class TabPage_LFG : UserControl
     {
-        public UserControl_LFG()
+        public TabPage_LFG()
         {
             InitializeComponent();
         }

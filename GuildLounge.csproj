@@ -177,41 +177,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControl_APIKeys.cs">
+    <Compile Include="TabPages\Main\TabPage_APIKeys.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControl_APIKeys.Designer.cs">
-      <DependentUpon>UserControl_APIKeys.cs</DependentUpon>
+    <Compile Include="TabPages\Main\TabPage_APIKeys.Designer.cs">
+      <DependentUpon>TabPage_APIKeys.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControl_Guides.cs">
+    <Compile Include="TabPages\Main\TabPage_Guides.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControl_Guides.Designer.cs">
-      <DependentUpon>UserControl_Guides.cs</DependentUpon>
+    <Compile Include="TabPages\Main\TabPage_Guides.Designer.cs">
+      <DependentUpon>TabPage_Guides.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControl_LFG.cs">
+    <Compile Include="TabPages\Main\TabPage_LFG.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControl_LFG.Designer.cs">
-      <DependentUpon>UserControl_LFG.cs</DependentUpon>
+    <Compile Include="TabPages\Main\TabPage_LFG.Designer.cs">
+      <DependentUpon>TabPage_LFG.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControl_Dashboard.cs">
+    <Compile Include="TabPages\Main\TabPage_Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControl_Dashboard.Designer.cs">
-      <DependentUpon>UserControl_Dashboard.cs</DependentUpon>
+    <Compile Include="TabPages\Main\TabPage_Dashboard.Designer.cs">
+      <DependentUpon>TabPage_Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControl_Raids.cs">
+    <Compile Include="TabPages\Main\TabPage_Raids.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControl_Raids.Designer.cs">
-      <DependentUpon>UserControl_Raids.cs</DependentUpon>
+    <Compile Include="TabPages\Main\TabPage_Raids.Designer.cs">
+      <DependentUpon>TabPage_Raids.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControl_Settings.cs">
+    <Compile Include="TabPages\Main\TabPage_Settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControl_Settings.Designer.cs">
-      <DependentUpon>UserControl_Settings.cs</DependentUpon>
+    <Compile Include="TabPages\Main\TabPage_Settings.Designer.cs">
+      <DependentUpon>TabPage_Settings.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Controls\Control_Button.resx">
       <DependentUpon>Control_Button.cs</DependentUpon>
@@ -260,23 +260,23 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControl_APIKeys.resx">
-      <DependentUpon>UserControl_APIKeys.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\TabPage_APIKeys.resx">
+      <DependentUpon>TabPage_APIKeys.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControl_Guides.resx">
-      <DependentUpon>UserControl_Guides.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\TabPage_Guides.resx">
+      <DependentUpon>TabPage_Guides.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControl_LFG.resx">
-      <DependentUpon>UserControl_LFG.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\TabPage_LFG.resx">
+      <DependentUpon>TabPage_LFG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControl_Dashboard.resx">
-      <DependentUpon>UserControl_Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\TabPage_Dashboard.resx">
+      <DependentUpon>TabPage_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControl_Raids.resx">
-      <DependentUpon>UserControl_Raids.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\TabPage_Raids.resx">
+      <DependentUpon>TabPage_Raids.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControl_Settings.resx">
-      <DependentUpon>UserControl_Settings.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\TabPage_Settings.resx">
+      <DependentUpon>TabPage_Settings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -471,6 +471,8 @@
   <ItemGroup>
     <Content Include="icon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="TabPages\Tools\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

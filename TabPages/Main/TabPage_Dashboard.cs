@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 
 namespace GuildLounge
 {
-    public partial class UserControl_Dashboard : UserControl
+    public partial class TabPage_Dashboard : UserControl
     {
         NewsObject[] News;
         int NewsIndex;
@@ -22,7 +22,7 @@ namespace GuildLounge
             public Image HeaderImage { get; set; }
         }
 
-        public UserControl_Dashboard()
+        public TabPage_Dashboard()
         {
             InitializeComponent();
             News = new NewsObject[3];

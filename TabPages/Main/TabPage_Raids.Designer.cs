@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge
 {
-    partial class UserControl_Raids
+    partial class TabPage_Raids
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl_Raids));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TabPage_Raids));
             this.labelTotalWeeklyLI = new System.Windows.Forms.Label();
             this.labelTotalWeeklyLD = new System.Windows.Forms.Label();
             this.pictureBoxHoT = new System.Windows.Forms.PictureBox();

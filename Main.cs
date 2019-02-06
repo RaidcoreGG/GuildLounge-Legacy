@@ -51,12 +51,12 @@ namespace GuildLounge
             panelOverview.AutoScroll = true;
 
             //INITIALIZING TABS
-            DashboardTab = new UserControl_Dashboard();
-            LFGTab = new UserControl_LFG();
-            RaidsTab = new UserControl_Raids();
-            GuidesTab = new UserControl_Guides();
-            APIKeysTab = new UserControl_APIKeys();
-            SettingsTab = new UserControl_Settings();
+            DashboardTab = new TabPage_Dashboard();
+            LFGTab = new TabPage_LFG();
+            RaidsTab = new TabPage_Raids();
+            GuidesTab = new TabPage_Guides();
+            APIKeysTab = new TabPage_APIKeys();
+            SettingsTab = new TabPage_Settings();
 
             //HIDING TABS
             DashboardTab.Visible
@@ -181,7 +181,7 @@ namespace GuildLounge
         public void RefreshKeys()
         {
             //GET KEYS FROM KEYSTAB
-            var obj = (UserControl_APIKeys)APIKeysTab;
+            var obj = (TabPage_APIKeys)APIKeysTab;
             APIEntries = obj.APIEntries;
             
             if (APIEntries != null)
@@ -207,7 +207,7 @@ namespace GuildLounge
             }
 
             //SET NEW KEY FOR RAIDS TAB
-            var obj2 = (UserControl_Raids)RaidsTab;
+            var obj2 = (TabPage_Raids)RaidsTab;
             obj2.ActiveAPIEntry = ActiveAPIEntry;
         }
 
@@ -325,7 +325,7 @@ namespace GuildLounge
                 if (ActiveAPIEntry != APIEntries[comboBoxAccount.SelectedIndex])
                 {
                     //SET MAINTAB ACTIVE ENTRY, REQUESTHANDLER ACTIVE ENTRY & RAIDSTAB ACTIVE ENTRY TO SELECTED ENTRY FROM COMBOBOX
-                    var obj = (UserControl_Raids)RaidsTab;
+                    var obj = (TabPage_Raids)RaidsTab;
                     ActiveAPIEntry =
                         obj.ActiveAPIEntry =
                         APIEntries[comboBoxAccount.SelectedIndex];
@@ -341,7 +341,7 @@ namespace GuildLounge
             if (ActiveAPIEntry != null)
             {
                 //REFRESH RAID ENCOUNTER PROGRESS BY SETTING THE KEY
-                var obj = (UserControl_Raids)RaidsTab;
+                var obj = (TabPage_Raids)RaidsTab;
                 obj.ActiveAPIEntry = ActiveAPIEntry;
 
                 //REFRESH OVERVIEW

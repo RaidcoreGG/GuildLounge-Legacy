@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge
 {
-    partial class UserControl_LFG
+    partial class TabPage_LFG
     {
         /// <summary> 
         /// Required designer variable.

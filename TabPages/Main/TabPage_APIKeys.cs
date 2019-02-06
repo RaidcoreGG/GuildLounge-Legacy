@@ -6,12 +6,12 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class UserControl_APIKeys : UserControl
+    public partial class TabPage_APIKeys : UserControl
     {
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
         public ApiEntry[] APIEntries { get; set; }
 
-        public UserControl_APIKeys()
+        public TabPage_APIKeys()
         {
             InitializeComponent();
 
