@@ -134,41 +134,41 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ModuleBaseCurrencies.cs">
+    <Compile Include="Modules\Module_BaseCurrencies.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\ModuleBaseCurrencies.Designer.cs">
-      <DependentUpon>ModuleBaseCurrencies.cs</DependentUpon>
+    <Compile Include="Modules\Module_BaseCurrencies.Designer.cs">
+      <DependentUpon>Module_BaseCurrencies.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ModuleFractals.cs">
+    <Compile Include="Modules\Module_Fractals.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\ModuleFractals.Designer.cs">
-      <DependentUpon>ModuleFractals.cs</DependentUpon>
+    <Compile Include="Modules\Module_Fractals.Designer.cs">
+      <DependentUpon>Module_Fractals.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ModulePvP.cs">
+    <Compile Include="Modules\Module_PvP.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\ModulePvP.Designer.cs">
-      <DependentUpon>ModulePvP.cs</DependentUpon>
+    <Compile Include="Modules\Module_PvP.Designer.cs">
+      <DependentUpon>Module_PvP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ModuleRaids.cs">
+    <Compile Include="Modules\Module_Raids.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\ModuleRaids.Designer.cs">
-      <DependentUpon>ModuleRaids.cs</DependentUpon>
+    <Compile Include="Modules\Module_Raids.Designer.cs">
+      <DependentUpon>Module_Raids.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ModuleTPPickup.cs">
+    <Compile Include="Modules\Module_TPPickup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\ModuleTPPickup.Designer.cs">
-      <DependentUpon>ModuleTPPickup.cs</DependentUpon>
+    <Compile Include="Modules\Module_TPPickup.Designer.cs">
+      <DependentUpon>Module_TPPickup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ModuleWvW.cs">
+    <Compile Include="Modules\Module_WvW.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\ModuleWvW.Designer.cs">
-      <DependentUpon>ModuleWvW.cs</DependentUpon>
+    <Compile Include="Modules\Module_WvW.Designer.cs">
+      <DependentUpon>Module_WvW.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -237,23 +237,23 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ModuleBaseCurrencies.resx">
-      <DependentUpon>ModuleBaseCurrencies.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Module_BaseCurrencies.resx">
+      <DependentUpon>Module_BaseCurrencies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ModuleFractals.resx">
-      <DependentUpon>ModuleFractals.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Module_Fractals.resx">
+      <DependentUpon>Module_Fractals.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ModulePvP.resx">
-      <DependentUpon>ModulePvP.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Module_PvP.resx">
+      <DependentUpon>Module_PvP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ModuleRaids.resx">
-      <DependentUpon>ModuleRaids.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Module_Raids.resx">
+      <DependentUpon>Module_Raids.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ModuleTPPickup.resx">
-      <DependentUpon>ModuleTPPickup.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Module_TPPickup.resx">
+      <DependentUpon>Module_TPPickup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ModuleWvW.resx">
-      <DependentUpon>ModuleWvW.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Module_WvW.resx">
+      <DependentUpon>Module_WvW.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
