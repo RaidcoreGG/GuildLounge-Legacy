@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge
 {
-    partial class ModuleTPPickup
+    partial class Module_TPPickup
     {
         /// <summary> 
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge
 {
-    partial class ModuleWvW
+    partial class Module_WvW
     {
         /// <summary> 
         /// Required designer variable.

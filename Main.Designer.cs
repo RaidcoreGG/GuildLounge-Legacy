@@ -36,12 +36,12 @@
             this.buttonLFG = new GuildLounge.Control_NavigationButton();
             this.buttonDashboard = new GuildLounge.Control_NavigationButton();
             this.panelOverview = new System.Windows.Forms.Panel();
-            this.moduleTPPickup = new GuildLounge.ModuleTPPickup();
-            this.moduleBaseCurrencies = new GuildLounge.ModuleBaseCurrencies();
-            this.modulePvP = new GuildLounge.ModulePvP();
-            this.moduleWvW = new GuildLounge.ModuleWvW();
-            this.moduleFractals = new GuildLounge.ModuleFractals();
-            this.moduleRaids = new GuildLounge.ModuleRaids();
+            this.moduleTPPickup = new GuildLounge.Module_TPPickup();
+            this.moduleBaseCurrencies = new GuildLounge.Module_BaseCurrencies();
+            this.modulePvP = new GuildLounge.Module_PvP();
+            this.moduleWvW = new GuildLounge.Module_WvW();
+            this.moduleFractals = new GuildLounge.Module_Fractals();
+            this.moduleRaids = new GuildLounge.Module_Raids();
             this.menuStrip = new GuildLounge.Control_MenuStrip();
             this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
@@ -449,12 +449,12 @@
         private System.Windows.Forms.Panel panelLaunch;
         private System.Windows.Forms.Label labelLaunchError;
         private Control_HighlightButton buttonLaunch;
-        private ModuleRaids moduleRaids;
-        private ModuleFractals moduleFractals;
-        private ModuleWvW moduleWvW;
-        private ModulePvP modulePvP;
-        private ModuleTPPickup moduleTPPickup;
-        private ModuleBaseCurrencies moduleBaseCurrencies;
+        private Module_Raids moduleRaids;
+        private Module_Fractals moduleFractals;
+        private Module_WvW moduleWvW;
+        private Module_PvP modulePvP;
+        private Module_TPPickup moduleTPPickup;
+        private Module_BaseCurrencies moduleBaseCurrencies;
     }
 }
 

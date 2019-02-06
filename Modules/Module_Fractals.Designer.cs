@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge
 {
-    partial class ModuleFractals
+    partial class Module_Fractals
     {
         /// <summary> 
         /// Required designer variable.

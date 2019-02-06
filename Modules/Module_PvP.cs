@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class ModulePvP : UserControl
+    public partial class Module_PvP : UserControl
     {
         public int AscendedShardsOfGlory
         {
@@ -27,7 +27,7 @@ namespace GuildLounge
                 labelPvPLeagueTicket.Text = value.ToString();
             }
         }
-        public ModulePvP()
+        public Module_PvP()
         {
             InitializeComponent();
         }

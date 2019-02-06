@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class ModuleTPPickup : UserControl
+    public partial class Module_TPPickup : UserControl
     {
         private int m_iCoins;
         public int Coins
@@ -41,7 +41,7 @@ namespace GuildLounge
             }
         }
 
-        public ModuleTPPickup()
+        public Module_TPPickup()
         {
             InitializeComponent();
 

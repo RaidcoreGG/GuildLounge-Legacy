@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class ModuleBaseCurrencies : UserControl
+    public partial class Module_BaseCurrencies : UserControl
     {
         private int m_iCoins;
         public int Coins
@@ -65,7 +65,7 @@ namespace GuildLounge
             }
         }
 
-        public ModuleBaseCurrencies()
+        public Module_BaseCurrencies()
         {
             InitializeComponent();
 

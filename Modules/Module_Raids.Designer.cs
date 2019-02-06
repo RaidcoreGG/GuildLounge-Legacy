@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge
 {
-    partial class ModuleRaids
+    partial class Module_Raids
     {
         /// <summary> 
         /// Required designer variable.

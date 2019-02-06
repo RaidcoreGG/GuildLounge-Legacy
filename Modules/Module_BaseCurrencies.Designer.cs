@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge
 {
-    partial class ModuleBaseCurrencies
+    partial class Module_BaseCurrencies
     {
         /// <summary> 
         /// Required designer variable.

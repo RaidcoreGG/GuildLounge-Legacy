@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class ModuleFractals : UserControl
+    public partial class Module_Fractals : UserControl
     {
         public int FractalRelics
         {
@@ -27,7 +27,7 @@ namespace GuildLounge
                 labelPristineFractalRelics.Text = value.ToString();
             }
         }
-        public ModuleFractals()
+        public Module_Fractals()
         {
             InitializeComponent();
 

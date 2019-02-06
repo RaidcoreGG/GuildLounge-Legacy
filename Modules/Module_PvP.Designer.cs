@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge
 {
-    partial class ModulePvP
+    partial class Module_PvP
     {
         /// <summary> 
         /// Required designer variable.

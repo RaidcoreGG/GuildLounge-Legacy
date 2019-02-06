@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class ModuleRaids : UserControl
+    public partial class Module_Raids : UserControl
     {
         private Control_ToolTip ToolTipLI;
         private Control_ToolTip ToolTipLD;
@@ -75,7 +75,7 @@ namespace GuildLounge
             }
         }
 
-        public ModuleRaids()
+        public Module_Raids()
         {
             InitializeComponent();
 

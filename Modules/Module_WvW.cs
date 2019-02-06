@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class ModuleWvW : UserControl
+    public partial class Module_WvW : UserControl
     {
         public int BadgesOfHonor
         {
@@ -27,7 +27,7 @@ namespace GuildLounge
                 labelWvWSkirmishTicket.Text = value.ToString();
             }
         }
-        public ModuleWvW()
+        public Module_WvW()
         {
             InitializeComponent();
 
