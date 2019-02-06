@@ -49,7 +49,7 @@
             this.linkLabelAPIKeys = new System.Windows.Forms.LinkLabel();
             this.panelLaunch = new System.Windows.Forms.Panel();
             this.labelLaunchError = new System.Windows.Forms.Label();
-            this.buttonLaunch = new GuildLounge.GL_Button();
+            this.buttonLaunch = new GuildLounge.GL_HighlightButton();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonDashboard = new GuildLounge.GL_NavigationButton();
             this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
@@ -449,7 +449,7 @@
         private System.Windows.Forms.LinkLabel linkLabelAPIKeys;
         private System.Windows.Forms.Panel panelLaunch;
         private System.Windows.Forms.Label labelLaunchError;
-        private GL_Button buttonLaunch;
+        private GL_HighlightButton buttonLaunch;
         private ModuleRaids moduleRaids;
         private ModuleFractals moduleFractals;
         private ModuleWvW moduleWvW;

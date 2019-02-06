@@ -80,11 +80,11 @@
     <Compile Include="Classes\ApiEntry.cs" />
     <Compile Include="Classes\ApiHandler.cs" />
     <Compile Include="Classes\RequestObjects.cs" />
-    <Compile Include="Controls\GL_Button.cs">
+    <Compile Include="Controls\GL_HighlightButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\GL_Button.Designer.cs">
-      <DependentUpon>GL_Button.cs</DependentUpon>
+    <Compile Include="Controls\GL_HighlightButton.Designer.cs">
+      <DependentUpon>GL_HighlightButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\GL_NavigationButton.cs">
       <SubType>Component</SubType>
@@ -207,8 +207,8 @@
     <Compile Include="UserControls\UserControl_Settings.Designer.cs">
       <DependentUpon>UserControl_Settings.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\GL_Button.resx">
-      <DependentUpon>GL_Button.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\GL_HighlightButton.resx">
+      <DependentUpon>GL_HighlightButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\GL_NavigationButton.resx">
       <DependentUpon>GL_NavigationButton.cs</DependentUpon>
