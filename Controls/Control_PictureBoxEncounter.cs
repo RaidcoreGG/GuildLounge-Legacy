@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class GL_PictureBoxEncounter : PictureBox
+    public partial class Control_PictureBoxEncounter : PictureBox
     {
         public int BorderSize { get; set; }
         public Color BorderColor { get; set; }
@@ -43,14 +43,14 @@ namespace GuildLounge
                     Image = null;
             }
         }
-        private GL_ToolTip ToolTipEncounterName { get; set; }
+        private Control_ToolTip ToolTipEncounterName { get; set; }
 
-        public GL_PictureBoxEncounter()
+        public Control_PictureBoxEncounter()
         {
             InitializeComponent();
 
             BorderSize = 2;
-            ToolTipEncounterName = new GL_ToolTip();
+            ToolTipEncounterName = new Control_ToolTip();
         }
 
         protected override void OnPaint(PaintEventArgs pe)

@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class GL_NavigationButton : Button
+    public partial class Control_NavigationButton : Button
     {
         private bool m_oActive;
-        private GL_HorizontalLine hr;
-        public GL_NavigationButton() : base()
+        private Control_HorizontalLine hr;
+        public Control_NavigationButton() : base()
         {
             InitializeComponent();
 
@@ -23,7 +23,7 @@ namespace GuildLounge
                 Color.Transparent;
 
             //SET UP HORIZONTAL LINE
-            hr = new GL_HorizontalLine();
+            hr = new Control_HorizontalLine();
             hr.Width = Width;
             hr.Location = new Point(0, Height - hr.Height);
             hr.BackColor = Color.Red;

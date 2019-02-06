@@ -75,52 +75,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\UtilityMethods.cs" />
+    <Compile Include="Classes\Utility.cs" />
     <Compile Include="Classes\AddOnUpdater.cs" />
     <Compile Include="Classes\ApiEntry.cs" />
     <Compile Include="Classes\ApiHandler.cs" />
     <Compile Include="Classes\RequestObjects.cs" />
-    <Compile Include="Controls\GL_HighlightButton.cs">
+    <Compile Include="Controls\Control_Button.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\GL_HighlightButton.Designer.cs">
-      <DependentUpon>GL_HighlightButton.cs</DependentUpon>
+    <Compile Include="Controls\Control_Button.Designer.cs">
+      <DependentUpon>Control_Button.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\GL_NavigationButton.cs">
+    <Compile Include="Controls\Control_HighlightButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\GL_NavigationButton.Designer.cs">
-      <DependentUpon>GL_NavigationButton.cs</DependentUpon>
+    <Compile Include="Controls\Control_HighlightButton.Designer.cs">
+      <DependentUpon>Control_HighlightButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\GL_GroupBox.cs">
+    <Compile Include="Controls\Control_NavigationButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\GL_GroupBox.Designer.cs">
-      <DependentUpon>GL_GroupBox.cs</DependentUpon>
+    <Compile Include="Controls\Control_NavigationButton.Designer.cs">
+      <DependentUpon>Control_NavigationButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\GL_MenuStrip.cs">
+    <Compile Include="Controls\Control_GroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\GL_MenuStrip.Designer.cs">
-      <DependentUpon>GL_MenuStrip.cs</DependentUpon>
+    <Compile Include="Controls\Control_GroupBox.Designer.cs">
+      <DependentUpon>Control_GroupBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\GL_PictureBoxEncounter.cs">
+    <Compile Include="Controls\Control_MenuStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\GL_PictureBoxEncounter.Designer.cs">
-      <DependentUpon>GL_PictureBoxEncounter.cs</DependentUpon>
+    <Compile Include="Controls\Control_MenuStrip.Designer.cs">
+      <DependentUpon>Control_MenuStrip.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\GL_HorizontalLine.cs">
+    <Compile Include="Controls\Control_PictureBoxEncounter.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\GL_HorizontalLine.Designer.cs">
-      <DependentUpon>GL_HorizontalLine.cs</DependentUpon>
+    <Compile Include="Controls\Control_PictureBoxEncounter.Designer.cs">
+      <DependentUpon>Control_PictureBoxEncounter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\GL_ToolTip.cs">
+    <Compile Include="Controls\Control_HorizontalLine.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\GL_ToolTip.Designer.cs">
-      <DependentUpon>GL_ToolTip.cs</DependentUpon>
+    <Compile Include="Controls\Control_HorizontalLine.Designer.cs">
+      <DependentUpon>Control_HorizontalLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Control_ToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Control_ToolTip.Designer.cs">
+      <DependentUpon>Control_ToolTip.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -207,23 +213,26 @@
     <Compile Include="UserControls\UserControl_Settings.Designer.cs">
       <DependentUpon>UserControl_Settings.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\GL_HighlightButton.resx">
-      <DependentUpon>GL_HighlightButton.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Control_Button.resx">
+      <DependentUpon>Control_Button.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\GL_NavigationButton.resx">
-      <DependentUpon>GL_NavigationButton.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Control_HighlightButton.resx">
+      <DependentUpon>Control_HighlightButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\GL_GroupBox.resx">
-      <DependentUpon>GL_GroupBox.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Control_NavigationButton.resx">
+      <DependentUpon>Control_NavigationButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\GL_MenuStrip.resx">
-      <DependentUpon>GL_MenuStrip.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Control_GroupBox.resx">
+      <DependentUpon>Control_GroupBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\GL_PictureBoxEncounter.resx">
-      <DependentUpon>GL_PictureBoxEncounter.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Control_MenuStrip.resx">
+      <DependentUpon>Control_MenuStrip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\GL_ToolTip.resx">
-      <DependentUpon>GL_ToolTip.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Control_PictureBoxEncounter.resx">
+      <DependentUpon>Control_PictureBoxEncounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Control_ToolTip.resx">
+      <DependentUpon>Control_ToolTip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

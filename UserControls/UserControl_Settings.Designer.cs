@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gL_GroupBoxStartParams = new GuildLounge.GL_GroupBox();
+            this.gL_GroupBoxStartParams = new GuildLounge.Control_GroupBox();
             this.textBoxStartParams = new System.Windows.Forms.TextBox();
             this.labelStartParams = new System.Windows.Forms.Label();
-            this.buttonRestore = new GuildLounge.GL_HighlightButton();
-            this.buttonSave = new GuildLounge.GL_HighlightButton();
-            this.gL_GroupBoxAddOns = new GuildLounge.GL_GroupBox();
-            this.buttonForceUpdate = new GuildLounge.GL_HighlightButton();
-            this.buttonRemoveAddOn = new GuildLounge.GL_HighlightButton();
-            this.buttonEditAddOn = new GuildLounge.GL_HighlightButton();
+            this.buttonRestore = new GuildLounge.Control_HighlightButton();
+            this.buttonSave = new GuildLounge.Control_HighlightButton();
+            this.gL_GroupBoxAddOns = new GuildLounge.Control_GroupBox();
+            this.buttonForceUpdate = new GuildLounge.Control_HighlightButton();
+            this.buttonRemoveAddOn = new GuildLounge.Control_HighlightButton();
+            this.buttonEditAddOn = new GuildLounge.Control_HighlightButton();
             this.labelUpdateInfo = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
-            this.buttonAddAddOn = new GuildLounge.GL_HighlightButton();
+            this.buttonAddAddOn = new GuildLounge.Control_HighlightButton();
             this.textBoxAddOnLink = new System.Windows.Forms.TextBox();
             this.labelUpdateLink = new System.Windows.Forms.Label();
             this.listBoxAddOns = new System.Windows.Forms.ListBox();
             this.checkBoxUpdateAddOns = new System.Windows.Forms.CheckBox();
-            this.gL_GroupBoxGameDir = new GuildLounge.GL_GroupBox();
-            this.buttonBrowseGameDirectory = new GuildLounge.GL_HighlightButton();
+            this.gL_GroupBoxGameDir = new GuildLounge.Control_GroupBox();
+            this.buttonBrowseGameDirectory = new GuildLounge.Control_HighlightButton();
             this.textBoxGameDirectory = new System.Windows.Forms.TextBox();
             this.labelDirectory = new System.Windows.Forms.Label();
-            this.gL_GroupBoxLaunchBehavior = new GuildLounge.GL_GroupBox();
+            this.gL_GroupBoxLaunchBehavior = new GuildLounge.Control_GroupBox();
             this.radioButtonLaunchStayOpen = new System.Windows.Forms.RadioButton();
             this.radioButtonLaunchClose = new System.Windows.Forms.RadioButton();
             this.radioButtonLaunchMinimize = new System.Windows.Forms.RadioButton();
@@ -410,30 +410,30 @@
 
         #endregion
 
-        private GL_GroupBox gL_GroupBoxLaunchBehavior;
+        private Control_GroupBox gL_GroupBoxLaunchBehavior;
         private System.Windows.Forms.Label labelLaunchBehavior;
         private System.Windows.Forms.RadioButton radioButtonLaunchStayOpen;
         private System.Windows.Forms.RadioButton radioButtonLaunchMinimize;
         private System.Windows.Forms.RadioButton radioButtonLaunchClose;
-        private GL_GroupBox gL_GroupBoxGameDir;
+        private Control_GroupBox gL_GroupBoxGameDir;
         private System.Windows.Forms.TextBox textBoxGameDirectory;
         private System.Windows.Forms.Label labelDirectory;
-        private GL_HighlightButton buttonBrowseGameDirectory;
-        private GL_GroupBox gL_GroupBoxAddOns;
+        private Control_HighlightButton buttonBrowseGameDirectory;
+        private Control_GroupBox gL_GroupBoxAddOns;
         private System.Windows.Forms.CheckBox checkBoxUpdateAddOns;
         private System.Windows.Forms.ListBox listBoxAddOns;
-        private GL_HighlightButton buttonAddAddOn;
+        private Control_HighlightButton buttonAddAddOn;
         private System.Windows.Forms.TextBox textBoxAddOnLink;
         private System.Windows.Forms.Label labelUpdateLink;
-        private GL_HighlightButton buttonSave;
-        private GL_HighlightButton buttonRestore;
+        private Control_HighlightButton buttonSave;
+        private Control_HighlightButton buttonRestore;
         private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Label labelUpdateInfo;
-        private GL_GroupBox gL_GroupBoxStartParams;
+        private Control_GroupBox gL_GroupBoxStartParams;
         private System.Windows.Forms.TextBox textBoxStartParams;
         private System.Windows.Forms.Label labelStartParams;
-        private GL_HighlightButton buttonRemoveAddOn;
-        private GL_HighlightButton buttonEditAddOn;
-        private GL_HighlightButton buttonForceUpdate;
+        private Control_HighlightButton buttonRemoveAddOn;
+        private Control_HighlightButton buttonEditAddOn;
+        private Control_HighlightButton buttonForceUpdate;
     }
 }

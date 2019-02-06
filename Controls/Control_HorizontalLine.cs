@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class GL_HorizontalLine : Control
+    public partial class Control_HorizontalLine : Control
     {
-        public GL_HorizontalLine()
+        public Control_HorizontalLine()
         {
             InitializeComponent();
             Height = 2;

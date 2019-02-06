@@ -3,12 +3,12 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class GL_GroupBox : GroupBox
+    public partial class Control_GroupBox : GroupBox
     {
         public int BorderSize { get; set; }
         public Color BorderColor { get; set; }
 
-        public GL_GroupBox()
+        public Control_GroupBox()
         {
             InitializeComponent();
 

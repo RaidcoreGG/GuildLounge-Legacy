@@ -25,7 +25,7 @@ namespace GuildLounge
 
         //TAB CONTROL
         private UserControl ActiveTab;
-        private GL_NavigationButton ActiveTabButton;
+        private Control_NavigationButton ActiveTabButton;
 
         private UserControl DashboardTab;
         private UserControl LFGTab;
@@ -131,10 +131,10 @@ namespace GuildLounge
 
             if(ActiveTabButton != null)
             {
-                if (button is GL_NavigationButton)
+                if (button is Control_NavigationButton)
                 {
                     ActiveTabButton.Active = false;
-                    ActiveTabButton = (GL_NavigationButton)button;
+                    ActiveTabButton = (Control_NavigationButton)button;
                     ActiveTabButton.Active = true;
                 }
                 else
@@ -142,7 +142,7 @@ namespace GuildLounge
             }
             else
             {
-                ActiveTabButton = (GL_NavigationButton)button;
+                ActiveTabButton = (Control_NavigationButton)button;
                 ActiveTabButton.Active = true;
             }
         }

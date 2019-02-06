@@ -30,7 +30,7 @@
         {
             this.labelFractals = new System.Windows.Forms.Label();
             this.pictureBoxFractals = new System.Windows.Forms.PictureBox();
-            this.groupBoxFractals = new GuildLounge.GL_GroupBox();
+            this.groupBoxFractals = new GuildLounge.Control_GroupBox();
             this.labelPristineFractalRelics = new System.Windows.Forms.Label();
             this.pictureBoxPristineFractalRelics = new System.Windows.Forms.PictureBox();
             this.labelFractalRelics = new System.Windows.Forms.Label();
@@ -148,7 +148,7 @@
 
         private System.Windows.Forms.Label labelFractals;
         private System.Windows.Forms.PictureBox pictureBoxFractals;
-        private GL_GroupBox groupBoxFractals;
+        private Control_GroupBox groupBoxFractals;
         private System.Windows.Forms.Label labelPristineFractalRelics;
         private System.Windows.Forms.PictureBox pictureBoxPristineFractalRelics;
         private System.Windows.Forms.Label labelFractalRelics;

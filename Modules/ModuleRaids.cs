@@ -5,8 +5,8 @@ namespace GuildLounge
 {
     public partial class ModuleRaids : UserControl
     {
-        private GL_ToolTip ToolTipLI;
-        private GL_ToolTip ToolTipLD;
+        private Control_ToolTip ToolTipLI;
+        private Control_ToolTip ToolTipLD;
         
         public int LegendaryInsights
         {
@@ -79,8 +79,8 @@ namespace GuildLounge
         {
             InitializeComponent();
 
-            ToolTipLI = new GL_ToolTip();
-            ToolTipLD = new GL_ToolTip();
+            ToolTipLI = new Control_ToolTip();
+            ToolTipLD = new Control_ToolTip();
 
             pictureBoxLI.MouseEnter += new System.EventHandler(LI_OnMouseEnter);
             pictureBoxLI.MouseLeave += new System.EventHandler(LI_OnMouseLeave);

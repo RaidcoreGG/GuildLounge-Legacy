@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.labelBaseCurrencies = new System.Windows.Forms.Label();
-            this.groupBoxBaseCurrencies = new GuildLounge.GL_GroupBox();
+            this.groupBoxBaseCurrencies = new GuildLounge.Control_GroupBox();
             this.labelKarma = new System.Windows.Forms.Label();
             this.labelSilver = new System.Windows.Forms.Label();
             this.labelCopper = new System.Windows.Forms.Label();
@@ -260,7 +260,7 @@
 
         private System.Windows.Forms.Label labelBaseCurrencies;
         private System.Windows.Forms.PictureBox pictureBoxBaseCurrencies;
-        private GL_GroupBox groupBoxBaseCurrencies;
+        private Control_GroupBox groupBoxBaseCurrencies;
         private System.Windows.Forms.Label labelCopper;
         private System.Windows.Forms.PictureBox pictureBoxCopper;
         private System.Windows.Forms.Label labelGold;

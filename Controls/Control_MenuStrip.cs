@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class GL_MenuStrip : MenuStrip
+    public partial class Control_MenuStrip : MenuStrip
     {
-        public GL_MenuStrip() : base()
+        public Control_MenuStrip() : base()
         {
             InitializeComponent();
 

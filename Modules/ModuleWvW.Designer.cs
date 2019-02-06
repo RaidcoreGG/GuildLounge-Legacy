@@ -30,7 +30,7 @@
         {
             this.labelWvW = new System.Windows.Forms.Label();
             this.pictureBoxWvW = new System.Windows.Forms.PictureBox();
-            this.groupBoxWvW = new GuildLounge.GL_GroupBox();
+            this.groupBoxWvW = new GuildLounge.Control_GroupBox();
             this.labelWvWSkirmishTicket = new System.Windows.Forms.Label();
             this.pictureBoxWvWSkirmishTicket = new System.Windows.Forms.PictureBox();
             this.labelBadgeOfHonor = new System.Windows.Forms.Label();
@@ -148,7 +148,7 @@
 
         private System.Windows.Forms.Label labelWvW;
         private System.Windows.Forms.PictureBox pictureBoxWvW;
-        private GL_GroupBox groupBoxWvW;
+        private Control_GroupBox groupBoxWvW;
         private System.Windows.Forms.Label labelWvWSkirmishTicket;
         private System.Windows.Forms.PictureBox pictureBoxWvWSkirmishTicket;
         private System.Windows.Forms.Label labelBadgeOfHonor;

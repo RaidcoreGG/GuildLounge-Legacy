@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace GuildLounge
 {
-    public partial class GL_Button : Button
+    public partial class Control_Button : Button
     {
-        public GL_Button()
+        public Control_Button()
         {
             InitializeComponent();
 

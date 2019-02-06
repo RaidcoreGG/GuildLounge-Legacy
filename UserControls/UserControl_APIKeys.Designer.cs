@@ -34,9 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
-            this.buttonEditKey = new GuildLounge.GL_HighlightButton();
-            this.buttonAddKey = new GuildLounge.GL_HighlightButton();
-            this.buttonRemoveKey = new GuildLounge.GL_HighlightButton();
+            this.buttonEditKey = new GuildLounge.Control_HighlightButton();
+            this.buttonAddKey = new GuildLounge.Control_HighlightButton();
+            this.buttonRemoveKey = new GuildLounge.Control_HighlightButton();
             this.SuspendLayout();
             // 
             // listBoxAPIKeys
@@ -180,8 +180,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelError;
-        private GL_HighlightButton buttonAddKey;
-        private GL_HighlightButton buttonEditKey;
-        private GL_HighlightButton buttonRemoveKey;
+        private Control_HighlightButton buttonAddKey;
+        private Control_HighlightButton buttonEditKey;
+        private Control_HighlightButton buttonRemoveKey;
     }
 }

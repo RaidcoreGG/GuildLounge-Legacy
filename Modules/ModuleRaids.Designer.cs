@@ -30,7 +30,7 @@
         {
             this.labelRaids = new System.Windows.Forms.Label();
             this.pictureBoxRaids = new System.Windows.Forms.PictureBox();
-            this.groupBoxRaids = new GuildLounge.GL_GroupBox();
+            this.groupBoxRaids = new GuildLounge.Control_GroupBox();
             this.labelGaetingCrystal = new System.Windows.Forms.Label();
             this.labelMagnetiteShard = new System.Windows.Forms.Label();
             this.pictureBoxGaetingCrystal = new System.Windows.Forms.PictureBox();
@@ -204,7 +204,7 @@
 
         private System.Windows.Forms.Label labelRaids;
         private System.Windows.Forms.PictureBox pictureBoxRaids;
-        private GL_GroupBox groupBoxRaids;
+        private Control_GroupBox groupBoxRaids;
         private System.Windows.Forms.Label labelGaetingCrystal;
         private System.Windows.Forms.Label labelMagnetiteShard;
         private System.Windows.Forms.PictureBox pictureBoxGaetingCrystal;

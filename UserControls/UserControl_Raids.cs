@@ -116,11 +116,11 @@ namespace GuildLounge
             labelTotalWeeklyLD.Text = LD + " / 7 LD earned this week.";
             
             //RECOLORING LABELS FOR COMPLETED WINGS
-            foreach (var gb in Controls.OfType<GL_GroupBox>())
+            foreach (var gb in Controls.OfType<Control_GroupBox>())
             {
                 int gbc = gb.Controls.Count - 1;
                 int pbcTrue = 0;
-                foreach (var pb in gb.Controls.OfType<GL_PictureBoxEncounter>())
+                foreach (var pb in gb.Controls.OfType<Control_PictureBoxEncounter>())
                 {
                     if (pb.EncounterFinished)
                         pbcTrue++;

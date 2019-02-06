@@ -2,11 +2,11 @@
 
 namespace GuildLounge
 {
-    public partial class GL_ToolTip : ToolTip
+    public partial class Control_ToolTip : ToolTip
     {
         public string Text { get; set; }
 
-        public GL_ToolTip() : base ()
+        public Control_ToolTip() : base ()
         {
             InitializeComponent();
         }

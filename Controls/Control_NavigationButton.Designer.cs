@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge
 {
-    partial class GL_NavigationButton
+    partial class Control_NavigationButton
     {
         /// <summary>
         /// Required designer variable.

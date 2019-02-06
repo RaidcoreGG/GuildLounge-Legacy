@@ -31,11 +31,11 @@
             this.pictureBoxNews = new System.Windows.Forms.PictureBox();
             this.buttonNewsNext = new System.Windows.Forms.Button();
             this.buttonNewsPrevious = new System.Windows.Forms.Button();
-            this.groupBoxTools = new GuildLounge.GL_GroupBox();
+            this.groupBoxTools = new GuildLounge.Control_GroupBox();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.linkLabel13 = new System.Windows.Forms.LinkLabel();
             this.labelTools = new System.Windows.Forms.Label();
-            this.groupBoxLinks = new GuildLounge.GL_GroupBox();
+            this.groupBoxLinks = new GuildLounge.Control_GroupBox();
             this.linkLabelGLDiscord = new System.Windows.Forms.LinkLabel();
             this.linkLabelGLIdeaSubmission = new System.Windows.Forms.LinkLabel();
             this.linkLabelGW2Forums = new System.Windows.Forms.LinkLabel();
@@ -313,7 +313,7 @@
         private System.Windows.Forms.PictureBox pictureBoxNews;
         private System.Windows.Forms.Button buttonNewsPrevious;
         private System.Windows.Forms.Button buttonNewsNext;
-        private GL_GroupBox groupBoxLinks;
+        private Control_GroupBox groupBoxLinks;
         private System.Windows.Forms.Label labelLinks;
         private System.Windows.Forms.LinkLabel linkLabelGLReleaseNotes;
         private System.Windows.Forms.LinkLabel linkLabelGLDiscord;
@@ -322,7 +322,7 @@
         private System.Windows.Forms.LinkLabel linkLabelGW2ReleaseNotes;
         private System.Windows.Forms.LinkLabel linkLabelGW2Wiki;
         private System.Windows.Forms.LinkLabel linkLabelGW2Efficiency;
-        private GL_GroupBox groupBoxTools;
+        private Control_GroupBox groupBoxTools;
         private System.Windows.Forms.LinkLabel linkLabel8;
         private System.Windows.Forms.LinkLabel linkLabel13;
         private System.Windows.Forms.Label labelTools;

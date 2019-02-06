@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.labelTPPickup = new System.Windows.Forms.Label();
-            this.groupBoxBaseCurrencies = new GuildLounge.GL_GroupBox();
+            this.groupBoxBaseCurrencies = new GuildLounge.Control_GroupBox();
             this.labelItems = new System.Windows.Forms.Label();
             this.labelItemsDescription = new System.Windows.Forms.Label();
             this.labelSilver = new System.Windows.Forms.Label();
@@ -202,7 +202,7 @@
 
         private System.Windows.Forms.Label labelTPPickup;
         private System.Windows.Forms.PictureBox pictureBoxTPPickup;
-        private GL_GroupBox groupBoxBaseCurrencies;
+        private Control_GroupBox groupBoxBaseCurrencies;
         private System.Windows.Forms.Label labelItemsDescription;
         private System.Windows.Forms.Label labelSilver;
         private System.Windows.Forms.PictureBox pictureBoxSilver;

@@ -30,7 +30,7 @@
         {
             this.labelPvP = new System.Windows.Forms.Label();
             this.pictureBoxPvP = new System.Windows.Forms.PictureBox();
-            this.groupBoxPvP = new GuildLounge.GL_GroupBox();
+            this.groupBoxPvP = new GuildLounge.Control_GroupBox();
             this.labelPvPLeagueTicket = new System.Windows.Forms.Label();
             this.pictureBoxPvPLeagueTicket = new System.Windows.Forms.PictureBox();
             this.labelAscendedShardsOfGlory = new System.Windows.Forms.Label();
@@ -148,7 +148,7 @@
 
         private System.Windows.Forms.Label labelPvP;
         private System.Windows.Forms.PictureBox pictureBoxPvP;
-        private GL_GroupBox groupBoxPvP;
+        private Control_GroupBox groupBoxPvP;
         private System.Windows.Forms.Label labelPvPLeagueTicket;
         private System.Windows.Forms.PictureBox pictureBoxPvPLeagueTicket;
         private System.Windows.Forms.Label labelAscendedShardsOfGlory;
