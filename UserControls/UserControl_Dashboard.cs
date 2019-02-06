@@ -26,9 +26,9 @@ namespace GuildLounge
         {
             InitializeComponent();
             News = new NewsObject[3];
-            News[0] = new NewsObject { Link = "www.guildlounge.com", HeaderImage = Properties.Resources.news_placeholder1 };
-            News[1] = new NewsObject { Link = "www.guildlounge.com", HeaderImage = Properties.Resources.news_placeholder2 };
-            News[2] = new NewsObject { Link = "www.guildlounge.com", HeaderImage = Properties.Resources.news_placeholder3 };
+            News[0] = new NewsObject { Link = "www.guildlounge.com", HeaderImage = Properties.Resources.news_panel1 };
+            News[1] = new NewsObject { Link = "www.guildlounge.com", HeaderImage = Properties.Resources.news_panel2 };
+            News[2] = new NewsObject { Link = "www.guildlounge.com", HeaderImage = Properties.Resources.news_panel3 };
             NewsIndex = 0;
         }
 

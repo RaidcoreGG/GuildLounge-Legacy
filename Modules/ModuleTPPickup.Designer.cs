@@ -113,7 +113,7 @@
             // pictureBoxSilver
             // 
             this.pictureBoxSilver.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxSilver.BackgroundImage = global::GuildLounge.Properties.Resources.icon_coinssilver;
+            this.pictureBoxSilver.BackgroundImage = global::GuildLounge.Properties.Resources.cur_coinssilver;
             this.pictureBoxSilver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxSilver.Location = new System.Drawing.Point(82, 6);
             this.pictureBoxSilver.Name = "pictureBoxSilver";
@@ -135,7 +135,7 @@
             // pictureBoxCopper
             // 
             this.pictureBoxCopper.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCopper.BackgroundImage = global::GuildLounge.Properties.Resources.icon_coinscopper;
+            this.pictureBoxCopper.BackgroundImage = global::GuildLounge.Properties.Resources.cur_coinscopper;
             this.pictureBoxCopper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxCopper.Location = new System.Drawing.Point(139, 6);
             this.pictureBoxCopper.Name = "pictureBoxCopper";
@@ -157,7 +157,7 @@
             // pictureBoxGold
             // 
             this.pictureBoxGold.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxGold.BackgroundImage = global::GuildLounge.Properties.Resources.icon_coinsgold;
+            this.pictureBoxGold.BackgroundImage = global::GuildLounge.Properties.Resources.cur_coinsgold;
             this.pictureBoxGold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxGold.Location = new System.Drawing.Point(6, 6);
             this.pictureBoxGold.Name = "pictureBoxGold";
@@ -168,7 +168,7 @@
             // pictureBoxTPPickup
             // 
             this.pictureBoxTPPickup.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTPPickup.BackgroundImage = global::GuildLounge.Properties.Resources.icon_tppickup;
+            this.pictureBoxTPPickup.BackgroundImage = global::GuildLounge.Properties.Resources.cat_tppickup;
             this.pictureBoxTPPickup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxTPPickup.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxTPPickup.Name = "pictureBoxTPPickup";

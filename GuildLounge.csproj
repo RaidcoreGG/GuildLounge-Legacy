@@ -166,6 +166,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControl_APIKeys.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -268,11 +273,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -295,175 +295,173 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_gaetingcrystal.png" />
+    <None Include="Resources\Currency\cur_gaetingcrystal.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_ld.png" />
+    <None Include="Resources\Material\mat_ld.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_li.png" />
+    <None Include="Resources\Material\mat_li.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_magnetiteshard.png" />
+    <None Include="Resources\Currency\cur_magnetiteshard.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo\logo.png" />
+    <None Include="Resources\Brand\brand_guildlounge.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\news_placeholder.png" />
+    <None Include="Resources\News\news_panel0.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\1_spiritvale\icon_gorseval.png" />
+    <None Include="Resources\Raids\Bosses\W1_SpiritVale\boss_gorseval.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\1_spiritvale\icon_sabetha.png" />
+    <None Include="Resources\Raids\Bosses\W1_SpiritVale\boss_sabetha.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\1_spiritvale\icon_valeguardian.png" />
+    <None Include="Resources\Raids\Bosses\W1_SpiritVale\boss_valeguardian.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\2_salvationpass\icon_matthias.png" />
+    <None Include="Resources\Raids\Bosses\W2_SalvationPass\boss_matthias.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\2_salvationpass\icon_slothasor.png" />
+    <None Include="Resources\Raids\Bosses\W2_SalvationPass\boss_slothasor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\3_strongholdofthefaithful\icon_escort.png" />
+    <None Include="Resources\Raids\Bosses\W3_StrongholdOfTheFaithful\boss_escort.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\3_strongholdofthefaithful\icon_keepconstruct.png" />
+    <None Include="Resources\Raids\Bosses\W3_StrongholdOfTheFaithful\boss_keepconstruct.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\3_strongholdofthefaithful\icon_xera.png" />
+    <None Include="Resources\Raids\Bosses\W3_StrongholdOfTheFaithful\boss_xera.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\4_bastionofthepenitent\icon_cairn.png" />
+    <None Include="Resources\Raids\Bosses\W4_BastionOfThePenitent\boss_cairn.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\4_bastionofthepenitent\icon_deimos.png" />
+    <None Include="Resources\Raids\Bosses\W4_BastionOfThePenitent\boss_deimos.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\4_bastionofthepenitent\icon_mursaatoverseer.png" />
+    <None Include="Resources\Raids\Bosses\W4_BastionOfThePenitent\boss_mursaatoverseer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\4_bastionofthepenitent\icon_samarog.png" />
+    <None Include="Resources\Raids\Bosses\W4_BastionOfThePenitent\boss_samarog.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\5_hallofchains\icon_dhuum.png" />
+    <None Include="Resources\Raids\Bosses\W5_HallOfChains\boss_dhuum.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\5_hallofchains\icon_soullesshorror.png" />
+    <None Include="Resources\Raids\Bosses\W5_HallOfChains\boss_soullesshorror.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\6_mythwrightgambit\icon_largostwins.png" />
+    <None Include="Resources\Raids\Bosses\W6_MythwrightGambit\boss_largostwins.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\6_mythwrightgambit\icon_qadim.png" />
+    <None Include="Resources\Raids\Bosses\W6_MythwrightGambit\boss_qadim.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo\logo_hot.png" />
+    <None Include="Resources\Brand\brand_hot.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo\logo_pof.png" />
+    <None Include="Resources\Brand\brand_pof.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\menubar\ui_minimize.png" />
+    <None Include="Resources\UI\Menubar\ui_minimize.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\navigation\ui_arrow_dn.png" />
+    <None Include="Resources\UI\Navigation\ui_arrow_dn.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\navigation\ui_arrow_lt.png" />
+    <None Include="Resources\UI\Navigation\ui_arrow_lt.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\navigation\ui_arrow_rt.png" />
+    <None Include="Resources\UI\Navigation\ui_arrow_rt.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\navigation\ui_arrow_up.png" />
+    <None Include="Resources\UI\Navigation\ui_arrow_up.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\navigation\ui_refresh.png" />
+    <None Include="Resources\UI\Navigation\ui_refresh.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\menubar\ui_close.png" />
+    <None Include="Resources\UI\Menubar\ui_close.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_fractalrelic.png" />
+    <None Include="Resources\Currency\cur_fractalrelic.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_pristinefractalrelic.png" />
+    <None Include="Resources\Currency\cur_pristinefractalrelic.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\category\icon_raids.png" />
+    <None Include="Resources\ModuleCategory\cat_raids.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\category\icon_fractals.png" />
+    <None Include="Resources\ModuleCategory\cat_fractals.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\category\icon_recommendedfractals.png" />
+    <None Include="Resources\ModuleCategory\cat_pvp.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\category\icon_pvp.png" />
+    <None Include="Resources\ModuleCategory\cat_wvw.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\category\icon_wvw.png" />
+    <None Include="Resources\Currency\cur_pvpleagueticket.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_pvpleagueticket.png" />
+    <None Include="Resources\Currency\cur_wvwskirmishticket.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_wvwskirmishticket.png" />
+    <None Include="Resources\Currency\cur_ascendedshardofglory.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_ascendedshardofglory.png" />
+    <None Include="Resources\Currency\cur_badgeofhonor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_badgeofhonor.png" />
+    <None Include="Resources\News\news_panel1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\news_placeholder1.png" />
+    <None Include="Resources\News\news_panel2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\news_placeholder2.png" />
+    <None Include="Resources\News\news_panel3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\news_placeholder3.png" />
+    <None Include="Resources\UI\Navigation\ui_refresh_ani.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\navigation\ui_refresh_ani.gif" />
+    <None Include="Resources\ModuleCategory\cat_basecurrencies.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\category\icon_basecurrencies.png" />
+    <None Include="Resources\Currency\cur_coinscopper.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_coinscopper.png" />
+    <None Include="Resources\Currency\cur_coinsgold.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_coinsgold.png" />
+    <None Include="Resources\Currency\cur_coinssilver.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_coinssilver.png" />
+    <None Include="Resources\Currency\cur_karma.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_karma.png" />
+    <None Include="Resources\ModuleCategory\cat_tppickup.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\category\icon_tppickup.png" />
+    <None Include="Resources\Raids\General\overlay_cmdone.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\icon_cmdone.png" />
+    <None Include="Resources\Raids\General\overlay_cm.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bosses\icon_cm.png" />
+    <None Include="Resources\Currency\cur_gems.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\currencies\icon_gems.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\currencies\icon_laurels.png" />
+    <None Include="Resources\Currency\cur_laurels.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

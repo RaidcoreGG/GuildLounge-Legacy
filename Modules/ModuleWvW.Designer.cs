@@ -55,7 +55,7 @@
             // pictureBoxWvW
             // 
             this.pictureBoxWvW.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxWvW.BackgroundImage = global::GuildLounge.Properties.Resources.icon_wvw;
+            this.pictureBoxWvW.BackgroundImage = global::GuildLounge.Properties.Resources.cat_wvw;
             this.pictureBoxWvW.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxWvW.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxWvW.Name = "pictureBoxWvW";
@@ -93,7 +93,7 @@
             // pictureBoxWvWSkirmishTicket
             // 
             this.pictureBoxWvWSkirmishTicket.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxWvWSkirmishTicket.BackgroundImage = global::GuildLounge.Properties.Resources.icon_wvwskirmishticket;
+            this.pictureBoxWvWSkirmishTicket.BackgroundImage = global::GuildLounge.Properties.Resources.cur_wvwskirmishticket;
             this.pictureBoxWvWSkirmishTicket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxWvWSkirmishTicket.Location = new System.Drawing.Point(98, 6);
             this.pictureBoxWvWSkirmishTicket.Name = "pictureBoxWvWSkirmishTicket";
@@ -115,7 +115,7 @@
             // pictureBoxBadgeOfHonor
             // 
             this.pictureBoxBadgeOfHonor.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBadgeOfHonor.BackgroundImage = global::GuildLounge.Properties.Resources.icon_badgeofhonor;
+            this.pictureBoxBadgeOfHonor.BackgroundImage = global::GuildLounge.Properties.Resources.cur_badgeofhonor;
             this.pictureBoxBadgeOfHonor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxBadgeOfHonor.Location = new System.Drawing.Point(6, 6);
             this.pictureBoxBadgeOfHonor.Name = "pictureBoxBadgeOfHonor";

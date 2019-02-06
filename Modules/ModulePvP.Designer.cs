@@ -55,7 +55,7 @@
             // pictureBoxPvP
             // 
             this.pictureBoxPvP.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPvP.BackgroundImage = global::GuildLounge.Properties.Resources.icon_pvp;
+            this.pictureBoxPvP.BackgroundImage = global::GuildLounge.Properties.Resources.cat_pvp;
             this.pictureBoxPvP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxPvP.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxPvP.Name = "pictureBoxPvP";
@@ -93,7 +93,7 @@
             // pictureBoxPvPLeagueTicket
             // 
             this.pictureBoxPvPLeagueTicket.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPvPLeagueTicket.BackgroundImage = global::GuildLounge.Properties.Resources.icon_pvpleagueticket;
+            this.pictureBoxPvPLeagueTicket.BackgroundImage = global::GuildLounge.Properties.Resources.cur_pvpleagueticket;
             this.pictureBoxPvPLeagueTicket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxPvPLeagueTicket.Location = new System.Drawing.Point(98, 6);
             this.pictureBoxPvPLeagueTicket.Name = "pictureBoxPvPLeagueTicket";
@@ -115,7 +115,7 @@
             // pictureBoxAscendedShardsOfGlory
             // 
             this.pictureBoxAscendedShardsOfGlory.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxAscendedShardsOfGlory.BackgroundImage = global::GuildLounge.Properties.Resources.icon_ascendedshardofglory;
+            this.pictureBoxAscendedShardsOfGlory.BackgroundImage = global::GuildLounge.Properties.Resources.cur_ascendedshardofglory;
             this.pictureBoxAscendedShardsOfGlory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxAscendedShardsOfGlory.Location = new System.Drawing.Point(6, 6);
             this.pictureBoxAscendedShardsOfGlory.Name = "pictureBoxAscendedShardsOfGlory";

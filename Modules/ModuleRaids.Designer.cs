@@ -61,7 +61,7 @@
             // pictureBoxRaids
             // 
             this.pictureBoxRaids.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRaids.BackgroundImage = global::GuildLounge.Properties.Resources.icon_raids;
+            this.pictureBoxRaids.BackgroundImage = global::GuildLounge.Properties.Resources.cat_raids;
             this.pictureBoxRaids.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxRaids.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxRaids.Name = "pictureBoxRaids";
@@ -114,7 +114,7 @@
             // pictureBoxGaetingCrystal
             // 
             this.pictureBoxGaetingCrystal.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxGaetingCrystal.BackgroundImage = global::GuildLounge.Properties.Resources.icon_gaetingcrystal;
+            this.pictureBoxGaetingCrystal.BackgroundImage = global::GuildLounge.Properties.Resources.cur_gaetingcrystal;
             this.pictureBoxGaetingCrystal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxGaetingCrystal.Location = new System.Drawing.Point(98, 35);
             this.pictureBoxGaetingCrystal.Name = "pictureBoxGaetingCrystal";
@@ -125,7 +125,7 @@
             // pictureBoxMagnetiteShard
             // 
             this.pictureBoxMagnetiteShard.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxMagnetiteShard.BackgroundImage = global::GuildLounge.Properties.Resources.icon_magnetiteshard;
+            this.pictureBoxMagnetiteShard.BackgroundImage = global::GuildLounge.Properties.Resources.cur_magnetiteshard;
             this.pictureBoxMagnetiteShard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxMagnetiteShard.Location = new System.Drawing.Point(6, 35);
             this.pictureBoxMagnetiteShard.Name = "pictureBoxMagnetiteShard";
@@ -158,7 +158,7 @@
             // pictureBoxLD
             // 
             this.pictureBoxLD.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxLD.BackgroundImage = global::GuildLounge.Properties.Resources.icon_ld;
+            this.pictureBoxLD.BackgroundImage = global::GuildLounge.Properties.Resources.mat_ld;
             this.pictureBoxLD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxLD.Location = new System.Drawing.Point(98, 6);
             this.pictureBoxLD.Name = "pictureBoxLD";
@@ -169,7 +169,7 @@
             // pictureBoxLI
             // 
             this.pictureBoxLI.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxLI.BackgroundImage = global::GuildLounge.Properties.Resources.icon_li;
+            this.pictureBoxLI.BackgroundImage = global::GuildLounge.Properties.Resources.mat_li;
             this.pictureBoxLI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxLI.Location = new System.Drawing.Point(6, 6);
             this.pictureBoxLI.Name = "pictureBoxLI";

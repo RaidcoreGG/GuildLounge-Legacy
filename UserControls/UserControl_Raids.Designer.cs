@@ -120,7 +120,7 @@
             // pictureBoxHoT
             // 
             this.pictureBoxHoT.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxHoT.BackgroundImage = global::GuildLounge.Properties.Resources.logo_hot;
+            this.pictureBoxHoT.BackgroundImage = global::GuildLounge.Properties.Resources.brand_hot;
             this.pictureBoxHoT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxHoT.Location = new System.Drawing.Point(161, 12);
             this.pictureBoxHoT.Name = "pictureBoxHoT";
@@ -131,7 +131,7 @@
             // pictureBoxPoF
             // 
             this.pictureBoxPoF.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPoF.BackgroundImage = global::GuildLounge.Properties.Resources.logo_pof;
+            this.pictureBoxPoF.BackgroundImage = global::GuildLounge.Properties.Resources.brand_pof;
             this.pictureBoxPoF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxPoF.Location = new System.Drawing.Point(531, 12);
             this.pictureBoxPoF.Name = "pictureBoxPoF";
@@ -168,7 +168,7 @@
             // pictureBoxConjuredAmalgamate
             // 
             this.pictureBoxConjuredAmalgamate.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxConjuredAmalgamate.BackgroundImage = global::GuildLounge.Properties.Resources.icon_ld;
+            this.pictureBoxConjuredAmalgamate.BackgroundImage = global::GuildLounge.Properties.Resources.mat_ld;
             this.pictureBoxConjuredAmalgamate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxConjuredAmalgamate.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxConjuredAmalgamate.BorderSize = 2;
@@ -185,7 +185,7 @@
             // pictureBoxLargosTwins
             // 
             this.pictureBoxLargosTwins.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxLargosTwins.BackgroundImage = global::GuildLounge.Properties.Resources.icon_largostwins;
+            this.pictureBoxLargosTwins.BackgroundImage = global::GuildLounge.Properties.Resources.boss_largostwins;
             this.pictureBoxLargosTwins.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxLargosTwins.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxLargosTwins.BorderSize = 2;
@@ -202,7 +202,7 @@
             // pictureBoxQadim
             // 
             this.pictureBoxQadim.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxQadim.BackgroundImage = global::GuildLounge.Properties.Resources.icon_qadim;
+            this.pictureBoxQadim.BackgroundImage = global::GuildLounge.Properties.Resources.boss_qadim;
             this.pictureBoxQadim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxQadim.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxQadim.BorderSize = 2;
@@ -246,7 +246,7 @@
             // pictureBoxDhuum
             // 
             this.pictureBoxDhuum.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxDhuum.BackgroundImage = global::GuildLounge.Properties.Resources.icon_dhuum;
+            this.pictureBoxDhuum.BackgroundImage = global::GuildLounge.Properties.Resources.boss_dhuum;
             this.pictureBoxDhuum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxDhuum.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxDhuum.BorderSize = 2;
@@ -263,7 +263,7 @@
             // pictureBoxStatuesofGrenth
             // 
             this.pictureBoxStatuesofGrenth.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxStatuesofGrenth.BackgroundImage = global::GuildLounge.Properties.Resources.icon_ld;
+            this.pictureBoxStatuesofGrenth.BackgroundImage = global::GuildLounge.Properties.Resources.mat_ld;
             this.pictureBoxStatuesofGrenth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxStatuesofGrenth.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxStatuesofGrenth.BorderSize = 2;
@@ -280,7 +280,7 @@
             // pictureBoxRiverofSouls
             // 
             this.pictureBoxRiverofSouls.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRiverofSouls.BackgroundImage = global::GuildLounge.Properties.Resources.icon_ld;
+            this.pictureBoxRiverofSouls.BackgroundImage = global::GuildLounge.Properties.Resources.mat_ld;
             this.pictureBoxRiverofSouls.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxRiverofSouls.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxRiverofSouls.BorderSize = 2;
@@ -296,7 +296,7 @@
             // pictureBoxSoullessHorror
             // 
             this.pictureBoxSoullessHorror.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxSoullessHorror.BackgroundImage = global::GuildLounge.Properties.Resources.icon_soullesshorror;
+            this.pictureBoxSoullessHorror.BackgroundImage = global::GuildLounge.Properties.Resources.boss_soullesshorror;
             this.pictureBoxSoullessHorror.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxSoullessHorror.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxSoullessHorror.BorderSize = 2;
@@ -340,7 +340,7 @@
             // pictureBoxCairn
             // 
             this.pictureBoxCairn.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCairn.BackgroundImage = global::GuildLounge.Properties.Resources.icon_cairn;
+            this.pictureBoxCairn.BackgroundImage = global::GuildLounge.Properties.Resources.boss_cairn;
             this.pictureBoxCairn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxCairn.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxCairn.BorderSize = 2;
@@ -357,7 +357,7 @@
             // pictureBoxMursaatOverseer
             // 
             this.pictureBoxMursaatOverseer.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxMursaatOverseer.BackgroundImage = global::GuildLounge.Properties.Resources.icon_mursaatoverseer;
+            this.pictureBoxMursaatOverseer.BackgroundImage = global::GuildLounge.Properties.Resources.boss_mursaatoverseer;
             this.pictureBoxMursaatOverseer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxMursaatOverseer.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxMursaatOverseer.BorderSize = 2;
@@ -374,7 +374,7 @@
             // pictureBoxSamarog
             // 
             this.pictureBoxSamarog.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxSamarog.BackgroundImage = global::GuildLounge.Properties.Resources.icon_samarog;
+            this.pictureBoxSamarog.BackgroundImage = global::GuildLounge.Properties.Resources.boss_samarog;
             this.pictureBoxSamarog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxSamarog.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxSamarog.BorderSize = 2;
@@ -391,7 +391,7 @@
             // pictureBoxDeimos
             // 
             this.pictureBoxDeimos.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxDeimos.BackgroundImage = global::GuildLounge.Properties.Resources.icon_deimos;
+            this.pictureBoxDeimos.BackgroundImage = global::GuildLounge.Properties.Resources.boss_deimos;
             this.pictureBoxDeimos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxDeimos.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxDeimos.BorderSize = 2;
@@ -435,7 +435,7 @@
             // pictureBoxXera
             // 
             this.pictureBoxXera.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxXera.BackgroundImage = global::GuildLounge.Properties.Resources.icon_xera;
+            this.pictureBoxXera.BackgroundImage = global::GuildLounge.Properties.Resources.boss_xera;
             this.pictureBoxXera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxXera.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxXera.BorderSize = 2;
@@ -451,7 +451,7 @@
             // pictureBoxTwistedCastle
             // 
             this.pictureBoxTwistedCastle.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTwistedCastle.BackgroundImage = global::GuildLounge.Properties.Resources.icon_li;
+            this.pictureBoxTwistedCastle.BackgroundImage = global::GuildLounge.Properties.Resources.mat_li;
             this.pictureBoxTwistedCastle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxTwistedCastle.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxTwistedCastle.BorderSize = 2;
@@ -467,7 +467,7 @@
             // pictureBoxKeepConstruct
             // 
             this.pictureBoxKeepConstruct.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxKeepConstruct.BackgroundImage = global::GuildLounge.Properties.Resources.icon_keepconstruct;
+            this.pictureBoxKeepConstruct.BackgroundImage = global::GuildLounge.Properties.Resources.boss_keepconstruct;
             this.pictureBoxKeepConstruct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxKeepConstruct.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxKeepConstruct.BorderSize = 2;
@@ -484,7 +484,7 @@
             // pictureBoxEscort
             // 
             this.pictureBoxEscort.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxEscort.BackgroundImage = global::GuildLounge.Properties.Resources.icon_escort;
+            this.pictureBoxEscort.BackgroundImage = global::GuildLounge.Properties.Resources.boss_escort;
             this.pictureBoxEscort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxEscort.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxEscort.BorderSize = 2;
@@ -526,7 +526,7 @@
             // pictureBoxMatthias
             // 
             this.pictureBoxMatthias.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxMatthias.BackgroundImage = global::GuildLounge.Properties.Resources.icon_matthias;
+            this.pictureBoxMatthias.BackgroundImage = global::GuildLounge.Properties.Resources.boss_matthias;
             this.pictureBoxMatthias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxMatthias.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxMatthias.BorderSize = 2;
@@ -542,7 +542,7 @@
             // pictureBoxTrio
             // 
             this.pictureBoxTrio.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTrio.BackgroundImage = global::GuildLounge.Properties.Resources.icon_li;
+            this.pictureBoxTrio.BackgroundImage = global::GuildLounge.Properties.Resources.mat_li;
             this.pictureBoxTrio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxTrio.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxTrio.BorderSize = 2;
@@ -558,7 +558,7 @@
             // pictureBoxSlothasor
             // 
             this.pictureBoxSlothasor.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxSlothasor.BackgroundImage = global::GuildLounge.Properties.Resources.icon_slothasor;
+            this.pictureBoxSlothasor.BackgroundImage = global::GuildLounge.Properties.Resources.boss_slothasor;
             this.pictureBoxSlothasor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxSlothasor.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxSlothasor.BorderSize = 2;
@@ -601,7 +601,7 @@
             // pictureBoxSabetha
             // 
             this.pictureBoxSabetha.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxSabetha.BackgroundImage = global::GuildLounge.Properties.Resources.icon_sabetha;
+            this.pictureBoxSabetha.BackgroundImage = global::GuildLounge.Properties.Resources.boss_sabetha;
             this.pictureBoxSabetha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxSabetha.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxSabetha.BorderSize = 2;
@@ -617,7 +617,7 @@
             // pictureBoxGorseval
             // 
             this.pictureBoxGorseval.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxGorseval.BackgroundImage = global::GuildLounge.Properties.Resources.icon_gorseval;
+            this.pictureBoxGorseval.BackgroundImage = global::GuildLounge.Properties.Resources.boss_gorseval;
             this.pictureBoxGorseval.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxGorseval.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxGorseval.BorderSize = 2;
@@ -633,7 +633,7 @@
             // pictureBoxSpiritWoods
             // 
             this.pictureBoxSpiritWoods.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxSpiritWoods.BackgroundImage = global::GuildLounge.Properties.Resources.icon_li;
+            this.pictureBoxSpiritWoods.BackgroundImage = global::GuildLounge.Properties.Resources.mat_li;
             this.pictureBoxSpiritWoods.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxSpiritWoods.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxSpiritWoods.BorderSize = 2;
@@ -649,7 +649,7 @@
             // pictureBoxValeGuardian
             // 
             this.pictureBoxValeGuardian.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxValeGuardian.BackgroundImage = global::GuildLounge.Properties.Resources.icon_valeguardian;
+            this.pictureBoxValeGuardian.BackgroundImage = global::GuildLounge.Properties.Resources.boss_valeguardian;
             this.pictureBoxValeGuardian.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxValeGuardian.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxValeGuardian.BorderSize = 2;

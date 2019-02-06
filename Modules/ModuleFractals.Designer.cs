@@ -55,7 +55,7 @@
             // pictureBoxFractals
             // 
             this.pictureBoxFractals.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxFractals.BackgroundImage = global::GuildLounge.Properties.Resources.icon_fractals;
+            this.pictureBoxFractals.BackgroundImage = global::GuildLounge.Properties.Resources.cat_fractals;
             this.pictureBoxFractals.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxFractals.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxFractals.Name = "pictureBoxFractals";
@@ -93,7 +93,7 @@
             // pictureBoxPristineFractalRelics
             // 
             this.pictureBoxPristineFractalRelics.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPristineFractalRelics.BackgroundImage = global::GuildLounge.Properties.Resources.icon_pristinefractalrelic;
+            this.pictureBoxPristineFractalRelics.BackgroundImage = global::GuildLounge.Properties.Resources.cur_pristinefractalrelic;
             this.pictureBoxPristineFractalRelics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxPristineFractalRelics.Location = new System.Drawing.Point(98, 6);
             this.pictureBoxPristineFractalRelics.Name = "pictureBoxPristineFractalRelics";
@@ -115,7 +115,7 @@
             // pictureBoxFractalRelics
             // 
             this.pictureBoxFractalRelics.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxFractalRelics.BackgroundImage = global::GuildLounge.Properties.Resources.icon_fractalrelic;
+            this.pictureBoxFractalRelics.BackgroundImage = global::GuildLounge.Properties.Resources.cur_fractalrelic;
             this.pictureBoxFractalRelics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxFractalRelics.Location = new System.Drawing.Point(6, 6);
             this.pictureBoxFractalRelics.Name = "pictureBoxFractalRelics";

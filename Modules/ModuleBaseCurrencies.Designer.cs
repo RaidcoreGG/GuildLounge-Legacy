@@ -157,7 +157,7 @@
             // pictureBoxBaseCurrencies
             // 
             this.pictureBoxBaseCurrencies.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBaseCurrencies.BackgroundImage = global::GuildLounge.Properties.Resources.icon_basecurrencies;
+            this.pictureBoxBaseCurrencies.BackgroundImage = global::GuildLounge.Properties.Resources.cat_basecurrencies;
             this.pictureBoxBaseCurrencies.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxBaseCurrencies.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxBaseCurrencies.Name = "pictureBoxBaseCurrencies";
@@ -168,7 +168,7 @@
             // pictureBoxGems
             // 
             this.pictureBoxGems.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxGems.BackgroundImage = global::GuildLounge.Properties.Resources.icon_gems;
+            this.pictureBoxGems.BackgroundImage = global::GuildLounge.Properties.Resources.cur_gems;
             this.pictureBoxGems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxGems.Location = new System.Drawing.Point(98, 64);
             this.pictureBoxGems.Name = "pictureBoxGems";
@@ -179,7 +179,7 @@
             // pictureBoxLaurels
             // 
             this.pictureBoxLaurels.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxLaurels.BackgroundImage = global::GuildLounge.Properties.Resources.icon_laurels;
+            this.pictureBoxLaurels.BackgroundImage = global::GuildLounge.Properties.Resources.cur_laurels;
             this.pictureBoxLaurels.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxLaurels.Location = new System.Drawing.Point(6, 64);
             this.pictureBoxLaurels.Name = "pictureBoxLaurels";
@@ -190,7 +190,7 @@
             // pictureBoxKarma
             // 
             this.pictureBoxKarma.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxKarma.BackgroundImage = global::GuildLounge.Properties.Resources.icon_karma;
+            this.pictureBoxKarma.BackgroundImage = global::GuildLounge.Properties.Resources.cur_karma;
             this.pictureBoxKarma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxKarma.Location = new System.Drawing.Point(6, 35);
             this.pictureBoxKarma.Name = "pictureBoxKarma";
@@ -201,7 +201,7 @@
             // pictureBoxSilver
             // 
             this.pictureBoxSilver.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxSilver.BackgroundImage = global::GuildLounge.Properties.Resources.icon_coinssilver;
+            this.pictureBoxSilver.BackgroundImage = global::GuildLounge.Properties.Resources.cur_coinssilver;
             this.pictureBoxSilver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxSilver.Location = new System.Drawing.Point(82, 6);
             this.pictureBoxSilver.Name = "pictureBoxSilver";
@@ -212,7 +212,7 @@
             // pictureBoxCopper
             // 
             this.pictureBoxCopper.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCopper.BackgroundImage = global::GuildLounge.Properties.Resources.icon_coinscopper;
+            this.pictureBoxCopper.BackgroundImage = global::GuildLounge.Properties.Resources.cur_coinscopper;
             this.pictureBoxCopper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxCopper.Location = new System.Drawing.Point(139, 6);
             this.pictureBoxCopper.Name = "pictureBoxCopper";
@@ -223,7 +223,7 @@
             // pictureBoxGold
             // 
             this.pictureBoxGold.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxGold.BackgroundImage = global::GuildLounge.Properties.Resources.icon_coinsgold;
+            this.pictureBoxGold.BackgroundImage = global::GuildLounge.Properties.Resources.cur_coinsgold;
             this.pictureBoxGold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxGold.Location = new System.Drawing.Point(6, 6);
             this.pictureBoxGold.Name = "pictureBoxGold";

@@ -366,7 +366,7 @@
             // 
             this.buttonDashboard.Active = false;
             this.buttonDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.BackgroundImage = global::GuildLounge.Properties.Resources.logo;
+            this.buttonDashboard.BackgroundImage = global::GuildLounge.Properties.Resources.brand_guildlounge;
             this.buttonDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonDashboard.FlatAppearance.BorderSize = 0;
             this.buttonDashboard.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;

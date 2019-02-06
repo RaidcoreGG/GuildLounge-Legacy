@@ -20,7 +20,7 @@ namespace GuildLounge
             {
                 m_bHasCM = value;
                 if (m_bHasCM)
-                    Image = Properties.Resources.icon_cm;
+                    Image = Properties.Resources.overlay_cm;
                 else
                     Image = null;
             }
@@ -36,9 +36,9 @@ namespace GuildLounge
             {
                 m_bDoneCM = value;
                 if (m_bDoneCM && m_bHasCM)
-                    Image = Properties.Resources.icon_cmdone;
+                    Image = Properties.Resources.overlay_cmdone;
                 else if (!m_bDoneCM && m_bHasCM)
-                    Image = Properties.Resources.icon_cm;
+                    Image = Properties.Resources.overlay_cm;
                 else if (!m_bHasCM)
                     Image = null;
             }
