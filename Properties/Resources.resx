@@ -160,6 +160,12 @@
   <data name="boss_soullesshorror" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Raids\Bosses\W5_HallOfChains\boss_soullesshorror.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="boss_statues" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Raids\Bosses\W5_HallOfChains\boss_statues.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boss_trio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Raids\Bosses\W2_SalvationPass\boss_trio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="boss_valeguardian" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Raids\Bosses\W1_SpiritVale\boss_valeguardian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

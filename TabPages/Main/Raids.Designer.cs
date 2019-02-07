@@ -263,7 +263,7 @@
             // pictureBoxStatuesofGrenth
             // 
             this.pictureBoxStatuesofGrenth.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxStatuesofGrenth.BackgroundImage = global::GuildLounge.Properties.Resources.mat_ld;
+            this.pictureBoxStatuesofGrenth.BackgroundImage = global::GuildLounge.Properties.Resources.boss_statues;
             this.pictureBoxStatuesofGrenth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxStatuesofGrenth.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxStatuesofGrenth.BorderSize = 2;
@@ -541,7 +541,7 @@
             // pictureBoxTrio
             // 
             this.pictureBoxTrio.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxTrio.BackgroundImage = global::GuildLounge.Properties.Resources.mat_li;
+            this.pictureBoxTrio.BackgroundImage = global::GuildLounge.Properties.Resources.boss_trio;
             this.pictureBoxTrio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxTrio.BorderColor = System.Drawing.Color.Red;
             this.pictureBoxTrio.BorderSize = 2;

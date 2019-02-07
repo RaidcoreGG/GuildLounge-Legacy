@@ -479,6 +479,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Raids\Bosses\W2_SalvationPass\boss_trio.png" />
+    <None Include="Resources\Raids\Bosses\W5_HallOfChains\boss_statues.png" />
     <None Include="Resources\Dailies\daily_wvw.png" />
     <None Include="Resources\Dailies\daily_pvp.png" />
     <None Include="Resources\Dailies\daily_pve.png" />
