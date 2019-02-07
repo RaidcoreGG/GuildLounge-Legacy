@@ -11,7 +11,7 @@ namespace GuildLounge
     {
         private const string _apiBase = "https://api.guildwars2.com/v2/";
         private static readonly HttpClient _client = new HttpClient();
-        private ModuleData AccOverview;
+        private ModuleData m_oModuleData;
 
         public async Task<T> GetResponse<T>(string endPoint, params string[] args)
         {
@@ -68,14 +68,14 @@ namespace GuildLounge
             return resp;
         }
 
-        public async Task<ModuleData> FetchAccountOverview(string accessToken)
+        public async Task<ModuleData> FetchModuleData(string accessToken)
         {
             Console.WriteLine("[OVERVIEW: INIT]");
             DateTime dt = DateTime.Now;
 
-            AccOverview = new ModuleData();
-            AccOverview.wallet = new AccountWallet();
-            AccOverview.tradingpost = new AccountTradingPost();
+            m_oModuleData = new ModuleData();
+            m_oModuleData.wallet = new AccountWallet();
+            m_oModuleData.tradingpost = new AccountTradingPost();
 
             await ProcessWallet(accessToken);
             await ProcessTradingPost(accessToken);
@@ -84,17 +84,17 @@ namespace GuildLounge
             await ProcessVault(accessToken);
 
             //CORRECT LI DUE TO DISCOUNT FOR FIRST SET
-            if (AccOverview.legendary_armor >= 300)
-                AccOverview.legendary_armor -= 150;
+            if (m_oModuleData.legendary_armor >= 300)
+                m_oModuleData.legendary_armor -= 150;
             else
             {
-                AccOverview.legendary_armor -= (AccOverview.legendary_armor / 50 * 25);
-                AccOverview.refined_armor -= (AccOverview.refined_armor / 25 * 25);
+                m_oModuleData.legendary_armor -= (m_oModuleData.legendary_armor / 50 * 25);
+                m_oModuleData.refined_armor -= (m_oModuleData.refined_armor / 25 * 25);
             }
 
-            GC.Collect();
             Console.WriteLine("[OVERVIEW: "+ (DateTime.Now - dt).TotalSeconds + "]");
-            return AccOverview;
+            GC.Collect();
+            return m_oModuleData;
         }
 
         private async Task ProcessWallet(string accessToken)
@@ -106,40 +106,40 @@ namespace GuildLounge
                 switch (currencies[i].id)
                 {
                     case 1:
-                        AccOverview.wallet.coins = currencies[i].value;
+                        m_oModuleData.wallet.coins = currencies[i].value;
                         break;
                     case 2:
-                        AccOverview.wallet.karma = currencies[i].value;
+                        m_oModuleData.wallet.karma = currencies[i].value;
                         break;
                     case 3:
-                        AccOverview.wallet.laurels = currencies[i].value;
+                        m_oModuleData.wallet.laurels = currencies[i].value;
                         break;
                     case 4:
-                        AccOverview.wallet.gems = currencies[i].value;
+                        m_oModuleData.wallet.gems = currencies[i].value;
                         break;
                     case 28:
-                        AccOverview.wallet.magnetite = currencies[i].value;
+                        m_oModuleData.wallet.magnetite = currencies[i].value;
                         break;
                     case 39:
-                        AccOverview.wallet.gaeting = currencies[i].value;
+                        m_oModuleData.wallet.gaeting = currencies[i].value;
                         break;
                     case 7:
-                        AccOverview.wallet.fractalrelic = currencies[i].value;
+                        m_oModuleData.wallet.fractalrelic = currencies[i].value;
                         break;
                     case 24:
-                        AccOverview.wallet.pristinefractalrelic = currencies[i].value;
+                        m_oModuleData.wallet.pristinefractalrelic = currencies[i].value;
                         break;
                     case 15:
-                        AccOverview.wallet.badgeofhonor = currencies[i].value;
+                        m_oModuleData.wallet.badgeofhonor = currencies[i].value;
                         break;
                     case 26:
-                        AccOverview.wallet.wvwskirmishticket = currencies[i].value;
+                        m_oModuleData.wallet.wvwskirmishticket = currencies[i].value;
                         break;
                     case 33:
-                        AccOverview.wallet.ascendedshardsofglory = currencies[i].value;
+                        m_oModuleData.wallet.ascendedshardsofglory = currencies[i].value;
                         break;
                     case 30:
-                        AccOverview.wallet.pvpleagueticket = currencies[i].value;
+                        m_oModuleData.wallet.pvpleagueticket = currencies[i].value;
                         break;
                 }
             }
@@ -148,7 +148,7 @@ namespace GuildLounge
         private async Task ProcessTradingPost(string accessToken)
         {
             AccountTradingPost tradingpost = await GetResponse<AccountTradingPost>("commerce/delivery", "access_token=" + accessToken);
-            AccOverview.tradingpost = tradingpost;
+            m_oModuleData.tradingpost = tradingpost;
         }
 
         private async Task ProcessMaterialStorage(string accessToken)
@@ -163,11 +163,11 @@ namespace GuildLounge
                 switch (materials[i].id)
                 {
                     case 77302:
-                        AccOverview.materialLI += materials[i].count;
+                        m_oModuleData.materialLI += materials[i].count;
                         LI = true;
                         break;
                     case 88485:
-                        AccOverview.materialLD += materials[i].count;
+                        m_oModuleData.materialLD += materials[i].count;
                         LD = true;
                         break;
                 }
@@ -197,9 +197,9 @@ namespace GuildLounge
                     if (eq != null)
                     {
                         if (legyArmorIds.Contains(eq.id))
-                            AccOverview.legendary_armor += 50;
+                            m_oModuleData.legendary_armor += 50;
                         else if (refArmorIds.Contains(eq.id))
-                            AccOverview.refined_armor += 25;
+                            m_oModuleData.refined_armor += 25;
                     }
                 }
                 foreach (Bag b in c.bags)
@@ -211,17 +211,17 @@ namespace GuildLounge
                             if (it != null)
                             {
                                 if (it.id == ldId)
-                                    AccOverview.materialLD += it.count;
+                                    m_oModuleData.materialLD += it.count;
                                 else if (it.id == liId)
-                                    AccOverview.materialLI += it.count;
+                                    m_oModuleData.materialLI += it.count;
                                 else if (it.id == gopId)
-                                    AccOverview.gift_of_prowess += 25 * it.count;
+                                    m_oModuleData.gift_of_prowess += 25 * it.count;
                                 else if (it.id == eiId)
-                                    AccOverview.envoy_insignia += 25 * it.count;
+                                    m_oModuleData.envoy_insignia += 25 * it.count;
                                 else if (legyArmorIds.Contains(it.id))
-                                    AccOverview.legendary_armor += 50;
+                                    m_oModuleData.legendary_armor += 50;
                                 else if (refArmorIds.Contains(it.id))
-                                    AccOverview.refined_armor += 25;
+                                    m_oModuleData.refined_armor += 25;
                             }
                         }
                     }
@@ -247,17 +247,17 @@ namespace GuildLounge
                 if (bi != null)
                 {
                     if (bi.id == ld_id)
-                        AccOverview.materialLD += bi.count;
+                        m_oModuleData.materialLD += bi.count;
                     else if (bi.id == li_id)
-                        AccOverview.materialLI += bi.count;
+                        m_oModuleData.materialLI += bi.count;
                     else if (bi.id == gop_id)
-                        AccOverview.gift_of_prowess += 25 * bi.count;
+                        m_oModuleData.gift_of_prowess += 25 * bi.count;
                     else if (bi.id == ei_id)
-                        AccOverview.envoy_insignia += 25 * bi.count;
+                        m_oModuleData.envoy_insignia += 25 * bi.count;
                     else if (legy_armor_ids.Contains(bi.id))
-                        AccOverview.legendary_armor += 50;
+                        m_oModuleData.legendary_armor += 50;
                     else if (ref_armor_ids.Contains(bi.id))
-                        AccOverview.refined_armor += 25;
+                        m_oModuleData.refined_armor += 25;
                 }
             }
         }

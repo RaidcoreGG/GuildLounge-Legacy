@@ -218,7 +218,7 @@ namespace GuildLounge
 
             try
             {
-                ModuleData APIResponse = await _api.FetchAccountOverview(ActiveAPIEntry.Key);
+                ModuleData APIResponse = await _api.FetchModuleData(ActiveAPIEntry.Key);
 
                 var w = APIResponse.wallet;
                 var tp = APIResponse.tradingpost;
