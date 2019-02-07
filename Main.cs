@@ -25,7 +25,7 @@ namespace GuildLounge
 
         //TAB CONTROL
         private UserControl ActiveTab;
-        private Control_NavigationButton ActiveTabButton;
+        private Controls.NavigationButton ActiveTabButton;
 
         private UserControl DashboardTab;
         private UserControl LFGTab;
@@ -51,12 +51,12 @@ namespace GuildLounge
             panelOverview.AutoScroll = true;
 
             //INITIALIZING TABS
-            DashboardTab = new TabPage_Dashboard();
-            LFGTab = new TabPage_LFG();
-            RaidsTab = new TabPage_Raids();
-            GuidesTab = new TabPage_Guides();
-            APIKeysTab = new TabPage_APIKeys();
-            SettingsTab = new TabPage_Settings();
+            DashboardTab = new TabPages.Dashboard();
+            LFGTab = new TabPages.LFG();
+            RaidsTab = new TabPages.Raids();
+            GuidesTab = new TabPages.Guides();
+            APIKeysTab = new TabPages.APIKeys();
+            SettingsTab = new TabPages.Settings();
 
             //HIDING TABS
             DashboardTab.Visible
@@ -131,10 +131,10 @@ namespace GuildLounge
 
             if(ActiveTabButton != null)
             {
-                if (button is Control_NavigationButton)
+                if (button is Controls.NavigationButton)
                 {
                     ActiveTabButton.Active = false;
-                    ActiveTabButton = (Control_NavigationButton)button;
+                    ActiveTabButton = (Controls.NavigationButton)button;
                     ActiveTabButton.Active = true;
                 }
                 else
@@ -142,7 +142,7 @@ namespace GuildLounge
             }
             else
             {
-                ActiveTabButton = (Control_NavigationButton)button;
+                ActiveTabButton = (Controls.NavigationButton)button;
                 ActiveTabButton.Active = true;
             }
         }
@@ -181,7 +181,7 @@ namespace GuildLounge
         public void RefreshKeys()
         {
             //GET KEYS FROM KEYSTAB
-            var obj = (TabPage_APIKeys)APIKeysTab;
+            var obj = (TabPages.APIKeys)APIKeysTab;
             APIEntries = obj.APIEntries;
             
             if (APIEntries != null)
@@ -207,7 +207,7 @@ namespace GuildLounge
             }
 
             //SET NEW KEY FOR RAIDS TAB
-            var obj2 = (TabPage_Raids)RaidsTab;
+            var obj2 = (TabPages.Raids)RaidsTab;
             obj2.ActiveAPIEntry = ActiveAPIEntry;
         }
 
@@ -325,7 +325,7 @@ namespace GuildLounge
                 if (ActiveAPIEntry != APIEntries[comboBoxAccount.SelectedIndex])
                 {
                     //SET MAINTAB ACTIVE ENTRY, REQUESTHANDLER ACTIVE ENTRY & RAIDSTAB ACTIVE ENTRY TO SELECTED ENTRY FROM COMBOBOX
-                    var obj = (TabPage_Raids)RaidsTab;
+                    var obj = (TabPages.Raids)RaidsTab;
                     ActiveAPIEntry =
                         obj.ActiveAPIEntry =
                         APIEntries[comboBoxAccount.SelectedIndex];
@@ -341,7 +341,7 @@ namespace GuildLounge
             if (ActiveAPIEntry != null)
             {
                 //REFRESH RAID ENCOUNTER PROGRESS BY SETTING THE KEY
-                var obj = (TabPage_Raids)RaidsTab;
+                var obj = (TabPages.Raids)RaidsTab;
                 obj.ActiveAPIEntry = ActiveAPIEntry;
 
                 //REFRESH OVERVIEW

@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelNavigation = new System.Windows.Forms.Panel();
-            this.gL_HorizontalLine1 = new GuildLounge.Control_HorizontalLine();
-            this.buttonGuides = new GuildLounge.Control_NavigationButton();
-            this.buttonRaids = new GuildLounge.Control_NavigationButton();
-            this.buttonLFG = new GuildLounge.Control_NavigationButton();
-            this.buttonDashboard = new GuildLounge.Control_NavigationButton();
+            this.gL_HorizontalLine1 = new GuildLounge.Controls.HorizontalLine();
+            this.buttonGuides = new GuildLounge.Controls.NavigationButton();
+            this.buttonRaids = new GuildLounge.Controls.NavigationButton();
+            this.buttonLFG = new GuildLounge.Controls.NavigationButton();
+            this.buttonDashboard = new GuildLounge.Controls.NavigationButton();
             this.panelOverview = new System.Windows.Forms.Panel();
-            this.moduleTPPickup = new GuildLounge.Module_TPPickup();
-            this.moduleBaseCurrencies = new GuildLounge.Module_BaseCurrencies();
-            this.modulePvP = new GuildLounge.Module_PvP();
-            this.moduleWvW = new GuildLounge.Module_WvW();
-            this.moduleFractals = new GuildLounge.Module_Fractals();
-            this.moduleRaids = new GuildLounge.Module_Raids();
-            this.menuStrip = new GuildLounge.Control_MenuStrip();
+            this.moduleTPPickup = new GuildLounge.Modules.TPPickup();
+            this.moduleBaseCurrencies = new GuildLounge.Modules.BaseCurrencies();
+            this.modulePvP = new GuildLounge.Modules.PvP();
+            this.moduleWvW = new GuildLounge.Modules.WvW();
+            this.moduleFractals = new GuildLounge.Modules.Fractals();
+            this.moduleRaids = new GuildLounge.Modules.Raids();
+            this.menuStrip = new GuildLounge.Controls.MenuStrip();
             this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAccount = new System.Windows.Forms.Panel();
@@ -53,7 +53,7 @@
             this.linkLabelAPIKeys = new System.Windows.Forms.LinkLabel();
             this.panelLaunch = new System.Windows.Forms.Panel();
             this.labelLaunchError = new System.Windows.Forms.Label();
-            this.buttonLaunch = new GuildLounge.Control_HighlightButton();
+            this.buttonLaunch = new GuildLounge.Controls.HighlightButton();
             this.panelNavigation.SuspendLayout();
             this.panelOverview.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -431,16 +431,16 @@
         }
 
         #endregion
-        private Control_MenuStrip menuStrip;
+        private GuildLounge.Controls.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMinimize;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClose;
         private System.Windows.Forms.Panel panelNavigation;
         private System.Windows.Forms.Panel panelOverview;
-        private Control_NavigationButton buttonGuides;
-        private Control_NavigationButton buttonRaids;
-        private Control_NavigationButton buttonLFG;
-        private Control_NavigationButton buttonDashboard;
-        private Control_HorizontalLine gL_HorizontalLine1;
+        private GuildLounge.Controls.NavigationButton buttonGuides;
+        private GuildLounge.Controls.NavigationButton buttonRaids;
+        private GuildLounge.Controls.NavigationButton buttonLFG;
+        private GuildLounge.Controls.NavigationButton buttonDashboard;
+        private GuildLounge.Controls.HorizontalLine gL_HorizontalLine1;
         private System.Windows.Forms.Panel panelAccount;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Label labelAPIError;
@@ -449,13 +449,13 @@
         private System.Windows.Forms.LinkLabel linkLabelAPIKeys;
         private System.Windows.Forms.Panel panelLaunch;
         private System.Windows.Forms.Label labelLaunchError;
-        private Control_HighlightButton buttonLaunch;
-        private Module_Raids moduleRaids;
-        private Module_Fractals moduleFractals;
-        private Module_WvW moduleWvW;
-        private Module_PvP modulePvP;
-        private Module_TPPickup moduleTPPickup;
-        private Module_BaseCurrencies moduleBaseCurrencies;
+        private GuildLounge.Controls.HighlightButton buttonLaunch;
+        private Modules.Raids moduleRaids;
+        private Modules.Fractals moduleFractals;
+        private Modules.WvW moduleWvW;
+        private Modules.PvP modulePvP;
+        private Modules.TPPickup moduleTPPickup;
+        private Modules.BaseCurrencies moduleBaseCurrencies;
     }
 }
 

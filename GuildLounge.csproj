@@ -80,53 +80,53 @@
     <Compile Include="Classes\ApiEntry.cs" />
     <Compile Include="Classes\ApiHandler.cs" />
     <Compile Include="Classes\RequestObjects.cs" />
-    <Compile Include="Controls\Control_Button.cs">
+    <Compile Include="Controls\Button.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Control_Button.Designer.cs">
-      <DependentUpon>Control_Button.cs</DependentUpon>
+    <Compile Include="Controls\Button.Designer.cs">
+      <DependentUpon>Button.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Control_HighlightButton.cs">
+    <Compile Include="Controls\HighlightButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Control_HighlightButton.Designer.cs">
-      <DependentUpon>Control_HighlightButton.cs</DependentUpon>
+    <Compile Include="Controls\HighlightButton.Designer.cs">
+      <DependentUpon>HighlightButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Control_NavigationButton.cs">
+    <Compile Include="Controls\NavigationButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Control_NavigationButton.Designer.cs">
-      <DependentUpon>Control_NavigationButton.cs</DependentUpon>
+    <Compile Include="Controls\NavigationButton.Designer.cs">
+      <DependentUpon>NavigationButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Control_GroupBox.cs">
+    <Compile Include="Controls\GroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Control_GroupBox.Designer.cs">
-      <DependentUpon>Control_GroupBox.cs</DependentUpon>
+    <Compile Include="Controls\GroupBox.Designer.cs">
+      <DependentUpon>GroupBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Control_MenuStrip.cs">
+    <Compile Include="Controls\MenuStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Control_MenuStrip.Designer.cs">
-      <DependentUpon>Control_MenuStrip.cs</DependentUpon>
+    <Compile Include="Controls\MenuStrip.Designer.cs">
+      <DependentUpon>MenuStrip.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Control_PictureBoxEncounter.cs">
+    <Compile Include="Controls\PictureBoxEncounter.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Control_PictureBoxEncounter.Designer.cs">
-      <DependentUpon>Control_PictureBoxEncounter.cs</DependentUpon>
+    <Compile Include="Controls\PictureBoxEncounter.Designer.cs">
+      <DependentUpon>PictureBoxEncounter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Control_HorizontalLine.cs">
+    <Compile Include="Controls\HorizontalLine.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Control_HorizontalLine.Designer.cs">
-      <DependentUpon>Control_HorizontalLine.cs</DependentUpon>
+    <Compile Include="Controls\HorizontalLine.Designer.cs">
+      <DependentUpon>HorizontalLine.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Control_ToolTip.cs">
+    <Compile Include="Controls\ToolTip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Control_ToolTip.Designer.cs">
-      <DependentUpon>Control_ToolTip.cs</DependentUpon>
+    <Compile Include="Controls\ToolTip.Designer.cs">
+      <DependentUpon>ToolTip.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -134,41 +134,41 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Module_BaseCurrencies.cs">
+    <Compile Include="Modules\BaseCurrencies.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Module_BaseCurrencies.Designer.cs">
-      <DependentUpon>Module_BaseCurrencies.cs</DependentUpon>
+    <Compile Include="Modules\BaseCurrencies.Designer.cs">
+      <DependentUpon>BaseCurrencies.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Module_Fractals.cs">
+    <Compile Include="Modules\Fractals.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Module_Fractals.Designer.cs">
-      <DependentUpon>Module_Fractals.cs</DependentUpon>
+    <Compile Include="Modules\Fractals.Designer.cs">
+      <DependentUpon>Fractals.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Module_PvP.cs">
+    <Compile Include="Modules\PvP.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Module_PvP.Designer.cs">
-      <DependentUpon>Module_PvP.cs</DependentUpon>
+    <Compile Include="Modules\PvP.Designer.cs">
+      <DependentUpon>PvP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Module_Raids.cs">
+    <Compile Include="Modules\Raids.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Module_Raids.Designer.cs">
-      <DependentUpon>Module_Raids.cs</DependentUpon>
+    <Compile Include="Modules\Raids.Designer.cs">
+      <DependentUpon>Raids.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Module_TPPickup.cs">
+    <Compile Include="Modules\TPPickup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Module_TPPickup.Designer.cs">
-      <DependentUpon>Module_TPPickup.cs</DependentUpon>
+    <Compile Include="Modules\TPPickup.Designer.cs">
+      <DependentUpon>TPPickup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Module_WvW.cs">
+    <Compile Include="Modules\WvW.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Module_WvW.Designer.cs">
-      <DependentUpon>Module_WvW.cs</DependentUpon>
+    <Compile Include="Modules\WvW.Designer.cs">
+      <DependentUpon>WvW.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -177,106 +177,106 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_APIKeys.cs">
+    <Compile Include="TabPages\Main\APIKeys.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_APIKeys.Designer.cs">
-      <DependentUpon>TabPage_APIKeys.cs</DependentUpon>
+    <Compile Include="TabPages\Main\APIKeys.Designer.cs">
+      <DependentUpon>APIKeys.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_Guides.cs">
+    <Compile Include="TabPages\Main\Guides.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_Guides.Designer.cs">
-      <DependentUpon>TabPage_Guides.cs</DependentUpon>
+    <Compile Include="TabPages\Main\Guides.Designer.cs">
+      <DependentUpon>Guides.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_LFG.cs">
+    <Compile Include="TabPages\Main\LFG.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_LFG.Designer.cs">
-      <DependentUpon>TabPage_LFG.cs</DependentUpon>
+    <Compile Include="TabPages\Main\LFG.Designer.cs">
+      <DependentUpon>LFG.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_Dashboard.cs">
+    <Compile Include="TabPages\Main\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_Dashboard.Designer.cs">
-      <DependentUpon>TabPage_Dashboard.cs</DependentUpon>
+    <Compile Include="TabPages\Main\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_Raids.cs">
+    <Compile Include="TabPages\Main\Raids.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_Raids.Designer.cs">
-      <DependentUpon>TabPage_Raids.cs</DependentUpon>
+    <Compile Include="TabPages\Main\Raids.Designer.cs">
+      <DependentUpon>Raids.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_Settings.cs">
+    <Compile Include="TabPages\Main\Settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabPages\Main\TabPage_Settings.Designer.cs">
-      <DependentUpon>TabPage_Settings.cs</DependentUpon>
+    <Compile Include="TabPages\Main\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\Control_Button.resx">
-      <DependentUpon>Control_Button.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Button.resx">
+      <DependentUpon>Button.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Control_HighlightButton.resx">
-      <DependentUpon>Control_HighlightButton.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\HighlightButton.resx">
+      <DependentUpon>HighlightButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Control_NavigationButton.resx">
-      <DependentUpon>Control_NavigationButton.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\NavigationButton.resx">
+      <DependentUpon>NavigationButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Control_GroupBox.resx">
-      <DependentUpon>Control_GroupBox.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\GroupBox.resx">
+      <DependentUpon>GroupBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Control_MenuStrip.resx">
-      <DependentUpon>Control_MenuStrip.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\MenuStrip.resx">
+      <DependentUpon>MenuStrip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Control_PictureBoxEncounter.resx">
-      <DependentUpon>Control_PictureBoxEncounter.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\PictureBoxEncounter.resx">
+      <DependentUpon>PictureBoxEncounter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Control_ToolTip.resx">
-      <DependentUpon>Control_ToolTip.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\ToolTip.resx">
+      <DependentUpon>ToolTip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Module_BaseCurrencies.resx">
-      <DependentUpon>Module_BaseCurrencies.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\BaseCurrencies.resx">
+      <DependentUpon>BaseCurrencies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Module_Fractals.resx">
-      <DependentUpon>Module_Fractals.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Fractals.resx">
+      <DependentUpon>Fractals.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Module_PvP.resx">
-      <DependentUpon>Module_PvP.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\PvP.resx">
+      <DependentUpon>PvP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Module_Raids.resx">
-      <DependentUpon>Module_Raids.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Raids.resx">
+      <DependentUpon>Raids.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Module_TPPickup.resx">
-      <DependentUpon>Module_TPPickup.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\TPPickup.resx">
+      <DependentUpon>TPPickup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Module_WvW.resx">
-      <DependentUpon>Module_WvW.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\WvW.resx">
+      <DependentUpon>WvW.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Main\TabPage_APIKeys.resx">
-      <DependentUpon>TabPage_APIKeys.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\APIKeys.resx">
+      <DependentUpon>APIKeys.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Main\TabPage_Guides.resx">
-      <DependentUpon>TabPage_Guides.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\Guides.resx">
+      <DependentUpon>Guides.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Main\TabPage_LFG.resx">
-      <DependentUpon>TabPage_LFG.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\LFG.resx">
+      <DependentUpon>LFG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Main\TabPage_Dashboard.resx">
-      <DependentUpon>TabPage_Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Main\TabPage_Raids.resx">
-      <DependentUpon>TabPage_Raids.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\Raids.resx">
+      <DependentUpon>Raids.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Main\TabPage_Settings.resx">
-      <DependentUpon>TabPage_Settings.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -472,6 +472,7 @@
     <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="TabPages\Main\Settings\" />
     <Folder Include="TabPages\Tools\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
