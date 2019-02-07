@@ -661,7 +661,7 @@
             this.pictureBoxValeGuardian.TabIndex = 14;
             this.pictureBoxValeGuardian.TabStop = false;
             // 
-            // TabPage_Raids
+            // Raids
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -677,7 +677,7 @@
             this.Controls.Add(this.labelTotalWeeklyLD);
             this.Controls.Add(this.labelTotalWeeklyLI);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "TabPage_Raids";
+            this.Name = "Raids";
             this.Size = new System.Drawing.Size(740, 436);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).EndInit();

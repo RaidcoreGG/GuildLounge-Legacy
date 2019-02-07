@@ -86,6 +86,12 @@
     <Compile Include="Controls\Button.Designer.cs">
       <DependentUpon>Button.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DailyModule.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DailyModule.Designer.cs">
+      <DependentUpon>DailyModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\HighlightButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </Compile>
     <EmbeddedResource Include="Controls\Button.resx">
       <DependentUpon>Button.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DailyModule.resx">
+      <DependentUpon>DailyModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\HighlightButton.resx">
       <DependentUpon>HighlightButton.cs</DependentUpon>
@@ -470,6 +479,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Dailies\daily_wvw.png" />
+    <None Include="Resources\Dailies\daily_pvp.png" />
+    <None Include="Resources\Dailies\daily_pve.png" />
+    <None Include="Resources\Dailies\daily_fractals.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TabPages\Main\Settings\" />

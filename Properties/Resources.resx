@@ -235,6 +235,18 @@
   <data name="cur_wvwskirmishticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Currency\cur_wvwskirmishticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="daily_fractals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dailies\daily_fractals.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="daily_pve" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dailies\daily_pve.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="daily_pvp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dailies\daily_pvp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="daily_wvw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dailies\daily_wvw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="mat_ld" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Material\mat_ld.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
