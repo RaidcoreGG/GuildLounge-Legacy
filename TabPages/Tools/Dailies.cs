@@ -72,7 +72,7 @@ namespace GuildLounge.TabPages.Tools
                 if (a.name.Contains("Tier"))
                 {
                     a.name = a.name.Remove(a.name.IndexOf("Tier"), 7);
-                    if (Array.FindIndex(fracs, f => f.name == a.name) == -1)
+                    if (!Array.Exists(fracs, f => f.name == a.name))
                     {
                         fracs[i] = a;
                         i++;
