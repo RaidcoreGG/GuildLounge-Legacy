@@ -46,7 +46,7 @@
             this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAccount = new System.Windows.Forms.Panel();
-            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonRefresh = new GuildLounge.Controls.Button();
             this.labelAPIError = new System.Windows.Forms.Label();
             this.linkLabelSettings = new System.Windows.Forms.LinkLabel();
             this.comboBoxAccount = new System.Windows.Forms.ComboBox();
@@ -442,7 +442,7 @@
         private GuildLounge.Controls.NavigationButton buttonDashboard;
         private GuildLounge.Controls.HorizontalLine gL_HorizontalLine1;
         private System.Windows.Forms.Panel panelAccount;
-        private System.Windows.Forms.Button buttonRefresh;
+        private GuildLounge.Controls.Button buttonRefresh;
         private System.Windows.Forms.Label labelAPIError;
         private System.Windows.Forms.LinkLabel linkLabelSettings;
         private System.Windows.Forms.ComboBox comboBoxAccount;

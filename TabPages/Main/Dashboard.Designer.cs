@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.pictureBoxNews = new System.Windows.Forms.PictureBox();
-            this.buttonNewsNext = new System.Windows.Forms.Button();
-            this.buttonNewsPrevious = new System.Windows.Forms.Button();
+            this.buttonNewsNext = new GuildLounge.Controls.Button();
+            this.buttonNewsPrevious = new GuildLounge.Controls.Button();
             this.groupBoxTools = new GuildLounge.Controls.GroupBox();
             this.linkLabelItemSearch = new System.Windows.Forms.LinkLabel();
             this.linkLabelDailies = new System.Windows.Forms.LinkLabel();
@@ -313,8 +313,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxNews;
-        private System.Windows.Forms.Button buttonNewsPrevious;
-        private System.Windows.Forms.Button buttonNewsNext;
+        private GuildLounge.Controls.Button buttonNewsPrevious;
+        private GuildLounge.Controls.Button buttonNewsNext;
         private GuildLounge.Controls.GroupBox groupBoxLinks;
         private System.Windows.Forms.Label labelLinks;
         private System.Windows.Forms.LinkLabel linkLabelGLReleaseNotes;
