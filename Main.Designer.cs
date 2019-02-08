@@ -30,12 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelNavigation = new System.Windows.Forms.Panel();
-            this.buttonSettings = new GuildLounge.Controls.NavigationButton();
             this.gL_HorizontalLine1 = new GuildLounge.Controls.HorizontalLine();
             this.buttonGuides = new GuildLounge.Controls.NavigationButton();
             this.buttonRaids = new GuildLounge.Controls.NavigationButton();
             this.buttonLFG = new GuildLounge.Controls.NavigationButton();
-            this.buttonDashboard = new GuildLounge.Controls.NavigationButton();
             this.panelOverview = new System.Windows.Forms.Panel();
             this.moduleTPPickup = new GuildLounge.Modules.TPPickup();
             this.moduleBaseCurrencies = new GuildLounge.Modules.BaseCurrencies();
@@ -44,16 +42,18 @@
             this.moduleFractals = new GuildLounge.Modules.Fractals();
             this.moduleRaids = new GuildLounge.Modules.Raids();
             this.menuStrip = new GuildLounge.Controls.MenuStrip();
-            this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAccount = new System.Windows.Forms.Panel();
-            this.buttonRefresh = new GuildLounge.Controls.Button();
             this.labelAPIError = new System.Windows.Forms.Label();
             this.comboBoxAccount = new System.Windows.Forms.ComboBox();
             this.linkLabelAPIKeys = new System.Windows.Forms.LinkLabel();
             this.panelLaunch = new System.Windows.Forms.Panel();
             this.labelLaunchError = new System.Windows.Forms.Label();
             this.buttonLaunch = new GuildLounge.Controls.HighlightButton();
+            this.buttonRefresh = new GuildLounge.Controls.Button();
+            this.buttonSettings = new GuildLounge.Controls.NavigationButton();
+            this.buttonDashboard = new GuildLounge.Controls.NavigationButton();
+            this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
             this.panelNavigation.SuspendLayout();
             this.panelOverview.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -74,25 +74,6 @@
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(740, 80);
             this.panelNavigation.TabIndex = 0;
-            // 
-            // buttonSettings
-            // 
-            this.buttonSettings.Active = false;
-            this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.BackgroundImage = global::GuildLounge.Properties.Resources.ui_settings;
-            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonSettings.FlatAppearance.BorderSize = 0;
-            this.buttonSettings.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSettings.ForeColor = System.Drawing.Color.Gray;
-            this.buttonSettings.Location = new System.Drawing.Point(660, 19);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(40, 40);
-            this.buttonSettings.TabIndex = 6;
-            this.buttonSettings.UseVisualStyleBackColor = false;
-            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // gL_HorizontalLine1
             // 
@@ -161,25 +142,6 @@
             this.buttonLFG.Text = "LFG";
             this.buttonLFG.UseVisualStyleBackColor = false;
             this.buttonLFG.Click += new System.EventHandler(this.buttonLFG_Click);
-            // 
-            // buttonDashboard
-            // 
-            this.buttonDashboard.Active = false;
-            this.buttonDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDashboard.BackgroundImage")));
-            this.buttonDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonDashboard.FlatAppearance.BorderSize = 0;
-            this.buttonDashboard.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDashboard.ForeColor = System.Drawing.Color.Gray;
-            this.buttonDashboard.Location = new System.Drawing.Point(10, 10);
-            this.buttonDashboard.Name = "buttonDashboard";
-            this.buttonDashboard.Size = new System.Drawing.Size(150, 60);
-            this.buttonDashboard.TabIndex = 1;
-            this.buttonDashboard.UseVisualStyleBackColor = false;
-            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
             // 
             // panelOverview
             // 
@@ -280,24 +242,6 @@
             this.menuStrip.TabIndex = 0;
             this.menuStrip.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip_MouseDown);
             // 
-            // toolStripMenuItemClose
-            // 
-            this.toolStripMenuItemClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripMenuItemClose.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemClose.Image")));
-            this.toolStripMenuItemClose.Name = "toolStripMenuItemClose";
-            this.toolStripMenuItemClose.Size = new System.Drawing.Size(28, 20);
-            this.toolStripMenuItemClose.Text = "X";
-            this.toolStripMenuItemClose.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
-            // 
-            // toolStripMenuItemMinimize
-            // 
-            this.toolStripMenuItemMinimize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripMenuItemMinimize.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemMinimize.Image")));
-            this.toolStripMenuItemMinimize.Name = "toolStripMenuItemMinimize";
-            this.toolStripMenuItemMinimize.Size = new System.Drawing.Size(28, 20);
-            this.toolStripMenuItemMinimize.Text = "_";
-            this.toolStripMenuItemMinimize.Click += new System.EventHandler(this.toolStripMenuItemMinimize_Click);
-            // 
             // panelAccount
             // 
             this.panelAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -309,25 +253,6 @@
             this.panelAccount.Name = "panelAccount";
             this.panelAccount.Size = new System.Drawing.Size(220, 80);
             this.panelAccount.TabIndex = 1;
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonRefresh.FlatAppearance.BorderSize = 0;
-            this.buttonRefresh.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefresh.ForeColor = System.Drawing.Color.Gray;
-            this.buttonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("buttonRefresh.Image")));
-            this.buttonRefresh.Location = new System.Drawing.Point(176, 24);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(32, 32);
-            this.buttonRefresh.TabIndex = 22;
-            this.buttonRefresh.TabStop = false;
-            this.buttonRefresh.UseVisualStyleBackColor = false;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // labelAPIError
             // 
@@ -403,6 +328,81 @@
             this.buttonLaunch.Text = "Launch";
             this.buttonLaunch.UseVisualStyleBackColor = false;
             this.buttonLaunch.Click += new System.EventHandler(this.buttonLaunch_Click);
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRefresh.FlatAppearance.BorderSize = 0;
+            this.buttonRefresh.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRefresh.ForeColor = System.Drawing.Color.Gray;
+            this.buttonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("buttonRefresh.Image")));
+            this.buttonRefresh.Location = new System.Drawing.Point(176, 24);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(32, 32);
+            this.buttonRefresh.TabIndex = 22;
+            this.buttonRefresh.TabStop = false;
+            this.buttonRefresh.UseVisualStyleBackColor = false;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // buttonSettings
+            // 
+            this.buttonSettings.Active = false;
+            this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.BackgroundImage = global::GuildLounge.Properties.Resources.ui_settings;
+            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonSettings.FlatAppearance.BorderSize = 0;
+            this.buttonSettings.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSettings.ForeColor = System.Drawing.Color.Gray;
+            this.buttonSettings.Location = new System.Drawing.Point(660, 19);
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(40, 40);
+            this.buttonSettings.TabIndex = 6;
+            this.buttonSettings.UseVisualStyleBackColor = false;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
+            // 
+            // buttonDashboard
+            // 
+            this.buttonDashboard.Active = false;
+            this.buttonDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDashboard.BackgroundImage")));
+            this.buttonDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonDashboard.FlatAppearance.BorderSize = 0;
+            this.buttonDashboard.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDashboard.ForeColor = System.Drawing.Color.Gray;
+            this.buttonDashboard.Location = new System.Drawing.Point(10, 10);
+            this.buttonDashboard.Name = "buttonDashboard";
+            this.buttonDashboard.Size = new System.Drawing.Size(150, 60);
+            this.buttonDashboard.TabIndex = 1;
+            this.buttonDashboard.UseVisualStyleBackColor = false;
+            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
+            // 
+            // toolStripMenuItemClose
+            // 
+            this.toolStripMenuItemClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripMenuItemClose.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemClose.Image")));
+            this.toolStripMenuItemClose.Name = "toolStripMenuItemClose";
+            this.toolStripMenuItemClose.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItemClose.Text = "X";
+            this.toolStripMenuItemClose.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
+            // 
+            // toolStripMenuItemMinimize
+            // 
+            this.toolStripMenuItemMinimize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripMenuItemMinimize.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemMinimize.Image")));
+            this.toolStripMenuItemMinimize.Name = "toolStripMenuItemMinimize";
+            this.toolStripMenuItemMinimize.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItemMinimize.Text = "_";
+            this.toolStripMenuItemMinimize.Click += new System.EventHandler(this.toolStripMenuItemMinimize_Click);
             // 
             // Main
             // 
