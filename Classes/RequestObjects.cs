@@ -47,6 +47,29 @@
         public int coins { get; set; }
         public Item[] items { get; set; }
     }
+
+    public class RaidCMs
+    {
+        public bool KeepConstruct { get; set; }
+        public bool Cairn { get; set; }
+        public bool MursaatOverseer { get; set; }
+        public bool Samarog { get; set; }
+        public bool Deimos { get; set; }
+        public bool SoullessHorror { get; set; }
+        public bool Statues { get; set; }
+        public bool Dhuum { get; set; }
+        public bool ConjuredAmalgamate { get; set; }
+        public bool LargosTwins { get; set; }
+        public bool Qadim { get; set; }
+    }
+
+    public class Dailies
+    {
+        public Achievement[] pve { get; set; }
+        public Achievement[] pvp { get; set; }
+        public Achievement[] wvw { get; set; }
+        public Achievement[] fractals { get; set; }
+    }
     #endregion
 
     #region character
@@ -84,25 +107,11 @@
         public int count { get; set; }
     }
 
-    public class RaidCMs
-    {
-        public bool KeepConstruct { get; set; }
-        public bool Cairn { get; set; }
-        public bool MursaatOverseer { get; set; }
-        public bool Samarog { get; set; }
-        public bool Deimos { get; set; }
-        public bool SoullessHorror { get; set; }
-        public bool Statues { get; set; }
-        public bool Dhuum { get; set; }
-        public bool ConjuredAmalgamate { get; set; }
-        public bool LargosTwins { get; set; }
-        public bool Qadim { get; set; }
-    }
-
     public class Achievement
     {
         public int id { get; set; }
         public string name { get; set; }
+        //ONLY FOR CERTAIN ACHIEVEMENTS
         public int[] bits { get; set; }
         //ONLY FOR ACCOUNT ACHIEVEMENTS
         public bool done { get; set; }

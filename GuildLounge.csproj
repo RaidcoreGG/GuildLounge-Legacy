@@ -219,6 +219,12 @@
     <Compile Include="TabPages\Main\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabPages\Tools\Dailies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPages\Tools\Dailies.Designer.cs">
+      <DependentUpon>Dailies.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controls\Button.resx">
       <DependentUpon>Button.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TabPages\Main\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Tools\Dailies.resx">
+      <DependentUpon>Dailies.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -488,7 +497,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TabPages\Main\Settings\" />
-    <Folder Include="TabPages\Tools\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

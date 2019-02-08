@@ -32,8 +32,8 @@
             this.buttonNewsNext = new System.Windows.Forms.Button();
             this.buttonNewsPrevious = new System.Windows.Forms.Button();
             this.groupBoxTools = new GuildLounge.Controls.GroupBox();
-            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel13 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelItemSearch = new System.Windows.Forms.LinkLabel();
+            this.linkLabelDailies = new System.Windows.Forms.LinkLabel();
             this.labelTools = new System.Windows.Forms.Label();
             this.groupBoxLinks = new GuildLounge.Controls.GroupBox();
             this.linkLabelGLDiscord = new System.Windows.Forms.LinkLabel();
@@ -103,8 +103,8 @@
             this.groupBoxTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.groupBoxTools.BorderColor = System.Drawing.Color.Gray;
             this.groupBoxTools.BorderSize = 1;
-            this.groupBoxTools.Controls.Add(this.linkLabel8);
-            this.groupBoxTools.Controls.Add(this.linkLabel13);
+            this.groupBoxTools.Controls.Add(this.linkLabelItemSearch);
+            this.groupBoxTools.Controls.Add(this.linkLabelDailies);
             this.groupBoxTools.Controls.Add(this.labelTools);
             this.groupBoxTools.Location = new System.Drawing.Point(386, 188);
             this.groupBoxTools.Name = "groupBoxTools";
@@ -113,33 +113,35 @@
             this.groupBoxTools.TabStop = false;
             this.groupBoxTools.Text = "gL_GroupBox1";
             // 
-            // linkLabel8
+            // linkLabelItemSearch
             // 
-            this.linkLabel8.ActiveLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabel8.AutoSize = true;
-            this.linkLabel8.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel8.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel8.Location = new System.Drawing.Point(7, 42);
-            this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(64, 13);
-            this.linkLabel8.TabIndex = 25;
-            this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "Item Search";
-            this.linkLabel8.VisitedLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelItemSearch.ActiveLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelItemSearch.AutoSize = true;
+            this.linkLabelItemSearch.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabelItemSearch.LinkColor = System.Drawing.Color.Red;
+            this.linkLabelItemSearch.Location = new System.Drawing.Point(7, 42);
+            this.linkLabelItemSearch.Name = "linkLabelItemSearch";
+            this.linkLabelItemSearch.Size = new System.Drawing.Size(64, 13);
+            this.linkLabelItemSearch.TabIndex = 25;
+            this.linkLabelItemSearch.TabStop = true;
+            this.linkLabelItemSearch.Text = "Item Search";
+            this.linkLabelItemSearch.VisitedLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelItemSearch.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelItemSearch_LinkClicked);
             // 
-            // linkLabel13
+            // linkLabelDailies
             // 
-            this.linkLabel13.ActiveLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabel13.AutoSize = true;
-            this.linkLabel13.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel13.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel13.Location = new System.Drawing.Point(7, 26);
-            this.linkLabel13.Name = "linkLabel13";
-            this.linkLabel13.Size = new System.Drawing.Size(38, 13);
-            this.linkLabel13.TabIndex = 20;
-            this.linkLabel13.TabStop = true;
-            this.linkLabel13.Text = "Dailies";
-            this.linkLabel13.VisitedLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelDailies.ActiveLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelDailies.AutoSize = true;
+            this.linkLabelDailies.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabelDailies.LinkColor = System.Drawing.Color.Red;
+            this.linkLabelDailies.Location = new System.Drawing.Point(7, 26);
+            this.linkLabelDailies.Name = "linkLabelDailies";
+            this.linkLabelDailies.Size = new System.Drawing.Size(38, 13);
+            this.linkLabelDailies.TabIndex = 20;
+            this.linkLabelDailies.TabStop = true;
+            this.linkLabelDailies.Text = "Dailies";
+            this.linkLabelDailies.VisitedLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelDailies.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelDailies_LinkClicked);
             // 
             // labelTools
             // 
@@ -209,10 +211,10 @@
             this.linkLabelGW2Forums.LinkColor = System.Drawing.Color.Red;
             this.linkLabelGW2Forums.Location = new System.Drawing.Point(7, 122);
             this.linkLabelGW2Forums.Name = "linkLabelGW2Forums";
-            this.linkLabelGW2Forums.Size = new System.Drawing.Size(69, 13);
+            this.linkLabelGW2Forums.Size = new System.Drawing.Size(104, 13);
             this.linkLabelGW2Forums.TabIndex = 24;
             this.linkLabelGW2Forums.TabStop = true;
-            this.linkLabelGW2Forums.Text = "GW2 Forums";
+            this.linkLabelGW2Forums.Text = "Official GW2 Forums";
             this.linkLabelGW2Forums.VisitedLinkColor = System.Drawing.Color.OrangeRed;
             this.linkLabelGW2Forums.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGW2Forums_LinkClicked);
             // 
@@ -224,10 +226,10 @@
             this.linkLabelGW2ReleaseNotes.LinkColor = System.Drawing.Color.Red;
             this.linkLabelGW2ReleaseNotes.Location = new System.Drawing.Point(7, 106);
             this.linkLabelGW2ReleaseNotes.Name = "linkLabelGW2ReleaseNotes";
-            this.linkLabelGW2ReleaseNotes.Size = new System.Drawing.Size(105, 13);
+            this.linkLabelGW2ReleaseNotes.Size = new System.Drawing.Size(140, 13);
             this.linkLabelGW2ReleaseNotes.TabIndex = 23;
             this.linkLabelGW2ReleaseNotes.TabStop = true;
-            this.linkLabelGW2ReleaseNotes.Text = "GW2 Release Notes";
+            this.linkLabelGW2ReleaseNotes.Text = "Official GW2 Release Notes";
             this.linkLabelGW2ReleaseNotes.VisitedLinkColor = System.Drawing.Color.OrangeRed;
             this.linkLabelGW2ReleaseNotes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGW2ReleaseNotes_LinkClicked);
             // 
@@ -239,10 +241,10 @@
             this.linkLabelGW2Wiki.LinkColor = System.Drawing.Color.Red;
             this.linkLabelGW2Wiki.Location = new System.Drawing.Point(7, 90);
             this.linkLabelGW2Wiki.Name = "linkLabelGW2Wiki";
-            this.linkLabelGW2Wiki.Size = new System.Drawing.Size(56, 13);
+            this.linkLabelGW2Wiki.Size = new System.Drawing.Size(91, 13);
             this.linkLabelGW2Wiki.TabIndex = 22;
             this.linkLabelGW2Wiki.TabStop = true;
-            this.linkLabelGW2Wiki.Text = "GW2 Wiki";
+            this.linkLabelGW2Wiki.Text = "Official GW2 Wiki";
             this.linkLabelGW2Wiki.VisitedLinkColor = System.Drawing.Color.OrangeRed;
             this.linkLabelGW2Wiki.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGW2Wiki_LinkClicked);
             // 
@@ -254,10 +256,10 @@
             this.linkLabelGW2Efficiency.LinkColor = System.Drawing.Color.Red;
             this.linkLabelGW2Efficiency.Location = new System.Drawing.Point(7, 74);
             this.linkLabelGW2Efficiency.Name = "linkLabelGW2Efficiency";
-            this.linkLabelGW2Efficiency.Size = new System.Drawing.Size(78, 13);
+            this.linkLabelGW2Efficiency.Size = new System.Drawing.Size(81, 13);
             this.linkLabelGW2Efficiency.TabIndex = 21;
             this.linkLabelGW2Efficiency.TabStop = true;
-            this.linkLabelGW2Efficiency.Text = "GW2Efficiency";
+            this.linkLabelGW2Efficiency.Text = "GW2 Efficiency";
             this.linkLabelGW2Efficiency.VisitedLinkColor = System.Drawing.Color.OrangeRed;
             this.linkLabelGW2Efficiency.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGW2Efficiency_LinkClicked);
             // 
@@ -286,7 +288,7 @@
             this.labelLinks.TabIndex = 0;
             this.labelLinks.Text = "Links";
             // 
-            // UserControl_Dashboard
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -297,7 +299,7 @@
             this.Controls.Add(this.buttonNewsPrevious);
             this.Controls.Add(this.pictureBoxNews);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "UserControl_Dashboard";
+            this.Name = "Dashboard";
             this.Size = new System.Drawing.Size(740, 436);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNews)).EndInit();
             this.groupBoxTools.ResumeLayout(false);
@@ -323,8 +325,8 @@
         private System.Windows.Forms.LinkLabel linkLabelGW2Wiki;
         private System.Windows.Forms.LinkLabel linkLabelGW2Efficiency;
         private GuildLounge.Controls.GroupBox groupBoxTools;
-        private System.Windows.Forms.LinkLabel linkLabel8;
-        private System.Windows.Forms.LinkLabel linkLabel13;
+        private System.Windows.Forms.LinkLabel linkLabelItemSearch;
+        private System.Windows.Forms.LinkLabel linkLabelDailies;
         private System.Windows.Forms.Label labelTools;
     }
 }

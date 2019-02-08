@@ -62,7 +62,7 @@ namespace GuildLounge.Controls
             labelTitle = new Label();
             labelTitle.BackColor = Color.Transparent;
             labelTitle.Location = new Point(38, ((Height - (int)labelTitle.Font.SizeInPoints) / 2 - 2));
-            Console.WriteLine(labelTitle.Height);
+            labelTitle.Width = Width - 38;
             labelTitle.Text = "Daily";
 
             Controls.Add(labelTitle);

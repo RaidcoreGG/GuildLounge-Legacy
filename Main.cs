@@ -27,12 +27,16 @@ namespace GuildLounge
         private UserControl ActiveTab;
         private Controls.NavigationButton ActiveTabButton;
 
+        //MAIN PAGES
         private UserControl DashboardTab;
         private UserControl LFGTab;
         private UserControl RaidsTab;
         private UserControl GuidesTab;
         private UserControl APIKeysTab;
         private UserControl SettingsTab;
+
+        //TOOL PAGES
+        public UserControl DailiesTab;
 
         //API STUFF
         private static readonly ApiHandler _api = new ApiHandler();
@@ -50,7 +54,7 @@ namespace GuildLounge
             panelOverview.VerticalScroll.Visible = false;
             panelOverview.AutoScroll = true;
 
-            //INITIALIZING TABS
+            //INITIALIZING MAIN PAGES
             DashboardTab = new TabPages.Dashboard();
             LFGTab = new TabPages.LFG();
             RaidsTab = new TabPages.Raids();
@@ -58,7 +62,10 @@ namespace GuildLounge
             APIKeysTab = new TabPages.APIKeys();
             SettingsTab = new TabPages.Settings();
 
-            //HIDING TABS
+            //INITIALIZING TOOL PAGES
+            DailiesTab = new TabPages.Tools.Dailies();
+
+            //HIDING MAIN PAGES
             DashboardTab.Visible
                 = LFGTab.Visible
                 = RaidsTab.Visible
@@ -67,7 +74,10 @@ namespace GuildLounge
                 = SettingsTab.Visible
                 = false;
 
-            //FIXING TAB LOCATION
+            //HIDING TOOL PAGES
+            DailiesTab.Visible = false;
+
+            //FIXING MAIN PAGES LOCATION
             DashboardTab.Location
                 = LFGTab.Location
                 = RaidsTab.Location
@@ -76,7 +86,10 @@ namespace GuildLounge
                 = SettingsTab.Location
                 = new Point(0, 104);
 
-            //ADDING TABS TO CONTROLS OF MAIN FORM
+            //FIXING MAIN PAGES LOCATION
+            DailiesTab.Location = new Point(0, 104);
+
+            //ADDING MAIN TABS TO CONTROLS OF MAIN FORM
             Controls.AddRange(new UserControl[]
             {
                 DashboardTab,
@@ -85,6 +98,12 @@ namespace GuildLounge
                 GuidesTab,
                 APIKeysTab,
                 SettingsTab
+            });
+
+            //ADDING TOOL TABS TO CONTROLS OF MAIN FORM
+            Controls.AddRange(new UserControl[]
+            {
+                DailiesTab
             });
 
             //SETTING DASHBOARD AS STARTUP TAB
@@ -115,7 +134,7 @@ namespace GuildLounge
         }
 
         #region navigation
-        private void SetActiveTab(UserControl tab, object button)
+        public void SetActiveTab(UserControl tab, object button)
         {
             if(ActiveTab != null)
             {

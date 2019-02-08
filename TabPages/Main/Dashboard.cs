@@ -90,5 +90,18 @@ namespace GuildLounge.TabPages
             System.Diagnostics.Process.Start("https://forum.guildwars2.com");
         }
         #endregion
+
+        #region tools
+        private void linkLabelDailies_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var obj = (Main)Parent;
+            obj.SetActiveTab(obj.DailiesTab, sender);
+        }
+        #endregion
+
+        private void linkLabelItemSearch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
