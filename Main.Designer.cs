@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelNavigation = new System.Windows.Forms.Panel();
+            this.buttonSettings = new GuildLounge.Controls.NavigationButton();
             this.gL_HorizontalLine1 = new GuildLounge.Controls.HorizontalLine();
             this.buttonGuides = new GuildLounge.Controls.NavigationButton();
             this.buttonRaids = new GuildLounge.Controls.NavigationButton();
@@ -48,7 +49,6 @@
             this.panelAccount = new System.Windows.Forms.Panel();
             this.buttonRefresh = new GuildLounge.Controls.Button();
             this.labelAPIError = new System.Windows.Forms.Label();
-            this.linkLabelSettings = new System.Windows.Forms.LinkLabel();
             this.comboBoxAccount = new System.Windows.Forms.ComboBox();
             this.linkLabelAPIKeys = new System.Windows.Forms.LinkLabel();
             this.panelLaunch = new System.Windows.Forms.Panel();
@@ -64,6 +64,7 @@
             // panelNavigation
             // 
             this.panelNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.panelNavigation.Controls.Add(this.buttonSettings);
             this.panelNavigation.Controls.Add(this.gL_HorizontalLine1);
             this.panelNavigation.Controls.Add(this.buttonGuides);
             this.panelNavigation.Controls.Add(this.buttonRaids);
@@ -73,6 +74,25 @@
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(740, 80);
             this.panelNavigation.TabIndex = 0;
+            // 
+            // buttonSettings
+            // 
+            this.buttonSettings.Active = false;
+            this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.BackgroundImage = global::GuildLounge.Properties.Resources.ui_settings;
+            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonSettings.FlatAppearance.BorderSize = 0;
+            this.buttonSettings.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSettings.ForeColor = System.Drawing.Color.Gray;
+            this.buttonSettings.Location = new System.Drawing.Point(660, 19);
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(40, 40);
+            this.buttonSettings.TabIndex = 6;
+            this.buttonSettings.UseVisualStyleBackColor = false;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // gL_HorizontalLine1
             // 
@@ -95,7 +115,7 @@
             this.buttonGuides.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuides.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonGuides.ForeColor = System.Drawing.Color.Gray;
-            this.buttonGuides.Location = new System.Drawing.Point(560, 19);
+            this.buttonGuides.Location = new System.Drawing.Point(510, 19);
             this.buttonGuides.Name = "buttonGuides";
             this.buttonGuides.Size = new System.Drawing.Size(110, 40);
             this.buttonGuides.TabIndex = 4;
@@ -114,7 +134,7 @@
             this.buttonRaids.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRaids.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonRaids.ForeColor = System.Drawing.Color.Gray;
-            this.buttonRaids.Location = new System.Drawing.Point(405, 19);
+            this.buttonRaids.Location = new System.Drawing.Point(360, 19);
             this.buttonRaids.Name = "buttonRaids";
             this.buttonRaids.Size = new System.Drawing.Size(110, 40);
             this.buttonRaids.TabIndex = 3;
@@ -134,7 +154,7 @@
             this.buttonLFG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLFG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonLFG.ForeColor = System.Drawing.Color.Gray;
-            this.buttonLFG.Location = new System.Drawing.Point(250, 19);
+            this.buttonLFG.Location = new System.Drawing.Point(210, 19);
             this.buttonLFG.Name = "buttonLFG";
             this.buttonLFG.Size = new System.Drawing.Size(110, 40);
             this.buttonLFG.TabIndex = 2;
@@ -283,7 +303,6 @@
             this.panelAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.panelAccount.Controls.Add(this.buttonRefresh);
             this.panelAccount.Controls.Add(this.labelAPIError);
-            this.panelAccount.Controls.Add(this.linkLabelSettings);
             this.panelAccount.Controls.Add(this.comboBoxAccount);
             this.panelAccount.Controls.Add(this.linkLabelAPIKeys);
             this.panelAccount.Location = new System.Drawing.Point(740, 24);
@@ -319,20 +338,6 @@
             this.labelAPIError.TabIndex = 21;
             this.labelAPIError.Text = "[API ERROR]";
             this.labelAPIError.Visible = false;
-            // 
-            // linkLabelSettings
-            // 
-            this.linkLabelSettings.ActiveLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabelSettings.AutoSize = true;
-            this.linkLabelSettings.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelSettings.Location = new System.Drawing.Point(163, 62);
-            this.linkLabelSettings.Name = "linkLabelSettings";
-            this.linkLabelSettings.Size = new System.Drawing.Size(45, 13);
-            this.linkLabelSettings.TabIndex = 20;
-            this.linkLabelSettings.TabStop = true;
-            this.linkLabelSettings.Text = "Settings";
-            this.linkLabelSettings.VisitedLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabelSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSettings_LinkClicked);
             // 
             // comboBoxAccount
             // 
@@ -444,7 +449,6 @@
         private System.Windows.Forms.Panel panelAccount;
         private GuildLounge.Controls.Button buttonRefresh;
         private System.Windows.Forms.Label labelAPIError;
-        private System.Windows.Forms.LinkLabel linkLabelSettings;
         private System.Windows.Forms.ComboBox comboBoxAccount;
         private System.Windows.Forms.LinkLabel linkLabelAPIKeys;
         private System.Windows.Forms.Panel panelLaunch;
@@ -456,6 +460,7 @@
         private Modules.PvP modulePvP;
         private Modules.TPPickup moduleTPPickup;
         private Modules.BaseCurrencies moduleBaseCurrencies;
+        private Controls.NavigationButton buttonSettings;
     }
 }
 

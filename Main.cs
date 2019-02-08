@@ -42,12 +42,26 @@ namespace GuildLounge
         private static readonly ApiHandler _api = new ApiHandler();
         public ApiEntry[] APIEntries { get; set; }
         private ApiEntry ActiveAPIEntry { get; set; }
+
+        //MISC
+        private PictureBox LoadingIcon { get; set; }
         #endregion
 
 
         public Main()
         {
             InitializeComponent();
+
+            //INITIALIZE LOADING ICON
+            LoadingIcon = new PictureBox()
+            {
+                Location = buttonRefresh.Location,
+                Size = buttonRefresh.Size,
+                Image = Properties.Resources.ui_refresh_ani,
+                Visible = false
+            };
+
+            panelAccount.Controls.Add(LoadingIcon);
 
             //DISABLE HORIZONTAL SCROLL FOR MODULES PANEL
             panelOverview.HorizontalScroll.Maximum = 0;
@@ -191,7 +205,7 @@ namespace GuildLounge
             SetActiveTab(APIKeysTab, sender);
         }
 
-        private void linkLabelSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void buttonSettings_Click(object sender, EventArgs e)
         {
             SetActiveTab(SettingsTab, sender);
         }
@@ -234,6 +248,8 @@ namespace GuildLounge
         {
             comboBoxAccount.Enabled = false;
             buttonRefresh.Enabled = false;
+            buttonRefresh.Visible = false;
+            LoadingIcon.Visible = true;
 
             try
             {
@@ -291,6 +307,8 @@ namespace GuildLounge
                 {
                     comboBoxAccount.Enabled = true;
                     buttonRefresh.Enabled = true;
+                    buttonRefresh.Visible = true;
+                    LoadingIcon.Visible = false;
                 }
             }
         }
