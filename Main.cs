@@ -47,6 +47,12 @@ namespace GuildLounge
         private PictureBox LoadingIcon { get; set; }
         #endregion
 
+        protected void OnMouseWheelModules(object sender, MouseEventArgs e)
+        {
+            scrollbarModules.OnMouseWheel(sender, e);
+            panelModulesInner.AutoScrollPosition = new Point(0, scrollbarModules.Value);
+            //panelOverview.Invalidate();
+        }
 
         public Main()
         {
@@ -64,9 +70,15 @@ namespace GuildLounge
             panelAccount.Controls.Add(LoadingIcon);
 
             //DISABLE HORIZONTAL SCROLL FOR MODULES PANEL
-            panelOverview.HorizontalScroll.Maximum = 0;
-            panelOverview.VerticalScroll.Visible = false;
-            panelOverview.AutoScroll = true;
+            panelModulesOuter.HorizontalScroll.Maximum = panelModulesInner.HorizontalScroll.Maximum = 0;
+            panelModulesOuter.HorizontalScroll.Visible = panelModulesInner.HorizontalScroll.Visible = false;
+            panelModulesOuter.VerticalScroll.Maximum = panelModulesInner.VerticalScroll.Maximum = 0;
+            panelModulesOuter.VerticalScroll.Visible = panelModulesInner.VerticalScroll.Visible = false;
+            panelModulesOuter.AutoScroll = panelModulesInner.AutoScroll = true;
+
+            scrollbarModules.Recalculate(342, 582);
+            panelModulesOuter.MouseWheel += new MouseEventHandler(OnMouseWheelModules);
+            panelModulesInner.MouseWheel += new MouseEventHandler(OnMouseWheelModules);
 
             //INITIALIZING MAIN PAGES
             DashboardTab = new TabPages.Dashboard();

@@ -30,32 +30,35 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelNavigation = new System.Windows.Forms.Panel();
+            this.buttonSettings = new GuildLounge.Controls.NavigationButton();
             this.gL_HorizontalLine1 = new GuildLounge.Controls.HorizontalLine();
             this.buttonGuides = new GuildLounge.Controls.NavigationButton();
             this.buttonRaids = new GuildLounge.Controls.NavigationButton();
             this.buttonLFG = new GuildLounge.Controls.NavigationButton();
-            this.panelOverview = new System.Windows.Forms.Panel();
+            this.buttonDashboard = new GuildLounge.Controls.NavigationButton();
+            this.panelModulesOuter = new System.Windows.Forms.Panel();
+            this.panelModulesInner = new System.Windows.Forms.Panel();
             this.moduleTPPickup = new GuildLounge.Modules.TPPickup();
             this.moduleBaseCurrencies = new GuildLounge.Modules.BaseCurrencies();
             this.modulePvP = new GuildLounge.Modules.PvP();
             this.moduleWvW = new GuildLounge.Modules.WvW();
             this.moduleFractals = new GuildLounge.Modules.Fractals();
             this.moduleRaids = new GuildLounge.Modules.Raids();
+            this.scrollbarModules = new GuildLounge.Controls.Scrollbar();
             this.menuStrip = new GuildLounge.Controls.MenuStrip();
+            this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAccount = new System.Windows.Forms.Panel();
+            this.buttonRefresh = new GuildLounge.Controls.Button();
             this.labelAPIError = new System.Windows.Forms.Label();
             this.comboBoxAccount = new System.Windows.Forms.ComboBox();
             this.linkLabelAPIKeys = new System.Windows.Forms.LinkLabel();
             this.panelLaunch = new System.Windows.Forms.Panel();
             this.labelLaunchError = new System.Windows.Forms.Label();
             this.buttonLaunch = new GuildLounge.Controls.HighlightButton();
-            this.buttonRefresh = new GuildLounge.Controls.Button();
-            this.buttonSettings = new GuildLounge.Controls.NavigationButton();
-            this.buttonDashboard = new GuildLounge.Controls.NavigationButton();
-            this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
             this.panelNavigation.SuspendLayout();
-            this.panelOverview.SuspendLayout();
+            this.panelModulesOuter.SuspendLayout();
+            this.panelModulesInner.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.panelAccount.SuspendLayout();
             this.panelLaunch.SuspendLayout();
@@ -74,6 +77,25 @@
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(740, 80);
             this.panelNavigation.TabIndex = 0;
+            // 
+            // buttonSettings
+            // 
+            this.buttonSettings.Active = false;
+            this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.BackgroundImage = global::GuildLounge.Properties.Resources.ui_settings;
+            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonSettings.FlatAppearance.BorderSize = 0;
+            this.buttonSettings.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSettings.ForeColor = System.Drawing.Color.Gray;
+            this.buttonSettings.Location = new System.Drawing.Point(660, 19);
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(40, 40);
+            this.buttonSettings.TabIndex = 6;
+            this.buttonSettings.UseVisualStyleBackColor = false;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // gL_HorizontalLine1
             // 
@@ -143,19 +165,48 @@
             this.buttonLFG.UseVisualStyleBackColor = false;
             this.buttonLFG.Click += new System.EventHandler(this.buttonLFG_Click);
             // 
-            // panelOverview
+            // buttonDashboard
             // 
-            this.panelOverview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.panelOverview.Controls.Add(this.moduleTPPickup);
-            this.panelOverview.Controls.Add(this.moduleBaseCurrencies);
-            this.panelOverview.Controls.Add(this.modulePvP);
-            this.panelOverview.Controls.Add(this.moduleWvW);
-            this.panelOverview.Controls.Add(this.moduleFractals);
-            this.panelOverview.Controls.Add(this.moduleRaids);
-            this.panelOverview.Location = new System.Drawing.Point(740, 104);
-            this.panelOverview.Name = "panelOverview";
-            this.panelOverview.Size = new System.Drawing.Size(220, 366);
-            this.panelOverview.TabIndex = 0;
+            this.buttonDashboard.Active = false;
+            this.buttonDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDashboard.BackgroundImage")));
+            this.buttonDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonDashboard.FlatAppearance.BorderSize = 0;
+            this.buttonDashboard.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDashboard.ForeColor = System.Drawing.Color.Gray;
+            this.buttonDashboard.Location = new System.Drawing.Point(10, 10);
+            this.buttonDashboard.Name = "buttonDashboard";
+            this.buttonDashboard.Size = new System.Drawing.Size(150, 60);
+            this.buttonDashboard.TabIndex = 1;
+            this.buttonDashboard.UseVisualStyleBackColor = false;
+            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
+            // 
+            // panelModulesOuter
+            // 
+            this.panelModulesOuter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panelModulesOuter.Controls.Add(this.panelModulesInner);
+            this.panelModulesOuter.Controls.Add(this.scrollbarModules);
+            this.panelModulesOuter.Location = new System.Drawing.Point(740, 104);
+            this.panelModulesOuter.Name = "panelModulesOuter";
+            this.panelModulesOuter.Size = new System.Drawing.Size(220, 366);
+            this.panelModulesOuter.TabIndex = 0;
+            // 
+            // panelModulesInner
+            // 
+            this.panelModulesInner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panelModulesInner.Controls.Add(this.moduleTPPickup);
+            this.panelModulesInner.Controls.Add(this.moduleBaseCurrencies);
+            this.panelModulesInner.Controls.Add(this.modulePvP);
+            this.panelModulesInner.Controls.Add(this.moduleWvW);
+            this.panelModulesInner.Controls.Add(this.moduleFractals);
+            this.panelModulesInner.Controls.Add(this.moduleRaids);
+            this.panelModulesInner.Location = new System.Drawing.Point(12, 12);
+            this.panelModulesInner.Name = "panelModulesInner";
+            this.panelModulesInner.Size = new System.Drawing.Size(196, 342);
+            this.panelModulesInner.TabIndex = 30;
             // 
             // moduleTPPickup
             // 
@@ -163,10 +214,10 @@
             this.moduleTPPickup.Coins = 0;
             this.moduleTPPickup.ForeColor = System.Drawing.Color.White;
             this.moduleTPPickup.Items = 0;
-            this.moduleTPPickup.Location = new System.Drawing.Point(12, 488);
+            this.moduleTPPickup.Location = new System.Drawing.Point(0, 476);
             this.moduleTPPickup.Name = "moduleTPPickup";
             this.moduleTPPickup.Size = new System.Drawing.Size(196, 94);
-            this.moduleTPPickup.TabIndex = 28;
+            this.moduleTPPickup.TabIndex = 34;
             // 
             // moduleBaseCurrencies
             // 
@@ -176,10 +227,10 @@
             this.moduleBaseCurrencies.Gems = 0;
             this.moduleBaseCurrencies.Karma = 0;
             this.moduleBaseCurrencies.Laurels = 0;
-            this.moduleBaseCurrencies.Location = new System.Drawing.Point(12, 352);
+            this.moduleBaseCurrencies.Location = new System.Drawing.Point(0, 340);
             this.moduleBaseCurrencies.Name = "moduleBaseCurrencies";
             this.moduleBaseCurrencies.Size = new System.Drawing.Size(196, 124);
-            this.moduleBaseCurrencies.TabIndex = 3;
+            this.moduleBaseCurrencies.TabIndex = 29;
             // 
             // modulePvP
             // 
@@ -187,32 +238,32 @@
             this.modulePvP.BackColor = System.Drawing.Color.Transparent;
             this.modulePvP.ForeColor = System.Drawing.Color.White;
             this.modulePvP.LeagueTicket = 0;
-            this.modulePvP.Location = new System.Drawing.Point(12, 274);
+            this.modulePvP.Location = new System.Drawing.Point(0, 262);
             this.modulePvP.Name = "modulePvP";
             this.modulePvP.Size = new System.Drawing.Size(196, 66);
-            this.modulePvP.TabIndex = 27;
+            this.modulePvP.TabIndex = 33;
             // 
             // moduleWvW
             // 
             this.moduleWvW.BackColor = System.Drawing.Color.Transparent;
             this.moduleWvW.BadgesOfHonor = 0;
             this.moduleWvW.ForeColor = System.Drawing.Color.White;
-            this.moduleWvW.Location = new System.Drawing.Point(12, 196);
+            this.moduleWvW.Location = new System.Drawing.Point(0, 184);
             this.moduleWvW.Name = "moduleWvW";
             this.moduleWvW.Size = new System.Drawing.Size(196, 66);
             this.moduleWvW.SkirmishTickets = 0;
-            this.moduleWvW.TabIndex = 26;
+            this.moduleWvW.TabIndex = 32;
             // 
             // moduleFractals
             // 
             this.moduleFractals.BackColor = System.Drawing.Color.Transparent;
             this.moduleFractals.ForeColor = System.Drawing.Color.White;
             this.moduleFractals.FractalRelics = 0;
-            this.moduleFractals.Location = new System.Drawing.Point(12, 118);
+            this.moduleFractals.Location = new System.Drawing.Point(0, 106);
             this.moduleFractals.Name = "moduleFractals";
             this.moduleFractals.PristineFractalRelics = 0;
             this.moduleFractals.Size = new System.Drawing.Size(196, 66);
-            this.moduleFractals.TabIndex = 25;
+            this.moduleFractals.TabIndex = 31;
             // 
             // moduleRaids
             // 
@@ -223,11 +274,21 @@
             this.moduleRaids.LegendaryDivinations = 0;
             this.moduleRaids.LegendaryInsights = 0;
             this.moduleRaids.LIDetail = null;
-            this.moduleRaids.Location = new System.Drawing.Point(12, 12);
+            this.moduleRaids.Location = new System.Drawing.Point(0, 0);
             this.moduleRaids.MagnetiteShards = 0;
             this.moduleRaids.Name = "moduleRaids";
             this.moduleRaids.Size = new System.Drawing.Size(196, 94);
-            this.moduleRaids.TabIndex = 24;
+            this.moduleRaids.TabIndex = 30;
+            // 
+            // scrollbarModules
+            // 
+            this.scrollbarModules.AutoScroll = true;
+            this.scrollbarModules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.scrollbarModules.Location = new System.Drawing.Point(212, 0);
+            this.scrollbarModules.Name = "scrollbarModules";
+            this.scrollbarModules.Size = new System.Drawing.Size(8, 366);
+            this.scrollbarModules.TabIndex = 29;
+            this.scrollbarModules.Value = 0;
             // 
             // menuStrip
             // 
@@ -242,6 +303,24 @@
             this.menuStrip.TabIndex = 0;
             this.menuStrip.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip_MouseDown);
             // 
+            // toolStripMenuItemClose
+            // 
+            this.toolStripMenuItemClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripMenuItemClose.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemClose.Image")));
+            this.toolStripMenuItemClose.Name = "toolStripMenuItemClose";
+            this.toolStripMenuItemClose.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItemClose.Text = "X";
+            this.toolStripMenuItemClose.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
+            // 
+            // toolStripMenuItemMinimize
+            // 
+            this.toolStripMenuItemMinimize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripMenuItemMinimize.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemMinimize.Image")));
+            this.toolStripMenuItemMinimize.Name = "toolStripMenuItemMinimize";
+            this.toolStripMenuItemMinimize.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItemMinimize.Text = "_";
+            this.toolStripMenuItemMinimize.Click += new System.EventHandler(this.toolStripMenuItemMinimize_Click);
+            // 
             // panelAccount
             // 
             this.panelAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -253,6 +332,25 @@
             this.panelAccount.Name = "panelAccount";
             this.panelAccount.Size = new System.Drawing.Size(220, 80);
             this.panelAccount.TabIndex = 1;
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRefresh.FlatAppearance.BorderSize = 0;
+            this.buttonRefresh.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRefresh.ForeColor = System.Drawing.Color.Gray;
+            this.buttonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("buttonRefresh.Image")));
+            this.buttonRefresh.Location = new System.Drawing.Point(176, 24);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(32, 32);
+            this.buttonRefresh.TabIndex = 22;
+            this.buttonRefresh.TabStop = false;
+            this.buttonRefresh.UseVisualStyleBackColor = false;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // labelAPIError
             // 
@@ -329,81 +427,6 @@
             this.buttonLaunch.UseVisualStyleBackColor = false;
             this.buttonLaunch.Click += new System.EventHandler(this.buttonLaunch_Click);
             // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonRefresh.FlatAppearance.BorderSize = 0;
-            this.buttonRefresh.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefresh.ForeColor = System.Drawing.Color.Gray;
-            this.buttonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("buttonRefresh.Image")));
-            this.buttonRefresh.Location = new System.Drawing.Point(176, 24);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(32, 32);
-            this.buttonRefresh.TabIndex = 22;
-            this.buttonRefresh.TabStop = false;
-            this.buttonRefresh.UseVisualStyleBackColor = false;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
-            // 
-            // buttonSettings
-            // 
-            this.buttonSettings.Active = false;
-            this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.BackgroundImage = global::GuildLounge.Properties.Resources.ui_settings;
-            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonSettings.FlatAppearance.BorderSize = 0;
-            this.buttonSettings.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSettings.ForeColor = System.Drawing.Color.Gray;
-            this.buttonSettings.Location = new System.Drawing.Point(660, 19);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(40, 40);
-            this.buttonSettings.TabIndex = 6;
-            this.buttonSettings.UseVisualStyleBackColor = false;
-            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
-            // 
-            // buttonDashboard
-            // 
-            this.buttonDashboard.Active = false;
-            this.buttonDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDashboard.BackgroundImage")));
-            this.buttonDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonDashboard.FlatAppearance.BorderSize = 0;
-            this.buttonDashboard.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDashboard.ForeColor = System.Drawing.Color.Gray;
-            this.buttonDashboard.Location = new System.Drawing.Point(10, 10);
-            this.buttonDashboard.Name = "buttonDashboard";
-            this.buttonDashboard.Size = new System.Drawing.Size(150, 60);
-            this.buttonDashboard.TabIndex = 1;
-            this.buttonDashboard.UseVisualStyleBackColor = false;
-            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
-            // 
-            // toolStripMenuItemClose
-            // 
-            this.toolStripMenuItemClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripMenuItemClose.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemClose.Image")));
-            this.toolStripMenuItemClose.Name = "toolStripMenuItemClose";
-            this.toolStripMenuItemClose.Size = new System.Drawing.Size(28, 20);
-            this.toolStripMenuItemClose.Text = "X";
-            this.toolStripMenuItemClose.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
-            // 
-            // toolStripMenuItemMinimize
-            // 
-            this.toolStripMenuItemMinimize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripMenuItemMinimize.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemMinimize.Image")));
-            this.toolStripMenuItemMinimize.Name = "toolStripMenuItemMinimize";
-            this.toolStripMenuItemMinimize.Size = new System.Drawing.Size(28, 20);
-            this.toolStripMenuItemMinimize.Text = "_";
-            this.toolStripMenuItemMinimize.Click += new System.EventHandler(this.toolStripMenuItemMinimize_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,7 +436,7 @@
             this.Controls.Add(this.panelLaunch);
             this.Controls.Add(this.panelAccount);
             this.Controls.Add(this.panelNavigation);
-            this.Controls.Add(this.panelOverview);
+            this.Controls.Add(this.panelModulesOuter);
             this.Controls.Add(this.menuStrip);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -423,7 +446,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Guild Lounge";
             this.panelNavigation.ResumeLayout(false);
-            this.panelOverview.ResumeLayout(false);
+            this.panelModulesOuter.ResumeLayout(false);
+            this.panelModulesInner.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.panelAccount.ResumeLayout(false);
@@ -440,7 +464,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMinimize;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClose;
         private System.Windows.Forms.Panel panelNavigation;
-        private System.Windows.Forms.Panel panelOverview;
+        private System.Windows.Forms.Panel panelModulesOuter;
         private GuildLounge.Controls.NavigationButton buttonGuides;
         private GuildLounge.Controls.NavigationButton buttonRaids;
         private GuildLounge.Controls.NavigationButton buttonLFG;
@@ -454,13 +478,15 @@
         private System.Windows.Forms.Panel panelLaunch;
         private System.Windows.Forms.Label labelLaunchError;
         private GuildLounge.Controls.HighlightButton buttonLaunch;
-        private Modules.Raids moduleRaids;
-        private Modules.Fractals moduleFractals;
-        private Modules.WvW moduleWvW;
-        private Modules.PvP modulePvP;
+        private Controls.NavigationButton buttonSettings;
+        private Controls.Scrollbar scrollbarModules;
+        private System.Windows.Forms.Panel panelModulesInner;
         private Modules.TPPickup moduleTPPickup;
         private Modules.BaseCurrencies moduleBaseCurrencies;
-        private Controls.NavigationButton buttonSettings;
+        private Modules.PvP modulePvP;
+        private Modules.WvW moduleWvW;
+        private Modules.Fractals moduleFractals;
+        private Modules.Raids moduleRaids;
     }
 }
 
