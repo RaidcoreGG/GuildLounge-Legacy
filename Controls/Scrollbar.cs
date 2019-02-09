@@ -14,6 +14,8 @@ namespace GuildLounge.Controls
     {
         public Button Thumb { get; set; }
 
+        private float factor { get; set; }
+
         private int Maximum { get; set; }
         private int Minimum { get; set; }
         public int Value { get; set; }
@@ -48,8 +50,8 @@ namespace GuildLounge.Controls
 
         public void Recalculate(int normalHeight, int overflowedHeight)
         {
-            float prc = (float)normalHeight / (float)overflowedHeight;
-            Thumb.Size = new Size(Width - 2, (int)((normalHeight - 2) * prc));
+            factor = (float)normalHeight / (float)overflowedHeight;
+            Thumb.Size = new Size(Width - 2, (int)((normalHeight - 2) * factor));
 
             Step = (int)(overflowedHeight * 0.1);
 
@@ -84,7 +86,7 @@ namespace GuildLounge.Controls
                 else
                 {
                     Thumb.Top = Maximum;
-                    Value = Maximum+Thumb.Height;
+                    Value = (int)(Maximum/(factor*100)*100);
                 }
             }
         }
