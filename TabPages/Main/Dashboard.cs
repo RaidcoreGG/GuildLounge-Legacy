@@ -13,39 +13,57 @@ namespace GuildLounge.TabPages
 {
     public partial class Dashboard : UserControl
     {
-        NewsObject[] News;
-        int NewsIndex;
+        private NewsObject[] News;
+        private int NewsIndex;
+        private Timer NewsClock;
 
+        public Dashboard()
+        {
+            InitializeComponent();
+            News = new NewsObject[]
+            {
+                new NewsObject { Link = "http://guildlounge.com/about", HeaderImage = Properties.Resources.news_panel1 },
+                new NewsObject { Link = "http://guildlounge.com", HeaderImage = Properties.Resources.news_panel2 },
+                //new NewsObject { Link = "http://guildlounge.com", HeaderImage = Properties.Resources.news_panel3 },
+            };
+
+            NewsIndex = 0;
+            NewsClock = new Timer();
+            NewsClock.Interval = 7000;
+            NewsClock.Tick += NewsClock_Tick;
+            NewsClock.Start();
+        }
+
+        #region news
         class NewsObject
         {
             public string Link { get; set; }
             public Image HeaderImage { get; set; }
         }
 
-        public Dashboard()
+        private void NewsClock_Tick(object sender, EventArgs e)
         {
-            InitializeComponent();
-            News = new NewsObject[3];
-            News[0] = new NewsObject { Link = "http://guildlounge.com", HeaderImage = Properties.Resources.news_panel1 };
-            News[1] = new NewsObject { Link = "http://guildlounge.com", HeaderImage = Properties.Resources.news_panel2 };
-            News[2] = new NewsObject { Link = "http://guildlounge.com", HeaderImage = Properties.Resources.news_panel3 };
-            NewsIndex = 0;
+            buttonNewsNext_Click(null, null);
         }
-
+        
         private void buttonNewsPrevious_Click(object sender, EventArgs e)
         {
+            NewsClock.Stop();
             NewsIndex--;
             if (NewsIndex < 0)
                 NewsIndex = News.Length - 1;
             pictureBoxNews.BackgroundImage = News[NewsIndex].HeaderImage;
+            NewsClock.Start();
         }
 
         private void buttonNewsNext_Click(object sender, EventArgs e)
         {
+            NewsClock.Stop();
             NewsIndex++;
             if (NewsIndex > News.Length - 1)
                 NewsIndex = 0;
             pictureBoxNews.BackgroundImage = News[NewsIndex].HeaderImage;
+            NewsClock.Start();
         }
 
         private void pictureBoxNews_Click(object sender, EventArgs e)
@@ -53,6 +71,7 @@ namespace GuildLounge.TabPages
             if(Regex.IsMatch(News[NewsIndex].Link, @"(http(s)?:\/\/)?(www.)?[\w-_\/]"))
                 System.Diagnostics.Process.Start(News[NewsIndex].Link);
         }
+        #endregion
 
         #region links
         private void linkLabelGLReleaseNotes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -98,10 +117,5 @@ namespace GuildLounge.TabPages
             obj.SetActiveTab(obj.DailiesTab, sender);
         }
         #endregion
-
-        private void linkLabelItemSearch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
     }
 }
