@@ -50,6 +50,9 @@ namespace GuildLounge.Controls
 
         public void Recalculate(int normalHeight, int overflowedHeight)
         {
+            if (overflowedHeight < normalHeight)
+                overflowedHeight = normalHeight;
+
             factor = (float)normalHeight / (float)overflowedHeight;
             Thumb.Size = new Size(Width - 2, (int)((normalHeight - 2) * factor));
 

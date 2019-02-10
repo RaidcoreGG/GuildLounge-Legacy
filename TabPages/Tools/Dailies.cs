@@ -91,11 +91,11 @@ namespace GuildLounge.TabPages.Tools
 
         private void AssignDailies(GuildLounge.Dailies dailies)
         {
-            Point col1 = new Point(70, 70);
-            Point col2 = new Point(274, 70);
-            Point col3 = new Point(478, 70);
+            Point col1 = new Point(70, 30);
+            Point col2 = new Point(274, 30);
+            Point col3 = new Point(478, 30);
 
-            Control[] dailyModules = new Control[22];
+            Control[] dailyModules = new Control[24];
             int i = 0;
             foreach (Achievement a in dailies.pve)
             {
@@ -121,6 +121,8 @@ namespace GuildLounge.TabPages.Tools
                 col3.Y += 38;
                 i++;
             }
+
+            labelInfo.Location = new Point(labelInfo.Location.X, col1.Y + 6);
 
             Controls.AddRange(dailyModules);
         }
