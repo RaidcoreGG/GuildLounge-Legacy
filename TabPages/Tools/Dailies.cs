@@ -122,7 +122,10 @@ namespace GuildLounge.TabPages.Tools
                 i++;
             }
 
-            labelInfo.Location = new Point(labelInfo.Location.X, col1.Y + 6);
+            if (col1.Y < col2.Y)
+                labelInfo.Location = new Point(labelInfo.Location.X, col2.Y + 6);
+            else
+                labelInfo.Location = new Point(labelInfo.Location.X, col1.Y + 6);
 
             Controls.AddRange(dailyModules);
         }
