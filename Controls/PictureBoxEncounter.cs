@@ -6,11 +6,12 @@ namespace GuildLounge.Controls
 {
     public partial class PictureBoxEncounter : PictureBox
     {
-        public int BorderSize { get; set; }
-        public Color BorderColor { get; set; }
+        private int BorderSize { get; set; }
+        private Color BorderColor { get; set; }
+        public string EncounterName { get; set; }
         public bool EncounterFinished { get; set; }
         private bool m_bHasCM { get; set; }
-        public bool HasCM
+        public bool CM
         {
             get
             {
@@ -26,7 +27,7 @@ namespace GuildLounge.Controls
             }
         }
         private bool m_bDoneCM { get; set; }
-        public bool DoneCM
+        public bool CMdone
         {
             get
             {
@@ -82,10 +83,7 @@ namespace GuildLounge.Controls
         protected override void OnMouseEnter(EventArgs e)
         {
             base.OnMouseEnter(e);
-            string txt = "";
-            if (Name.StartsWith("pictureBox"))
-                txt = Name.Substring(10);
-            ToolTipEncounterName.Show(txt, this, 0, Height);
+            ToolTipEncounterName.Show(EncounterName, this, 0, Height);
         }
 
         protected override void OnMouseLeave(EventArgs e)

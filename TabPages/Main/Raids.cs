@@ -142,23 +142,23 @@ namespace GuildLounge.TabPages
                 RaidCMs APIResponse = await _api.FetchRaidCMs(ActiveAPIEntry.Key);
 
                 //W3
-                pictureBoxKeepConstruct.DoneCM = APIResponse.KeepConstruct;
+                pictureBoxKeepConstruct.CMdone = APIResponse.KeepConstruct;
 
                 //W4
-                pictureBoxCairn.DoneCM = APIResponse.Cairn;
-                pictureBoxMursaatOverseer.DoneCM = APIResponse.MursaatOverseer;
-                pictureBoxSamarog.DoneCM = APIResponse.Samarog;
-                pictureBoxDeimos.DoneCM = APIResponse.Deimos;
+                pictureBoxCairn.CMdone = APIResponse.Cairn;
+                pictureBoxMursaatOverseer.CMdone = APIResponse.MursaatOverseer;
+                pictureBoxSamarog.CMdone = APIResponse.Samarog;
+                pictureBoxDeimos.CMdone = APIResponse.Deimos;
 
                 //W5
-                pictureBoxSoullessHorror.DoneCM = APIResponse.SoullessHorror;
-                pictureBoxStatuesofGrenth.DoneCM = APIResponse.Statues;
-                pictureBoxDhuum.DoneCM = APIResponse.Dhuum;
+                pictureBoxSoullessHorror.CMdone = APIResponse.SoullessHorror;
+                pictureBoxStatuesofGrenth.CMdone = APIResponse.Statues;
+                pictureBoxDhuum.CMdone = APIResponse.Dhuum;
 
                 //W6
-                pictureBoxConjuredAmalgamate.DoneCM = APIResponse.ConjuredAmalgamate;
-                pictureBoxLargosTwins.DoneCM = APIResponse.LargosTwins;
-                pictureBoxQadim.DoneCM = APIResponse.Qadim;
+                pictureBoxConjuredAmalgamate.CMdone = APIResponse.ConjuredAmalgamate;
+                pictureBoxLargosTwins.CMdone = APIResponse.LargosTwins;
+                pictureBoxQadim.CMdone = APIResponse.Qadim;
             /*}
             catch (Exception exc)
             {
