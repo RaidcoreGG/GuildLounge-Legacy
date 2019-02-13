@@ -77,7 +77,7 @@
   <ItemGroup>
     <Compile Include="Classes\Utility.cs" />
     <Compile Include="Classes\AddOnUpdater.cs" />
-    <Compile Include="Classes\ApiEntry.cs" />
+    <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\ApiHandler.cs" />
     <Compile Include="Classes\RequestObjects.cs" />
     <Compile Include="Controls\Button.cs">

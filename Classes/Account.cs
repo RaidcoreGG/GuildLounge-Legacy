@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace GuildLounge
 {
-    public class ApiEntry
+    public class Account
     {
         private string m_sKey;
 

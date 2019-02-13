@@ -40,8 +40,8 @@ namespace GuildLounge
 
         //API STUFF
         private static readonly ApiHandler _api = new ApiHandler();
-        public ApiEntry[] APIEntries { get; set; }
-        private ApiEntry ActiveAPIEntry { get; set; }
+        public Account[] APIEntries { get; set; }
+        private Account ActiveAPIEntry { get; set; }
 
         //MISC
         private PictureBox LoadingIcon { get; set; }
@@ -267,38 +267,38 @@ namespace GuildLounge
             {
                 ModuleData APIResponse = await _api.FetchModuleData(ActiveAPIEntry.Key);
 
-                var w = APIResponse.wallet;
-                var tp = APIResponse.tradingpost;
+                var w = APIResponse.Wallet;
+                var tp = APIResponse.TradingPost;
 
                 //RAIDS
-                moduleRaids.LegendaryInsights = APIResponse.sumLI;
-                moduleRaids.LegendaryDivinations = APIResponse.sumLD;
-                moduleRaids.MagnetiteShards = w.magnetite;
-                moduleRaids.GaetingCrystals = w.gaeting;
+                moduleRaids.LegendaryInsights = APIResponse.TotalLegendaryInsights;
+                moduleRaids.LegendaryDivinations = APIResponse.TotalLegendaryDivinations;
+                moduleRaids.MagnetiteShards = w.MagnetiteShards;
+                moduleRaids.GaetingCrystals = w.GaetingCrystals;
 
                 SetToolTipTexts(APIResponse);
 
                 //FRACTALS
-                moduleFractals.FractalRelics = w.fractalrelic;
-                moduleFractals.PristineFractalRelics = w.pristinefractalrelic;
+                moduleFractals.FractalRelics = w.FractalRelics;
+                moduleFractals.PristineFractalRelics = w.PristineFractalRelics;
 
                 //WVW
-                moduleWvW.BadgesOfHonor = w.badgeofhonor;
-                moduleWvW.SkirmishTickets = w.wvwskirmishticket;
+                moduleWvW.BadgesOfHonor = w.BadgeOfHonor;
+                moduleWvW.SkirmishTickets = w.SkirmishTicket;
 
                 //PVP
-                modulePvP.AscendedShardsOfGlory = w.ascendedshardsofglory;
-                modulePvP.LeagueTicket = w.pvpleagueticket;
+                modulePvP.AscendedShardsOfGlory = w.AscendedShardsOfGlory;
+                modulePvP.LeagueTicket = w.LeagueTicket;
 
                 //COINS
-                moduleBaseCurrencies.Coins = w.coins;
-                moduleBaseCurrencies.Karma = w.karma;
-                moduleBaseCurrencies.Laurels = w.laurels;
-                moduleBaseCurrencies.Gems = w.gems;
+                moduleBaseCurrencies.Coins = w.Coins;
+                moduleBaseCurrencies.Karma = w.Karma;
+                moduleBaseCurrencies.Laurels = w.Laurels;
+                moduleBaseCurrencies.Gems = w.Gems;
 
                 //TP PICKUP
-                moduleTPPickup.Coins = tp.coins;
-                moduleTPPickup.Items = tp.items.Length;
+                moduleTPPickup.Coins = tp.Coins;
+                moduleTPPickup.Items = tp.Items.Length;
                 
             }
             catch (Exception exc)
@@ -328,21 +328,21 @@ namespace GuildLounge
         private void SetToolTipTexts(ModuleData APIResponse)
         {
             string detailedInfo = "";
-            if (APIResponse.materialLI > 0)
-                detailedInfo += "On hand: " + APIResponse.materialLI + "\n";
-            if (APIResponse.legendary_armor > 0)
-                detailedInfo += "In Legendary Armor: " + APIResponse.legendary_armor + "\n";
-            if (APIResponse.refined_armor > 0)
-                detailedInfo += "In Refined Armor: " + APIResponse.refined_armor + "\n";
-            if (APIResponse.gift_of_prowess > 0)
-                detailedInfo += "In Gifts of Prowess: " + APIResponse.gift_of_prowess + "\n";
-            if (APIResponse.envoy_insignia > 0)
-                detailedInfo += "In Envoy Insignias: " + APIResponse.envoy_insignia + "\n";
+            if (APIResponse.OnHandLI > 0)
+                detailedInfo += "On hand: " + APIResponse.OnHandLI + "\n";
+            if (APIResponse.LegendaryArmor > 0)
+                detailedInfo += "In Legendary Armor: " + APIResponse.LegendaryArmor + "\n";
+            if (APIResponse.RefinedArmor > 0)
+                detailedInfo += "In Refined Armor: " + APIResponse.RefinedArmor + "\n";
+            if (APIResponse.GiftOfProwess > 0)
+                detailedInfo += "In Gifts of Prowess: " + APIResponse.GiftOfProwess + "\n";
+            if (APIResponse.EnvoyInsignia > 0)
+                detailedInfo += "In Envoy Insignias: " + APIResponse.EnvoyInsignia + "\n";
             moduleRaids.LIDetail = detailedInfo;
 
             detailedInfo = "";
-            if (APIResponse.materialLD > 0)
-                detailedInfo += "On hand: " + APIResponse.materialLD + "\n";
+            if (APIResponse.OnHandLD > 0)
+                detailedInfo += "On hand: " + APIResponse.OnHandLD + "\n";
             moduleRaids.LDDetail = detailedInfo;
         }
 

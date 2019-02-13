@@ -9,7 +9,7 @@ namespace GuildLounge.TabPages
     public partial class APIKeys : UserControl
     {
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
-        public ApiEntry[] APIEntries { get; set; }
+        public Account[] APIEntries { get; set; }
 
         public APIKeys()
         {
@@ -28,7 +28,7 @@ namespace GuildLounge.TabPages
         public void LoadAPIKeys()
         {
             //READ API KEYS FROM FILE AND ADD THEM TO THE LISTBOX
-            APIEntries = new JavaScriptSerializer().Deserialize<List<ApiEntry>>(File.ReadAllText(Path.Combine(_appdata, "api_keys.json"))).ToArray();
+            APIEntries = new JavaScriptSerializer().Deserialize<List<Account>>(File.ReadAllText(Path.Combine(_appdata, "api_keys.json"))).ToArray();
             listBoxAPIKeys.Items.AddRange(APIEntries);
         }
 
@@ -37,9 +37,9 @@ namespace GuildLounge.TabPages
             if (listBoxAPIKeys.Items.Count > 0)
             {
                 //REINITIALIZE ARRAY WITH EDITED/UPDATED VALUES FROM THE LISTBOX
-                APIEntries = new ApiEntry[listBoxAPIKeys.Items.Count];
+                APIEntries = new Account[listBoxAPIKeys.Items.Count];
                 for (int i = 0; i < listBoxAPIKeys.Items.Count; i++)
-                    APIEntries[i] = (ApiEntry)listBoxAPIKeys.Items[i];
+                    APIEntries[i] = (Account)listBoxAPIKeys.Items[i];
 
                 //PARSE TO JSON AND WRITE TO FILE
                 string parsedKeys = new JavaScriptSerializer().Serialize(APIEntries);
@@ -72,7 +72,7 @@ namespace GuildLounge.TabPages
         {
             try
             {
-                listBoxAPIKeys.Items.Add(new ApiEntry { Name = textBoxKeyName.Text, Key = textBoxKey.Text });
+                listBoxAPIKeys.Items.Add(new Account { Name = textBoxKeyName.Text, Key = textBoxKey.Text });
                 textBoxKeyName.Clear();
                 textBoxKey.Clear();
                 SaveAPIKeys();
@@ -88,7 +88,7 @@ namespace GuildLounge.TabPages
         {
             if (listBoxAPIKeys.SelectedIndex >= 0)
             {
-                var obj = (ApiEntry)listBoxAPIKeys.Items[listBoxAPIKeys.SelectedIndex];
+                var obj = (Account)listBoxAPIKeys.Items[listBoxAPIKeys.SelectedIndex];
                 textBoxKeyName.Text = obj.Name;
                 textBoxKey.Text = obj.Key;
                 listBoxAPIKeys.Items.Remove(obj);

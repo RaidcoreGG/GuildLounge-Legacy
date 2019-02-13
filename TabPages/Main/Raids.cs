@@ -8,8 +8,8 @@ namespace GuildLounge.TabPages
     public partial class Raids : UserControl
     {
         private static readonly ApiHandler _api = new ApiHandler();
-        private ApiEntry m_oActiveKey;
-        public ApiEntry ActiveAPIEntry
+        private Account m_oActiveKey;
+        public Account ActiveAPIEntry
         {
             get { return m_oActiveKey; }
             set

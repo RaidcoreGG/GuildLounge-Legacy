@@ -29,38 +29,38 @@ namespace GuildLounge
             
             foreach (Achievement a in achievements)
             {
-                switch (a.id)
+                switch (a.Id)
                 {
                     case 3019:
-                        resp.KeepConstruct = a.done;
+                        resp.KeepConstruct = a.Done;
                         break;
                     case 3392:
-                        if (a.bits.Contains(0))
+                        if (a.Bits.Contains(0))
                             resp.Cairn = true;
-                        if (a.bits.Contains(1))
+                        if (a.Bits.Contains(1))
                             resp.MursaatOverseer = true;
-                        if (a.bits.Contains(2))
+                        if (a.Bits.Contains(2))
                             resp.Samarog = true;
-                        if (a.bits.Contains(3))
+                        if (a.Bits.Contains(3))
                             resp.Deimos = true;
                         break;
                     case 3993:
-                        resp.SoullessHorror = a.done;
+                        resp.SoullessHorror = a.Done;
                         break;
                     case 4037:
-                        resp.Statues = a.done;
+                        resp.Statues = a.Done;
                         break;
                     case 3979:
-                        resp.Dhuum = a.done;
+                        resp.Dhuum = a.Done;
                         break;
                     case 4416:
-                        resp.ConjuredAmalgamate = a.done;
+                        resp.ConjuredAmalgamate = a.Done;
                         break;
                     case 4429:
-                        resp.LargosTwins = a.done;
+                        resp.LargosTwins = a.Done;
                         break;
                     case 4355:
-                        resp.Qadim = a.done;
+                        resp.Qadim = a.Done;
                         break;
                 }
             }
@@ -74,8 +74,8 @@ namespace GuildLounge
             DateTime dt = DateTime.Now;
 
             m_oModuleData = new ModuleData();
-            m_oModuleData.wallet = new Wallet();
-            m_oModuleData.tradingpost = new TradingPost();
+            m_oModuleData.Wallet = new Wallet();
+            m_oModuleData.TradingPost = new TradingPost();
 
             await ProcessWallet(accessToken);
             await ProcessTradingPost(accessToken);
@@ -84,12 +84,12 @@ namespace GuildLounge
             await ProcessVault(accessToken);
 
             //CORRECT LI DUE TO DISCOUNT FOR FIRST SET
-            if (m_oModuleData.legendary_armor >= 300)
-                m_oModuleData.legendary_armor -= 150;
+            if (m_oModuleData.LegendaryArmor >= 300)
+                m_oModuleData.LegendaryArmor -= 150;
             else
             {
-                m_oModuleData.legendary_armor -= (m_oModuleData.legendary_armor / 50 * 25);
-                m_oModuleData.refined_armor -= (m_oModuleData.refined_armor / 25 * 25);
+                m_oModuleData.LegendaryArmor -= (m_oModuleData.LegendaryArmor / 50 * 25);
+                m_oModuleData.RefinedArmor -= (m_oModuleData.RefinedArmor / 25 * 25);
             }
 
             Console.WriteLine("[OVERVIEW: "+ (DateTime.Now - dt).TotalSeconds + "]");
@@ -103,43 +103,43 @@ namespace GuildLounge
 
             for (int i = 0; i < currencies.Length; i++)
             {
-                switch (currencies[i].id)
+                switch (currencies[i].Id)
                 {
                     case 1:
-                        m_oModuleData.wallet.coins = currencies[i].value;
+                        m_oModuleData.Wallet.Coins = currencies[i].Value;
                         break;
                     case 2:
-                        m_oModuleData.wallet.karma = currencies[i].value;
+                        m_oModuleData.Wallet.Karma = currencies[i].Value;
                         break;
                     case 3:
-                        m_oModuleData.wallet.laurels = currencies[i].value;
+                        m_oModuleData.Wallet.Laurels = currencies[i].Value;
                         break;
                     case 4:
-                        m_oModuleData.wallet.gems = currencies[i].value;
+                        m_oModuleData.Wallet.Gems = currencies[i].Value;
                         break;
                     case 28:
-                        m_oModuleData.wallet.magnetite = currencies[i].value;
+                        m_oModuleData.Wallet.MagnetiteShards = currencies[i].Value;
                         break;
                     case 39:
-                        m_oModuleData.wallet.gaeting = currencies[i].value;
+                        m_oModuleData.Wallet.GaetingCrystals = currencies[i].Value;
                         break;
                     case 7:
-                        m_oModuleData.wallet.fractalrelic = currencies[i].value;
+                        m_oModuleData.Wallet.FractalRelics = currencies[i].Value;
                         break;
                     case 24:
-                        m_oModuleData.wallet.pristinefractalrelic = currencies[i].value;
+                        m_oModuleData.Wallet.PristineFractalRelics = currencies[i].Value;
                         break;
                     case 15:
-                        m_oModuleData.wallet.badgeofhonor = currencies[i].value;
+                        m_oModuleData.Wallet.BadgeOfHonor = currencies[i].Value;
                         break;
                     case 26:
-                        m_oModuleData.wallet.wvwskirmishticket = currencies[i].value;
+                        m_oModuleData.Wallet.SkirmishTicket = currencies[i].Value;
                         break;
                     case 33:
-                        m_oModuleData.wallet.ascendedshardsofglory = currencies[i].value;
+                        m_oModuleData.Wallet.AscendedShardsOfGlory = currencies[i].Value;
                         break;
                     case 30:
-                        m_oModuleData.wallet.pvpleagueticket = currencies[i].value;
+                        m_oModuleData.Wallet.LeagueTicket = currencies[i].Value;
                         break;
                 }
             }
@@ -148,7 +148,7 @@ namespace GuildLounge
         private async Task ProcessTradingPost(string accessToken)
         {
             TradingPost tradingpost = await GetResponse<TradingPost>("commerce/delivery", "access_token=" + accessToken);
-            m_oModuleData.tradingpost = tradingpost;
+            m_oModuleData.TradingPost = tradingpost;
         }
 
         private async Task ProcessMaterialStorage(string accessToken)
@@ -160,14 +160,14 @@ namespace GuildLounge
 
             for (int i = 0; i < materials.Length; i++)
             {
-                switch (materials[i].id)
+                switch (materials[i].Id)
                 {
                     case 77302:
-                        m_oModuleData.materialLI += materials[i].count;
+                        m_oModuleData.OnHandLI += materials[i].Count;
                         LI = true;
                         break;
                     case 88485:
-                        m_oModuleData.materialLD += materials[i].count;
+                        m_oModuleData.OnHandLD += materials[i].Count;
                         LD = true;
                         break;
                 }
@@ -192,36 +192,36 @@ namespace GuildLounge
 
             foreach (Character c in characters)
             {
-                foreach (Item eq in c.equipment)
+                foreach (Item eq in c.Equipment)
                 {
                     if (eq != null)
                     {
-                        if (legyArmorIds.Contains(eq.id))
-                            m_oModuleData.legendary_armor += 50;
-                        else if (refArmorIds.Contains(eq.id))
-                            m_oModuleData.refined_armor += 25;
+                        if (legyArmorIds.Contains(eq.Id))
+                            m_oModuleData.LegendaryArmor += 50;
+                        else if (refArmorIds.Contains(eq.Id))
+                            m_oModuleData.RefinedArmor += 25;
                     }
                 }
-                foreach (Bag b in c.bags)
+                foreach (Bag b in c.Bags)
                 {
                     if (b != null)
                     {
-                        foreach (Item it in b.inventory)
+                        foreach (Item it in b.Inventory)
                         {
                             if (it != null)
                             {
-                                if (it.id == ldId)
-                                    m_oModuleData.materialLD += it.count;
-                                else if (it.id == liId)
-                                    m_oModuleData.materialLI += it.count;
-                                else if (it.id == gopId)
-                                    m_oModuleData.gift_of_prowess += 25 * it.count;
-                                else if (it.id == eiId)
-                                    m_oModuleData.envoy_insignia += 25 * it.count;
-                                else if (legyArmorIds.Contains(it.id))
-                                    m_oModuleData.legendary_armor += 50;
-                                else if (refArmorIds.Contains(it.id))
-                                    m_oModuleData.refined_armor += 25;
+                                if (it.Id == ldId)
+                                    m_oModuleData.OnHandLD += it.Count;
+                                else if (it.Id == liId)
+                                    m_oModuleData.OnHandLI += it.Count;
+                                else if (it.Id == gopId)
+                                    m_oModuleData.GiftOfProwess += 25 * it.Count;
+                                else if (it.Id == eiId)
+                                    m_oModuleData.EnvoyInsignia += 25 * it.Count;
+                                else if (legyArmorIds.Contains(it.Id))
+                                    m_oModuleData.LegendaryArmor += 50;
+                                else if (refArmorIds.Contains(it.Id))
+                                    m_oModuleData.RefinedArmor += 25;
                             }
                         }
                     }
@@ -246,18 +246,18 @@ namespace GuildLounge
             {
                 if (bi != null)
                 {
-                    if (bi.id == ld_id)
-                        m_oModuleData.materialLD += bi.count;
-                    else if (bi.id == li_id)
-                        m_oModuleData.materialLI += bi.count;
-                    else if (bi.id == gop_id)
-                        m_oModuleData.gift_of_prowess += 25 * bi.count;
-                    else if (bi.id == ei_id)
-                        m_oModuleData.envoy_insignia += 25 * bi.count;
-                    else if (legy_armor_ids.Contains(bi.id))
-                        m_oModuleData.legendary_armor += 50;
-                    else if (ref_armor_ids.Contains(bi.id))
-                        m_oModuleData.refined_armor += 25;
+                    if (bi.Id == ld_id)
+                        m_oModuleData.OnHandLD += bi.Count;
+                    else if (bi.Id == li_id)
+                        m_oModuleData.OnHandLI += bi.Count;
+                    else if (bi.Id == gop_id)
+                        m_oModuleData.GiftOfProwess += 25 * bi.Count;
+                    else if (bi.Id == ei_id)
+                        m_oModuleData.EnvoyInsignia += 25 * bi.Count;
+                    else if (legy_armor_ids.Contains(bi.Id))
+                        m_oModuleData.LegendaryArmor += 50;
+                    else if (ref_armor_ids.Contains(bi.Id))
+                        m_oModuleData.RefinedArmor += 25;
                 }
             }
         }

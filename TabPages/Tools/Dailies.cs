@@ -26,35 +26,35 @@ namespace GuildLounge.TabPages.Tools
             GuildLounge.Dailies APIResponse = await _api.GetResponse<GuildLounge.Dailies>("achievements/daily");
             Achievement[] resolvedDailies = await _api.GetResponse<Achievement[]>("achievements", "ids=" + MergeDailyIDs(APIResponse));
             APIResponse = JoinDailies(APIResponse, resolvedDailies);
-            APIResponse.fractals = ReduceFractals(APIResponse);
+            APIResponse.Fractals = ReduceFractals(APIResponse);
             AssignDailies(APIResponse);
         }
 
         private string MergeDailyIDs(GuildLounge.Dailies dailies)
         {
             string ids = "";
-            foreach (Achievement a in dailies.pve)
-                ids += a.id + ",";
-            foreach (Achievement a in dailies.pvp)
-                ids += a.id + ",";
-            foreach (Achievement a in dailies.wvw)
-                ids += a.id + ",";
-            foreach (Achievement a in dailies.fractals)
-                ids += a.id + ",";
+            foreach (Achievement a in dailies.PvE)
+                ids += a.Id + ",";
+            foreach (Achievement a in dailies.PvP)
+                ids += a.Id + ",";
+            foreach (Achievement a in dailies.WvW)
+                ids += a.Id + ",";
+            foreach (Achievement a in dailies.Fractals)
+                ids += a.Id + ",";
 
             return ids.TrimEnd(Convert.ToChar(","));
         }
 
         private GuildLounge.Dailies JoinDailies(GuildLounge.Dailies dailies, Achievement[] resolvedIDs)
         {
-            foreach (Achievement a in dailies.pve)
-                a.name = resolvedIDs[Array.FindIndex(resolvedIDs, r => r.id == a.id)].name;
-            foreach (Achievement a in dailies.pvp)
-                a.name = resolvedIDs[Array.FindIndex(resolvedIDs, r => r.id == a.id)].name;
-            foreach (Achievement a in dailies.wvw)
-                a.name = resolvedIDs[Array.FindIndex(resolvedIDs, r => r.id == a.id)].name;
-            foreach (Achievement a in dailies.fractals)
-                a.name = resolvedIDs[Array.FindIndex(resolvedIDs, r => r.id == a.id)].name;
+            foreach (Achievement a in dailies.PvE)
+                a.Name = resolvedIDs[Array.FindIndex(resolvedIDs, r => r.Id == a.Id)].Name;
+            foreach (Achievement a in dailies.PvP)
+                a.Name = resolvedIDs[Array.FindIndex(resolvedIDs, r => r.Id == a.Id)].Name;
+            foreach (Achievement a in dailies.WvW)
+                a.Name = resolvedIDs[Array.FindIndex(resolvedIDs, r => r.Id == a.Id)].Name;
+            foreach (Achievement a in dailies.Fractals)
+                a.Name = resolvedIDs[Array.FindIndex(resolvedIDs, r => r.Id == a.Id)].Name;
 
             return dailies;
         }
@@ -67,20 +67,20 @@ namespace GuildLounge.TabPages.Tools
                 fracs[j] = new Achievement();
 
             int i = 0;
-            foreach (Achievement a in dailies.fractals)
+            foreach (Achievement a in dailies.Fractals)
             {
-                if (a.name.Contains("Tier"))
+                if (a.Name.Contains("Tier"))
                 {
-                    a.name = a.name.Remove(a.name.IndexOf("Tier"), 7);
-                    if (!Array.Exists(fracs, f => f.name == a.name))
+                    a.Name = a.Name.Remove(a.Name.IndexOf("Tier"), 7);
+                    if (!Array.Exists(fracs, f => f.Name == a.Name))
                     {
                         fracs[i] = a;
                         i++;
                     }
                 }
-                else if (a.name.Contains("Recommended"))
+                else if (a.Name.Contains("Recommended"))
                 {
-                    a.name = a.name.Remove(a.name.IndexOf("Fractal"), 8);
+                    a.Name = a.Name.Remove(a.Name.IndexOf("Fractal"), 8);
                     fracs[i] = a;
                     i++;
                 }
@@ -97,27 +97,27 @@ namespace GuildLounge.TabPages.Tools
 
             Control[] dailyModules = new Control[24];
             int i = 0;
-            foreach (Achievement a in dailies.pve)
+            foreach (Achievement a in dailies.PvE)
             {
-                dailyModules[i] = new Controls.DailyModule() { Location = col1, Category = "pve", Title = a.name.Substring(6)};
+                dailyModules[i] = new Controls.DailyModule() { Location = col1, Category = "pve", Title = a.Name.Substring(6)};
                 col1.Y += 38;
                 i++;
             }
-            foreach (Achievement a in dailies.pvp)
+            foreach (Achievement a in dailies.PvP)
             {
-                dailyModules[i] = new Controls.DailyModule() { Location = col2, Category = "pvp", Title = a.name.Substring(6) };
+                dailyModules[i] = new Controls.DailyModule() { Location = col2, Category = "pvp", Title = a.Name.Substring(6) };
                 col2.Y += 38;
                 i++;
             }
-            foreach (Achievement a in dailies.wvw)
+            foreach (Achievement a in dailies.WvW)
             {
-                dailyModules[i] = new Controls.DailyModule() { Location = col2, Category = "wvw", Title = a.name.Substring(6) };
+                dailyModules[i] = new Controls.DailyModule() { Location = col2, Category = "wvw", Title = a.Name.Substring(6) };
                 col2.Y += 38;
                 i++;
             }
-            foreach (Achievement a in dailies.fractals)
+            foreach (Achievement a in dailies.Fractals)
             {
-                dailyModules[i] = new Controls.DailyModule() { Location = col3, Category = "fractals", Title = a.name.Substring(6) };
+                dailyModules[i] = new Controls.DailyModule() { Location = col3, Category = "fractals", Title = a.Name.Substring(6) };
                 col3.Y += 38;
                 i++;
             }

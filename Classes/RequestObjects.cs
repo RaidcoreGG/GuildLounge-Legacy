@@ -1,51 +1,49 @@
 ﻿namespace GuildLounge
 {
-    #region overviews
     public class ModuleData
     {
-        //WALLET
-        public Wallet wallet { get; set; }
-        //TRADING POST
-        public TradingPost tradingpost { get; set; }
+        public Wallet Wallet { get; set; }
+        public TradingPost TradingPost { get; set; }
+
         //LI
-        public int materialLI { get; set; }
-        public int legendary_armor { get; set; }
-        public int refined_armor { get; set; }
-        public int gift_of_prowess { get; set; }
-        public int envoy_insignia { get; set; }
-        public int sumLI
+        public int OnHandLI { get; set; }
+        public int LegendaryArmor { get; set; }
+        public int RefinedArmor { get; set; }
+        public int GiftOfProwess { get; set; }
+        public int EnvoyInsignia { get; set; }
+        public int TotalLegendaryInsights
         {
-            get { return materialLI + legendary_armor + refined_armor + gift_of_prowess; }
+            get { return OnHandLI + LegendaryArmor + RefinedArmor + GiftOfProwess; }
         }
 
         //LD
-        public int materialLD { get; set; }
-        public int sumLD
+        public int OnHandLD { get; set; }
+        public int TotalLegendaryDivinations
         {
-            get { return materialLD; }
+            get { return OnHandLD; }
         }
     }
 
     public class Wallet
     {
-        public int coins { get; set; }
-        public int karma { get; set; }
-        public int laurels { get; set; }
-        public int gems { get; set; }
-        public int magnetite { get; set; }
-        public int gaeting { get; set; }
-        public int fractalrelic { get; set; }
-        public int pristinefractalrelic { get; set; }
-        public int badgeofhonor { get; set; }
-        public int wvwskirmishticket { get; set; }
-        public int ascendedshardsofglory { get; set; }
-        public int pvpleagueticket { get; set; }
+        public int Coins { get; set; }
+        public int Karma { get; set; }
+        public int Laurels { get; set; }
+        public int Gems { get; set; }
+        public int MagnetiteShards { get; set; }
+        public int GaetingCrystals { get; set; }
+        public int FractalRelics { get; set; }
+        public int PristineFractalRelics { get; set; }
+        public int BadgeOfHonor { get; set; }
+        public int SkirmishTicket { get; set; }
+        public int AscendedShardsOfGlory { get; set; }
+        public int LeagueTicket { get; set; }
     }
 
     public class TradingPost
     {
-        public int coins { get; set; }
-        public Item[] items { get; set; }
+        public int Coins { get; set; }
+        public Item[] Items { get; set; }
     }
 
     public class RaidCMs
@@ -65,56 +63,55 @@
 
     public class Dailies
     {
-        public Achievement[] pve { get; set; }
-        public Achievement[] pvp { get; set; }
-        public Achievement[] wvw { get; set; }
-        public Achievement[] fractals { get; set; }
+        public Achievement[] PvE { get; set; }
+        public Achievement[] PvP { get; set; }
+        public Achievement[] WvW { get; set; }
+        public Achievement[] Fractals { get; set; }
     }
-    #endregion
-
-    #region character
+    
     public class Character
     {
-        public string name { get; set; }
-        public Item[] equipment { get; set; }
-        public Bag[] bags { get; set; }
+        public string Name { get; set; }
+        public Item[] Equipment { get; set; }
+        public Bag[] Bags { get; set; }
     }
 
     public class Bag
     {
-        public int id { get; set; }
-        public Item[] inventory { get; set; }
+        public int Id { get; set; }
+        public Item[] Inventory { get; set; }
     }
 
     public class Item
     {
-        public int id { get; set; }
-        public int count { get; set; }
+        public int Id { get; set; }
+        public int Count { get; set; }
     }
-    #endregion
 
-    #region misc
     public class Currency
     {
-        public int id { get; set; }
-        public int value { get; set; }
+        public int Id { get; set; }
+        public int Value { get; set; }
     }
     
     public class Material
     {
-        public int id { get; set; }
-        public int category { get; set; }
-        public int count { get; set; }
+        public int Id { get; set; }
+        public int Count { get; set; }
     }
 
     public class Achievement
     {
-        public int id { get; set; }
-        public string name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         //ONLY FOR CERTAIN ACHIEVEMENTS
-        public int[] bits { get; set; }
+        public int[] Bits { get; set; }
         //ONLY FOR ACCOUNT ACHIEVEMENTS
-        public bool done { get; set; }
+        public bool Done { get; set; }
     }
-    #endregion
+
+    public class TokenInfo
+    {
+        public string[] Permissions { get; set; }
+    }
 }
