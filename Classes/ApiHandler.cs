@@ -74,8 +74,8 @@ namespace GuildLounge
             DateTime dt = DateTime.Now;
 
             m_oModuleData = new ModuleData();
-            m_oModuleData.wallet = new AccountWallet();
-            m_oModuleData.tradingpost = new AccountTradingPost();
+            m_oModuleData.wallet = new Wallet();
+            m_oModuleData.tradingpost = new TradingPost();
 
             await ProcessWallet(accessToken);
             await ProcessTradingPost(accessToken);
@@ -99,7 +99,7 @@ namespace GuildLounge
 
         private async Task ProcessWallet(string accessToken)
         {
-            WalletItem[] currencies = await GetResponse<WalletItem[]>("account/wallet", "access_token=" + accessToken );
+            Currency[] currencies = await GetResponse<Currency[]>("account/wallet", "access_token=" + accessToken );
 
             for (int i = 0; i < currencies.Length; i++)
             {
@@ -147,13 +147,13 @@ namespace GuildLounge
 
         private async Task ProcessTradingPost(string accessToken)
         {
-            AccountTradingPost tradingpost = await GetResponse<AccountTradingPost>("commerce/delivery", "access_token=" + accessToken);
+            TradingPost tradingpost = await GetResponse<TradingPost>("commerce/delivery", "access_token=" + accessToken);
             m_oModuleData.tradingpost = tradingpost;
         }
 
         private async Task ProcessMaterialStorage(string accessToken)
         {
-            MaterialItem[] materials = await GetResponse<MaterialItem[]>("account/materials", "access_token=" + accessToken);
+            Material[] materials = await GetResponse<Material[]>("account/materials", "access_token=" + accessToken);
 
             bool LI = false;
             bool LD = false;

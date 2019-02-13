@@ -4,9 +4,9 @@
     public class ModuleData
     {
         //WALLET
-        public AccountWallet wallet { get; set; }
+        public Wallet wallet { get; set; }
         //TRADING POST
-        public AccountTradingPost tradingpost { get; set; }
+        public TradingPost tradingpost { get; set; }
         //LI
         public int materialLI { get; set; }
         public int legendary_armor { get; set; }
@@ -26,7 +26,7 @@
         }
     }
 
-    public class AccountWallet
+    public class Wallet
     {
         public int coins { get; set; }
         public int karma { get; set; }
@@ -42,7 +42,7 @@
         public int pvpleagueticket { get; set; }
     }
 
-    public class AccountTradingPost
+    public class TradingPost
     {
         public int coins { get; set; }
         public Item[] items { get; set; }
@@ -94,13 +94,13 @@
     #endregion
 
     #region misc
-    public class WalletItem
+    public class Currency
     {
         public int id { get; set; }
         public int value { get; set; }
     }
     
-    public class MaterialItem
+    public class Material
     {
         public int id { get; set; }
         public int category { get; set; }
