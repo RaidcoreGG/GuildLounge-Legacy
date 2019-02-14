@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panelCategories = new System.Windows.Forms.Panel();
+            this.horizontalLine1 = new GuildLounge.Controls.HorizontalLine();
+            this.buttonRestore = new GuildLounge.Controls.HighlightButton();
+            this.buttonSave = new GuildLounge.Controls.HighlightButton();
             this.buttonAbout = new GuildLounge.Controls.HighlightButton();
             this.buttonSettingsExtensions = new GuildLounge.Controls.HighlightButton();
             this.buttonSettingsModules = new GuildLounge.Controls.HighlightButton();
             this.buttonSettingsAccounts = new GuildLounge.Controls.HighlightButton();
             this.buttonSettingsGeneral = new GuildLounge.Controls.HighlightButton();
-            this.buttonSave = new GuildLounge.Controls.HighlightButton();
-            this.buttonRestore = new GuildLounge.Controls.HighlightButton();
-            this.horizontalLine1 = new GuildLounge.Controls.HorizontalLine();
             this.panelCategories.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,43 @@
             this.panelCategories.Name = "panelCategories";
             this.panelCategories.Size = new System.Drawing.Size(170, 436);
             this.panelCategories.TabIndex = 1;
+            // 
+            // horizontalLine1
+            // 
+            this.horizontalLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.horizontalLine1.Location = new System.Drawing.Point(12, 364);
+            this.horizontalLine1.Name = "horizontalLine1";
+            this.horizontalLine1.Size = new System.Drawing.Size(146, 2);
+            this.horizontalLine1.TabIndex = 7;
+            this.horizontalLine1.Text = "horizontalLine1";
+            // 
+            // buttonRestore
+            // 
+            this.buttonRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
+            this.buttonRestore.FlatAppearance.BorderSize = 0;
+            this.buttonRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRestore.ForeColor = System.Drawing.Color.White;
+            this.buttonRestore.Location = new System.Drawing.Point(12, 372);
+            this.buttonRestore.Name = "buttonRestore";
+            this.buttonRestore.Size = new System.Drawing.Size(146, 23);
+            this.buttonRestore.TabIndex = 6;
+            this.buttonRestore.Text = "Default";
+            this.buttonRestore.UseVisualStyleBackColor = false;
+            this.buttonRestore.Click += new System.EventHandler(this.buttonRestore_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.ForeColor = System.Drawing.Color.White;
+            this.buttonSave.Location = new System.Drawing.Point(12, 401);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(146, 23);
+            this.buttonSave.TabIndex = 5;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonAbout
             // 
@@ -125,43 +162,6 @@
             this.buttonSettingsGeneral.Text = "General";
             this.buttonSettingsGeneral.UseVisualStyleBackColor = false;
             this.buttonSettingsGeneral.Click += new System.EventHandler(this.buttonSettingsGeneral_Click);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(12, 401);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(146, 23);
-            this.buttonSave.TabIndex = 5;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // buttonRestore
-            // 
-            this.buttonRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
-            this.buttonRestore.FlatAppearance.BorderSize = 0;
-            this.buttonRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRestore.ForeColor = System.Drawing.Color.White;
-            this.buttonRestore.Location = new System.Drawing.Point(12, 372);
-            this.buttonRestore.Name = "buttonRestore";
-            this.buttonRestore.Size = new System.Drawing.Size(146, 23);
-            this.buttonRestore.TabIndex = 6;
-            this.buttonRestore.Text = "Restore";
-            this.buttonRestore.UseVisualStyleBackColor = false;
-            this.buttonRestore.Click += new System.EventHandler(this.buttonRestore_Click);
-            // 
-            // horizontalLine1
-            // 
-            this.horizontalLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.horizontalLine1.Location = new System.Drawing.Point(12, 364);
-            this.horizontalLine1.Name = "horizontalLine1";
-            this.horizontalLine1.Size = new System.Drawing.Size(146, 2);
-            this.horizontalLine1.TabIndex = 7;
-            this.horizontalLine1.Text = "horizontalLine1";
             // 
             // Settings
             // 

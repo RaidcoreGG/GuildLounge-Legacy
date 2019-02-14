@@ -46,6 +46,7 @@
             this.buttonEditAccount = new GuildLounge.Controls.HighlightButton();
             this.buttonRemoveAccount = new GuildLounge.Controls.HighlightButton();
             this.apiKeyInfo1 = new GuildLounge.Controls.ApiKeyInfo();
+            this.labelError = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.groupBox1.BorderColor = System.Drawing.Color.Gray;
             this.groupBox1.BorderSize = 1;
+            this.groupBox1.Controls.Add(this.labelError);
             this.groupBox1.Controls.Add(this.buttonToggleShowPassword);
             this.groupBox1.Controls.Add(this.buttonAddAccount);
             this.groupBox1.Controls.Add(this.label1);
@@ -269,6 +271,16 @@
             this.apiKeyInfo1.Size = new System.Drawing.Size(176, 156);
             this.apiKeyInfo1.TabIndex = 1;
             // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Location = new System.Drawing.Point(73, 136);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(52, 13);
+            this.labelError.TabIndex = 24;
+            this.labelError.Text = "[ERROR]";
+            this.labelError.Visible = false;
+            // 
             // Accounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,5 +319,6 @@
         private Controls.HighlightButton buttonRemoveAccount;
         private Controls.ApiKeyInfo apiKeyInfo1;
         private System.Windows.Forms.ListBox listBoxAPIKeys;
+        private System.Windows.Forms.Label labelError;
     }
 }
