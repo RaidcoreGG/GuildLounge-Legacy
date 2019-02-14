@@ -231,6 +231,42 @@
     <Compile Include="TabPages\Main\Raids.Designer.cs">
       <DependentUpon>Raids.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabPages\Main\Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPages\Main\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Main\SettingsPages\Accounts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPages\Main\SettingsPages\Accounts.Designer.cs">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Main\SettingsPages\Extensions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPages\Main\SettingsPages\Extensions.Designer.cs">
+      <DependentUpon>Extensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Main\SettingsPages\About.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPages\Main\SettingsPages\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Main\SettingsPages\Modules.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPages\Main\SettingsPages\Modules.Designer.cs">
+      <DependentUpon>Modules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Main\SettingsPages\General.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabPages\Main\SettingsPages\General.Designer.cs">
+      <DependentUpon>General.cs</DependentUpon>
+    </Compile>
     <Compile Include="TabPages\Main\Settings_old.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -313,6 +349,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TabPages\Main\Raids.resx">
       <DependentUpon>Raids.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Main\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Main\SettingsPages\Accounts.resx">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Main\SettingsPages\Extensions.resx">
+      <DependentUpon>Extensions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Main\SettingsPages\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Main\SettingsPages\Modules.resx">
+      <DependentUpon>Modules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Main\SettingsPages\General.resx">
+      <DependentUpon>General.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabPages\Main\Settings_old.resx">
       <DependentUpon>Settings_old.cs</DependentUpon>
@@ -520,8 +574,6 @@
     <None Include="Resources\Dailies\daily_pve.png" />
     <None Include="Resources\Dailies\daily_fractals.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TabPages\Main\Settings\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

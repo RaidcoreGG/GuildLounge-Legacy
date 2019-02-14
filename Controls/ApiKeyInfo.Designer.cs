@@ -82,9 +82,9 @@
             this.labelAdditional.ForeColor = System.Drawing.Color.White;
             this.labelAdditional.Location = new System.Drawing.Point(176, 12);
             this.labelAdditional.Name = "labelAdditional";
-            this.labelAdditional.Size = new System.Drawing.Size(53, 13);
+            this.labelAdditional.Size = new System.Drawing.Size(44, 13);
             this.labelAdditional.TabIndex = 9;
-            this.labelAdditional.Text = "Additional";
+            this.labelAdditional.Text = "Unused";
             // 
             // groupBoxAdditional
             // 
