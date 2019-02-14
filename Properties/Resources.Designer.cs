@@ -663,6 +663,16 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ui_locked {
+            get {
+                object obj = ResourceManager.GetObject("ui_locked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ui_minimize {
             get {
                 object obj = ResourceManager.GetObject("ui_minimize", resourceCulture);
@@ -696,6 +706,16 @@ namespace GuildLounge.Properties {
         internal static System.Drawing.Bitmap ui_settings {
             get {
                 object obj = ResourceManager.GetObject("ui_settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ui_unlocked {
+            get {
+                object obj = ResourceManager.GetObject("ui_unlocked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

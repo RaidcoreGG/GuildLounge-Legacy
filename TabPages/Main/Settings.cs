@@ -95,5 +95,15 @@ namespace GuildLounge.TabPages
         {
             SetActiveTab(AboutTab);
         }
+
+        private void buttonRestore_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
