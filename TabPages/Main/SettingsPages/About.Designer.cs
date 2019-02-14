@@ -31,14 +31,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxAdditional = new GuildLounge.Controls.GroupBox();
+            this.labelTwitterName = new System.Windows.Forms.Label();
+            this.linkLabelRedditName = new System.Windows.Forms.LinkLabel();
+            this.labelDiscordName = new System.Windows.Forms.Label();
+            this.labelIngameName = new System.Windows.Forms.Label();
             this.labelTwitter = new System.Windows.Forms.Label();
             this.labelReddit = new System.Windows.Forms.Label();
             this.labelDiscord = new System.Windows.Forms.Label();
             this.labelIngame = new System.Windows.Forms.Label();
-            this.labelIngameName = new System.Windows.Forms.Label();
-            this.labelDiscordName = new System.Windows.Forms.Label();
-            this.linkLabelRedditName = new System.Windows.Forms.LinkLabel();
-            this.labelTwitterName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -91,6 +91,50 @@
             this.groupBoxAdditional.TabStop = false;
             this.groupBoxAdditional.Text = "groupBox2";
             // 
+            // labelTwitterName
+            // 
+            this.labelTwitterName.AutoSize = true;
+            this.labelTwitterName.ForeColor = System.Drawing.Color.White;
+            this.labelTwitterName.Location = new System.Drawing.Point(79, 72);
+            this.labelTwitterName.Name = "labelTwitterName";
+            this.labelTwitterName.Size = new System.Drawing.Size(99, 13);
+            this.labelTwitterName.TabIndex = 21;
+            this.labelTwitterName.Text = "currently banned lol";
+            // 
+            // linkLabelRedditName
+            // 
+            this.linkLabelRedditName.ActiveLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelRedditName.AutoSize = true;
+            this.linkLabelRedditName.LinkColor = System.Drawing.Color.Red;
+            this.linkLabelRedditName.Location = new System.Drawing.Point(79, 50);
+            this.linkLabelRedditName.Name = "linkLabelRedditName";
+            this.linkLabelRedditName.Size = new System.Drawing.Size(85, 13);
+            this.linkLabelRedditName.TabIndex = 20;
+            this.linkLabelRedditName.TabStop = true;
+            this.linkLabelRedditName.Text = "/u/DeltaxHunter";
+            this.linkLabelRedditName.VisitedLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelRedditName.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRedditName_LinkClicked);
+            // 
+            // labelDiscordName
+            // 
+            this.labelDiscordName.AutoSize = true;
+            this.labelDiscordName.ForeColor = System.Drawing.Color.White;
+            this.labelDiscordName.Location = new System.Drawing.Point(79, 28);
+            this.labelDiscordName.Name = "labelDiscordName";
+            this.labelDiscordName.Size = new System.Drawing.Size(63, 13);
+            this.labelDiscordName.TabIndex = 9;
+            this.labelDiscordName.Text = "Delta#0729";
+            // 
+            // labelIngameName
+            // 
+            this.labelIngameName.AutoSize = true;
+            this.labelIngameName.ForeColor = System.Drawing.Color.White;
+            this.labelIngameName.Location = new System.Drawing.Point(79, 6);
+            this.labelIngameName.Name = "labelIngameName";
+            this.labelIngameName.Size = new System.Drawing.Size(120, 13);
+            this.labelIngameName.TabIndex = 8;
+            this.labelIngameName.Text = "Tribun der Weisse.3427";
+            // 
             // labelTwitter
             // 
             this.labelTwitter.AutoSize = true;
@@ -130,50 +174,6 @@
             this.labelIngame.Size = new System.Drawing.Size(50, 13);
             this.labelIngame.TabIndex = 2;
             this.labelIngame.Text = "In-Game:";
-            // 
-            // labelIngameName
-            // 
-            this.labelIngameName.AutoSize = true;
-            this.labelIngameName.ForeColor = System.Drawing.Color.White;
-            this.labelIngameName.Location = new System.Drawing.Point(79, 6);
-            this.labelIngameName.Name = "labelIngameName";
-            this.labelIngameName.Size = new System.Drawing.Size(120, 13);
-            this.labelIngameName.TabIndex = 8;
-            this.labelIngameName.Text = "Tribun der Weisse.3427";
-            // 
-            // labelDiscordName
-            // 
-            this.labelDiscordName.AutoSize = true;
-            this.labelDiscordName.ForeColor = System.Drawing.Color.White;
-            this.labelDiscordName.Location = new System.Drawing.Point(79, 28);
-            this.labelDiscordName.Name = "labelDiscordName";
-            this.labelDiscordName.Size = new System.Drawing.Size(63, 13);
-            this.labelDiscordName.TabIndex = 9;
-            this.labelDiscordName.Text = "Delta#0729";
-            // 
-            // linkLabelRedditName
-            // 
-            this.linkLabelRedditName.ActiveLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabelRedditName.AutoSize = true;
-            this.linkLabelRedditName.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelRedditName.Location = new System.Drawing.Point(79, 50);
-            this.linkLabelRedditName.Name = "linkLabelRedditName";
-            this.linkLabelRedditName.Size = new System.Drawing.Size(85, 13);
-            this.linkLabelRedditName.TabIndex = 20;
-            this.linkLabelRedditName.TabStop = true;
-            this.linkLabelRedditName.Text = "/u/DeltaxHunter";
-            this.linkLabelRedditName.VisitedLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabelRedditName.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRedditName_LinkClicked);
-            // 
-            // labelTwitterName
-            // 
-            this.labelTwitterName.AutoSize = true;
-            this.labelTwitterName.ForeColor = System.Drawing.Color.White;
-            this.labelTwitterName.Location = new System.Drawing.Point(79, 72);
-            this.labelTwitterName.Name = "labelTwitterName";
-            this.labelTwitterName.Size = new System.Drawing.Size(99, 13);
-            this.labelTwitterName.TabIndex = 21;
-            this.labelTwitterName.Text = "currently banned lol";
             // 
             // label3
             // 
@@ -241,26 +241,30 @@
             // buttonPayPal
             // 
             this.buttonPayPal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.buttonPayPal.BackgroundImage = global::GuildLounge.Properties.Resources.button_paypal;
+            this.buttonPayPal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonPayPal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPayPal.FlatAppearance.BorderSize = 0;
             this.buttonPayPal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPayPal.Location = new System.Drawing.Point(150, 360);
             this.buttonPayPal.Name = "buttonPayPal";
             this.buttonPayPal.Size = new System.Drawing.Size(128, 28);
             this.buttonPayPal.TabIndex = 17;
-            this.buttonPayPal.Text = "PayPal";
             this.buttonPayPal.UseVisualStyleBackColor = false;
             this.buttonPayPal.Click += new System.EventHandler(this.buttonPayPal_Click);
             // 
             // buttonPatreon
             // 
             this.buttonPatreon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.buttonPatreon.BackgroundImage = global::GuildLounge.Properties.Resources.button_patreon;
+            this.buttonPatreon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonPatreon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPatreon.FlatAppearance.BorderSize = 0;
             this.buttonPatreon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPatreon.Location = new System.Drawing.Point(291, 360);
             this.buttonPatreon.Name = "buttonPatreon";
             this.buttonPatreon.Size = new System.Drawing.Size(128, 28);
             this.buttonPatreon.TabIndex = 18;
-            this.buttonPatreon.Text = "Patreon";
             this.buttonPatreon.UseVisualStyleBackColor = false;
             this.buttonPatreon.Click += new System.EventHandler(this.buttonPatreon_Click);
             // 

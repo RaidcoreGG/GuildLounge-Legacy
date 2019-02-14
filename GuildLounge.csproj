@@ -566,6 +566,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Misc\button_paypal.png" />
+    <None Include="Resources\Misc\button_patreon.png" />
     <None Include="Resources\UI\Navigation\ui_settings.png" />
     <None Include="Resources\Raids\Bosses\W2_SalvationPass\boss_trio.png" />
     <None Include="Resources\Raids\Bosses\W5_HallOfChains\boss_statues.png" />
