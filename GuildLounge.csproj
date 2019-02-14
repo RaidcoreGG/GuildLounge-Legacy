@@ -231,11 +231,11 @@
     <Compile Include="TabPages\Main\Raids.Designer.cs">
       <DependentUpon>Raids.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabPages\Main\Settings.cs">
+    <Compile Include="TabPages\Main\Settings_old.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TabPages\Main\Settings.Designer.cs">
-      <DependentUpon>Settings.cs</DependentUpon>
+    <Compile Include="TabPages\Main\Settings_old.Designer.cs">
+      <DependentUpon>Settings_old.cs</DependentUpon>
     </Compile>
     <Compile Include="TabPages\Tools\Dailies.cs">
       <SubType>UserControl</SubType>
@@ -314,8 +314,8 @@
     <EmbeddedResource Include="TabPages\Main\Raids.resx">
       <DependentUpon>Raids.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Main\Settings.resx">
-      <DependentUpon>Settings.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Main\Settings_old.resx">
+      <DependentUpon>Settings_old.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabPages\Tools\Dailies.resx">
       <DependentUpon>Dailies.cs</DependentUpon>

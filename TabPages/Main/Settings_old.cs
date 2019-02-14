@@ -7,13 +7,13 @@ using System.Windows.Forms;
 
 namespace GuildLounge.TabPages
 {
-    public partial class Settings : UserControl
+    public partial class Settings_old : UserControl
     {
         private static AddOnUpdater _updater;
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
         private AddOn[] AddOns { get; set; }
 
-        public Settings()
+        public Settings_old()
         {
             InitializeComponent();
 

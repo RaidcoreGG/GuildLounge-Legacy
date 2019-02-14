@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge.TabPages
 {
-    partial class Settings
+    partial class Settings_old
     {
         /// <summary> 
         /// Required designer variable.
