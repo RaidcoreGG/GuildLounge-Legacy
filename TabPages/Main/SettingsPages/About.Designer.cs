@@ -48,6 +48,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.buttonPayPal = new GuildLounge.Controls.Button();
             this.buttonPatreon = new GuildLounge.Controls.Button();
+            this.horizontalLine1 = new GuildLounge.Controls.HorizontalLine();
+            this.horizontalLine2 = new GuildLounge.Controls.HorizontalLine();
             this.groupBoxAdditional.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -262,11 +264,31 @@
             this.buttonPatreon.UseVisualStyleBackColor = false;
             this.buttonPatreon.Click += new System.EventHandler(this.buttonPatreon_Click);
             // 
+            // horizontalLine1
+            // 
+            this.horizontalLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.horizontalLine1.Location = new System.Drawing.Point(150, 171);
+            this.horizontalLine1.Name = "horizontalLine1";
+            this.horizontalLine1.Size = new System.Drawing.Size(269, 2);
+            this.horizontalLine1.TabIndex = 19;
+            this.horizontalLine1.Text = "horizontalLine1";
+            // 
+            // horizontalLine2
+            // 
+            this.horizontalLine2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.horizontalLine2.Location = new System.Drawing.Point(150, 262);
+            this.horizontalLine2.Name = "horizontalLine2";
+            this.horizontalLine2.Size = new System.Drawing.Size(269, 2);
+            this.horizontalLine2.TabIndex = 20;
+            this.horizontalLine2.Text = "horizontalLine2";
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.Controls.Add(this.horizontalLine2);
+            this.Controls.Add(this.horizontalLine1);
             this.Controls.Add(this.buttonPatreon);
             this.Controls.Add(this.buttonPayPal);
             this.Controls.Add(this.label9);
@@ -311,5 +333,7 @@
         private System.Windows.Forms.Label label9;
         private Controls.Button buttonPayPal;
         private Controls.Button buttonPatreon;
+        private Controls.HorizontalLine horizontalLine1;
+        private Controls.HorizontalLine horizontalLine2;
     }
 }
