@@ -87,6 +87,7 @@ namespace GuildLounge
             GuidesTab = new TabPages.Guides();
             APIKeysTab = new TabPages.APIKeys();
             SettingsTab = new TabPages.Settings_old();
+            //SettingsTab = new TabPages.Settings();
 
             //INITIALIZING TOOL PAGES
             DailiesTab = new TabPages.Tools.Dailies();
@@ -112,7 +113,7 @@ namespace GuildLounge
                 = SettingsTab.Location
                 = new Point(0, 104);
 
-            //FIXING MAIN PAGES LOCATION
+            //FIXING TOOL PAGES LOCATION
             DailiesTab.Location = new Point(0, 104);
 
             //ADDING MAIN TABS TO CONTROLS OF MAIN FORM

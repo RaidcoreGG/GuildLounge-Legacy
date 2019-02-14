@@ -62,6 +62,7 @@
             this.buttonAbout.TabIndex = 4;
             this.buttonAbout.Text = "About";
             this.buttonAbout.UseVisualStyleBackColor = false;
+            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
             // 
             // buttonSettingsExtensions
             // 
@@ -75,6 +76,7 @@
             this.buttonSettingsExtensions.TabIndex = 3;
             this.buttonSettingsExtensions.Text = "Add-Ons";
             this.buttonSettingsExtensions.UseVisualStyleBackColor = false;
+            this.buttonSettingsExtensions.Click += new System.EventHandler(this.buttonSettingsExtensions_Click);
             // 
             // buttonSettingsModules
             // 
@@ -88,6 +90,7 @@
             this.buttonSettingsModules.TabIndex = 2;
             this.buttonSettingsModules.Text = "Modules";
             this.buttonSettingsModules.UseVisualStyleBackColor = false;
+            this.buttonSettingsModules.Click += new System.EventHandler(this.buttonSettingsModules_Click);
             // 
             // buttonSettingsAccounts
             // 
@@ -101,6 +104,7 @@
             this.buttonSettingsAccounts.TabIndex = 1;
             this.buttonSettingsAccounts.Text = "Accounts";
             this.buttonSettingsAccounts.UseVisualStyleBackColor = false;
+            this.buttonSettingsAccounts.Click += new System.EventHandler(this.buttonSettingsAccounts_Click);
             // 
             // buttonSettingsGeneral
             // 
@@ -114,6 +118,7 @@
             this.buttonSettingsGeneral.TabIndex = 0;
             this.buttonSettingsGeneral.Text = "General";
             this.buttonSettingsGeneral.UseVisualStyleBackColor = false;
+            this.buttonSettingsGeneral.Click += new System.EventHandler(this.buttonSettingsGeneral_Click);
             // 
             // Settings
             // 
