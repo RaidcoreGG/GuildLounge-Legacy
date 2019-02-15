@@ -86,8 +86,7 @@ namespace GuildLounge
             RaidsTab = new TabPages.Raids();
             GuidesTab = new TabPages.Guides();
             APIKeysTab = new TabPages.APIKeys();
-            //SettingsTab = new TabPages.Settings_old();
-            SettingsTab = new TabPages.Settings();
+            SettingsTab = new TabPages.Settings_old();
 
             //INITIALIZING TOOL PAGES
             DailiesTab = new TabPages.Tools.Dailies();

@@ -86,7 +86,7 @@ namespace GuildLounge.TabPages
 
         private void linkLabelGLDiscord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://discord.gg/bkwWcCb");
+            System.Diagnostics.Process.Start("https://discord.gg/MSgPhDv");
         }
 
         private void linkLabelGW2Efficiency_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

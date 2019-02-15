@@ -30,14 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button1 = new GuildLounge.Controls.Button();
-            this.button2 = new GuildLounge.Controls.Button();
+            this.listBoxActive = new System.Windows.Forms.ListBox();
+            this.listBoxInactive = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabelGLDiscord = new System.Windows.Forms.LinkLabel();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonMoveToInactive = new GuildLounge.Controls.Button();
+            this.buttonMoveToActive = new GuildLounge.Controls.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -58,55 +58,35 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Inactive Modules:";
             // 
-            // listBox1
+            // listBoxActive
             // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.listBox1.ForeColor = System.Drawing.Color.White;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(16, 28);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(192, 194);
-            this.listBox1.TabIndex = 27;
+            this.listBoxActive.AllowDrop = true;
+            this.listBoxActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.listBoxActive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBoxActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.listBoxActive.ForeColor = System.Drawing.Color.White;
+            this.listBoxActive.FormattingEnabled = true;
+            this.listBoxActive.ItemHeight = 16;
+            this.listBoxActive.Location = new System.Drawing.Point(16, 28);
+            this.listBoxActive.Name = "listBoxActive";
+            this.listBoxActive.Size = new System.Drawing.Size(192, 194);
+            this.listBoxActive.TabIndex = 27;
+            this.listBoxActive.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBoxActive_DragDrop);
+            this.listBoxActive.DragOver += new System.Windows.Forms.DragEventHandler(this.listBoxActive_DragOver);
+            this.listBoxActive.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBoxActive_MouseDown);
             // 
-            // listBox2
+            // listBoxInactive
             // 
-            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.listBox2.ForeColor = System.Drawing.Color.White;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(362, 28);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(192, 194);
-            this.listBox2.TabIndex = 28;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::GuildLounge.Properties.Resources.ui_arrow_lt;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(273, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 24);
-            this.button1.TabIndex = 29;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::GuildLounge.Properties.Resources.ui_arrow_rt;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(273, 130);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(24, 24);
-            this.button2.TabIndex = 30;
-            this.button2.UseVisualStyleBackColor = false;
+            this.listBoxInactive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.listBoxInactive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBoxInactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.listBoxInactive.ForeColor = System.Drawing.Color.White;
+            this.listBoxInactive.FormattingEnabled = true;
+            this.listBoxInactive.ItemHeight = 16;
+            this.listBoxInactive.Location = new System.Drawing.Point(362, 28);
+            this.listBoxInactive.Name = "listBoxInactive";
+            this.listBoxInactive.Size = new System.Drawing.Size(192, 194);
+            this.listBoxInactive.TabIndex = 28;
             // 
             // label4
             // 
@@ -130,6 +110,7 @@
             this.linkLabelGLDiscord.TabStop = true;
             this.linkLabelGLDiscord.Text = "Discord.";
             this.linkLabelGLDiscord.VisitedLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelGLDiscord.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGLDiscord_LinkClicked);
             // 
             // label5
             // 
@@ -150,6 +131,32 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "Tip: You can change the order by dragging the modules.";
             // 
+            // buttonMoveToInactive
+            // 
+            this.buttonMoveToInactive.BackgroundImage = global::GuildLounge.Properties.Resources.ui_arrow_rt;
+            this.buttonMoveToInactive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonMoveToInactive.FlatAppearance.BorderSize = 0;
+            this.buttonMoveToInactive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMoveToInactive.Location = new System.Drawing.Point(273, 130);
+            this.buttonMoveToInactive.Name = "buttonMoveToInactive";
+            this.buttonMoveToInactive.Size = new System.Drawing.Size(24, 24);
+            this.buttonMoveToInactive.TabIndex = 30;
+            this.buttonMoveToInactive.UseVisualStyleBackColor = false;
+            this.buttonMoveToInactive.Click += new System.EventHandler(this.buttonMoveToInactive_Click);
+            // 
+            // buttonMoveToActive
+            // 
+            this.buttonMoveToActive.BackgroundImage = global::GuildLounge.Properties.Resources.ui_arrow_lt;
+            this.buttonMoveToActive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonMoveToActive.FlatAppearance.BorderSize = 0;
+            this.buttonMoveToActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMoveToActive.Location = new System.Drawing.Point(273, 100);
+            this.buttonMoveToActive.Name = "buttonMoveToActive";
+            this.buttonMoveToActive.Size = new System.Drawing.Size(24, 24);
+            this.buttonMoveToActive.TabIndex = 29;
+            this.buttonMoveToActive.UseVisualStyleBackColor = false;
+            this.buttonMoveToActive.Click += new System.EventHandler(this.buttonMoveToActive_Click);
+            // 
             // Modules
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,10 +166,10 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.linkLabelGLDiscord);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.buttonMoveToInactive);
+            this.Controls.Add(this.buttonMoveToActive);
+            this.Controls.Add(this.listBoxInactive);
+            this.Controls.Add(this.listBoxActive);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
@@ -177,10 +184,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private Controls.Button button1;
-        private Controls.Button button2;
+        private System.Windows.Forms.ListBox listBoxActive;
+        private System.Windows.Forms.ListBox listBoxInactive;
+        private Controls.Button buttonMoveToActive;
+        private Controls.Button buttonMoveToInactive;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabelGLDiscord;
         private System.Windows.Forms.Label label5;
