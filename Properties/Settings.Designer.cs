@@ -70,5 +70,36 @@ namespace GuildLounge.Properties {
                 this["StartParams"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>Basic Currencies</string>
+  <string>Fractals</string>
+  <string>PvP</string>
+  <string>Raids</string>
+  <string>Trading Post Pickup</string>
+  <string>WvW</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection ActiveModules {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ActiveModules"]));
+            }
+            set {
+                this["ActiveModules"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection InactiveModules {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["InactiveModules"]));
+            }
+            set {
+                this["InactiveModules"] = value;
+            }
+        }
     }
 }

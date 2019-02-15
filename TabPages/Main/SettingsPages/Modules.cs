@@ -16,15 +16,63 @@ namespace GuildLounge.TabPages.SettingsPages
         public Modules()
         {
             InitializeComponent();
-            listBoxActive.Items.AddRange(new string[]
+            
+
+            try
             {
-                "Basic Currencies",
-                "Fractals",
-                "PvP",
-                "Raids",
-                "Trading Post Pickup",
-                "WvW"
-            });
+                LoadModules();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
+        }
+
+        private void LoadModules()
+        {
+            //ACTIVE
+            System.Collections.Specialized.StringCollection sca = Properties.Settings.Default.ActiveModules;
+            if(sca != null)
+            {
+                string[] stra = new string[sca.Count];
+                sca.CopyTo(stra, 0);
+                listBoxActive.Items.AddRange(stra);
+            }
+
+            //INACTIVE
+            System.Collections.Specialized.StringCollection sci = Properties.Settings.Default.InactiveModules;
+            if(sci != null)
+            {
+                string[] stri = new string[sci.Count];
+                sci.CopyTo(stri, 0);
+                listBoxInactive.Items.AddRange(stri);
+            }
+        }
+
+        public string[] GetActiveModules()
+        {
+            string[] modules = new string[listBoxActive.Items.Count];
+
+            int i = 0;
+            foreach(object o in listBoxActive.Items)
+            {
+                modules[i] = (string)o;
+                i++;
+            }
+            return modules;
+        }
+
+        public string[] GetInactiveModules()
+        {
+            string[] modules = new string[listBoxInactive.Items.Count];
+
+            int i = 0;
+            foreach (object o in listBoxInactive.Items)
+            {
+                modules[i] = (string)o;
+                i++;
+            }
+            return modules;
         }
 
         private void buttonMoveToActive_Click(object sender, EventArgs e)

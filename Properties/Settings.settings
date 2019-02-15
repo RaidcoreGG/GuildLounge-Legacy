@@ -14,5 +14,19 @@
     <Setting Name="StartParams" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="ActiveModules" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;Basic Currencies&lt;/string&gt;
+  &lt;string&gt;Fractals&lt;/string&gt;
+  &lt;string&gt;PvP&lt;/string&gt;
+  &lt;string&gt;Raids&lt;/string&gt;
+  &lt;string&gt;Trading Post Pickup&lt;/string&gt;
+  &lt;string&gt;WvW&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="InactiveModules" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

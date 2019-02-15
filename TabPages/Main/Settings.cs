@@ -103,7 +103,17 @@ namespace GuildLounge.TabPages
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            var obj = (SettingsPages.Modules)ModulesTab;
 
+            System.Collections.Specialized.StringCollection sca = new System.Collections.Specialized.StringCollection();
+            sca.AddRange(obj.GetActiveModules());
+            Properties.Settings.Default.ActiveModules = sca;
+
+            System.Collections.Specialized.StringCollection sci = new System.Collections.Specialized.StringCollection();
+            sci.AddRange(obj.GetInactiveModules());
+            Properties.Settings.Default.InactiveModules = sci;
+
+            Properties.Settings.Default.Save();
         }
     }
 }
