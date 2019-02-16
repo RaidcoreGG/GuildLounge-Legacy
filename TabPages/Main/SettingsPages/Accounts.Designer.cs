@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox2 = new GuildLounge.Controls.GroupBox();
+            this.listBoxAccounts = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonEditAccount = new GuildLounge.Controls.HighlightButton();
+            this.buttonRemoveAccount = new GuildLounge.Controls.HighlightButton();
+            this.apiKeyInfo = new GuildLounge.Controls.ApiKeyInfo();
             this.groupBox1 = new GuildLounge.Controls.GroupBox();
+            this.labelError = new System.Windows.Forms.Label();
             this.buttonToggleShowPassword = new GuildLounge.Controls.Button();
             this.buttonAddAccount = new GuildLounge.Controls.HighlightButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,16 +47,88 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new GuildLounge.Controls.GroupBox();
-            this.listBoxAPIKeys = new System.Windows.Forms.ListBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.buttonEditAccount = new GuildLounge.Controls.HighlightButton();
-            this.buttonRemoveAccount = new GuildLounge.Controls.HighlightButton();
-            this.apiKeyInfo1 = new GuildLounge.Controls.ApiKeyInfo();
-            this.labelError = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.groupBox2.BorderColor = System.Drawing.Color.Gray;
+            this.groupBox2.BorderSize = 1;
+            this.groupBox2.Controls.Add(this.listBoxAccounts);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.buttonEditAccount);
+            this.groupBox2.Controls.Add(this.buttonRemoveAccount);
+            this.groupBox2.Controls.Add(this.apiKeyInfo);
+            this.groupBox2.Location = new System.Drawing.Point(12, 186);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(546, 238);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBoxAccounts";
+            // 
+            // listBoxAccounts
+            // 
+            this.listBoxAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.listBoxAccounts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBoxAccounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.listBoxAccounts.ForeColor = System.Drawing.Color.White;
+            this.listBoxAccounts.FormattingEnabled = true;
+            this.listBoxAccounts.ItemHeight = 16;
+            this.listBoxAccounts.Location = new System.Drawing.Point(6, 6);
+            this.listBoxAccounts.Name = "listBoxAccounts";
+            this.listBoxAccounts.Size = new System.Drawing.Size(352, 226);
+            this.listBoxAccounts.TabIndex = 22;
+            this.listBoxAccounts.SelectedIndexChanged += new System.EventHandler(this.listBoxAccounts_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(364, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(140, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Permissions of selected key:";
+            // 
+            // buttonEditAccount
+            // 
+            this.buttonEditAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
+            this.buttonEditAccount.FlatAppearance.BorderSize = 0;
+            this.buttonEditAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.buttonEditAccount.ForeColor = System.Drawing.Color.White;
+            this.buttonEditAccount.Location = new System.Drawing.Point(364, 212);
+            this.buttonEditAccount.Name = "buttonEditAccount";
+            this.buttonEditAccount.Size = new System.Drawing.Size(176, 20);
+            this.buttonEditAccount.TabIndex = 20;
+            this.buttonEditAccount.Text = "Edit";
+            this.buttonEditAccount.UseVisualStyleBackColor = false;
+            this.buttonEditAccount.Click += new System.EventHandler(this.buttonEditAccount_Click);
+            // 
+            // buttonRemoveAccount
+            // 
+            this.buttonRemoveAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
+            this.buttonRemoveAccount.FlatAppearance.BorderSize = 0;
+            this.buttonRemoveAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRemoveAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.buttonRemoveAccount.ForeColor = System.Drawing.Color.White;
+            this.buttonRemoveAccount.Location = new System.Drawing.Point(364, 186);
+            this.buttonRemoveAccount.Name = "buttonRemoveAccount";
+            this.buttonRemoveAccount.Size = new System.Drawing.Size(176, 20);
+            this.buttonRemoveAccount.TabIndex = 19;
+            this.buttonRemoveAccount.Text = "Remove";
+            this.buttonRemoveAccount.UseVisualStyleBackColor = false;
+            this.buttonRemoveAccount.Click += new System.EventHandler(this.buttonRemoveAccount_Click);
+            // 
+            // apiKeyInfo
+            // 
+            this.apiKeyInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.apiKeyInfo.ForeColor = System.Drawing.Color.White;
+            this.apiKeyInfo.Location = new System.Drawing.Point(364, 22);
+            this.apiKeyInfo.Name = "apiKeyInfo";
+            this.apiKeyInfo.Size = new System.Drawing.Size(176, 156);
+            this.apiKeyInfo.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -74,6 +153,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBoxAccountEdit";
+            // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Location = new System.Drawing.Point(73, 136);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(52, 13);
+            this.labelError.TabIndex = 24;
+            this.labelError.Text = "[ERROR]";
+            this.labelError.Visible = false;
             // 
             // buttonToggleShowPassword
             // 
@@ -195,92 +284,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Name:";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.groupBox2.BorderColor = System.Drawing.Color.Gray;
-            this.groupBox2.BorderSize = 1;
-            this.groupBox2.Controls.Add(this.listBoxAPIKeys);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.buttonEditAccount);
-            this.groupBox2.Controls.Add(this.buttonRemoveAccount);
-            this.groupBox2.Controls.Add(this.apiKeyInfo1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 186);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(546, 238);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBoxAccounts";
-            // 
-            // listBoxAPIKeys
-            // 
-            this.listBoxAPIKeys.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.listBoxAPIKeys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxAPIKeys.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.listBoxAPIKeys.ForeColor = System.Drawing.Color.White;
-            this.listBoxAPIKeys.FormattingEnabled = true;
-            this.listBoxAPIKeys.ItemHeight = 16;
-            this.listBoxAPIKeys.Location = new System.Drawing.Point(6, 6);
-            this.listBoxAPIKeys.Name = "listBoxAPIKeys";
-            this.listBoxAPIKeys.Size = new System.Drawing.Size(352, 226);
-            this.listBoxAPIKeys.TabIndex = 22;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(364, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 13);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Permissions of selected key:";
-            // 
-            // buttonEditAccount
-            // 
-            this.buttonEditAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
-            this.buttonEditAccount.FlatAppearance.BorderSize = 0;
-            this.buttonEditAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.buttonEditAccount.ForeColor = System.Drawing.Color.White;
-            this.buttonEditAccount.Location = new System.Drawing.Point(364, 212);
-            this.buttonEditAccount.Name = "buttonEditAccount";
-            this.buttonEditAccount.Size = new System.Drawing.Size(176, 20);
-            this.buttonEditAccount.TabIndex = 20;
-            this.buttonEditAccount.Text = "Edit";
-            this.buttonEditAccount.UseVisualStyleBackColor = false;
-            // 
-            // buttonRemoveAccount
-            // 
-            this.buttonRemoveAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
-            this.buttonRemoveAccount.FlatAppearance.BorderSize = 0;
-            this.buttonRemoveAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRemoveAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.buttonRemoveAccount.ForeColor = System.Drawing.Color.White;
-            this.buttonRemoveAccount.Location = new System.Drawing.Point(364, 186);
-            this.buttonRemoveAccount.Name = "buttonRemoveAccount";
-            this.buttonRemoveAccount.Size = new System.Drawing.Size(176, 20);
-            this.buttonRemoveAccount.TabIndex = 19;
-            this.buttonRemoveAccount.Text = "Remove";
-            this.buttonRemoveAccount.UseVisualStyleBackColor = false;
-            // 
-            // apiKeyInfo1
-            // 
-            this.apiKeyInfo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.apiKeyInfo1.ForeColor = System.Drawing.Color.White;
-            this.apiKeyInfo1.Location = new System.Drawing.Point(364, 22);
-            this.apiKeyInfo1.Name = "apiKeyInfo1";
-            this.apiKeyInfo1.Size = new System.Drawing.Size(176, 156);
-            this.apiKeyInfo1.TabIndex = 1;
-            // 
-            // labelError
-            // 
-            this.labelError.AutoSize = true;
-            this.labelError.Location = new System.Drawing.Point(73, 136);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(52, 13);
-            this.labelError.TabIndex = 24;
-            this.labelError.Text = "[ERROR]";
-            this.labelError.Visible = false;
-            // 
             // Accounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,10 +294,10 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Accounts";
             this.Size = new System.Drawing.Size(570, 436);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -317,8 +320,8 @@
         private System.Windows.Forms.Label label6;
         private Controls.HighlightButton buttonEditAccount;
         private Controls.HighlightButton buttonRemoveAccount;
-        private Controls.ApiKeyInfo apiKeyInfo1;
-        private System.Windows.Forms.ListBox listBoxAPIKeys;
+        private Controls.ApiKeyInfo apiKeyInfo;
+        private System.Windows.Forms.ListBox listBoxAccounts;
         private System.Windows.Forms.Label labelError;
     }
 }

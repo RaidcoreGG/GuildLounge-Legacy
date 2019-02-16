@@ -71,6 +71,8 @@ namespace GuildLounge.TabPages
             }
         }
 
+        #region navigation
+
         private void buttonSettingsGeneral_Click(object sender, EventArgs e)
         {
             SetActiveTab(GeneralTab);
@@ -95,14 +97,22 @@ namespace GuildLounge.TabPages
         {
             SetActiveTab(AboutTab);
         }
+        #endregion
 
         private void buttonRestore_Click(object sender, EventArgs e)
         {
-
+            Properties.Settings.Default.Reset();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            //GENERAL
+            //DOESN'T REQUIRE FETCHING, HANDLED LOCALLY
+
+            //ACCOUNTS
+            //DOESN'T REQUIRE FETCHING, HANDLED LOCALLY
+
+            //MODULES
             var obj = (SettingsPages.Modules)ModulesTab;
 
             System.Collections.Specialized.StringCollection sca = new System.Collections.Specialized.StringCollection();
@@ -113,7 +123,21 @@ namespace GuildLounge.TabPages
             sci.AddRange(obj.GetInactiveModules());
             Properties.Settings.Default.InactiveModules = sci;
 
+            //EXTENSIONS
+            //DOESN'T REQUIRE FETCHING, HANDLED LOCALLY
+
             Properties.Settings.Default.Save();
+        }
+
+        public Account[] GetAccounts()
+        {
+            return ((SettingsPages.Accounts)AccountsTab).StoredAccounts;
+        }
+
+        public void RefetchAccounts()
+        {
+            var obj = (Main)Parent;
+            obj.RefetchAccounts();
         }
     }
 }

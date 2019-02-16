@@ -9,7 +9,7 @@ namespace GuildLounge.TabPages
     {
         private static readonly ApiHandler _api = new ApiHandler();
         private Account m_oActiveKey;
-        public Account ActiveAPIEntry
+        public Account ActiveAccount
         {
             get { return m_oActiveKey; }
             set
@@ -32,7 +32,7 @@ namespace GuildLounge.TabPages
             try
             {
                 //GET RAID ENCOUNTER PROGRESS
-                string[] APIResponse = await _api.GetResponse<string[]>("account/raids", "access_token=" + ActiveAPIEntry.Key);
+                string[] APIResponse = await _api.GetResponse<string[]>("account/raids", "access_token=" + ActiveAccount.Key);
 
                 //UPDATE ACCORDING TO DATA
                 UpdatePictureBoxes(APIResponse);
@@ -139,7 +139,7 @@ namespace GuildLounge.TabPages
         {
             //try
             //{
-                RaidCMs APIResponse = await _api.FetchRaidCMs(ActiveAPIEntry.Key);
+                RaidCMs APIResponse = await _api.FetchRaidCMs(ActiveAccount.Key);
 
                 //W3
                 pictureBoxKeepConstruct.CMdone = APIResponse.KeepConstruct;

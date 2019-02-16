@@ -20,7 +20,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
             try
             {
-                LoadModules();
+                LoadSettingsModules();
             }
             catch (Exception exc)
             {
@@ -28,7 +28,7 @@ namespace GuildLounge.TabPages.SettingsPages
             }
         }
 
-        private void LoadModules()
+        private void LoadSettingsModules()
         {
             //ACTIVE
             System.Collections.Specialized.StringCollection sca = Properties.Settings.Default.ActiveModules;

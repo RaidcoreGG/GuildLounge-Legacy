@@ -32,7 +32,7 @@ namespace GuildLounge
         private UserControl LFGTab;
         private UserControl RaidsTab;
         private UserControl GuidesTab;
-        private UserControl APIKeysTab;
+        //private UserControl APIKeysTab;
         private UserControl SettingsTab;
 
         //TOOL PAGES
@@ -40,8 +40,8 @@ namespace GuildLounge
 
         //API STUFF
         private static readonly ApiHandler _api = new ApiHandler();
-        public Account[] APIEntries { get; set; }
-        private Account ActiveAPIEntry { get; set; }
+        public Account[] StoredAccounts { get; set; }
+        private Account ActiveAccount { get; set; }
 
         //MISC
         private PictureBox LoadingIcon { get; set; }
@@ -85,8 +85,8 @@ namespace GuildLounge
             LFGTab = new TabPages.LFG();
             RaidsTab = new TabPages.Raids();
             GuidesTab = new TabPages.Guides();
-            APIKeysTab = new TabPages.APIKeys();
-            SettingsTab = new TabPages.Settings_old();
+            //APIKeysTab = new TabPages.APIKeys();
+            SettingsTab = new TabPages.Settings();
 
             //INITIALIZING TOOL PAGES
             DailiesTab = new TabPages.Tools.Dailies();
@@ -96,7 +96,7 @@ namespace GuildLounge
                 = LFGTab.Visible
                 = RaidsTab.Visible
                 = GuidesTab.Visible
-                = APIKeysTab.Visible
+                //= APIKeysTab.Visible
                 = SettingsTab.Visible
                 = false;
 
@@ -108,7 +108,7 @@ namespace GuildLounge
                 = LFGTab.Location
                 = RaidsTab.Location
                 = GuidesTab.Location
-                = APIKeysTab.Location
+                //= APIKeysTab.Location
                 = SettingsTab.Location
                 = new Point(0, 104);
 
@@ -122,7 +122,7 @@ namespace GuildLounge
                 LFGTab,
                 RaidsTab,
                 GuidesTab,
-                APIKeysTab,
+                //APIKeysTab,
                 SettingsTab
             });
 
@@ -148,7 +148,7 @@ namespace GuildLounge
             try
             {
                 //GET KEYS FROM API KEYS TAB
-                RefreshKeys();
+                RefetchAccounts();
 
                 //REQUEST&PROCESS DATA FROM API
                 UpdateAccountOverview();
@@ -212,10 +212,10 @@ namespace GuildLounge
             SetActiveTab(GuidesTab, sender);
         }
 
-        private void linkLabelAPIKeys_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        /*private void linkLabelAPIKeys_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             SetActiveTab(APIKeysTab, sender);
-        }
+        }*/
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
@@ -223,19 +223,19 @@ namespace GuildLounge
         }
         #endregion
 
-        public void RefreshKeys()
+        public void RefetchAccounts()
         {
             //GET KEYS FROM KEYSTAB
-            var obj = (TabPages.APIKeys)APIKeysTab;
-            APIEntries = obj.APIEntries;
+            var obj = (TabPages.Settings)SettingsTab;
+            StoredAccounts = obj.GetAccounts();
             
-            if (APIEntries != null)
+            if (StoredAccounts != null)
             {
-                ActiveAPIEntry = APIEntries[0];
+                ActiveAccount = StoredAccounts[0];
 
                 //UPDATE COMBOBOX ITEMS
                 comboBoxAccount.Items.Clear();
-                comboBoxAccount.Items.AddRange(APIEntries);
+                comboBoxAccount.Items.AddRange(StoredAccounts);
 
                 //CORRECT DISPLAY
                 comboBoxAccount.DisplayMember = "Name";
@@ -246,14 +246,14 @@ namespace GuildLounge
             }
             else
             {
-                ActiveAPIEntry = null;
+                ActiveAccount = null;
                 comboBoxAccount.Enabled = false;
                 buttonRefresh.Enabled = false;
             }
 
             //SET NEW KEY FOR RAIDS TAB
             var obj2 = (TabPages.Raids)RaidsTab;
-            obj2.ActiveAPIEntry = ActiveAPIEntry;
+            obj2.ActiveAccount = ActiveAccount;
         }
 
         private async void UpdateAccountOverview()
@@ -265,7 +265,7 @@ namespace GuildLounge
 
             try
             {
-                ModuleData APIResponse = await _api.FetchModuleData(ActiveAPIEntry.Key);
+                ModuleData APIResponse = await _api.FetchModuleData(ActiveAccount.Key);
 
                 var w = APIResponse.Wallet;
                 var tp = APIResponse.TradingPost;
@@ -315,7 +315,7 @@ namespace GuildLounge
             }
             finally
             {
-                if (ActiveAPIEntry != null)
+                if (ActiveAccount != null)
                 {
                     comboBoxAccount.Enabled = true;
                     buttonRefresh.Enabled = true;
@@ -369,15 +369,15 @@ namespace GuildLounge
 
         private void comboBoxAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ActiveAPIEntry != null)
+            if (ActiveAccount != null)
             {
-                if (ActiveAPIEntry != APIEntries[comboBoxAccount.SelectedIndex])
+                if (ActiveAccount != StoredAccounts[comboBoxAccount.SelectedIndex])
                 {
                     //SET MAINTAB ACTIVE ENTRY, REQUESTHANDLER ACTIVE ENTRY & RAIDSTAB ACTIVE ENTRY TO SELECTED ENTRY FROM COMBOBOX
                     var obj = (TabPages.Raids)RaidsTab;
-                    ActiveAPIEntry =
-                        obj.ActiveAPIEntry =
-                        APIEntries[comboBoxAccount.SelectedIndex];
+                    ActiveAccount =
+                        obj.ActiveAccount =
+                        StoredAccounts[comboBoxAccount.SelectedIndex];
 
                     //REFRESH DATA DUE TO NEWLY SELECTED KEY
                     UpdateAccountOverview();
@@ -387,11 +387,11 @@ namespace GuildLounge
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            if (ActiveAPIEntry != null)
+            if (ActiveAccount != null)
             {
                 //REFRESH RAID ENCOUNTER PROGRESS BY SETTING THE KEY
                 var obj = (TabPages.Raids)RaidsTab;
-                obj.ActiveAPIEntry = ActiveAPIEntry;
+                obj.ActiveAccount = ActiveAccount;
 
                 //REFRESH OVERVIEW
                 UpdateAccountOverview();

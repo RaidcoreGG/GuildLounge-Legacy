@@ -52,7 +52,6 @@
             this.buttonRefresh = new GuildLounge.Controls.Button();
             this.labelAPIError = new System.Windows.Forms.Label();
             this.comboBoxAccount = new System.Windows.Forms.ComboBox();
-            this.linkLabelAPIKeys = new System.Windows.Forms.LinkLabel();
             this.panelLaunch = new System.Windows.Forms.Panel();
             this.labelLaunchError = new System.Windows.Forms.Label();
             this.buttonLaunch = new GuildLounge.Controls.HighlightButton();
@@ -327,7 +326,6 @@
             this.panelAccount.Controls.Add(this.buttonRefresh);
             this.panelAccount.Controls.Add(this.labelAPIError);
             this.panelAccount.Controls.Add(this.comboBoxAccount);
-            this.panelAccount.Controls.Add(this.linkLabelAPIKeys);
             this.panelAccount.Location = new System.Drawing.Point(740, 24);
             this.panelAccount.Name = "panelAccount";
             this.panelAccount.Size = new System.Drawing.Size(220, 80);
@@ -377,20 +375,6 @@
             this.comboBoxAccount.TabIndex = 18;
             this.comboBoxAccount.Tag = "";
             this.comboBoxAccount.SelectedIndexChanged += new System.EventHandler(this.comboBoxAccount_SelectedIndexChanged);
-            // 
-            // linkLabelAPIKeys
-            // 
-            this.linkLabelAPIKeys.ActiveLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabelAPIKeys.AutoSize = true;
-            this.linkLabelAPIKeys.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelAPIKeys.Location = new System.Drawing.Point(9, 62);
-            this.linkLabelAPIKeys.Name = "linkLabelAPIKeys";
-            this.linkLabelAPIKeys.Size = new System.Drawing.Size(50, 13);
-            this.linkLabelAPIKeys.TabIndex = 19;
-            this.linkLabelAPIKeys.TabStop = true;
-            this.linkLabelAPIKeys.Text = "API Keys";
-            this.linkLabelAPIKeys.VisitedLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabelAPIKeys.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelAPIKeys_LinkClicked);
             // 
             // panelLaunch
             // 
@@ -474,7 +458,6 @@
         private GuildLounge.Controls.Button buttonRefresh;
         private System.Windows.Forms.Label labelAPIError;
         private System.Windows.Forms.ComboBox comboBoxAccount;
-        private System.Windows.Forms.LinkLabel linkLabelAPIKeys;
         private System.Windows.Forms.Panel panelLaunch;
         private System.Windows.Forms.Label labelLaunchError;
         private GuildLounge.Controls.HighlightButton buttonLaunch;
