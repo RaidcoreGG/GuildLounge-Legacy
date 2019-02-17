@@ -382,7 +382,7 @@
             this.labelLaunchBehavior.TabIndex = 0;
             this.labelLaunchBehavior.Text = "When GW2 launches, Guild Lounge should..";
             // 
-            // UserControl_Settings
+            // Settings_old
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -394,7 +394,7 @@
             this.Controls.Add(this.gL_GroupBoxGameDir);
             this.Controls.Add(this.gL_GroupBoxLaunchBehavior);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "UserControl_Settings";
+            this.Name = "Settings_old";
             this.Size = new System.Drawing.Size(740, 436);
             this.gL_GroupBoxStartParams.ResumeLayout(false);
             this.gL_GroupBoxStartParams.PerformLayout();

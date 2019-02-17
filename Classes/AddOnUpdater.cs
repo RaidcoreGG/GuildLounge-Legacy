@@ -60,7 +60,7 @@ namespace GuildLounge
                         && File.Exists(Path.Combine(_addonDir, n)))
                     {
                         DateTime dtOnline = Convert.ToDateTime(resp.Headers.Get("Last-Modified"));
-                        if (dtOnline > addOns[i].LastUpdated)
+                        if (dtOnline > addOns[i].LastChecked)
                         {
                             _client.DownloadFile(addOns[i].Link, Path.Combine(_addonDir, n));
                             Console.WriteLine("[ADDON: OUTDATED]");
@@ -85,7 +85,7 @@ namespace GuildLounge
                     Console.WriteLine("[ADDON: DOWNLOADED]");
                 }
 
-                addOns[i].LastUpdated = DateTime.Now;
+                addOns[i].LastChecked = DateTime.Now;
 
                 if (addOns[i].Link.Contains("deltaconnected.com/arcdps/x64/d3d9.dll"))
                     arc = true;
@@ -100,9 +100,8 @@ namespace GuildLounge
     {
         private string m_sLink { get; set; }
 
-        //THIS WAS REFERRING TO WHEN THE PROVIDER LAST UPDATED THE FILE (NOT THE USER/CLIENT!)
-        //NOW IT REFERS TO WHEN IT WAS LAST CHECKED FOR AN UPDATE
-        public DateTime LastUpdated { get; set; }
+        public string Name { get; set; }
+        public DateTime LastChecked { get; set; }
         public string Link
         {
             get
