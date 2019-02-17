@@ -89,8 +89,56 @@ namespace GuildLounge.TabPages.SettingsPages
                 labelUpdateInfo.Text = "Your add-ons will update automatically, the next time you start Guild Lounge.";
             else
                 labelUpdateInfo.Text = "Your add-ons will no longer be updated automatically.";
-            
-            Utility.TimeoutToDisappear(labelUpdateInfo);
+
+            labelUpdateInfo.Visible = true;
+        }
+
+        private void buttonForceUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateExtensions(StoredExtensions, false);
+        }
+
+        private void buttonRemoveExtension_Click(object sender, EventArgs e)
+        {
+            if (listBoxExtensions.SelectedIndex >= 0)
+            {
+                listBoxExtensions.Items.RemoveAt(listBoxExtensions.SelectedIndex);
+                SaveExtensions();
+            }
+        }
+
+        private void buttonEditExtension_Click(object sender, EventArgs e)
+        {
+            if (listBoxExtensions.SelectedIndex >= 0)
+            {
+                var obj = (AddOn)listBoxExtensions.Items[listBoxExtensions.SelectedIndex];
+                textBoxExtensionLink.Text = obj.Link;
+                textBoxExtensionName.Text = obj.Name;
+                listBoxExtensions.Items.Remove(obj);
+                SaveExtensions();
+            }
+            else
+            {
+                labelError.Text = "Select an add-on to edit first!";
+                Utility.TimeoutToDisappear(labelError);
+            }
+        }
+
+        private void buttonAddExtension_Click(object sender, EventArgs e)
+        {
+            //IF LINK VALID (IS DLL FILE)
+            try
+            {
+                listBoxExtensions.Items.Add(new AddOn() { Link = textBoxExtensionLink.Text, Name = textBoxExtensionName.Text });
+                textBoxExtensionLink.Clear();
+                textBoxExtensionName.Clear();
+                SaveExtensions();
+            }
+            catch (Exception exc)
+            {
+                labelError.Text = exc.Message;
+                Utility.TimeoutToDisappear(labelError);
+            }
         }
     }
 }

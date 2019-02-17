@@ -35,13 +35,13 @@
             this.buttonForceUpdate = new GuildLounge.Controls.HighlightButton();
             this.buttonRemoveExtension = new GuildLounge.Controls.HighlightButton();
             this.buttonEditExtension = new GuildLounge.Controls.HighlightButton();
-            this.labelUpdateInfo = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
             this.buttonAddExtension = new GuildLounge.Controls.HighlightButton();
             this.textBoxExtensionLink = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxExtensions = new System.Windows.Forms.ListBox();
             this.checkBoxAutoUpdate = new System.Windows.Forms.CheckBox();
+            this.labelUpdateInfo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +110,7 @@
             this.buttonForceUpdate.TabIndex = 20;
             this.buttonForceUpdate.Text = "Force Update";
             this.buttonForceUpdate.UseVisualStyleBackColor = false;
+            this.buttonForceUpdate.Click += new System.EventHandler(this.buttonForceUpdate_Click);
             // 
             // buttonRemoveExtension
             // 
@@ -124,6 +125,7 @@
             this.buttonRemoveExtension.TabIndex = 19;
             this.buttonRemoveExtension.Text = "Remove";
             this.buttonRemoveExtension.UseVisualStyleBackColor = false;
+            this.buttonRemoveExtension.Click += new System.EventHandler(this.buttonRemoveExtension_Click);
             // 
             // buttonEditExtension
             // 
@@ -138,16 +140,7 @@
             this.buttonEditExtension.TabIndex = 18;
             this.buttonEditExtension.Text = "Edit";
             this.buttonEditExtension.UseVisualStyleBackColor = false;
-            // 
-            // labelUpdateInfo
-            // 
-            this.labelUpdateInfo.AutoSize = true;
-            this.labelUpdateInfo.Location = new System.Drawing.Point(18, 348);
-            this.labelUpdateInfo.Name = "labelUpdateInfo";
-            this.labelUpdateInfo.Size = new System.Drawing.Size(82, 13);
-            this.labelUpdateInfo.TabIndex = 0;
-            this.labelUpdateInfo.Text = "[UPDATEINFO]";
-            this.labelUpdateInfo.Visible = false;
+            this.buttonEditExtension.Click += new System.EventHandler(this.buttonEditExtension_Click);
             // 
             // labelError
             // 
@@ -172,6 +165,7 @@
             this.buttonAddExtension.TabIndex = 17;
             this.buttonAddExtension.Text = "Add";
             this.buttonAddExtension.UseVisualStyleBackColor = false;
+            this.buttonAddExtension.Click += new System.EventHandler(this.buttonAddExtension_Click);
             // 
             // textBoxExtensionLink
             // 
@@ -216,6 +210,16 @@
             this.checkBoxAutoUpdate.Text = "Automatically update Add-Ons";
             this.checkBoxAutoUpdate.UseVisualStyleBackColor = true;
             this.checkBoxAutoUpdate.CheckedChanged += new System.EventHandler(this.checkBoxAutoUpdate_CheckedChanged);
+            // 
+            // labelUpdateInfo
+            // 
+            this.labelUpdateInfo.AutoSize = true;
+            this.labelUpdateInfo.Location = new System.Drawing.Point(18, 348);
+            this.labelUpdateInfo.Name = "labelUpdateInfo";
+            this.labelUpdateInfo.Size = new System.Drawing.Size(82, 13);
+            this.labelUpdateInfo.TabIndex = 0;
+            this.labelUpdateInfo.Text = "[UPDATEINFO]";
+            this.labelUpdateInfo.Visible = false;
             // 
             // Extensions
             // 

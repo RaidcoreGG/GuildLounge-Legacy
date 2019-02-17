@@ -19,13 +19,11 @@ namespace GuildLounge
 
         public static SortedCoins SortCoins(int amount)
         {
-            SortedCoins rtrn = new SortedCoins
-            {
+            return new SortedCoins {
                 Gold = (amount / 100 / 100),
                 Silver = (amount % 10000 / 100),
                 Copper = (amount % 100)
             };
-            return rtrn;
         }
 
         public class SortedCoins
