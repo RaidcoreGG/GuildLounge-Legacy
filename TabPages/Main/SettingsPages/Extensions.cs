@@ -14,9 +14,9 @@ namespace GuildLounge.TabPages.SettingsPages
 {
     public partial class Extensions : UserControl
     {
-        private static AddOnUpdater _updater;
+        private static ExtensionUpdater _updater;
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
-        private AddOn[] StoredExtensions { get; set; }
+        private Extension[] StoredExtensions { get; set; }
 
         public Extensions()
         {
@@ -39,7 +39,7 @@ namespace GuildLounge.TabPages.SettingsPages
         private void LoadExtensions()
         {
             //READ ADDONS FROM FILE & ADD THEM TO THE LISTBOX
-            StoredExtensions = new JavaScriptSerializer().Deserialize<List<AddOn>>(File.ReadAllText(Path.Combine(_appdata, "addons.json"))).ToArray();
+            StoredExtensions = new JavaScriptSerializer().Deserialize<List<Extension>>(File.ReadAllText(Path.Combine(_appdata, "addons.json"))).ToArray();
             listBoxExtensions.Items.AddRange(StoredExtensions);
             listBoxExtensions.DisplayMember = "link";
         }
@@ -49,14 +49,14 @@ namespace GuildLounge.TabPages.SettingsPages
             checkBoxAutoUpdate.Checked = Properties.Settings.Default.AutoUpdate;
         }
 
-        private void UpdateExtensions(AddOn[] addOns, bool checkForLastModified)
+        private void UpdateExtensions(Extension[] addOns, bool checkForLastModified)
         {
             //CREATE A NEW TASK TO RUN IN THE BACKGROUND SO THE PROGRAM EXECUTION/LOAD UP WON'T BE DELAYED
             Task.Run(async () =>
             {
-                _updater = new AddOnUpdater();
-                await _updater.UpdateAddOns(addOns, checkForLastModified);
-                StoredExtensions = _updater.AddOns;
+                _updater = new ExtensionUpdater();
+                await _updater.UpdateExtensions(addOns, checkForLastModified);
+                StoredExtensions = _updater.StoredExtensions;
                 SaveExtensions();
             });
         }
@@ -66,9 +66,9 @@ namespace GuildLounge.TabPages.SettingsPages
             if (listBoxExtensions.Items.Count > 0)
             {
                 //REINITIALIZE ARRAY WITH EDITED/UPDATED VALUES FROM THE LISTBOX
-                StoredExtensions = new AddOn[listBoxExtensions.Items.Count];
+                StoredExtensions = new Extension[listBoxExtensions.Items.Count];
                 for (int i = 0; i < listBoxExtensions.Items.Count; i++)
-                    StoredExtensions[i] = (AddOn)listBoxExtensions.Items[i];
+                    StoredExtensions[i] = (Extension)listBoxExtensions.Items[i];
 
                 //PARSE TO JSON AND WRITE TO FILE
                 string parsedKeys = new JavaScriptSerializer().Serialize(StoredExtensions);
@@ -111,7 +111,7 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             if (listBoxExtensions.SelectedIndex >= 0)
             {
-                var obj = (AddOn)listBoxExtensions.Items[listBoxExtensions.SelectedIndex];
+                var obj = (Extension)listBoxExtensions.Items[listBoxExtensions.SelectedIndex];
                 textBoxExtensionLink.Text = obj.Link;
                 textBoxExtensionName.Text = obj.Name;
                 listBoxExtensions.Items.Remove(obj);
@@ -129,7 +129,7 @@ namespace GuildLounge.TabPages.SettingsPages
             //IF LINK VALID (IS DLL FILE)
             try
             {
-                listBoxExtensions.Items.Add(new AddOn() { Link = textBoxExtensionLink.Text, Name = textBoxExtensionName.Text });
+                listBoxExtensions.Items.Add(new Extension() { Link = textBoxExtensionLink.Text, Name = textBoxExtensionName.Text });
                 textBoxExtensionLink.Clear();
                 textBoxExtensionName.Clear();
                 SaveExtensions();

@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace GuildLounge
 {
-    public class AddOnUpdater
+    public class ExtensionUpdater
     {
         private static readonly WebClient _client = new WebClient();
-        private static string _addonDir = Path.Combine(Properties.Settings.Default.GameDir, "bin64");
+        private static string _extDir = Path.Combine(Properties.Settings.Default.GameDir, "bin64");
         //OBSOLETE IF UPDATEADDONS() WOULD RETURN THE PROCESSED ADDONS
-        public AddOn[] AddOns { get; set; }
+        public Extension[] StoredExtensions { get; set; }
 
-        public AddOnUpdater()
+        public ExtensionUpdater()
         {
             
         }
 
-        public Task UpdateAddOns(AddOn[] addOns, bool checkForLastModified)
+        public Task UpdateExtensions(Extension[] extensions, bool checkForLastModified)
         {
             Console.WriteLine("[ADDONS: INIT]");
             DateTime dt = DateTime.Now;
@@ -27,20 +27,20 @@ namespace GuildLounge
 
             //FIX ARRAY SO IF IT CONTAINS ARCDPS, ARC WILL ALWAYS BE PROCESSED FIRST
             //BECAUSE ARC IS CHAINLOADING OTHER ADDONS
-            AddOn pos0 = addOns[0];
-            for (int i = 0; i < addOns.Length; i++)
+            Extension pos0 = extensions[0];
+            for (int i = 0; i < extensions.Length; i++)
             {
-                if (addOns[i].Link.Contains("deltaconnected.com/arcdps/x64/d3d9.dll"))
+                if (extensions[i].Link.Contains("deltaconnected.com/arcdps/x64/d3d9.dll"))
                 {
-                    addOns[0] = addOns[i];
-                    addOns[i] = pos0;
+                    extensions[0] = extensions[i];
+                    extensions[i] = pos0;
                 }
             }
 
             int j = 1;
-            for (int i = 0; i < addOns.Length; i++)
+            for (int i = 0; i < extensions.Length; i++)
             {
-                string n = addOns[i].Link.ToString();
+                string n = extensions[i].Link.ToString();
                 //RENAME DUPLICATE D3D9.DLLS
                 if (arc && n.EndsWith("d3d9.dll"))
                 {
@@ -53,16 +53,16 @@ namespace GuildLounge
 
                 if (checkForLastModified)
                 {
-                    HttpWebRequest req = (HttpWebRequest)WebRequest.Create(new Uri(addOns[i].Link));
+                    HttpWebRequest req = (HttpWebRequest)WebRequest.Create(new Uri(extensions[i].Link));
                     WebResponse resp = (HttpWebResponse)req.GetResponse();
                     
                     if (resp.Headers.AllKeys.Contains("Last-Modified")
-                        && File.Exists(Path.Combine(_addonDir, n)))
+                        && File.Exists(Path.Combine(_extDir, n)))
                     {
                         DateTime dtOnline = Convert.ToDateTime(resp.Headers.Get("Last-Modified"));
-                        if (dtOnline > addOns[i].LastChecked)
+                        if (dtOnline > extensions[i].LastChecked)
                         {
-                            _client.DownloadFile(addOns[i].Link, Path.Combine(_addonDir, n));
+                            _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, n));
                             Console.WriteLine("[ADDON: OUTDATED]");
                         }
                         else
@@ -72,7 +72,7 @@ namespace GuildLounge
                     }
                     else
                     {
-                        _client.DownloadFile(addOns[i].Link, Path.Combine(_addonDir, n));
+                        _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, n));
                         Console.WriteLine("[ADDON: NOT CHECKED]");
                     }
 
@@ -81,22 +81,22 @@ namespace GuildLounge
                 }
                 else
                 {
-                    _client.DownloadFile(addOns[i].Link, Path.Combine(_addonDir, n));
+                    _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, n));
                     Console.WriteLine("[ADDON: DOWNLOADED]");
                 }
 
-                addOns[i].LastChecked = DateTime.Now;
+                extensions[i].LastChecked = DateTime.Now;
 
-                if (addOns[i].Link.Contains("deltaconnected.com/arcdps/x64/d3d9.dll"))
+                if (extensions[i].Link.Contains("deltaconnected.com/arcdps/x64/d3d9.dll"))
                     arc = true;
             }
-            AddOns = addOns;
+            StoredExtensions = extensions;
             Console.WriteLine("[ADDONS: " + (DateTime.Now - dt).TotalSeconds + "]");
             return Task.FromResult(0);
         }
     }
 
-    public class AddOn
+    public class Extension
     {
         private string m_sLink { get; set; }
 

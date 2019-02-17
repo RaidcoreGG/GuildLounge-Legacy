@@ -76,7 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Utility.cs" />
-    <Compile Include="Classes\AddOnUpdater.cs" />
+    <Compile Include="Classes\ExtensionUpdater.cs" />
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\ApiHandler.cs" />
     <Compile Include="Classes\RequestObjects.cs" />

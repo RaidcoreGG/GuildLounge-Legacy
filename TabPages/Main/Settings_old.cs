@@ -9,9 +9,9 @@ namespace GuildLounge.TabPages
 {
     public partial class Settings_old : UserControl
     {
-        private static AddOnUpdater _updater;
+        private static ExtensionUpdater _updater;
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
-        private AddOn[] AddOns { get; set; }
+        private Extension[] AddOns { get; set; }
 
         public Settings_old()
         {
@@ -56,19 +56,19 @@ namespace GuildLounge.TabPages
         private void LoadAddOns()
         {
             //READ ADDONS FROM FILE & ADD THEM TO THE LISTBOX
-            AddOns = new JavaScriptSerializer().Deserialize<List<AddOn>>(File.ReadAllText(Path.Combine(_appdata, "addons.json"))).ToArray();
+            AddOns = new JavaScriptSerializer().Deserialize<List<Extension>>(File.ReadAllText(Path.Combine(_appdata, "addons.json"))).ToArray();
             listBoxAddOns.Items.AddRange(AddOns);
             listBoxAddOns.DisplayMember = "link";
         }
 
-        private void UpdateAddOns(AddOn[] addOns, bool checkForLastModified)
+        private void UpdateAddOns(Extension[] addOns, bool checkForLastModified)
         {
             //CREATE A NEW TASK TO RUN IN THE BACKGROUND SO THE PROGRAM EXECUTION/LOAD UP WON'T BE DELAYED
             Task.Run(async () =>
             {
-                _updater = new AddOnUpdater();
-                await _updater.UpdateAddOns(addOns, checkForLastModified);
-                AddOns = _updater.AddOns;
+                _updater = new ExtensionUpdater();
+                await _updater.UpdateExtensions(addOns, checkForLastModified);
+                AddOns = _updater.StoredExtensions;
                 SaveAddOns();
             });
         }
@@ -78,9 +78,9 @@ namespace GuildLounge.TabPages
             if (listBoxAddOns.Items.Count > 0)
             {
                 //REINITIALIZE ARRAY WITH EDITED/UPDATED VALUES FROM THE LISTBOX
-                AddOns = new AddOn[listBoxAddOns.Items.Count];
+                AddOns = new Extension[listBoxAddOns.Items.Count];
                 for (int i = 0; i < listBoxAddOns.Items.Count; i++)
-                    AddOns[i] = (AddOn)listBoxAddOns.Items[i];
+                    AddOns[i] = (Extension)listBoxAddOns.Items[i];
 
                 //PARSE TO JSON AND WRITE TO FILE
                 string parsedKeys = new JavaScriptSerializer().Serialize(AddOns);
@@ -158,7 +158,7 @@ namespace GuildLounge.TabPages
             //IF LINK VALID (IS DLL FILE)
             try
             {
-                listBoxAddOns.Items.Add(new AddOn() { Link = textBoxAddOnLink.Text });
+                listBoxAddOns.Items.Add(new Extension() { Link = textBoxAddOnLink.Text });
                 textBoxAddOnLink.Clear();
                 SaveAddOns();
             }
@@ -173,7 +173,7 @@ namespace GuildLounge.TabPages
         {
             if (listBoxAddOns.SelectedIndex >= 0)
             {
-                var obj = (AddOn)listBoxAddOns.Items[listBoxAddOns.SelectedIndex];
+                var obj = (Extension)listBoxAddOns.Items[listBoxAddOns.SelectedIndex];
                 textBoxAddOnLink.Text = obj.Link;
                 listBoxAddOns.Items.Remove(obj);
                 SaveAddOns();
