@@ -43,9 +43,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.buttonPayPal = new GuildLounge.Controls.Button();
             this.buttonPatreon = new GuildLounge.Controls.Button();
             this.horizontalLine1 = new GuildLounge.Controls.HorizontalLine();
@@ -187,56 +184,31 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(147, 202);
+            this.label4.Location = new System.Drawing.Point(147, 208);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(272, 13);
+            this.label4.Size = new System.Drawing.Size(272, 39);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Crafty, my Guild Leader from [SUN] The Sunlight Blades.";
+            this.label4.Text = "Crafty, my Guild Leader from [SUN] The Sunlight Blades.\r\nHe was trying to support" +
+    " me and review my code,\r\nbut I am stubborn! :D";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(147, 221);
+            this.label5.Location = new System.Drawing.Point(147, 271);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(239, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "He was trying to support me and review my code,";
+            this.label5.Size = new System.Drawing.Size(257, 26);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "If you\'d like to support the project so I can maintain it,\r\nyou can donate over P" +
+    "ayPal or Patreon below!";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(147, 240);
+            this.label6.Location = new System.Drawing.Point(183, 321);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "but I am stubborn! :D";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(147, 271);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(257, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "If you\'d like to support the project so I can maintain it,";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(147, 290);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(227, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "you can donate over PayPal or Patreon below!";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(183, 315);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(204, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Thank you very much for your support! <3";
+            this.label6.Size = new System.Drawing.Size(204, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Thank you very much for your support! <3";
             // 
             // buttonPayPal
             // 
@@ -295,9 +267,6 @@
             this.Controls.Add(this.horizontalLine1);
             this.Controls.Add(this.buttonPatreon);
             this.Controls.Add(this.buttonPayPal);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -332,9 +301,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private Controls.Button buttonPayPal;
         private Controls.Button buttonPatreon;
         private Controls.HorizontalLine horizontalLine1;
