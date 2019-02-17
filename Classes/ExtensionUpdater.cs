@@ -44,9 +44,17 @@ namespace GuildLounge
                 //RENAME DUPLICATE D3D9.DLLS
                 if (arc && n.EndsWith("d3d9.dll"))
                 {
-                    n = n.Substring(n.LastIndexOf("/") + 1);
-                    n = n.Insert(n.IndexOf("."), "_chainload" + j.ToString());
-                    j++;
+                    if(extensions[i].Name != null || extensions[i].Name != "")
+                    {
+                        n = n.Substring(n.LastIndexOf("/") + 1);
+                        n = n.Insert(n.IndexOf("."), "_" + extensions[i].Name);
+                    }
+                    else
+                    {
+                        n = n.Substring(n.LastIndexOf("/") + 1);
+                        n = n.Insert(n.IndexOf("."), "_chainload" + j.ToString());
+                        j++;
+                    }
                 }
                 else
                     n = n.Substring(n.LastIndexOf("/") + 1);
