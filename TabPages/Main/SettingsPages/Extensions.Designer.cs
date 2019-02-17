@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new GuildLounge.Controls.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxExtensionName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.buttonForceUpdate = new GuildLounge.Controls.HighlightButton();
             this.buttonRemoveExtension = new GuildLounge.Controls.HighlightButton();
             this.buttonEditExtension = new GuildLounge.Controls.HighlightButton();
@@ -39,9 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxExtensions = new System.Windows.Forms.ListBox();
             this.checkBoxAutoUpdate = new System.Windows.Forms.CheckBox();
-            this.textBoxExtensionName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +56,6 @@
             this.groupBox1.Controls.Add(this.buttonForceUpdate);
             this.groupBox1.Controls.Add(this.buttonRemoveExtension);
             this.groupBox1.Controls.Add(this.buttonEditExtension);
-            this.groupBox1.Controls.Add(this.labelUpdateInfo);
             this.groupBox1.Controls.Add(this.labelError);
             this.groupBox1.Controls.Add(this.buttonAddExtension);
             this.groupBox1.Controls.Add(this.textBoxExtensionLink);
@@ -69,6 +68,34 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "gL_GroupBox3";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 262);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(263, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "This name will be used if there are multiple d3d9-DLLs.";
+            // 
+            // textBoxExtensionName
+            // 
+            this.textBoxExtensionName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.textBoxExtensionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxExtensionName.ForeColor = System.Drawing.Color.White;
+            this.textBoxExtensionName.Location = new System.Drawing.Point(6, 278);
+            this.textBoxExtensionName.Name = "textBoxExtensionName";
+            this.textBoxExtensionName.Size = new System.Drawing.Size(534, 20);
+            this.textBoxExtensionName.TabIndex = 22;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 244);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(334, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Please enter a substitional name (e.g. \"arcdps\" for \"d3d9_arcdps.dll\")";
             // 
             // buttonForceUpdate
             // 
@@ -115,7 +142,7 @@
             // labelUpdateInfo
             // 
             this.labelUpdateInfo.AutoSize = true;
-            this.labelUpdateInfo.Location = new System.Drawing.Point(233, 10);
+            this.labelUpdateInfo.Location = new System.Drawing.Point(18, 348);
             this.labelUpdateInfo.Name = "labelUpdateInfo";
             this.labelUpdateInfo.Size = new System.Drawing.Size(82, 13);
             this.labelUpdateInfo.TabIndex = 0;
@@ -188,34 +215,7 @@
             this.checkBoxAutoUpdate.TabIndex = 14;
             this.checkBoxAutoUpdate.Text = "Automatically update Add-Ons";
             this.checkBoxAutoUpdate.UseVisualStyleBackColor = true;
-            // 
-            // textBoxExtensionName
-            // 
-            this.textBoxExtensionName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBoxExtensionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExtensionName.ForeColor = System.Drawing.Color.White;
-            this.textBoxExtensionName.Location = new System.Drawing.Point(6, 278);
-            this.textBoxExtensionName.Name = "textBoxExtensionName";
-            this.textBoxExtensionName.Size = new System.Drawing.Size(534, 20);
-            this.textBoxExtensionName.TabIndex = 22;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 244);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(334, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Please enter a substitional name (e.g. \"arcdps\" for \"d3d9_arcdps.dll\")";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 262);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(263, 13);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "This name will be used if there are multiple d3d9-DLLs.";
+            this.checkBoxAutoUpdate.CheckedChanged += new System.EventHandler(this.checkBoxAutoUpdate_CheckedChanged);
             // 
             // Extensions
             // 
@@ -223,12 +223,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.labelUpdateInfo);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Extensions";
             this.Size = new System.Drawing.Size(570, 436);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

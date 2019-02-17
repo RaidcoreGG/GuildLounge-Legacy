@@ -16,23 +16,16 @@ namespace GuildLounge.TabPages.SettingsPages
         public Modules()
         {
             InitializeComponent();
-            
 
-            try
-            {
-                LoadSettingsModules();
-            }
-            catch (Exception exc)
-            {
-                Console.WriteLine(exc.Message);
-            }
+            LoadSettingsModules();
         }
 
-        private void LoadSettingsModules()
+        public void LoadSettingsModules()
         {
             //ACTIVE
             System.Collections.Specialized.StringCollection sca = Properties.Settings.Default.ActiveModules;
-            if(sca != null)
+            listBoxActive.Items.Clear();
+            if (sca != null)
             {
                 string[] stra = new string[sca.Count];
                 sca.CopyTo(stra, 0);
@@ -41,7 +34,8 @@ namespace GuildLounge.TabPages.SettingsPages
 
             //INACTIVE
             System.Collections.Specialized.StringCollection sci = Properties.Settings.Default.InactiveModules;
-            if(sci != null)
+            listBoxInactive.Items.Clear();
+            if (sci != null)
             {
                 string[] stri = new string[sci.Count];
                 sci.CopyTo(stri, 0);

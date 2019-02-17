@@ -50,12 +50,12 @@ namespace GuildLounge.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool UpdateAddOns {
+        public bool AutoUpdate {
             get {
-                return ((bool)(this["UpdateAddOns"]));
+                return ((bool)(this["AutoUpdate"]));
             }
             set {
-                this["UpdateAddOns"] = value;
+                this["AutoUpdate"] = value;
             }
         }
         

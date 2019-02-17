@@ -8,7 +8,7 @@
     <Setting Name="LaunchBehavior" Type="System.String" Scope="User">
       <Value Profile="(Default)">MINIMIZE</Value>
     </Setting>
-    <Setting Name="UpdateAddOns" Type="System.Boolean" Scope="User">
+    <Setting Name="AutoUpdate" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="StartParams" Type="System.String" Scope="User">

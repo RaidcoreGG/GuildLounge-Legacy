@@ -47,7 +47,7 @@ namespace GuildLounge.TabPages
                     break;
             }
             textBoxStartParams.Text = Properties.Settings.Default.StartParams;
-            checkBoxUpdateAddOns.Checked = Properties.Settings.Default.UpdateAddOns;
+            checkBoxUpdateAddOns.Checked = Properties.Settings.Default.AutoUpdate;
 
             //LABEL LOADUP CORRECT
             labelUpdateInfo.Visible = false;
@@ -135,7 +135,7 @@ namespace GuildLounge.TabPages
 
         private void checkBoxUpdateAddOns_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxUpdateAddOns.Checked != Properties.Settings.Default.UpdateAddOns)
+            if (checkBoxUpdateAddOns.Checked != Properties.Settings.Default.AutoUpdate)
                 buttonSave.Enabled = true;
             if (checkBoxUpdateAddOns.Checked)
                 labelUpdateInfo.Text = "Your add-ons will update automatically, the next time you start Guild Lounge.";
@@ -211,7 +211,7 @@ namespace GuildLounge.TabPages
             else if (radioButtonLaunchClose.Checked)
                 Properties.Settings.Default.LaunchBehavior = "CLOSE";
             Properties.Settings.Default.StartParams = textBoxStartParams.Text;
-            Properties.Settings.Default.UpdateAddOns = checkBoxUpdateAddOns.Checked;
+            Properties.Settings.Default.AutoUpdate = checkBoxUpdateAddOns.Checked;
             Properties.Settings.Default.Save();
             buttonSave.Enabled = false;
         }
@@ -229,7 +229,7 @@ namespace GuildLounge.TabPages
             else if (Properties.Settings.Default.LaunchBehavior == "CLOSE")
                 radioButtonLaunchClose.Checked = true;
             textBoxStartParams.Text = Properties.Settings.Default.StartParams;
-            checkBoxUpdateAddOns.Checked = Properties.Settings.Default.UpdateAddOns;
+            checkBoxUpdateAddOns.Checked = Properties.Settings.Default.AutoUpdate;
             buttonSave.Enabled = false;
         }
     }

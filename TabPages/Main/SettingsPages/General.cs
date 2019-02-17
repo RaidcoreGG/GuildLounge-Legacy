@@ -19,7 +19,7 @@ namespace GuildLounge.TabPages.SettingsPages
             LoadSettingsGeneral();
         }
 
-        private void LoadSettingsGeneral()
+        public void LoadSettingsGeneral()
         {
             textBoxGameDirectory.Text = Properties.Settings.Default.GameDir;
             textBoxStartParams.Text = Properties.Settings.Default.StartParams;

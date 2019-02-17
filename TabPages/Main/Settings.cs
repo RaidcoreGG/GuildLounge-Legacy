@@ -102,6 +102,9 @@ namespace GuildLounge.TabPages
         private void buttonRestore_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Reset();
+            ((SettingsPages.General)GeneralTab).LoadSettingsGeneral();
+            ((SettingsPages.Modules)ModulesTab).LoadSettingsModules();
+            ((SettingsPages.Extensions)ExtensionsTab).LoadSettingsExtensions();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
