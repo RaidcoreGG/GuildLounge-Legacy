@@ -333,7 +333,8 @@ namespace GuildLounge
                         ((Modules.Raids)m).MagnetiteShards = w.MagnetiteShards;
                         ((Modules.Raids)m).GaetingCrystals = w.GaetingCrystals;
 
-                        SetToolTipTexts(APIResponse);
+                        ((Modules.Raids)m).LIDetail = SetToolTipTextLI(APIResponse);
+                        ((Modules.Raids)m).LDDetail = SetToolTipTextLD(APIResponse);
                     }
                     else if (m is Modules.TPPickup)
                     {
@@ -372,7 +373,7 @@ namespace GuildLounge
             }
         }
         
-        private void SetToolTipTexts(ModuleData APIResponse)
+        private string SetToolTipTextLI(ModuleData APIResponse)
         {
             string detailedInfo = "";
             if (APIResponse.OnHandLI > 0)
@@ -385,12 +386,15 @@ namespace GuildLounge
                 detailedInfo += "In Gifts of Prowess: " + APIResponse.GiftOfProwess + "\n";
             if (APIResponse.EnvoyInsignia > 0)
                 detailedInfo += "In Envoy Insignias: " + APIResponse.EnvoyInsignia + "\n";
-            //moduleRaids.LIDetail = detailedInfo;
+            return detailedInfo;
+        }
 
-            detailedInfo = "";
+        private string SetToolTipTextLD(ModuleData APIResponse)
+        {
+            string detailedInfo = "";
             if (APIResponse.OnHandLD > 0)
                 detailedInfo += "On hand: " + APIResponse.OnHandLD + "\n";
-            //moduleRaids.LDDetail = detailedInfo;
+            return detailedInfo;
         }
 
         #region menustrip
