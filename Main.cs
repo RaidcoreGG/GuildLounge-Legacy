@@ -197,6 +197,9 @@ namespace GuildLounge
 
         private int GetModulesOverflow()
         {
+            if (panelModulesInner.Controls.Count <= 0)
+                return panelModulesInner.Height;
+
             return panelModulesInner.Controls[panelModulesInner.Controls.Count - 1].Location.Y +
                 panelModulesInner.Controls[panelModulesInner.Controls.Count - 1].Height;
         }
