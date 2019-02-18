@@ -110,6 +110,9 @@ namespace GuildLounge.TabPages.SettingsPages
             object data = e.Data.GetData(typeof(string));
             this.listBoxActive.Items.Remove(data);
             this.listBoxActive.Items.Insert(index, data);
+
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
         }
 
         private void linkLabelGLDiscord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
