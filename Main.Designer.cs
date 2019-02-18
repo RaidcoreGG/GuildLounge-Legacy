@@ -38,12 +38,6 @@
             this.buttonDashboard = new GuildLounge.Controls.NavigationButton();
             this.panelModulesOuter = new System.Windows.Forms.Panel();
             this.panelModulesInner = new System.Windows.Forms.Panel();
-            this.moduleTPPickup = new GuildLounge.Modules.TPPickup();
-            this.moduleBaseCurrencies = new GuildLounge.Modules.BaseCurrencies();
-            this.modulePvP = new GuildLounge.Modules.PvP();
-            this.moduleWvW = new GuildLounge.Modules.WvW();
-            this.moduleFractals = new GuildLounge.Modules.Fractals();
-            this.moduleRaids = new GuildLounge.Modules.Raids();
             this.scrollbarModules = new GuildLounge.Controls.Scrollbar();
             this.menuStrip = new GuildLounge.Controls.MenuStrip();
             this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +51,6 @@
             this.buttonLaunch = new GuildLounge.Controls.HighlightButton();
             this.panelNavigation.SuspendLayout();
             this.panelModulesOuter.SuspendLayout();
-            this.panelModulesInner.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.panelAccount.SuspendLayout();
             this.panelLaunch.SuspendLayout();
@@ -196,88 +189,10 @@
             // panelModulesInner
             // 
             this.panelModulesInner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.panelModulesInner.Controls.Add(this.moduleTPPickup);
-            this.panelModulesInner.Controls.Add(this.moduleBaseCurrencies);
-            this.panelModulesInner.Controls.Add(this.modulePvP);
-            this.panelModulesInner.Controls.Add(this.moduleWvW);
-            this.panelModulesInner.Controls.Add(this.moduleFractals);
-            this.panelModulesInner.Controls.Add(this.moduleRaids);
             this.panelModulesInner.Location = new System.Drawing.Point(12, 12);
             this.panelModulesInner.Name = "panelModulesInner";
             this.panelModulesInner.Size = new System.Drawing.Size(196, 342);
             this.panelModulesInner.TabIndex = 30;
-            // 
-            // moduleTPPickup
-            // 
-            this.moduleTPPickup.BackColor = System.Drawing.Color.Transparent;
-            this.moduleTPPickup.Coins = 0;
-            this.moduleTPPickup.ForeColor = System.Drawing.Color.White;
-            this.moduleTPPickup.Items = 0;
-            this.moduleTPPickup.Location = new System.Drawing.Point(0, 476);
-            this.moduleTPPickup.Name = "moduleTPPickup";
-            this.moduleTPPickup.Size = new System.Drawing.Size(196, 94);
-            this.moduleTPPickup.TabIndex = 34;
-            // 
-            // moduleBaseCurrencies
-            // 
-            this.moduleBaseCurrencies.BackColor = System.Drawing.Color.Transparent;
-            this.moduleBaseCurrencies.Coins = 0;
-            this.moduleBaseCurrencies.ForeColor = System.Drawing.Color.White;
-            this.moduleBaseCurrencies.Gems = 0;
-            this.moduleBaseCurrencies.Karma = 0;
-            this.moduleBaseCurrencies.Laurels = 0;
-            this.moduleBaseCurrencies.Location = new System.Drawing.Point(0, 340);
-            this.moduleBaseCurrencies.Name = "moduleBaseCurrencies";
-            this.moduleBaseCurrencies.Size = new System.Drawing.Size(196, 124);
-            this.moduleBaseCurrencies.TabIndex = 29;
-            // 
-            // modulePvP
-            // 
-            this.modulePvP.AscendedShardsOfGlory = 0;
-            this.modulePvP.BackColor = System.Drawing.Color.Transparent;
-            this.modulePvP.ForeColor = System.Drawing.Color.White;
-            this.modulePvP.LeagueTicket = 0;
-            this.modulePvP.Location = new System.Drawing.Point(0, 262);
-            this.modulePvP.Name = "modulePvP";
-            this.modulePvP.Size = new System.Drawing.Size(196, 66);
-            this.modulePvP.TabIndex = 33;
-            // 
-            // moduleWvW
-            // 
-            this.moduleWvW.BackColor = System.Drawing.Color.Transparent;
-            this.moduleWvW.BadgesOfHonor = 0;
-            this.moduleWvW.ForeColor = System.Drawing.Color.White;
-            this.moduleWvW.Location = new System.Drawing.Point(0, 184);
-            this.moduleWvW.Name = "moduleWvW";
-            this.moduleWvW.Size = new System.Drawing.Size(196, 66);
-            this.moduleWvW.SkirmishTickets = 0;
-            this.moduleWvW.TabIndex = 32;
-            // 
-            // moduleFractals
-            // 
-            this.moduleFractals.BackColor = System.Drawing.Color.Transparent;
-            this.moduleFractals.ForeColor = System.Drawing.Color.White;
-            this.moduleFractals.FractalRelics = 0;
-            this.moduleFractals.Location = new System.Drawing.Point(0, 106);
-            this.moduleFractals.Name = "moduleFractals";
-            this.moduleFractals.PristineFractalRelics = 0;
-            this.moduleFractals.Size = new System.Drawing.Size(196, 66);
-            this.moduleFractals.TabIndex = 31;
-            // 
-            // moduleRaids
-            // 
-            this.moduleRaids.BackColor = System.Drawing.Color.Transparent;
-            this.moduleRaids.ForeColor = System.Drawing.Color.White;
-            this.moduleRaids.GaetingCrystals = 0;
-            this.moduleRaids.LDDetail = null;
-            this.moduleRaids.LegendaryDivinations = 0;
-            this.moduleRaids.LegendaryInsights = 0;
-            this.moduleRaids.LIDetail = null;
-            this.moduleRaids.Location = new System.Drawing.Point(0, 0);
-            this.moduleRaids.MagnetiteShards = 0;
-            this.moduleRaids.Name = "moduleRaids";
-            this.moduleRaids.Size = new System.Drawing.Size(196, 94);
-            this.moduleRaids.TabIndex = 30;
             // 
             // scrollbarModules
             // 
@@ -431,7 +346,6 @@
             this.Text = "Guild Lounge";
             this.panelNavigation.ResumeLayout(false);
             this.panelModulesOuter.ResumeLayout(false);
-            this.panelModulesInner.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.panelAccount.ResumeLayout(false);
@@ -464,12 +378,6 @@
         private Controls.NavigationButton buttonSettings;
         private Controls.Scrollbar scrollbarModules;
         private System.Windows.Forms.Panel panelModulesInner;
-        private Modules.TPPickup moduleTPPickup;
-        private Modules.BaseCurrencies moduleBaseCurrencies;
-        private Modules.PvP modulePvP;
-        private Modules.WvW moduleWvW;
-        private Modules.Fractals moduleFractals;
-        private Modules.Raids moduleRaids;
     }
 }
 

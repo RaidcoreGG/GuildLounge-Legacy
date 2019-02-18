@@ -54,7 +54,7 @@ namespace GuildLounge.TabPages
 
             //CALLING MAIN FORM TO REFRESH KEYS
             var obj = (Main)Parent;
-            obj.RefetchAccounts();
+            obj.GetAccounts();
         }
 
         #region listbox

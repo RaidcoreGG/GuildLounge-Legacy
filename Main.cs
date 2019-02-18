@@ -76,7 +76,8 @@ namespace GuildLounge
             panelModulesOuter.VerticalScroll.Visible = panelModulesInner.VerticalScroll.Visible = false;
             panelModulesOuter.AutoScroll = panelModulesInner.AutoScroll = true;
 
-            scrollbarModules.Recalculate(342, 582);
+            LoadModules();
+            
             panelModulesOuter.MouseWheel += new MouseEventHandler(OnMouseWheelModules);
             panelModulesInner.MouseWheel += new MouseEventHandler(OnMouseWheelModules);
 
@@ -85,7 +86,6 @@ namespace GuildLounge
             LFGTab = new TabPages.LFG();
             RaidsTab = new TabPages.Raids();
             GuidesTab = new TabPages.Guides();
-            //APIKeysTab = new TabPages.APIKeys();
             SettingsTab = new TabPages.Settings();
 
             //INITIALIZING TOOL PAGES
@@ -148,15 +148,57 @@ namespace GuildLounge
             try
             {
                 //GET KEYS FROM API KEYS TAB
-                RefetchAccounts();
+                GetAccounts();
 
                 //REQUEST&PROCESS DATA FROM API
-                UpdateAccountOverview();
+                UpdateModuleData();
             }
             catch (Exception exc)
             {
                 Console.WriteLine(exc.Message);
             }
+        }
+
+        public void LoadModules()
+        {
+            for (int i = panelModulesInner.Controls.Count-1; i >= 0; i--)
+                panelModulesInner.Controls.RemoveAt(i);
+
+            Point loc = new Point(0, 0);
+            foreach(string s in Properties.Settings.Default.ActiveModules)
+            {
+                switch (s)
+                {
+                    case "Basic Currencies":
+                        panelModulesInner.Controls.Add(new Modules.BaseCurrencies() { Name = "moduleBaseCurrencies", Location = loc});
+                        break;
+                    case "Fractals":
+                        panelModulesInner.Controls.Add(new Modules.Fractals() { Name = "moduleFractals", Location = loc });
+                        break;
+                    case "PvP":
+                        panelModulesInner.Controls.Add(new Modules.PvP() { Name = "modulePvP", Location = loc });
+                        break;
+                    case "Raids":
+                        panelModulesInner.Controls.Add(new Modules.Raids() { Name = "moduleRaids", Location = loc });
+                        break;
+                    case "Trading Post Pickup":
+                        panelModulesInner.Controls.Add(new Modules.TPPickup() { Name = "moduleTPPickup", Location = loc });
+                        break;
+                    case "WvW":
+                        panelModulesInner.Controls.Add(new Modules.WvW() { Name = "moduleWvW", Location = loc });
+                        break;
+                }
+                loc.Y += panelModulesInner.Controls[panelModulesInner.Controls.Count - 1].Height + 12;
+            }
+
+            scrollbarModules.Recalculate(panelModulesInner.Height, GetModulesOverflow());
+            UpdateModuleData();
+        }
+
+        private int GetModulesOverflow()
+        {
+            return panelModulesInner.Controls[panelModulesInner.Controls.Count - 1].Location.Y +
+                panelModulesInner.Controls[panelModulesInner.Controls.Count - 1].Height;
         }
 
         #region navigation
@@ -212,23 +254,18 @@ namespace GuildLounge
             SetActiveTab(GuidesTab, sender);
         }
 
-        /*private void linkLabelAPIKeys_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            SetActiveTab(APIKeysTab, sender);
-        }*/
-
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             SetActiveTab(SettingsTab, sender);
         }
         #endregion
 
-        public void RefetchAccounts()
+        public void GetAccounts()
         {
             //GET KEYS FROM KEYSTAB
             var obj = (TabPages.Settings)SettingsTab;
             StoredAccounts = obj.GetAccounts();
-            
+
             if (StoredAccounts != null)
             {
                 ActiveAccount = StoredAccounts[0];
@@ -256,7 +293,7 @@ namespace GuildLounge
             obj2.ActiveAccount = ActiveAccount;
         }
 
-        private async void UpdateAccountOverview()
+        private async void UpdateModuleData()
         {
             comboBoxAccount.Enabled = false;
             buttonRefresh.Enabled = false;
@@ -270,36 +307,46 @@ namespace GuildLounge
                 var w = APIResponse.Wallet;
                 var tp = APIResponse.TradingPost;
 
-                //RAIDS
-                moduleRaids.LegendaryInsights = APIResponse.TotalLegendaryInsights;
-                moduleRaids.LegendaryDivinations = APIResponse.TotalLegendaryDivinations;
-                moduleRaids.MagnetiteShards = w.MagnetiteShards;
-                moduleRaids.GaetingCrystals = w.GaetingCrystals;
+                foreach (Control m in panelModulesInner.Controls)
+                {
+                    if (m is Modules.BaseCurrencies)
+                    {
+                        ((Modules.BaseCurrencies)m).Coins = w.Coins;
+                        ((Modules.BaseCurrencies)m).Karma = w.Karma;
+                        ((Modules.BaseCurrencies)m).Laurels = w.Laurels;
+                        ((Modules.BaseCurrencies)m).Gems = w.Gems;
+                    }
+                    else if (m is Modules.Fractals)
+                    {
+                        ((Modules.Fractals)m).FractalRelics = w.FractalRelics;
+                        ((Modules.Fractals)m).PristineFractalRelics = w.PristineFractalRelics;
+                    }
+                    else if (m is Modules.PvP)
+                    {
+                        ((Modules.PvP)m).AscendedShardsOfGlory = w.AscendedShardsOfGlory;
+                        ((Modules.PvP)m).LeagueTicket = w.LeagueTicket;
+                    }
+                    else if (m is Modules.Raids)
+                    {
+                        ((Modules.Raids)m).LegendaryInsights = APIResponse.TotalLegendaryInsights;
+                        ((Modules.Raids)m).LegendaryDivinations = APIResponse.TotalLegendaryDivinations;
+                        ((Modules.Raids)m).MagnetiteShards = w.MagnetiteShards;
+                        ((Modules.Raids)m).GaetingCrystals = w.GaetingCrystals;
 
-                SetToolTipTexts(APIResponse);
+                        SetToolTipTexts(APIResponse);
+                    }
+                    else if (m is Modules.TPPickup)
+                    {
+                        ((Modules.TPPickup)m).Coins = tp.Coins;
+                        ((Modules.TPPickup)m).Items = tp.Items.Length;
+                    }
+                    else if (m is Modules.WvW)
+                    {
+                        ((Modules.WvW)m).BadgesOfHonor = w.BadgeOfHonor;
+                        ((Modules.WvW)m).SkirmishTickets = w.SkirmishTicket;
+                    }
+                }
 
-                //FRACTALS
-                moduleFractals.FractalRelics = w.FractalRelics;
-                moduleFractals.PristineFractalRelics = w.PristineFractalRelics;
-
-                //WVW
-                moduleWvW.BadgesOfHonor = w.BadgeOfHonor;
-                moduleWvW.SkirmishTickets = w.SkirmishTicket;
-
-                //PVP
-                modulePvP.AscendedShardsOfGlory = w.AscendedShardsOfGlory;
-                modulePvP.LeagueTicket = w.LeagueTicket;
-
-                //COINS
-                moduleBaseCurrencies.Coins = w.Coins;
-                moduleBaseCurrencies.Karma = w.Karma;
-                moduleBaseCurrencies.Laurels = w.Laurels;
-                moduleBaseCurrencies.Gems = w.Gems;
-
-                //TP PICKUP
-                moduleTPPickup.Coins = tp.Coins;
-                moduleTPPickup.Items = tp.Items.Length;
-                
             }
             catch (Exception exc)
             {
@@ -338,12 +385,12 @@ namespace GuildLounge
                 detailedInfo += "In Gifts of Prowess: " + APIResponse.GiftOfProwess + "\n";
             if (APIResponse.EnvoyInsignia > 0)
                 detailedInfo += "In Envoy Insignias: " + APIResponse.EnvoyInsignia + "\n";
-            moduleRaids.LIDetail = detailedInfo;
+            //moduleRaids.LIDetail = detailedInfo;
 
             detailedInfo = "";
             if (APIResponse.OnHandLD > 0)
                 detailedInfo += "On hand: " + APIResponse.OnHandLD + "\n";
-            moduleRaids.LDDetail = detailedInfo;
+            //moduleRaids.LDDetail = detailedInfo;
         }
 
         #region menustrip
@@ -380,7 +427,7 @@ namespace GuildLounge
                         StoredAccounts[comboBoxAccount.SelectedIndex];
 
                     //REFRESH DATA DUE TO NEWLY SELECTED KEY
-                    UpdateAccountOverview();
+                    UpdateModuleData();
                 }
             }
         }
@@ -394,7 +441,7 @@ namespace GuildLounge
                 obj.ActiveAccount = ActiveAccount;
 
                 //REFRESH OVERVIEW
-                UpdateAccountOverview();
+                UpdateModuleData();
             }
         }
         
@@ -415,7 +462,7 @@ namespace GuildLounge
                     Show();
 
                     //REFRESH DATA AS SOON AS THE GAME IS CLOSED
-                    UpdateAccountOverview();
+                    UpdateModuleData();
                 }
                 else if (Properties.Settings.Default.LaunchBehavior == "CLOSE")
                     Environment.Exit(0);

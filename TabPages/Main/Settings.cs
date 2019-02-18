@@ -113,6 +113,8 @@ namespace GuildLounge.TabPages
         {
             Properties.Settings.Default.Save();
             buttonSave.Enabled = false;
+            var obj = (Main)Parent;
+            obj.LoadModules();
         }
 
         public Account[] GetAccounts()
@@ -123,7 +125,7 @@ namespace GuildLounge.TabPages
         public void RefetchAccounts()
         {
             var obj = (Main)Parent;
-            obj.RefetchAccounts();
+            obj.GetAccounts();
         }
 
         public void SettingsChanged()
