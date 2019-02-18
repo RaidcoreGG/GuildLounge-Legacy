@@ -85,7 +85,6 @@ namespace GuildLounge
                     }
 
                     resp.Close();
-                    resp.Dispose();
                 }
                 else
                 {
