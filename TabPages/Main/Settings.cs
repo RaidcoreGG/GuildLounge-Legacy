@@ -54,6 +54,8 @@ namespace GuildLounge.TabPages
             });
 
             SetActiveTab(GeneralTab);
+
+            buttonSave.Enabled = false;
         }
 
         protected void SetActiveTab(UserControl tab)
@@ -130,6 +132,7 @@ namespace GuildLounge.TabPages
             //DOESN'T REQUIRE FETCHING, HANDLED LOCALLY
 
             Properties.Settings.Default.Save();
+            buttonSave.Enabled = false;
         }
 
         public Account[] GetAccounts()
@@ -141,6 +144,11 @@ namespace GuildLounge.TabPages
         {
             var obj = (Main)Parent;
             obj.RefetchAccounts();
+        }
+
+        public void SettingsChanged()
+        {
+            buttonSave.Enabled = true;
         }
     }
 }

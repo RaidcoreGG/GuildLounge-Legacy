@@ -49,26 +49,36 @@ namespace GuildLounge.TabPages.SettingsPages
         private void textBoxGameDirectory_TextChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.GameDir = textBoxGameDirectory.Text;
+            if(Parent != null)
+                ((Settings)Parent).SettingsChanged();
         }
 
         private void textBoxStartParams_TextChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.StartParams = textBoxStartParams.Text;
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
         }
 
         private void radioButtonLaunchStayOpen_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.LaunchBehavior = "STAY_OPEN";
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
         }
 
         private void radioButtonLaunchMinimize_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.LaunchBehavior = "MINIMIZE";
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
         }
 
         private void radioButtonLaunchClose_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.LaunchBehavior = "CLOSE";
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
         }
     }
 }

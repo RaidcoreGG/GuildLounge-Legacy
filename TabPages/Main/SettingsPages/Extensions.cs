@@ -94,6 +94,8 @@ namespace GuildLounge.TabPages.SettingsPages
                 labelUpdateInfo.Text = "Your add-ons will no longer be updated automatically.";
 
             labelUpdateInfo.Visible = true;
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
         }
 
         private void buttonForceUpdate_Click(object sender, EventArgs e)
