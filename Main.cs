@@ -170,22 +170,22 @@ namespace GuildLounge
                 switch (s)
                 {
                     case "Basic Currencies":
-                        panelModulesInner.Controls.Add(new Modules.BaseCurrencies() { Name = "moduleBaseCurrencies", Location = loc});
+                        panelModulesInner.Controls.Add(new Modules.BaseCurrencies() { Location = loc});
                         break;
                     case "Fractals":
-                        panelModulesInner.Controls.Add(new Modules.Fractals() { Name = "moduleFractals", Location = loc });
+                        panelModulesInner.Controls.Add(new Modules.Fractals() { Location = loc });
                         break;
                     case "PvP":
-                        panelModulesInner.Controls.Add(new Modules.PvP() { Name = "modulePvP", Location = loc });
+                        panelModulesInner.Controls.Add(new Modules.PvP() { Location = loc });
                         break;
                     case "Raids":
-                        panelModulesInner.Controls.Add(new Modules.Raids() { Name = "moduleRaids", Location = loc });
+                        panelModulesInner.Controls.Add(new Modules.Raids() { Location = loc });
                         break;
                     case "Trading Post Pickup":
-                        panelModulesInner.Controls.Add(new Modules.TPPickup() { Name = "moduleTPPickup", Location = loc });
+                        panelModulesInner.Controls.Add(new Modules.TPPickup() { Location = loc });
                         break;
                     case "WvW":
-                        panelModulesInner.Controls.Add(new Modules.WvW() { Name = "moduleWvW", Location = loc });
+                        panelModulesInner.Controls.Add(new Modules.WvW() { Location = loc });
                         break;
                 }
                 loc.Y += panelModulesInner.Controls[panelModulesInner.Controls.Count - 1].Height + 12;
