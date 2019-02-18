@@ -76,6 +76,8 @@ namespace GuildLounge.TabPages.SettingsPages
                 listBoxActive.Items.Add(listBoxInactive.Items[listBoxInactive.SelectedIndex]);
                 listBoxInactive.Items.RemoveAt(listBoxInactive.SelectedIndex);
             }
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
         }
 
         private void buttonMoveToInactive_Click(object sender, EventArgs e)
@@ -85,13 +87,10 @@ namespace GuildLounge.TabPages.SettingsPages
                 listBoxInactive.Items.Add(listBoxActive.Items[listBoxActive.SelectedIndex]);
                 listBoxActive.Items.RemoveAt(listBoxActive.SelectedIndex);
             }
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
         }
-
-        private void linkLabelGLDiscord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://discord.gg/MSgPhDv");
-        }
-
+        
         private void listBoxActive_MouseDown(object sender, MouseEventArgs e)
         {
             if (listBoxActive.SelectedItem != null)
@@ -111,6 +110,11 @@ namespace GuildLounge.TabPages.SettingsPages
             object data = e.Data.GetData(typeof(string));
             this.listBoxActive.Items.Remove(data);
             this.listBoxActive.Items.Insert(index, data);
+        }
+
+        private void linkLabelGLDiscord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://discord.gg/MSgPhDv");
         }
     }
 }
