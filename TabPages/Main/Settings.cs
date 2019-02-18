@@ -111,26 +111,6 @@ namespace GuildLounge.TabPages
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            //GENERAL
-            //DOESN'T REQUIRE FETCHING, HANDLED LOCALLY
-
-            //ACCOUNTS
-            //DOESN'T REQUIRE FETCHING, HANDLED LOCALLY
-
-            //MODULES
-            var obj = (SettingsPages.Modules)ModulesTab;
-
-            System.Collections.Specialized.StringCollection sca = new System.Collections.Specialized.StringCollection();
-            sca.AddRange(obj.GetActiveModules());
-            Properties.Settings.Default.ActiveModules = sca;
-
-            System.Collections.Specialized.StringCollection sci = new System.Collections.Specialized.StringCollection();
-            sci.AddRange(obj.GetInactiveModules());
-            Properties.Settings.Default.InactiveModules = sci;
-
-            //EXTENSIONS
-            //DOESN'T REQUIRE FETCHING, HANDLED LOCALLY
-
             Properties.Settings.Default.Save();
             buttonSave.Enabled = false;
         }

@@ -43,7 +43,21 @@ namespace GuildLounge.TabPages.SettingsPages
             }
         }
 
-        public string[] GetActiveModules()
+        private void SetModules()
+        {
+            System.Collections.Specialized.StringCollection sca = new System.Collections.Specialized.StringCollection();
+            sca.AddRange(GetActiveModules());
+            Properties.Settings.Default.ActiveModules = sca;
+
+            System.Collections.Specialized.StringCollection sci = new System.Collections.Specialized.StringCollection();
+            sci.AddRange(GetInactiveModules());
+            Properties.Settings.Default.InactiveModules = sci;
+
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
+        }
+
+        private string[] GetActiveModules()
         {
             string[] modules = new string[listBoxActive.Items.Count];
 
@@ -56,7 +70,7 @@ namespace GuildLounge.TabPages.SettingsPages
             return modules;
         }
 
-        public string[] GetInactiveModules()
+        private string[] GetInactiveModules()
         {
             string[] modules = new string[listBoxInactive.Items.Count];
 
@@ -76,8 +90,8 @@ namespace GuildLounge.TabPages.SettingsPages
                 listBoxActive.Items.Add(listBoxInactive.Items[listBoxInactive.SelectedIndex]);
                 listBoxInactive.Items.RemoveAt(listBoxInactive.SelectedIndex);
             }
-            if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+
+            SetModules();
         }
 
         private void buttonMoveToInactive_Click(object sender, EventArgs e)
@@ -87,8 +101,8 @@ namespace GuildLounge.TabPages.SettingsPages
                 listBoxInactive.Items.Add(listBoxActive.Items[listBoxActive.SelectedIndex]);
                 listBoxActive.Items.RemoveAt(listBoxActive.SelectedIndex);
             }
-            if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+
+            SetModules();
         }
         
         private void listBoxActive_MouseDown(object sender, MouseEventArgs e)
@@ -111,8 +125,7 @@ namespace GuildLounge.TabPages.SettingsPages
             this.listBoxActive.Items.Remove(data);
             this.listBoxActive.Items.Insert(index, data);
 
-            if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+            SetModules();
         }
 
         private void linkLabelGLDiscord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
