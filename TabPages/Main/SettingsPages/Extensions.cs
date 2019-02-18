@@ -34,6 +34,9 @@ namespace GuildLounge.TabPages.SettingsPages
             {
                 Console.WriteLine(exc.Message);
             }
+
+            //LOADUP FIX
+            labelUpdateInfo.Visible = false;
         }
 
         private void LoadExtensions()

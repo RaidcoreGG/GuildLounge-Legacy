@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.labelUpdateInfo = new System.Windows.Forms.Label();
             this.groupBox1 = new GuildLounge.Controls.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxExtensionName = new System.Windows.Forms.TextBox();
@@ -41,9 +42,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxExtensions = new System.Windows.Forms.ListBox();
             this.checkBoxAutoUpdate = new System.Windows.Forms.CheckBox();
-            this.labelUpdateInfo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // labelUpdateInfo
+            // 
+            this.labelUpdateInfo.AutoSize = true;
+            this.labelUpdateInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUpdateInfo.Location = new System.Drawing.Point(18, 377);
+            this.labelUpdateInfo.Name = "labelUpdateInfo";
+            this.labelUpdateInfo.Size = new System.Drawing.Size(82, 13);
+            this.labelUpdateInfo.TabIndex = 0;
+            this.labelUpdateInfo.Text = "[UPDATEINFO]";
+            this.labelUpdateInfo.Visible = false;
             // 
             // groupBox1
             // 
@@ -64,7 +75,7 @@
             this.groupBox1.Controls.Add(this.checkBoxAutoUpdate);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(546, 330);
+            this.groupBox1.Size = new System.Drawing.Size(546, 356);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "gL_GroupBox3";
@@ -72,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 262);
+            this.label3.Location = new System.Drawing.Point(6, 268);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(263, 13);
             this.label3.TabIndex = 23;
@@ -83,7 +94,7 @@
             this.textBoxExtensionName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.textBoxExtensionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxExtensionName.ForeColor = System.Drawing.Color.White;
-            this.textBoxExtensionName.Location = new System.Drawing.Point(6, 278);
+            this.textBoxExtensionName.Location = new System.Drawing.Point(6, 284);
             this.textBoxExtensionName.Name = "textBoxExtensionName";
             this.textBoxExtensionName.Size = new System.Drawing.Size(534, 20);
             this.textBoxExtensionName.TabIndex = 22;
@@ -91,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 244);
+            this.label2.Location = new System.Drawing.Point(6, 250);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(334, 13);
             this.label2.TabIndex = 21;
@@ -104,7 +115,7 @@
             this.buttonForceUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonForceUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.buttonForceUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonForceUpdate.Location = new System.Drawing.Point(122, 304);
+            this.buttonForceUpdate.Location = new System.Drawing.Point(122, 330);
             this.buttonForceUpdate.Name = "buttonForceUpdate";
             this.buttonForceUpdate.Size = new System.Drawing.Size(100, 20);
             this.buttonForceUpdate.TabIndex = 20;
@@ -119,7 +130,7 @@
             this.buttonRemoveExtension.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRemoveExtension.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.buttonRemoveExtension.ForeColor = System.Drawing.Color.White;
-            this.buttonRemoveExtension.Location = new System.Drawing.Point(228, 304);
+            this.buttonRemoveExtension.Location = new System.Drawing.Point(228, 330);
             this.buttonRemoveExtension.Name = "buttonRemoveExtension";
             this.buttonRemoveExtension.Size = new System.Drawing.Size(100, 20);
             this.buttonRemoveExtension.TabIndex = 19;
@@ -134,7 +145,7 @@
             this.buttonEditExtension.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditExtension.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.buttonEditExtension.ForeColor = System.Drawing.Color.White;
-            this.buttonEditExtension.Location = new System.Drawing.Point(334, 304);
+            this.buttonEditExtension.Location = new System.Drawing.Point(334, 330);
             this.buttonEditExtension.Name = "buttonEditExtension";
             this.buttonEditExtension.Size = new System.Drawing.Size(100, 20);
             this.buttonEditExtension.TabIndex = 18;
@@ -145,7 +156,7 @@
             // labelError
             // 
             this.labelError.AutoSize = true;
-            this.labelError.Location = new System.Drawing.Point(6, 308);
+            this.labelError.Location = new System.Drawing.Point(6, 314);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(52, 13);
             this.labelError.TabIndex = 0;
@@ -159,7 +170,7 @@
             this.buttonAddExtension.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddExtension.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.buttonAddExtension.ForeColor = System.Drawing.Color.White;
-            this.buttonAddExtension.Location = new System.Drawing.Point(440, 304);
+            this.buttonAddExtension.Location = new System.Drawing.Point(440, 330);
             this.buttonAddExtension.Name = "buttonAddExtension";
             this.buttonAddExtension.Size = new System.Drawing.Size(100, 20);
             this.buttonAddExtension.TabIndex = 17;
@@ -210,16 +221,6 @@
             this.checkBoxAutoUpdate.Text = "Automatically update Add-Ons";
             this.checkBoxAutoUpdate.UseVisualStyleBackColor = true;
             this.checkBoxAutoUpdate.CheckedChanged += new System.EventHandler(this.checkBoxAutoUpdate_CheckedChanged);
-            // 
-            // labelUpdateInfo
-            // 
-            this.labelUpdateInfo.AutoSize = true;
-            this.labelUpdateInfo.Location = new System.Drawing.Point(18, 348);
-            this.labelUpdateInfo.Name = "labelUpdateInfo";
-            this.labelUpdateInfo.Size = new System.Drawing.Size(82, 13);
-            this.labelUpdateInfo.TabIndex = 0;
-            this.labelUpdateInfo.Text = "[UPDATEINFO]";
-            this.labelUpdateInfo.Visible = false;
             // 
             // Extensions
             // 
