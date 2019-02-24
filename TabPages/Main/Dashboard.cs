@@ -13,6 +13,8 @@ namespace GuildLounge.TabPages
 {
     public partial class Dashboard : UserControl
     {
+        private static readonly ApiHandler _api = new ApiHandler();
+
         private NewsObject[] News;
         private int NewsIndex;
         private Timer NewsClock;
@@ -20,6 +22,8 @@ namespace GuildLounge.TabPages
         public Dashboard()
         {
             InitializeComponent();
+
+            //FetchNews();
             News = new NewsObject[]
             {
                 new NewsObject { Link = "http://guildlounge.com/about", HeaderImage = Properties.Resources.news_panel1 },
@@ -35,9 +39,16 @@ namespace GuildLounge.TabPages
         }
 
         #region news
+        private async void FetchNews()
+        {
+            NewsObject[] APIResponse = await _api.GetResponseWithEntry<NewsObject[]>("[ENTRYPOINT]", "news");
+            News = APIResponse;
+        }
+
         class NewsObject
         {
             public string Link { get; set; }
+            public string HeaderImageLink { get; set; }
             public Image HeaderImage { get; set; }
         }
 
@@ -52,7 +63,10 @@ namespace GuildLounge.TabPages
             NewsIndex--;
             if (NewsIndex < 0)
                 NewsIndex = News.Length - 1;
-            pictureBoxNews.BackgroundImage = News[NewsIndex].HeaderImage;
+            if (News[NewsIndex].HeaderImage == null)
+                pictureBoxNews.Load(News[NewsIndex].HeaderImageLink);
+            else
+                pictureBoxNews.BackgroundImage = News[NewsIndex].HeaderImage;
             NewsClock.Start();
         }
 
@@ -62,7 +76,10 @@ namespace GuildLounge.TabPages
             NewsIndex++;
             if (NewsIndex > News.Length - 1)
                 NewsIndex = 0;
-            pictureBoxNews.BackgroundImage = News[NewsIndex].HeaderImage;
+            if (News[NewsIndex].HeaderImage == null)
+                pictureBoxNews.Load(News[NewsIndex].HeaderImageLink);
+            else
+                pictureBoxNews.BackgroundImage = News[NewsIndex].HeaderImage;
             NewsClock.Start();
         }
 
