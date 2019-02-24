@@ -32,7 +32,7 @@ namespace GuildLounge.Controls
                 Location = new Point(1, 1),
                 Size = new Size(Width - 2, (int)((Height - 2) * 0.2)),
                 BackColor = Color.FromArgb(100, 100, 100)
-        };
+            };
 
             Recalculate(Height, Height);
 
@@ -51,10 +51,17 @@ namespace GuildLounge.Controls
         public void Recalculate(int normalHeight, int overflowedHeight)
         {
             if (overflowedHeight < normalHeight)
-                overflowedHeight = normalHeight;
+            {
+                this.Visible = false;
+                return;
+            }
+            else
+            {
+                this.Visible = true;
+                factor = (float)normalHeight / (float)overflowedHeight;
+            }
 
-            factor = (float)normalHeight / (float)overflowedHeight;
-            Thumb.Size = new Size(Width - 2, (int)((normalHeight - 2) * factor));
+            Thumb.Size = new Size(Width - 2, (int)((Height - 2) * factor));
 
             Step = (int)(overflowedHeight * 0.1);
 
