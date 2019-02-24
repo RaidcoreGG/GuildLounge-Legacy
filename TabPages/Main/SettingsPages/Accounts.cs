@@ -36,7 +36,7 @@ namespace GuildLounge.TabPages.SettingsPages
         public void LoadAccounts()
         {
             //READ API KEYS FROM FILE AND ADD THEM TO THE LISTBOX
-            StoredAccounts = new JavaScriptSerializer().Deserialize<List<Account>>(File.ReadAllText(Path.Combine(_appdata, "api_keys.json"))).ToArray();
+            StoredAccounts = new JavaScriptSerializer().Deserialize<List<Account>>(File.ReadAllText(Path.Combine(_appdata, "accounts.json"))).ToArray();
             listBoxAccounts.Items.AddRange(StoredAccounts);
         }
 
@@ -51,12 +51,12 @@ namespace GuildLounge.TabPages.SettingsPages
 
                 //PARSE TO JSON AND WRITE TO FILE
                 string parsedKeys = new JavaScriptSerializer().Serialize(StoredAccounts);
-                File.WriteAllText(Path.Combine(_appdata, "api_keys.json"), parsedKeys);
+                File.WriteAllText(Path.Combine(_appdata, "accounts.json"), parsedKeys);
             }
             else
             {
                 //WRITE AN EMPTY JSON OBJECT TO FILE
-                File.WriteAllText(Path.Combine(_appdata, "api_keys.json"), "[]");
+                File.WriteAllText(Path.Combine(_appdata, "accounts.json"), "[]");
                 StoredAccounts = null;
             }
 

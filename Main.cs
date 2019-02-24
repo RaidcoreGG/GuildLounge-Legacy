@@ -139,8 +139,8 @@ namespace GuildLounge
             //CREATE IF NOT EXISTING
             if (!Directory.Exists(_appdata))
                 Directory.CreateDirectory(_appdata);
-            if (!File.Exists(Path.Combine(_appdata, "api_keys.json")))
-                File.Create(Path.Combine(_appdata, "api_keys.json"));
+            if (!File.Exists(Path.Combine(_appdata, "accounts.json")))
+                File.Create(Path.Combine(_appdata, "accounts.json"));
             if (!File.Exists(Path.Combine(_appdata, "addons.json")))
                 File.Create(Path.Combine(_appdata, "addons.json"));
 
