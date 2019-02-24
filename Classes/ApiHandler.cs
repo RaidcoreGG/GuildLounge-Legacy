@@ -21,6 +21,15 @@ namespace GuildLounge
             return new JavaScriptSerializer().Deserialize<T>(response);
         }
         
+        //WILL BE USED TO UPDATE MODULE LIST WHEN NEW ONES GET ADDED
+        public async Task<T> GetResponseWithEntry<T>(string entryPoint, string endPoint, params string[] args)
+        {
+            Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
+            //Console.WriteLine(String.Join("?", (_apiBase + endPoint), String.Join("&", args)));
+            string response = await _client.GetStringAsync(String.Join("?", (entryPoint + endPoint), String.Join("&", args)));
+            return new JavaScriptSerializer().Deserialize<T>(response);
+        }
+
         public async Task<RaidCMs> FetchRaidCMs(string accessToken)
         {
             RaidCMs resp = new RaidCMs();

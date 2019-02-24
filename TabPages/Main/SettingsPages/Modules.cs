@@ -13,6 +13,8 @@ namespace GuildLounge.TabPages.SettingsPages
 {
     public partial class Modules : UserControl
     {
+        private static readonly ApiHandler _api = new ApiHandler();
+        
         public Modules()
         {
             InitializeComponent();
@@ -40,6 +42,22 @@ namespace GuildLounge.TabPages.SettingsPages
                 string[] stri = new string[sci.Count];
                 sci.CopyTo(stri, 0);
                 listBoxInactive.Items.AddRange(stri);
+            }
+
+            //InjectModules();
+        }
+
+        private async void InjectModules()
+        {
+            string[] APIResponse = await _api.GetResponseWithEntry<string[]>("[ENTRYPOINT]", "modules");
+
+            foreach (string s in APIResponse)
+            {
+                if (!listBoxActive.Items.Contains(s) && !listBoxInactive.Items.Contains(s))
+                {
+                    listBoxInactive.Items.Add(s);
+                    SetModules();
+                }
             }
         }
 
