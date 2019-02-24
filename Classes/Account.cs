@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace GuildLounge
@@ -20,7 +21,6 @@ namespace GuildLounge
                 if (CheckKey(value))
                 {
                     m_sKey = value;
-                    FetchPermissions(value);
                 }
                 else
                     throw new Exception("Invalid Key Format!");
@@ -39,10 +39,10 @@ namespace GuildLounge
             k = k.ToUpper();
             return Regex.IsMatch(k, @"^[\w]{8}(-[\w]{4}){3}-[\w]{20}(-[\w]{4}){3}-[\w]{12}$");
         }
-        private async void FetchPermissions(string accessToken)
+        public static async Task<string> FetchPermissions(string accessToken)
         {
             TokenInfo APIResponse = await _api.GetResponse<TokenInfo>("tokeninfo", "access_token=" + accessToken);
-            Permissions = APIResponse.ToString();
+            return APIResponse.ToString();
         }
     }
 }

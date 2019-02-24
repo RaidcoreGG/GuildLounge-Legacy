@@ -76,6 +76,8 @@ namespace GuildLounge.TabPages.SettingsPages
                     Password = textBoxPassword.Text
                 });
 
+                FetchPermissionsProxy();
+                
                 textBoxName.Clear();
                 textBoxAPIKey.Clear();
                 textBoxEmail.Clear();
@@ -88,6 +90,13 @@ namespace GuildLounge.TabPages.SettingsPages
                 labelError.Text = exc.Message;
                 Utility.TimeoutToDisappear(labelError);
             }
+        }
+
+        private async void FetchPermissionsProxy()
+        {
+            ((Account)listBoxAccounts.Items[listBoxAccounts.Items.Count - 1]).Permissions =
+                await Account.FetchPermissions(((Account)listBoxAccounts.Items[listBoxAccounts.Items.Count - 1]).Key);
+            SaveAccounts();
         }
 
         private void buttonRemoveAccount_Click(object sender, EventArgs e)
