@@ -26,6 +26,7 @@ namespace GuildLounge.TabPages.Tools
             GuildLounge.Dailies APIResponse = await _api.GetResponse<GuildLounge.Dailies>("achievements/daily");
             Achievement[] resolvedDailies = await _api.GetResponse<Achievement[]>("achievements", "ids=" + MergeDailyIDs(APIResponse));
             APIResponse = JoinDailies(APIResponse, resolvedDailies);
+            APIResponse.PvE = ReducePvE(APIResponse);
             APIResponse.Fractals = ReduceFractals(APIResponse);
             AssignDailies(APIResponse);
         }
@@ -57,6 +58,30 @@ namespace GuildLounge.TabPages.Tools
                 a.Name = resolvedIDs[Array.FindIndex(resolvedIDs, r => r.Id == a.Id)].Name;
 
             return dailies;
+        }
+
+        private Achievement[] ReducePvE(GuildLounge.Dailies dailies)
+        {
+            Achievement[] pve = new Achievement[dailies.PvE.Length];
+            //SET EMPTY OBJECTS TO PREVENT NULL REFERENCE
+            for (int j = 0; j < pve.Length; j++)
+                pve[j] = new Achievement();
+
+            int i = 0;
+            foreach (Achievement a in dailies.PvE)
+            {
+                if (!Array.Exists(pve, d => d.Name == a.Name))
+                {
+                    pve[i] = a;
+                    i++;
+                }
+            }
+
+            Achievement[] pveFix = new Achievement[i];
+            for (int j = 0; j < pveFix.Length; j++)
+                pveFix[j] = pve[j];
+
+            return pveFix;
         }
 
         private Achievement[] ReduceFractals(GuildLounge.Dailies dailies)
