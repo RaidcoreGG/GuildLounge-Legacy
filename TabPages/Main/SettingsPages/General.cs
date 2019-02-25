@@ -6,6 +6,8 @@ namespace GuildLounge.TabPages.SettingsPages
 {
     public partial class General : UserControl
     {
+        private static readonly ApiHandler _api = new ApiHandler();
+
         public General()
         {
             InitializeComponent();
@@ -13,6 +15,8 @@ namespace GuildLounge.TabPages.SettingsPages
             labelBuildNumber.Text = "Build: " + Assembly.GetExecutingAssembly().GetName().Version.Revision.ToString();
 
             LoadSettingsGeneral();
+            if (checkBoxAutoUpdate.Checked)
+                CheckForUpdate();
         }
 
         public void LoadSettingsGeneral()
@@ -84,6 +88,40 @@ namespace GuildLounge.TabPages.SettingsPages
             Properties.Settings.Default.CheckForUpdates = checkBoxAutoUpdate.Checked;
             if (Parent != null)
                 ((Settings)Parent).SettingsChanged();
+        }
+
+        private void buttonCheckForUpdates_Click(object sender, EventArgs e)
+        {
+            CheckForUpdate();
+        }
+
+        private async void CheckForUpdate()
+        {
+            try
+            {
+                BuildInfo APIResponse = await _api.GetResponse<BuildInfo>("http://api.guildlounge.com/", "build");
+
+                if(APIResponse.Id > Assembly.GetExecutingAssembly().GetName().Version.Revision)
+                {
+                    var result = MessageBox.Show("There is a newer version available.\n" +
+                        "If you click no you can update from the settings by clicking 'Check Now'.", "Guild Lounge Updater",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                        UpdateExecutable();
+                }
+            }
+            catch (Exception exc)
+            {
+                labelUpdaterInfo.Text = "Up to date!";
+                Utility.TimeoutToDisappear(labelUpdaterInfo);
+            }
+        }
+
+        private void UpdateExecutable()
+        {
+            Console.WriteLine("UPDATING KAPPA");
         }
     }
 }

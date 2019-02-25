@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -22,6 +23,7 @@ namespace GuildLounge
         #region variables
         //APPDATA FOLDER PATH
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
+        private static readonly WebClient _client = new WebClient();
 
         //TAB CONTROL
         private UserControl ActiveTab;
@@ -56,7 +58,15 @@ namespace GuildLounge
         public Main()
         {
             InitializeComponent();
-            
+
+            //UPGRADE SETTINGS IF VERSION HAS CHANGED
+            if (Properties.Settings.Default.UpgradeRequired)
+            {
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.UpgradeRequired = false;
+                Properties.Settings.Default.Save();
+            }
+
             //INITIALIZE LOADING ICON
             LoadingIcon = new PictureBox()
             {
@@ -142,6 +152,15 @@ namespace GuildLounge
                 File.Create(Path.Combine(_appdata, "accounts.json"));
             if (!File.Exists(Path.Combine(_appdata, "addons.json")))
                 File.Create(Path.Combine(_appdata, "addons.json"));
+            try
+            {
+                if (!File.Exists(Path.Combine(_appdata, "updater.exe")))
+                    _client.DownloadFile("http://dev.guildlounge.com/updater.exe", Path.Combine(_appdata, "updater.exe"));
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
 
             //API STUFF
             try

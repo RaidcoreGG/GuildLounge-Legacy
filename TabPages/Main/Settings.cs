@@ -24,13 +24,6 @@ namespace GuildLounge.TabPages
         {
             InitializeComponent();
 
-            if (Properties.Settings.Default.UpgradeRequired)
-            {
-                Properties.Settings.Default.Upgrade();
-                Properties.Settings.Default.UpgradeRequired = false;
-                Properties.Settings.Default.Save();
-            }
-
             GeneralTab = new SettingsPages.General();
             AccountsTab = new SettingsPages.Accounts();
             ModulesTab = new SettingsPages.Modules();
