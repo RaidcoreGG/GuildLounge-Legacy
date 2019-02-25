@@ -488,7 +488,12 @@ namespace GuildLounge
                 File.Delete(Path.Combine(gw2appdata, "Local.dat"));
                 File.Copy(Path.Combine(_appdata, locl), Path.Combine(gw2appdata, "Local.dat"));
             }
-            
+            else
+            {
+                File.Delete(Path.Combine(gw2appdata, "Local.dat"));
+                File.Copy(Path.Combine(_appdata, "Local.dat"), Path.Combine(gw2appdata, "Local.dat"));
+            }
+
             try
             {
                 //RUN PROCESS
