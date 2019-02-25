@@ -36,13 +36,8 @@
             this.apiKeyInfo = new GuildLounge.Controls.ApiKeyInfo();
             this.groupBox1 = new GuildLounge.Controls.GroupBox();
             this.labelError = new System.Windows.Forms.Label();
-            this.buttonToggleShowPassword = new GuildLounge.Controls.Button();
             this.buttonAddAccount = new GuildLounge.Controls.HighlightButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBoxAPIKey = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
@@ -136,20 +131,15 @@
             this.groupBox1.BorderColor = System.Drawing.Color.Gray;
             this.groupBox1.BorderSize = 1;
             this.groupBox1.Controls.Add(this.labelError);
-            this.groupBox1.Controls.Add(this.buttonToggleShowPassword);
             this.groupBox1.Controls.Add(this.buttonAddAccount);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBoxPassword);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBoxEmail);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBoxAPIKey);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBoxName);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(546, 158);
+            this.groupBox1.Size = new System.Drawing.Size(546, 106);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBoxAccountEdit";
@@ -157,31 +147,12 @@
             // labelError
             // 
             this.labelError.AutoSize = true;
-            this.labelError.Location = new System.Drawing.Point(73, 136);
+            this.labelError.Location = new System.Drawing.Point(73, 84);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(52, 13);
             this.labelError.TabIndex = 24;
             this.labelError.Text = "[ERROR]";
             this.labelError.Visible = false;
-            // 
-            // buttonToggleShowPassword
-            // 
-            this.buttonToggleShowPassword.BackColor = System.Drawing.Color.Transparent;
-            this.buttonToggleShowPassword.BackgroundImage = global::GuildLounge.Properties.Resources.ui_locked;
-            this.buttonToggleShowPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonToggleShowPassword.FlatAppearance.BorderSize = 0;
-            this.buttonToggleShowPassword.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonToggleShowPassword.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonToggleShowPassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonToggleShowPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonToggleShowPassword.ForeColor = System.Drawing.Color.Gray;
-            this.buttonToggleShowPassword.Location = new System.Drawing.Point(520, 106);
-            this.buttonToggleShowPassword.Name = "buttonToggleShowPassword";
-            this.buttonToggleShowPassword.Size = new System.Drawing.Size(20, 20);
-            this.buttonToggleShowPassword.TabIndex = 23;
-            this.buttonToggleShowPassword.TabStop = false;
-            this.buttonToggleShowPassword.UseVisualStyleBackColor = false;
-            this.buttonToggleShowPassword.Click += new System.EventHandler(this.buttonToggleShowPassword_Click);
             // 
             // buttonAddAccount
             // 
@@ -190,7 +161,7 @@
             this.buttonAddAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.buttonAddAccount.ForeColor = System.Drawing.Color.White;
-            this.buttonAddAccount.Location = new System.Drawing.Point(440, 132);
+            this.buttonAddAccount.Location = new System.Drawing.Point(440, 80);
             this.buttonAddAccount.Name = "buttonAddAccount";
             this.buttonAddAccount.Size = new System.Drawing.Size(100, 20);
             this.buttonAddAccount.TabIndex = 18;
@@ -206,45 +177,6 @@
             this.label1.Size = new System.Drawing.Size(109, 13);
             this.label1.TabIndex = 16;
             this.label1.Text = "Save a new account:";
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxPassword.ForeColor = System.Drawing.Color.White;
-            this.textBoxPassword.Location = new System.Drawing.Point(76, 106);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(438, 20);
-            this.textBoxPassword.TabIndex = 15;
-            this.textBoxPassword.UseSystemPasswordChar = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 108);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Password:";
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxEmail.ForeColor = System.Drawing.Color.White;
-            this.textBoxEmail.Location = new System.Drawing.Point(76, 80);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(464, 20);
-            this.textBoxEmail.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "E-Mail:";
             // 
             // textBoxAPIKey
             // 
@@ -306,16 +238,11 @@
 
         private Controls.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxAPIKey;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label1;
         private Controls.HighlightButton buttonAddAccount;
-        private Controls.Button buttonToggleShowPassword;
         private Controls.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
         private Controls.HighlightButton buttonEditAccount;

@@ -71,17 +71,13 @@ namespace GuildLounge.TabPages.SettingsPages
             {
                 listBoxAccounts.Items.Add(new Account {
                     Name = textBoxName.Text,
-                    Key = textBoxAPIKey.Text,
-                    Email = textBoxEmail.Text,
-                    Password = textBoxPassword.Text
+                    Key = textBoxAPIKey.Text
                 });
 
                 FetchPermissionsProxy();
                 
                 textBoxName.Clear();
                 textBoxAPIKey.Clear();
-                textBoxEmail.Clear();
-                textBoxPassword.Clear();
 
                 SaveAccounts();
             }
@@ -115,8 +111,6 @@ namespace GuildLounge.TabPages.SettingsPages
                 var obj = (Account)listBoxAccounts.Items[listBoxAccounts.SelectedIndex];
                 textBoxName.Text = obj.Name;
                 textBoxAPIKey.Text = obj.Key;
-                textBoxEmail.Text = obj.Email;
-                textBoxPassword.Text = obj.Password;
 
                 listBoxAccounts.Items.Remove(obj);
 
@@ -127,17 +121,6 @@ namespace GuildLounge.TabPages.SettingsPages
                 labelError.Text = "Select an account to edit first!";
                 Utility.TimeoutToDisappear(labelError);
             }
-        }
-        
-        private void buttonToggleShowPassword_Click(object sender, EventArgs e)
-        {
-            m_bHidePassword = !m_bHidePassword;
-            textBoxPassword.UseSystemPasswordChar = m_bHidePassword;
-
-            if (m_bHidePassword)
-                buttonToggleShowPassword.BackgroundImage = Properties.Resources.ui_locked;
-            else
-                buttonToggleShowPassword.BackgroundImage = Properties.Resources.ui_unlocked;
         }
 
         private void listBoxAccounts_SelectedIndexChanged(object sender, EventArgs e)

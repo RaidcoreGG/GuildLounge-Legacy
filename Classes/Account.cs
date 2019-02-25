@@ -26,8 +26,6 @@ namespace GuildLounge
                     throw new Exception("Invalid Key Format!");
             }
         }
-        public string Email { get; set; }
-        public string Password { get; set; }
         public string Permissions { get; set; }
 
         public override string ToString()
