@@ -30,6 +30,7 @@
         {
             this.labelBuildNumber = new System.Windows.Forms.Label();
             this.groupBox4 = new GuildLounge.Controls.GroupBox();
+            this.labelUpdaterInfo = new System.Windows.Forms.Label();
             this.buttonCheckForUpdates = new GuildLounge.Controls.HighlightButton();
             this.checkBoxAutoUpdate = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.radioButtonLaunchClose = new System.Windows.Forms.RadioButton();
             this.radioButtonLaunchMinimize = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.labelUpdaterInfo = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -76,6 +76,16 @@
             this.groupBox4.TabIndex = 24;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "gL_GroupBox3";
+            // 
+            // labelUpdaterInfo
+            // 
+            this.labelUpdaterInfo.AutoSize = true;
+            this.labelUpdaterInfo.Location = new System.Drawing.Point(62, 6);
+            this.labelUpdaterInfo.Name = "labelUpdaterInfo";
+            this.labelUpdaterInfo.Size = new System.Drawing.Size(90, 13);
+            this.labelUpdaterInfo.TabIndex = 16;
+            this.labelUpdaterInfo.Text = "[UPDATERINFO]";
+            this.labelUpdaterInfo.Visible = false;
             // 
             // buttonCheckForUpdates
             // 
@@ -228,7 +238,7 @@
             // radioButtonLaunchClose
             // 
             this.radioButtonLaunchClose.AutoSize = true;
-            this.radioButtonLaunchClose.Location = new System.Drawing.Point(222, 22);
+            this.radioButtonLaunchClose.Location = new System.Drawing.Point(182, 22);
             this.radioButtonLaunchClose.Name = "radioButtonLaunchClose";
             this.radioButtonLaunchClose.Size = new System.Drawing.Size(50, 17);
             this.radioButtonLaunchClose.TabIndex = 12;
@@ -240,12 +250,12 @@
             // 
             this.radioButtonLaunchMinimize.AutoSize = true;
             this.radioButtonLaunchMinimize.Checked = true;
-            this.radioButtonLaunchMinimize.Location = new System.Drawing.Point(104, 22);
+            this.radioButtonLaunchMinimize.Location = new System.Drawing.Point(107, 22);
             this.radioButtonLaunchMinimize.Name = "radioButtonLaunchMinimize";
-            this.radioButtonLaunchMinimize.Size = new System.Drawing.Size(96, 17);
+            this.radioButtonLaunchMinimize.Size = new System.Drawing.Size(45, 17);
             this.radioButtonLaunchMinimize.TabIndex = 11;
             this.radioButtonLaunchMinimize.TabStop = true;
-            this.radioButtonLaunchMinimize.Text = "minimize to tray";
+            this.radioButtonLaunchMinimize.Text = "hide";
             this.radioButtonLaunchMinimize.UseVisualStyleBackColor = true;
             this.radioButtonLaunchMinimize.CheckedChanged += new System.EventHandler(this.radioButtonLaunchMinimize_CheckedChanged);
             // 
@@ -257,16 +267,6 @@
             this.label3.Size = new System.Drawing.Size(219, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "When GW2 launches, Guild Lounge should..";
-            // 
-            // labelUpdaterInfo
-            // 
-            this.labelUpdaterInfo.AutoSize = true;
-            this.labelUpdaterInfo.Location = new System.Drawing.Point(62, 6);
-            this.labelUpdaterInfo.Name = "labelUpdaterInfo";
-            this.labelUpdaterInfo.Size = new System.Drawing.Size(90, 13);
-            this.labelUpdaterInfo.TabIndex = 16;
-            this.labelUpdaterInfo.Text = "[UPDATERINFO]";
-            this.labelUpdaterInfo.Visible = false;
             // 
             // General
             // 
