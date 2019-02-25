@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -51,14 +50,7 @@ namespace GuildLounge.TabPages
                 Console.WriteLine(exc.Message);
             }
         }
-
-        class NewsObject
-        {
-            public string Link { get; set; }
-            public string HeaderImageLink { get; set; }
-            public Image HeaderImage { get; set; }
-        }
-
+        
         private void NewsClock_Tick(object sender, EventArgs e)
         {
             buttonNewsNext_Click(null, null);

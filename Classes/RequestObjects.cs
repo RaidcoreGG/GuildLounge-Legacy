@@ -1,4 +1,6 @@
-﻿namespace GuildLounge
+﻿using System.Drawing;
+
+namespace GuildLounge
 {
     public class ModuleData
     {
@@ -117,5 +119,12 @@
         {
             return string.Join(",", Permissions);
         }
+    }
+
+    class NewsObject
+    {
+        public string Link { get; set; }
+        public string HeaderImageLink { get; set; }
+        public Image HeaderImage { get; set; }
     }
 }
