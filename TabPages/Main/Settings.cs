@@ -107,6 +107,7 @@ namespace GuildLounge.TabPages
             ((SettingsPages.General)GeneralTab).LoadSettingsGeneral();
             ((SettingsPages.Modules)ModulesTab).LoadSettingsModules();
             ((SettingsPages.Extensions)ExtensionsTab).LoadSettingsExtensions();
+            buttonSave.Enabled = true;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

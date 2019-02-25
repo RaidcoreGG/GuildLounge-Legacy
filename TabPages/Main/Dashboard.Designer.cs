@@ -36,7 +36,6 @@
             this.labelTools = new System.Windows.Forms.Label();
             this.groupBoxLinks = new GuildLounge.Controls.GroupBox();
             this.linkLabelGLDiscord = new System.Windows.Forms.LinkLabel();
-            this.linkLabelGLIdeaSubmission = new System.Windows.Forms.LinkLabel();
             this.linkLabelGW2Forums = new System.Windows.Forms.LinkLabel();
             this.linkLabelGW2ReleaseNotes = new System.Windows.Forms.LinkLabel();
             this.linkLabelGW2Wiki = new System.Windows.Forms.LinkLabel();
@@ -142,7 +141,6 @@
             this.groupBoxLinks.BorderColor = System.Drawing.Color.Gray;
             this.groupBoxLinks.BorderSize = 1;
             this.groupBoxLinks.Controls.Add(this.linkLabelGLDiscord);
-            this.groupBoxLinks.Controls.Add(this.linkLabelGLIdeaSubmission);
             this.groupBoxLinks.Controls.Add(this.linkLabelGW2Forums);
             this.groupBoxLinks.Controls.Add(this.linkLabelGW2ReleaseNotes);
             this.groupBoxLinks.Controls.Add(this.linkLabelGW2Wiki);
@@ -162,7 +160,7 @@
             this.linkLabelGLDiscord.AutoSize = true;
             this.linkLabelGLDiscord.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelGLDiscord.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelGLDiscord.Location = new System.Drawing.Point(7, 58);
+            this.linkLabelGLDiscord.Location = new System.Drawing.Point(7, 42);
             this.linkLabelGLDiscord.Name = "linkLabelGLDiscord";
             this.linkLabelGLDiscord.Size = new System.Drawing.Size(109, 13);
             this.linkLabelGLDiscord.TabIndex = 26;
@@ -171,28 +169,13 @@
             this.linkLabelGLDiscord.VisitedLinkColor = System.Drawing.Color.OrangeRed;
             this.linkLabelGLDiscord.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGLDiscord_LinkClicked);
             // 
-            // linkLabelGLIdeaSubmission
-            // 
-            this.linkLabelGLIdeaSubmission.ActiveLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabelGLIdeaSubmission.AutoSize = true;
-            this.linkLabelGLIdeaSubmission.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabelGLIdeaSubmission.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelGLIdeaSubmission.Location = new System.Drawing.Point(7, 42);
-            this.linkLabelGLIdeaSubmission.Name = "linkLabelGLIdeaSubmission";
-            this.linkLabelGLIdeaSubmission.Size = new System.Drawing.Size(150, 13);
-            this.linkLabelGLIdeaSubmission.TabIndex = 25;
-            this.linkLabelGLIdeaSubmission.TabStop = true;
-            this.linkLabelGLIdeaSubmission.Text = "Guild Lounge Idea Submission";
-            this.linkLabelGLIdeaSubmission.VisitedLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabelGLIdeaSubmission.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGLIdeaSubmission_LinkClicked);
-            // 
             // linkLabelGW2Forums
             // 
             this.linkLabelGW2Forums.ActiveLinkColor = System.Drawing.Color.OrangeRed;
             this.linkLabelGW2Forums.AutoSize = true;
             this.linkLabelGW2Forums.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelGW2Forums.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelGW2Forums.Location = new System.Drawing.Point(7, 122);
+            this.linkLabelGW2Forums.Location = new System.Drawing.Point(7, 106);
             this.linkLabelGW2Forums.Name = "linkLabelGW2Forums";
             this.linkLabelGW2Forums.Size = new System.Drawing.Size(104, 13);
             this.linkLabelGW2Forums.TabIndex = 24;
@@ -207,7 +190,7 @@
             this.linkLabelGW2ReleaseNotes.AutoSize = true;
             this.linkLabelGW2ReleaseNotes.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelGW2ReleaseNotes.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelGW2ReleaseNotes.Location = new System.Drawing.Point(7, 106);
+            this.linkLabelGW2ReleaseNotes.Location = new System.Drawing.Point(7, 90);
             this.linkLabelGW2ReleaseNotes.Name = "linkLabelGW2ReleaseNotes";
             this.linkLabelGW2ReleaseNotes.Size = new System.Drawing.Size(140, 13);
             this.linkLabelGW2ReleaseNotes.TabIndex = 23;
@@ -222,7 +205,7 @@
             this.linkLabelGW2Wiki.AutoSize = true;
             this.linkLabelGW2Wiki.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelGW2Wiki.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelGW2Wiki.Location = new System.Drawing.Point(7, 90);
+            this.linkLabelGW2Wiki.Location = new System.Drawing.Point(7, 74);
             this.linkLabelGW2Wiki.Name = "linkLabelGW2Wiki";
             this.linkLabelGW2Wiki.Size = new System.Drawing.Size(91, 13);
             this.linkLabelGW2Wiki.TabIndex = 22;
@@ -237,7 +220,7 @@
             this.linkLabelGW2Efficiency.AutoSize = true;
             this.linkLabelGW2Efficiency.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelGW2Efficiency.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelGW2Efficiency.Location = new System.Drawing.Point(7, 74);
+            this.linkLabelGW2Efficiency.Location = new System.Drawing.Point(7, 58);
             this.linkLabelGW2Efficiency.Name = "linkLabelGW2Efficiency";
             this.linkLabelGW2Efficiency.Size = new System.Drawing.Size(81, 13);
             this.linkLabelGW2Efficiency.TabIndex = 21;
@@ -302,7 +285,6 @@
         private System.Windows.Forms.Label labelLinks;
         private System.Windows.Forms.LinkLabel linkLabelGLReleaseNotes;
         private System.Windows.Forms.LinkLabel linkLabelGLDiscord;
-        private System.Windows.Forms.LinkLabel linkLabelGLIdeaSubmission;
         private System.Windows.Forms.LinkLabel linkLabelGW2Forums;
         private System.Windows.Forms.LinkLabel linkLabelGW2ReleaseNotes;
         private System.Windows.Forms.LinkLabel linkLabelGW2Wiki;

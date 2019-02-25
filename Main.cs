@@ -302,6 +302,8 @@ namespace GuildLounge
                 comboBoxAccount.Enabled = true;
                 buttonRefresh.Enabled = true;
                 labelAPIError.Visible = false;
+
+                UpdateModuleData();
             }
             else
             {

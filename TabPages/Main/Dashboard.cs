@@ -18,8 +18,8 @@ namespace GuildLounge.TabPages
 
             News = new NewsObject[]
             {
-                new NewsObject { Link = "http://guildlounge.com/about", HeaderImage = Properties.Resources.news_panel1 },
-                new NewsObject { Link = "http://guildlounge.com", HeaderImage = Properties.Resources.news_panel2 },
+                new NewsObject { Link = "", HeaderImage = Properties.Resources.news_panel1 },
+                new NewsObject { Link = "", HeaderImage = Properties.Resources.news_panel2 },
                 //new NewsObject { Link = "http://guildlounge.com", HeaderImage = Properties.Resources.news_panel3 },
             };
 
