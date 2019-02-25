@@ -74,7 +74,8 @@ namespace GuildLounge
 
     class BuildInfo
     {
-        public int Id { get; set; }
+        public int BuildID { get; set; }
+        public int RevisionID { get; set; }
     }
 
     //GW2 API
