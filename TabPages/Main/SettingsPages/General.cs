@@ -128,7 +128,7 @@ namespace GuildLounge.TabPages.SettingsPages
             {
                 Process Updater = new Process();
                 Updater.StartInfo = new ProcessStartInfo(Path.Combine(_appdata, "updater.exe"));
-                Updater.StartInfo.Arguments = "-path " + Application.ExecutablePath;
+                Updater.StartInfo.Arguments = Application.ExecutablePath;
                 Updater.Start();
             }
             catch (Exception exc)
