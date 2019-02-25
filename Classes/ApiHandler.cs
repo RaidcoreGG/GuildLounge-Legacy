@@ -22,7 +22,7 @@ namespace GuildLounge
         }
         
         //WILL BE USED TO UPDATE MODULE LIST WHEN NEW ONES GET ADDED
-        public async Task<T> GetResponseWithEntry<T>(string entryPoint, string endPoint, params string[] args)
+        public async Task<T> GetResponseWithEntryPoint<T>(string entryPoint, string endPoint, params string[] args)
         {
             Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
             //Console.WriteLine(String.Join("?", (_apiBase + endPoint), String.Join("&", args)));

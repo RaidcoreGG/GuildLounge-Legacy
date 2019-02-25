@@ -42,7 +42,7 @@ namespace GuildLounge.TabPages
         {
             try
             {
-                NewsObject[] APIResponse = await _api.GetResponseWithEntry<NewsObject[]>("http://api.guildlounge.com/", "news");
+                NewsObject[] APIResponse = await _api.GetResponseWithEntryPoint<NewsObject[]>("http://api.guildlounge.com/", "news");
                 News = APIResponse;
             }
             catch (Exception exc)

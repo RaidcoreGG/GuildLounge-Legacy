@@ -45,7 +45,7 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             try
             {
-                string[] APIResponse = await _api.GetResponseWithEntry<string[]>("http://api.guildlounge.com/", "modules");
+                string[] APIResponse = await _api.GetResponseWithEntryPoint<string[]>("http://api.guildlounge.com/", "modules");
 
                 foreach (string s in APIResponse)
                 {

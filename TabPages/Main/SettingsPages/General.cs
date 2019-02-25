@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -6,6 +8,7 @@ namespace GuildLounge.TabPages.SettingsPages
 {
     public partial class General : UserControl
     {
+        private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
         private static readonly ApiHandler _api = new ApiHandler();
 
         public General()
@@ -99,12 +102,12 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             try
             {
-                BuildInfo APIResponse = await _api.GetResponse<BuildInfo>("http://api.guildlounge.com/", "build");
+                BuildInfo APIResponse = await _api.GetResponseWithEntryPoint<BuildInfo>("http://api.guildlounge.com/", "build");
 
                 if(APIResponse.Id > Assembly.GetExecutingAssembly().GetName().Version.Revision)
                 {
                     var result = MessageBox.Show("There is a newer version available.\n" +
-                        "If you click no you can update from the settings by clicking 'Check Now'.", "Guild Lounge Updater",
+                        "Update now?", "Guild Lounge Updater",
                                  MessageBoxButtons.YesNo,
                                  MessageBoxIcon.Question);
 
@@ -121,7 +124,17 @@ namespace GuildLounge.TabPages.SettingsPages
 
         private void UpdateExecutable()
         {
-            Console.WriteLine("UPDATING KAPPA");
+            try
+            {
+                Process Updater = new Process();
+                Updater.StartInfo = new ProcessStartInfo(Path.Combine(_appdata, "updater.exe"));
+                Updater.StartInfo.Arguments = "-path " + Application.ExecutablePath;
+                Updater.Start();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
         }
     }
 }
