@@ -116,7 +116,7 @@ namespace GuildLounge.TabPages.SettingsPages
                         UpdateExecutable();
                 }
             }
-            catch (Exception exc)
+            catch
             {
                 labelUpdaterInfo.Text = "Up to date!";
                 Utility.TimeoutToDisappear(labelUpdaterInfo);

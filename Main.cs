@@ -105,7 +105,6 @@ namespace GuildLounge
                 = LFGTab.Visible
                 = RaidsTab.Visible
                 = GuidesTab.Visible
-                //= APIKeysTab.Visible
                 = SettingsTab.Visible
                 = false;
 
@@ -117,7 +116,6 @@ namespace GuildLounge
                 = LFGTab.Location
                 = RaidsTab.Location
                 = GuidesTab.Location
-                //= APIKeysTab.Location
                 = SettingsTab.Location
                 = new Point(0, 104);
 
@@ -131,7 +129,6 @@ namespace GuildLounge
                 LFGTab,
                 RaidsTab,
                 GuidesTab,
-                //APIKeysTab,
                 SettingsTab
             });
 
@@ -152,6 +149,9 @@ namespace GuildLounge
                 File.Create(Path.Combine(_appdata, "accounts.json"));
             if (!File.Exists(Path.Combine(_appdata, "addons.json")))
                 File.Create(Path.Combine(_appdata, "addons.json"));
+            string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
+            if (!File.Exists(Path.Combine(_appdata, "Local.dat")))
+                File.Copy(Path.Combine(gw2appdata, "Local.dat"), Path.Combine(_appdata, "Local.dat"));
             try
             {
                 if (!File.Exists(Path.Combine(_appdata, "updater.exe")))
@@ -299,15 +299,20 @@ namespace GuildLounge
                 comboBoxAccount.DisplayMember = "Name";
                 comboBoxAccount.SelectedIndex = 0;
 
-                comboBoxAccount.Enabled = true;
-                buttonRefresh.Enabled = true;
+                comboBoxAccount.Enabled = false;
+                buttonRefresh.Enabled = false;
             }
             else
             {
                 ActiveAccount = null;
-                comboBoxAccount.Enabled = false;
-                buttonRefresh.Enabled = false;
+                
+                comboBoxAccount.Enabled = true;
+                buttonRefresh.Enabled = true;
+                
             }
+
+            buttonRefresh.Visible = true;
+            LoadingIcon.Visible = false;
 
             //SET NEW KEY FOR RAIDS TAB
             var obj2 = (TabPages.Raids)RaidsTab;
@@ -475,6 +480,15 @@ namespace GuildLounge
             Process GW2 = new Process();
             GW2.StartInfo = new ProcessStartInfo(Path.Combine(Properties.Settings.Default.GameDir, "Gw2-64.exe"));
             GW2.StartInfo.Arguments = Properties.Settings.Default.StartParams;
+
+            string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
+            string locl = ActiveAccount.Name + "_Local.dat";
+            if (File.Exists(Path.Combine(_appdata, locl)))
+            {
+                File.Delete(Path.Combine(gw2appdata, "Local.dat"));
+                File.Copy(Path.Combine(_appdata, locl), Path.Combine(gw2appdata, "Local.dat"));
+            }
+            
             try
             {
                 //RUN PROCESS
@@ -484,6 +498,10 @@ namespace GuildLounge
                     //HIDE GUILD LOUNGE UNTIL GW2 IS CLOSED
                     Hide();
                     GW2.WaitForExit();
+
+                    if (!File.Exists(Path.Combine(_appdata, locl)))
+                        File.Copy(Path.Combine(gw2appdata, "Local.dat"), Path.Combine(_appdata, locl));
+
                     Show();
 
                     //REFRESH DATA AS SOON AS THE GAME IS CLOSED
