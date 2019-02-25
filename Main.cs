@@ -409,6 +409,7 @@ namespace GuildLounge
                     buttonRefresh.Enabled = true;
                     buttonRefresh.Visible = true;
                     LoadingIcon.Visible = false;
+                    labelAPIError.Visible = false;
                 }
             }
         }
@@ -492,7 +493,10 @@ namespace GuildLounge
         private void buttonLaunch_Click(object sender, EventArgs e)
         {
             Process GW2 = new Process();
-            GW2.StartInfo = new ProcessStartInfo(Path.Combine(Properties.Settings.Default.GameDir, "Gw2-64.exe"));
+            if(File.Exists(Path.Combine(Properties.Settings.Default.GameDir, "Gw2-64.exe")))
+                GW2.StartInfo = new ProcessStartInfo(Path.Combine(Properties.Settings.Default.GameDir, "Gw2-64.exe"));
+            else
+                GW2.StartInfo = new ProcessStartInfo(Path.Combine(Properties.Settings.Default.GameDir, "Gw2.exe"));
             GW2.StartInfo.Arguments = Properties.Settings.Default.StartParams;
 
             string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");

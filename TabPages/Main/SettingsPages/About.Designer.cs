@@ -200,6 +200,7 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "If you\'d like to support the project so I can maintain it,\r\nyou can donate over P" +
     "ayPal or Patreon below!";
+            this.label5.Visible = false;
             // 
             // label6
             // 
@@ -209,6 +210,7 @@
             this.label6.Size = new System.Drawing.Size(204, 13);
             this.label6.TabIndex = 16;
             this.label6.Text = "Thank you very much for your support! <3";
+            this.label6.Visible = false;
             // 
             // buttonPayPal
             // 
@@ -223,6 +225,7 @@
             this.buttonPayPal.Size = new System.Drawing.Size(128, 28);
             this.buttonPayPal.TabIndex = 17;
             this.buttonPayPal.UseVisualStyleBackColor = false;
+            this.buttonPayPal.Visible = false;
             this.buttonPayPal.Click += new System.EventHandler(this.buttonPayPal_Click);
             // 
             // buttonPatreon
@@ -238,6 +241,7 @@
             this.buttonPatreon.Size = new System.Drawing.Size(128, 28);
             this.buttonPatreon.TabIndex = 18;
             this.buttonPatreon.UseVisualStyleBackColor = false;
+            this.buttonPatreon.Visible = false;
             this.buttonPatreon.Click += new System.EventHandler(this.buttonPatreon_Click);
             // 
             // horizontalLine1
@@ -257,6 +261,7 @@
             this.horizontalLine2.Size = new System.Drawing.Size(269, 2);
             this.horizontalLine2.TabIndex = 20;
             this.horizontalLine2.Text = "horizontalLine2";
+            this.horizontalLine2.Visible = false;
             // 
             // About
             // 

@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("GuildLounge")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Kevin Bieniek")]
+[assembly: AssemblyCompany("DeltaxHunter")]
 [assembly: AssemblyProduct("GuildLounge")]
-[assembly: AssemblyCopyright("Copyright © Kevin Bieniek 2019")]
+[assembly: AssemblyCopyright("Copyright © DeltaxHunter 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
