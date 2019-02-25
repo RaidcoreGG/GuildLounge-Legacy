@@ -40,9 +40,15 @@
             this.radioButtonLaunchClose = new System.Windows.Forms.RadioButton();
             this.radioButtonLaunchMinimize = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.labelBuildNumber = new System.Windows.Forms.Label();
+            this.groupBox4 = new GuildLounge.Controls.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkBoxAutoUpdate = new System.Windows.Forms.CheckBox();
+            this.buttonCheckForUpdates = new GuildLounge.Controls.HighlightButton();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -189,11 +195,73 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "When GW2 launches, Guild Lounge should..";
             // 
+            // labelBuildNumber
+            // 
+            this.labelBuildNumber.AutoSize = true;
+            this.labelBuildNumber.Location = new System.Drawing.Point(9, 411);
+            this.labelBuildNumber.Name = "labelBuildNumber";
+            this.labelBuildNumber.Size = new System.Drawing.Size(66, 13);
+            this.labelBuildNumber.TabIndex = 26;
+            this.labelBuildNumber.Text = "Build: 00000";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.groupBox4.BorderColor = System.Drawing.Color.Gray;
+            this.groupBox4.BorderSize = 1;
+            this.groupBox4.Controls.Add(this.buttonCheckForUpdates);
+            this.groupBox4.Controls.Add(this.checkBoxAutoUpdate);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Location = new System.Drawing.Point(296, 120);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(262, 47);
+            this.groupBox4.TabIndex = 24;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "gL_GroupBox3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Updates:";
+            // 
+            // checkBoxAutoUpdate
+            // 
+            this.checkBoxAutoUpdate.AutoSize = true;
+            this.checkBoxAutoUpdate.Checked = true;
+            this.checkBoxAutoUpdate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxAutoUpdate.Location = new System.Drawing.Point(9, 23);
+            this.checkBoxAutoUpdate.Name = "checkBoxAutoUpdate";
+            this.checkBoxAutoUpdate.Size = new System.Drawing.Size(113, 17);
+            this.checkBoxAutoUpdate.TabIndex = 15;
+            this.checkBoxAutoUpdate.Text = "Check for updates";
+            this.checkBoxAutoUpdate.UseVisualStyleBackColor = true;
+            this.checkBoxAutoUpdate.CheckedChanged += new System.EventHandler(this.checkBoxAutoUpdate_CheckedChanged);
+            // 
+            // buttonCheckForUpdates
+            // 
+            this.buttonCheckForUpdates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
+            this.buttonCheckForUpdates.FlatAppearance.BorderSize = 0;
+            this.buttonCheckForUpdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCheckForUpdates.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.buttonCheckForUpdates.ForeColor = System.Drawing.Color.White;
+            this.buttonCheckForUpdates.Location = new System.Drawing.Point(156, 21);
+            this.buttonCheckForUpdates.Name = "buttonCheckForUpdates";
+            this.buttonCheckForUpdates.Size = new System.Drawing.Size(100, 20);
+            this.buttonCheckForUpdates.TabIndex = 10;
+            this.buttonCheckForUpdates.Text = "Check Now";
+            this.buttonCheckForUpdates.UseVisualStyleBackColor = false;
+            // 
             // General
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.labelBuildNumber);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
@@ -206,7 +274,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -224,5 +295,10 @@
         private System.Windows.Forms.RadioButton radioButtonLaunchClose;
         private System.Windows.Forms.RadioButton radioButtonLaunchMinimize;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelBuildNumber;
+        private Controls.GroupBox groupBox4;
+        private System.Windows.Forms.Label label4;
+        private Controls.HighlightButton buttonCheckForUpdates;
+        private System.Windows.Forms.CheckBox checkBoxAutoUpdate;
     }
 }

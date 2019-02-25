@@ -51,13 +51,12 @@ namespace GuildLounge
         {
             scrollbarModules.OnMouseWheel(sender, e);
             panelModulesInner.AutoScrollPosition = new Point(0, scrollbarModules.Value);
-            //panelOverview.Invalidate();
         }
 
         public Main()
         {
             InitializeComponent();
-
+            
             //INITIALIZE LOADING ICON
             LoadingIcon = new PictureBox()
             {

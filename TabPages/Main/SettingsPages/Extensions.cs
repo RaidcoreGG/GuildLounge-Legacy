@@ -49,7 +49,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
         public void LoadSettingsExtensions()
         {
-            checkBoxAutoUpdate.Checked = Properties.Settings.Default.AutoUpdate;
+            checkBoxAutoUpdate.Checked = Properties.Settings.Default.AutoUpdateExtensions;
         }
 
         private void UpdateExtensions(Extension[] addOns, bool checkForLastModified)
@@ -87,7 +87,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
         private void checkBoxAutoUpdate_CheckedChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.AutoUpdate = checkBoxAutoUpdate.Checked;
+            Properties.Settings.Default.AutoUpdateExtensions = checkBoxAutoUpdate.Checked;
             if (checkBoxAutoUpdate.Checked)
                 labelUpdateInfo.Text = "Your add-ons will update automatically, the next time you start Guild Lounge.";
             else

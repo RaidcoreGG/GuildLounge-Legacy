@@ -50,12 +50,12 @@ namespace GuildLounge.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool AutoUpdate {
+        public bool AutoUpdateExtensions {
             get {
-                return ((bool)(this["AutoUpdate"]));
+                return ((bool)(this["AutoUpdateExtensions"]));
             }
             set {
-                this["AutoUpdate"] = value;
+                this["AutoUpdateExtensions"] = value;
             }
         }
         
@@ -99,6 +99,30 @@ namespace GuildLounge.Properties {
             }
             set {
                 this["InactiveModules"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckForUpdates {
+            get {
+                return ((bool)(this["CheckForUpdates"]));
+            }
+            set {
+                this["CheckForUpdates"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UpgradeRequired {
+            get {
+                return ((bool)(this["UpgradeRequired"]));
+            }
+            set {
+                this["UpgradeRequired"] = value;
             }
         }
     }

@@ -201,12 +201,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TabPages\Main\APIKeys.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabPages\Main\APIKeys.Designer.cs">
-      <DependentUpon>APIKeys.cs</DependentUpon>
-    </Compile>
     <Compile Include="TabPages\Main\Guides.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -266,12 +260,6 @@
     </Compile>
     <Compile Include="TabPages\Main\SettingsPages\General.Designer.cs">
       <DependentUpon>General.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabPages\Main\Settings_old.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabPages\Main\Settings_old.Designer.cs">
-      <DependentUpon>Settings_old.cs</DependentUpon>
     </Compile>
     <Compile Include="TabPages\Tools\Dailies.cs">
       <SubType>UserControl</SubType>
@@ -335,9 +323,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Main\APIKeys.resx">
-      <DependentUpon>APIKeys.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TabPages\Main\Guides.resx">
       <DependentUpon>Guides.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,9 +352,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TabPages\Main\SettingsPages\General.resx">
       <DependentUpon>General.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Main\Settings_old.resx">
-      <DependentUpon>Settings_old.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabPages\Tools\Dailies.resx">
       <DependentUpon>Dailies.cs</DependentUpon>

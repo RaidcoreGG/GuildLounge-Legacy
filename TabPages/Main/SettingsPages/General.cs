@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace GuildLounge.TabPages.SettingsPages
@@ -15,6 +9,8 @@ namespace GuildLounge.TabPages.SettingsPages
         public General()
         {
             InitializeComponent();
+
+            labelBuildNumber.Text = "Build: " + Assembly.GetExecutingAssembly().GetName().Version.Revision.ToString();
 
             LoadSettingsGeneral();
         }
@@ -36,6 +32,8 @@ namespace GuildLounge.TabPages.SettingsPages
                     radioButtonLaunchClose.Checked = true;
                     break;
             }
+
+            checkBoxAutoUpdate.Checked = Properties.Settings.Default.CheckForUpdates;
         }
 
         private void buttonBrowseGameDirectory_Click(object sender, EventArgs e)
@@ -77,6 +75,13 @@ namespace GuildLounge.TabPages.SettingsPages
         private void radioButtonLaunchClose_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.LaunchBehavior = "CLOSE";
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
+        }
+
+        private void checkBoxAutoUpdate_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.CheckForUpdates = checkBoxAutoUpdate.Checked;
             if (Parent != null)
                 ((Settings)Parent).SettingsChanged();
         }

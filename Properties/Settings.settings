@@ -8,7 +8,7 @@
     <Setting Name="LaunchBehavior" Type="System.String" Scope="User">
       <Value Profile="(Default)">MINIMIZE</Value>
     </Setting>
-    <Setting Name="AutoUpdate" Type="System.Boolean" Scope="User">
+    <Setting Name="AutoUpdateExtensions" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="StartParams" Type="System.String" Scope="User">
@@ -27,6 +27,12 @@
     </Setting>
     <Setting Name="InactiveModules" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CheckForUpdates" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
