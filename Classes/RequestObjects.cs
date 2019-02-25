@@ -2,6 +2,7 @@
 
 namespace GuildLounge
 {
+    //GUILDLOUNGE
     public class ModuleData
     {
         public Wallet Wallet { get; set; }
@@ -63,6 +64,20 @@ namespace GuildLounge
         public bool Qadim { get; set; }
     }
 
+    //GUILDLOUNGE API
+    class NewsObject
+    {
+        public string Link { get; set; }
+        public string HeaderImageLink { get; set; }
+        public Image HeaderImage { get; set; }
+    }
+
+    class BuildInfo
+    {
+        public int Id { get; set; }
+    }
+
+    //GW2 API
     public class Dailies
     {
         public Achievement[] PvE { get; set; }
@@ -119,12 +134,5 @@ namespace GuildLounge
         {
             return string.Join(",", Permissions);
         }
-    }
-
-    class NewsObject
-    {
-        public string Link { get; set; }
-        public string HeaderImageLink { get; set; }
-        public Image HeaderImage { get; set; }
     }
 }
