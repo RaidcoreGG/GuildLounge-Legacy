@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Web.Script.Serialization;
 
 namespace GuildLounge.TabPages.SettingsPages
 {
@@ -44,20 +38,27 @@ namespace GuildLounge.TabPages.SettingsPages
                 listBoxInactive.Items.AddRange(stri);
             }
 
-            //InjectModules();
+            FetchModules();
         }
 
-        private async void InjectModules()
+        private async void FetchModules()
         {
-            string[] APIResponse = await _api.GetResponseWithEntry<string[]>("[ENTRYPOINT]", "modules");
-
-            foreach (string s in APIResponse)
+            try
             {
-                if (!listBoxActive.Items.Contains(s) && !listBoxInactive.Items.Contains(s))
+                string[] APIResponse = await _api.GetResponseWithEntry<string[]>("http://api.guildlounge.com/", "modules");
+
+                foreach (string s in APIResponse)
                 {
-                    listBoxInactive.Items.Add(s);
-                    SetModules();
+                    if (!listBoxActive.Items.Contains(s) && !listBoxInactive.Items.Contains(s))
+                    {
+                        listBoxInactive.Items.Add(s);
+                        SetModules();
+                    }
                 }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
             }
         }
 
