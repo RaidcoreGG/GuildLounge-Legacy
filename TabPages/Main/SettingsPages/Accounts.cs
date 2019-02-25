@@ -90,8 +90,18 @@ namespace GuildLounge.TabPages.SettingsPages
 
         private async void FetchPermissionsProxy()
         {
-            ((Account)listBoxAccounts.Items[listBoxAccounts.Items.Count - 1]).Permissions =
+            try
+            {
+                ((Account)listBoxAccounts.Items[listBoxAccounts.Items.Count - 1]).Permissions =
                 await Account.FetchPermissions(((Account)listBoxAccounts.Items[listBoxAccounts.Items.Count - 1]).Key);
+            }
+            catch
+            {
+                listBoxAccounts.SelectedIndex = listBoxAccounts.Items.Count - 1;
+                buttonEditAccount_Click(null, null);
+                labelError.Text = "Invalid API-Key.";
+                Utility.TimeoutToDisappear(labelError);
+            }
             SaveAccounts();
         }
 

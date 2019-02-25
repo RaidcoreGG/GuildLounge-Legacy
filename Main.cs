@@ -299,16 +299,17 @@ namespace GuildLounge
                 comboBoxAccount.DisplayMember = "Name";
                 comboBoxAccount.SelectedIndex = 0;
 
-                comboBoxAccount.Enabled = false;
-                buttonRefresh.Enabled = false;
+                comboBoxAccount.Enabled = true;
+                buttonRefresh.Enabled = true;
+                labelAPIError.Visible = false;
             }
             else
             {
                 ActiveAccount = null;
                 
-                comboBoxAccount.Enabled = true;
-                buttonRefresh.Enabled = true;
-                
+                comboBoxAccount.Enabled = false;
+                buttonRefresh.Enabled = false;
+                labelAPIError.Visible = true;
             }
 
             buttonRefresh.Visible = true;
@@ -378,14 +379,25 @@ namespace GuildLounge
             catch (Exception exc)
             {
                 if (exc.Message.Contains("400 (Bad Request)"))
+                {
                     labelAPIError.Text = "Invalid API-Key.";
+                    Utility.TimeoutToDisappear(labelAPIError);
+                }
                 else if (exc.Message.Contains("403 (Forbidden)"))
-                    labelAPIError.Text = "Try again later.";
+                {
+                    labelAPIError.Text = "Please try again later.";
+                    Utility.TimeoutToDisappear(labelAPIError);
+                }
                 else if (exc is NullReferenceException)
+                {
                     labelAPIError.Text = "Please add an API-Key.";
+                    labelAPIError.Visible = true;
+                }
                 else
+                {
                     labelAPIError.Text = exc.Message;
-                Utility.TimeoutToDisappear(labelAPIError);
+                    Utility.TimeoutToDisappear(labelAPIError);
+                }
             }
             finally
             {
