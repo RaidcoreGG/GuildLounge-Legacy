@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace GuildLounge.TabPages
 {
@@ -23,7 +17,6 @@ namespace GuildLounge.TabPages
         {
             InitializeComponent();
 
-            //FetchNews();
             News = new NewsObject[]
             {
                 new NewsObject { Link = "http://guildlounge.com/about", HeaderImage = Properties.Resources.news_panel1 },
@@ -31,18 +24,32 @@ namespace GuildLounge.TabPages
                 //new NewsObject { Link = "http://guildlounge.com", HeaderImage = Properties.Resources.news_panel3 },
             };
 
+            FetchNews();
+
             NewsIndex = 0;
             NewsClock = new Timer();
             NewsClock.Interval = 7000;
             NewsClock.Tick += NewsClock_Tick;
             NewsClock.Start();
+
+            if (News[NewsIndex].HeaderImage == null)
+                pictureBoxNews.Load(News[NewsIndex].HeaderImageLink);
+            else
+                pictureBoxNews.Image = News[NewsIndex].HeaderImage;
         }
 
         #region news
         private async void FetchNews()
         {
-            NewsObject[] APIResponse = await _api.GetResponseWithEntry<NewsObject[]>("[ENTRYPOINT]", "news");
-            News = APIResponse;
+            try
+            {
+                NewsObject[] APIResponse = await _api.GetResponseWithEntry<NewsObject[]>("http://api.guildlounge.com/", "news");
+                News = APIResponse;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
         }
 
         class NewsObject
@@ -66,7 +73,7 @@ namespace GuildLounge.TabPages
             if (News[NewsIndex].HeaderImage == null)
                 pictureBoxNews.Load(News[NewsIndex].HeaderImageLink);
             else
-                pictureBoxNews.BackgroundImage = News[NewsIndex].HeaderImage;
+                pictureBoxNews.Image = News[NewsIndex].HeaderImage;
             NewsClock.Start();
         }
 
@@ -79,7 +86,7 @@ namespace GuildLounge.TabPages
             if (News[NewsIndex].HeaderImage == null)
                 pictureBoxNews.Load(News[NewsIndex].HeaderImageLink);
             else
-                pictureBoxNews.BackgroundImage = News[NewsIndex].HeaderImage;
+                pictureBoxNews.Image = News[NewsIndex].HeaderImage;
             NewsClock.Start();
         }
 
