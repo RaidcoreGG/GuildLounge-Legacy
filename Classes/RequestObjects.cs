@@ -76,6 +76,7 @@ namespace GuildLounge
     {
         public int BuildID { get; set; }
         public int RevisionID { get; set; }
+        public string Note { get; set; }
     }
 
     //GW2 API

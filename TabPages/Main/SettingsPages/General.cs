@@ -108,6 +108,7 @@ namespace GuildLounge.TabPages.SettingsPages
                     APIResponse.RevisionID > Assembly.GetExecutingAssembly().GetName().Version.Revision)
                 {
                     var result = MessageBox.Show("There is a newer version available.\n" +
+                        "Note: " + APIResponse.Note + "\n" +
                         "Update now?", "Guild Lounge Updater",
                                  MessageBoxButtons.YesNo,
                                  MessageBoxIcon.Question);
