@@ -167,9 +167,6 @@ namespace GuildLounge
             {
                 //GET KEYS FROM API KEYS TAB
                 GetAccounts();
-
-                //REQUEST&PROCESS DATA FROM API
-                UpdateModuleData();
             }
             catch (Exception exc)
             {
