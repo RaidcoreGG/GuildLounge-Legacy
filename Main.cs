@@ -167,6 +167,8 @@ namespace GuildLounge
             {
                 //GET KEYS FROM API KEYS TAB
                 GetAccounts();
+
+                UpdateModuleData();
             }
             catch (Exception exc)
             {
@@ -299,8 +301,6 @@ namespace GuildLounge
                 comboBoxAccount.Enabled = true;
                 buttonRefresh.Enabled = true;
                 labelAPIError.Visible = false;
-
-                UpdateModuleData();
             }
             else
             {
@@ -497,7 +497,11 @@ namespace GuildLounge
             GW2.StartInfo.Arguments = Properties.Settings.Default.StartParams;
 
             string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
-            string locl = ActiveAccount.Name + "_Local.dat";
+            string locl;
+            if (ActiveAccount.Name != null || ActiveAccount.Name != "")
+                locl = ActiveAccount.Name + "_Local.dat";
+            else
+                locl = ActiveAccount.Key.Substring(56) + "_Local.dat";
             if (File.Exists(Path.Combine(_appdata, locl)))
             {
                 File.Delete(Path.Combine(gw2appdata, "Local.dat"));
