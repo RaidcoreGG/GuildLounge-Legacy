@@ -498,7 +498,7 @@ namespace GuildLounge
 
             string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
             string locl;
-            if (ActiveAccount.Name != null || ActiveAccount.Name != "")
+            if (ActiveAccount.Name != null && ActiveAccount.Name != "")
                 locl = ActiveAccount.Name + "_Local.dat";
             else
                 locl = ActiveAccount.Key.Substring(56) + "_Local.dat";
