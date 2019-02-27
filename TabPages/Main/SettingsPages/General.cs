@@ -104,11 +104,17 @@ namespace GuildLounge.TabPages.SettingsPages
             {
                 BuildInfo APIResponse = await _api.GetResponseWithEntryPoint<BuildInfo>("http://api.guildlounge.com/", "build");
 
-                if(APIResponse.BuildID > Assembly.GetExecutingAssembly().GetName().Version.Build ||
-                    APIResponse.RevisionID > Assembly.GetExecutingAssembly().GetName().Version.Revision)
+                if
+                (
+                    APIResponse.BuildID > Assembly.GetExecutingAssembly().GetName().Version.Build ||
+                    (
+                        APIResponse.BuildID == Assembly.GetExecutingAssembly().GetName().Version.Build &&
+                        APIResponse.RevisionID > Assembly.GetExecutingAssembly().GetName().Version.Revision
+                    )
+                )
                 {
                     var result = MessageBox.Show("There is a newer version available.\n" +
-                        "Note: " + APIResponse.Note + "\n" +
+                        "Note: " + APIResponse.Note + "\n\n" +
                         "Update now?", "Guild Lounge Updater",
                                  MessageBoxButtons.YesNo,
                                  MessageBoxIcon.Question);
