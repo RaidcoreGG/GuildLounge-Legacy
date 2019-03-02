@@ -502,19 +502,20 @@ namespace GuildLounge
                 locl = ActiveAccount.Name + "_Local.dat";
             else
                 locl = ActiveAccount.Key.Substring(56) + "_Local.dat";
-            if (File.Exists(Path.Combine(_appdata, locl)))
-            {
-                File.Delete(Path.Combine(gw2appdata, "Local.dat"));
-                File.Copy(Path.Combine(_appdata, locl), Path.Combine(gw2appdata, "Local.dat"));
-            }
-            else
-            {
-                File.Delete(Path.Combine(gw2appdata, "Local.dat"));
-                File.Copy(Path.Combine(_appdata, "Local.dat"), Path.Combine(gw2appdata, "Local.dat"));
-            }
 
             try
             {
+                if (File.Exists(Path.Combine(_appdata, locl)))
+                {
+                    File.Delete(Path.Combine(gw2appdata, "Local.dat"));
+                    File.Copy(Path.Combine(_appdata, locl), Path.Combine(gw2appdata, "Local.dat"));
+                }
+                else
+                {
+                    File.Delete(Path.Combine(gw2appdata, "Local.dat"));
+                    File.Copy(Path.Combine(_appdata, "Local.dat"), Path.Combine(gw2appdata, "Local.dat"));
+                }
+
                 //RUN PROCESS
                 GW2.Start();
                 if (Properties.Settings.Default.LaunchBehavior == "MINIMIZE")
@@ -538,6 +539,8 @@ namespace GuildLounge
             {
                 if (exc is DirectoryNotFoundException || exc is FileNotFoundException || exc is System.ComponentModel.Win32Exception)
                     labelLaunchError.Text = "Invalid Game Directory.";
+                else if (exc is IOException)
+                    labelLaunchError.Text = "Game already running.";
                 else
                     labelLaunchError.Text = exc.Message;
                 Utility.TimeoutToDisappear(labelLaunchError);

@@ -31,10 +31,7 @@ namespace GuildLounge.TabPages
             NewsClock.Tick += NewsClock_Tick;
             NewsClock.Start();
 
-            if (News[NewsIndex].HeaderImage == null)
-                pictureBoxNews.Load(News[NewsIndex].HeaderImageLink);
-            else
-                pictureBoxNews.Image = News[NewsIndex].HeaderImage;
+            SetNewsImage();
         }
 
         #region news
@@ -51,6 +48,21 @@ namespace GuildLounge.TabPages
             }
         }
         
+        private void SetNewsImage()
+        {
+            try
+            {
+                if (News[NewsIndex].HeaderImage == null)
+                    pictureBoxNews.Load(News[NewsIndex].HeaderImageLink);
+                else
+                    pictureBoxNews.Image = News[NewsIndex].HeaderImage;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
+        }
+
         private void NewsClock_Tick(object sender, EventArgs e)
         {
             buttonNewsNext_Click(null, null);
@@ -62,10 +74,7 @@ namespace GuildLounge.TabPages
             NewsIndex--;
             if (NewsIndex < 0)
                 NewsIndex = News.Length - 1;
-            if (News[NewsIndex].HeaderImage == null)
-                pictureBoxNews.Load(News[NewsIndex].HeaderImageLink);
-            else
-                pictureBoxNews.Image = News[NewsIndex].HeaderImage;
+            SetNewsImage();
             NewsClock.Start();
         }
 
@@ -75,10 +84,7 @@ namespace GuildLounge.TabPages
             NewsIndex++;
             if (NewsIndex > News.Length - 1)
                 NewsIndex = 0;
-            if (News[NewsIndex].HeaderImage == null)
-                pictureBoxNews.Load(News[NewsIndex].HeaderImageLink);
-            else
-                pictureBoxNews.Image = News[NewsIndex].HeaderImage;
+            SetNewsImage();
             NewsClock.Start();
         }
 
