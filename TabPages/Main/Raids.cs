@@ -8,16 +8,14 @@ namespace GuildLounge.TabPages
     public partial class Raids : UserControl
     {
         private static readonly ApiHandler _api = new ApiHandler();
-        private Account m_oActiveKey;
+        private Account m_oActiveAccount;
         public Account ActiveAccount
         {
-            get { return m_oActiveKey; }
+            get { return m_oActiveAccount; }
             set
             {
-                //SET VALUES
-                m_oActiveKey = value;
-
-                //UPDATA DATA
+                //Set value and refetch data
+                m_oActiveAccount = value;
                 UpdateWeeklyRaidProgress();
             }
         }
@@ -31,10 +29,10 @@ namespace GuildLounge.TabPages
         {
             try
             {
-                //GET RAID ENCOUNTER PROGRESS
+                //Get encounter progress from the API
                 string[] APIResponse = await _api.GetResponse<string[]>("account/raids", "access_token=" + ActiveAccount.Key);
 
-                //UPDATE ACCORDING TO DATA
+                //Updates from API response
                 UpdatePictureBoxes(APIResponse);
                 UpdateLabels(APIResponse);
                 UpdateCMFlags();
@@ -44,7 +42,6 @@ namespace GuildLounge.TabPages
                 Console.WriteLine(exc.Message);
             }
 
-            //REDRAW
             Refresh();
         }
         
@@ -89,7 +86,7 @@ namespace GuildLounge.TabPages
         
         private void UpdateLabels(string[] APIResponse)
         {
-            //COUNT LEGENDARY INSIGHTS PROGRESS
+            //Count LI and set label text
             byte LI = 0;
             string[] HoT = {"vale_guardian", "spirit_woods", "gorseval", "sabetha",
                             "slothasor", "bandit_trio", "matthias",
@@ -103,7 +100,7 @@ namespace GuildLounge.TabPages
             }
             labelTotalWeeklyLI.Text = LI + " / 15 LI earned this week.";
 
-            //COUNT LEGENDARY DIVINATIONS PROGRESS
+            //Count LD and set label text
             byte LD = 0;
             string[] PoF = {"soulless_horror", "river_of_souls", "statues_of_grenth", "voice_in_the_void",
                             "conjured_amalgamate", "twin_largos", "qadim"};
@@ -115,7 +112,7 @@ namespace GuildLounge.TabPages
             }
             labelTotalWeeklyLD.Text = LD + " / 7 LD earned this week.";
             
-            //RECOLORING LABELS FOR COMPLETED WINGS
+            //Recolor labels if wing is completed
             foreach (var gb in Controls.OfType<GroupBox>())
             {
                 int gbc = gb.Controls.Count - 1;
@@ -137,10 +134,12 @@ namespace GuildLounge.TabPages
 
         private async void UpdateCMFlags()
         {
-            //try
-            //{
+            try
+            {
+                //Fetch CM progress from predefined achievements
                 RaidCMs APIResponse = await _api.FetchRaidCMs(ActiveAccount.Key);
 
+                //Set encounter CM progress according to API response
                 //W3
                 pictureBoxKeepConstruct.CMdone = APIResponse.KeepConstruct;
 
@@ -159,33 +158,31 @@ namespace GuildLounge.TabPages
                 pictureBoxConjuredAmalgamate.CMdone = APIResponse.ConjuredAmalgamate;
                 pictureBoxLargosTwins.CMdone = APIResponse.LargosTwins;
                 pictureBoxQadim.CMdone = APIResponse.Qadim;
-            /*}
+            }
             catch (Exception exc)
             {
                 Console.WriteLine(exc.Message);
 
+                //Set each encounter CM to false if API fails
                 //W3
-                pictureBoxKeepConstruct.DoneCM = false;
+                pictureBoxKeepConstruct.CMdone = false;
 
                 //W4
-                pictureBoxCairn.DoneCM = false;
-                pictureBoxMursaatOverseer.DoneCM = false;
-                pictureBoxSamarog.DoneCM = false;
-                pictureBoxDeimos.DoneCM = false;
+                pictureBoxCairn.CMdone = false;
+                pictureBoxMursaatOverseer.CMdone = false;
+                pictureBoxSamarog.CMdone = false;
+                pictureBoxDeimos.CMdone = false;
 
                 //W5
-                pictureBoxSoullessHorror.DoneCM = false;
-                pictureBoxStatuesofGrenth.DoneCM = false;
-                pictureBoxDhuum.DoneCM = false;
+                pictureBoxSoullessHorror.CMdone = false;
+                pictureBoxStatuesofGrenth.CMdone = false;
+                pictureBoxDhuum.CMdone = false;
 
                 //W6
-                pictureBoxConjuredAmalgamate.DoneCM = false;
-                pictureBoxLargosTwins.DoneCM = false;
-                pictureBoxQadim.DoneCM = false;
-            }*/
-
-            //REDRAW
-            Refresh();
+                pictureBoxConjuredAmalgamate.CMdone = false;
+                pictureBoxLargosTwins.CMdone = false;
+                pictureBoxQadim.CMdone = false;
+            }
         }
     }
 }
