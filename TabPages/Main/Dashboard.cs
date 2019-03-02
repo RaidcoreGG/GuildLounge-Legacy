@@ -53,7 +53,10 @@ namespace GuildLounge.TabPages
             try
             {
                 if (News[NewsIndex].HeaderImage == null)
+                {
                     pictureBoxNews.Load(News[NewsIndex].HeaderImageLink);
+                    News[NewsIndex].HeaderImage = pictureBoxNews.Image;
+                }
                 else
                     pictureBoxNews.Image = News[NewsIndex].HeaderImage;
             }
