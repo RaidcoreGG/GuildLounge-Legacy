@@ -613,6 +613,16 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tut_accountswitching {
+            get {
+                object obj = ResourceManager.GetObject("tut_accountswitching", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ui_arrow_dn {
             get {
                 object obj = ResourceManager.GetObject("ui_arrow_dn", resourceCulture);

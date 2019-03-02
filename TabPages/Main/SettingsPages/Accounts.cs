@@ -1,27 +1,19 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.IO;
 using System.Web.Script.Serialization;
+using System.Windows.Forms;
 
 namespace GuildLounge.TabPages.SettingsPages
 {
     public partial class Accounts : UserControl
     {
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
-        private bool m_bHidePassword { get; set; }
         public Account[] StoredAccounts { get; set; }
 
         public Accounts()
         {
             InitializeComponent();
-            m_bHidePassword = true;
 
             try
             {
@@ -35,7 +27,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
         public void LoadAccounts()
         {
-            //READ API KEYS FROM FILE AND ADD THEM TO THE LISTBOX
+            //Deserialize accounts and load them
             StoredAccounts = new JavaScriptSerializer().Deserialize<List<Account>>(File.ReadAllText(Path.Combine(_appdata, "accounts.json"))).ToArray();
             listBoxAccounts.Items.AddRange(StoredAccounts);
         }
@@ -44,23 +36,23 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             if (listBoxAccounts.Items.Count > 0)
             {
-                //REINITIALIZE ARRAY WITH EDITED/UPDATED VALUES FROM THE LISTBOX
+                //Reinitialize array with accounts from listbox
                 StoredAccounts = new Account[listBoxAccounts.Items.Count];
                 for (int i = 0; i < listBoxAccounts.Items.Count; i++)
                     StoredAccounts[i] = (Account)listBoxAccounts.Items[i];
 
-                //PARSE TO JSON AND WRITE TO FILE
+                //Serialize json and write to file
                 string parsedKeys = new JavaScriptSerializer().Serialize(StoredAccounts);
                 File.WriteAllText(Path.Combine(_appdata, "accounts.json"), parsedKeys);
             }
             else
             {
-                //WRITE AN EMPTY JSON OBJECT TO FILE
+                //Write empty json
                 File.WriteAllText(Path.Combine(_appdata, "accounts.json"), "[]");
                 StoredAccounts = null;
             }
 
-            //CALLING MAIN FORM TO REFRESH KEYS
+            //Call parent to refetch accounts
             var obj = (Settings)Parent;
             obj.RefetchAccounts();
         }
@@ -69,13 +61,16 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             try
             {
+                //Create new account object from values
                 listBoxAccounts.Items.Add(new Account {
                     Name = textBoxName.Text,
                     Key = textBoxAPIKey.Text
                 });
 
+                //Get permissions of last added key
                 FetchPermissionsProxy();
                 
+                //Clear textboxes
                 textBoxName.Clear();
                 textBoxAPIKey.Clear();
 
@@ -92,13 +87,16 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             try
             {
+                //Get permissions of last added key
                 ((Account)listBoxAccounts.Items[listBoxAccounts.Items.Count - 1]).Permissions =
                 await Account.FetchPermissions(((Account)listBoxAccounts.Items[listBoxAccounts.Items.Count - 1]).Key);
             }
             catch
             {
+                //Set the selected index and invoke edit
                 listBoxAccounts.SelectedIndex = listBoxAccounts.Items.Count - 1;
                 buttonEditAccount_Click(null, null);
+
                 labelError.Text = "Invalid API-Key.";
                 Utility.TimeoutToDisappear(labelError);
             }
@@ -118,10 +116,12 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             if (listBoxAccounts.SelectedIndex >= 0)
             {
+                //Load selected values of selected account into textboxes
                 var obj = (Account)listBoxAccounts.Items[listBoxAccounts.SelectedIndex];
                 textBoxName.Text = obj.Name;
                 textBoxAPIKey.Text = obj.Key;
 
+                //Remove selected account
                 listBoxAccounts.Items.Remove(obj);
 
                 SaveAccounts();
@@ -137,10 +137,95 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             if(listBoxAccounts.SelectedIndex >= 0)
             {
+                //Load permissions of selected key for display
                 var obj = (Account)listBoxAccounts.Items[listBoxAccounts.SelectedIndex];
                 if (obj.Permissions != null)
                     apiKeyInfo.UpdatePermissions(obj.Permissions);
+
+                //Set linked .DAT file name
+                string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
+                string locl;
+                if (obj.Name != null && obj.Name != "")
+                    locl = obj.Name + "_Local.dat";
+                else
+                    locl = obj.Key.Substring(56) + "_Local.dat";
+
+                //Display if a .DAT file is linked
+                if (File.Exists(Path.Combine(_appdata, locl)))
+                    labelDatFile.Text = locl;
+                else
+                    labelDatFile.Text = "not linked";
             }
+        }
+
+        private void buttonLinkCurrentDAT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listBoxAccounts.SelectedIndex >= 0)
+                {
+                    //Set linked .DAT file name
+                    var obj = (Account)listBoxAccounts.Items[listBoxAccounts.SelectedIndex];
+                    string locl;
+                    if (obj.Name != null && obj.Name != "")
+                        locl = obj.Name + "_Local.dat";
+                    else
+                        locl = obj.Key.Substring(56) + "_Local.dat";
+
+                    //Copy Local.dat to create USER_Local.dat
+                    string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
+                    if (!File.Exists(Path.Combine(_appdata, locl)))
+                        File.Copy(Path.Combine(gw2appdata, "Local.dat"), Path.Combine(_appdata, locl));
+                }
+                else
+                {
+                    labelError.Text = "Select an account to link first!";
+                    Utility.TimeoutToDisappear(labelLinkingError);
+                }
+            }
+            catch (Exception exc)
+            {
+                labelLinkingError.Text = exc.Message;
+                Utility.TimeoutToDisappear(labelLinkingError);
+            }
+        }
+
+        private void buttonUnlinkDAT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(listBoxAccounts.SelectedIndex >= 0)
+                {
+                    //Set linked .DAT file name
+                    var obj = (Account)listBoxAccounts.Items[listBoxAccounts.SelectedIndex];
+                    string locl;
+                    if (obj.Name != null && obj.Name != "")
+                        locl = obj.Name + "_Local.dat";
+                    else
+                        locl = obj.Key.Substring(56) + "_Local.dat";
+
+                    //Delete USER_Local.dat
+                    if (File.Exists(Path.Combine(_appdata, locl)))
+                        File.Delete(Path.Combine(_appdata, locl));
+                }
+                else
+                {
+                    labelError.Text = "Select an account to unlink first!";
+                    Utility.TimeoutToDisappear(labelLinkingError);
+                }
+            }
+            catch (Exception exc)
+            {
+                labelLinkingError.Text = exc.Message;
+                Utility.TimeoutToDisappear(labelLinkingError);
+            }
+        }
+
+        private void linkLabelQuickSwitchingHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Help.AccountQuickSwitching help = new Help.AccountQuickSwitching();
+            help.StartPosition = FormStartPosition.CenterParent;
+            help.ShowDialog();
         }
     }
 }

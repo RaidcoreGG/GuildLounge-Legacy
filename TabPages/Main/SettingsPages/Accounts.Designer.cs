@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox3 = new GuildLounge.Controls.GroupBox();
+            this.labelLinkingError = new System.Windows.Forms.Label();
+            this.linkLabelQuickSwitchingHelp = new System.Windows.Forms.LinkLabel();
+            this.buttonLinkCurrentDAT = new GuildLounge.Controls.HighlightButton();
+            this.buttonUnlinkDAT = new GuildLounge.Controls.HighlightButton();
+            this.labelDatFile = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new GuildLounge.Controls.GroupBox();
             this.listBoxAccounts = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,9 +50,110 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.groupBox3.BorderColor = System.Drawing.Color.Gray;
+            this.groupBox3.BorderSize = 1;
+            this.groupBox3.Controls.Add(this.labelLinkingError);
+            this.groupBox3.Controls.Add(this.linkLabelQuickSwitchingHelp);
+            this.groupBox3.Controls.Add(this.buttonLinkCurrentDAT);
+            this.groupBox3.Controls.Add(this.buttonUnlinkDAT);
+            this.groupBox3.Controls.Add(this.labelDatFile);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Location = new System.Drawing.Point(12, 368);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(546, 56);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBoxAccountDAT";
+            // 
+            // labelLinkingError
+            // 
+            this.labelLinkingError.AutoSize = true;
+            this.labelLinkingError.Location = new System.Drawing.Point(331, 6);
+            this.labelLinkingError.Name = "labelLinkingError";
+            this.labelLinkingError.Size = new System.Drawing.Size(52, 13);
+            this.labelLinkingError.TabIndex = 25;
+            this.labelLinkingError.Text = "[ERROR]";
+            this.labelLinkingError.Visible = false;
+            // 
+            // linkLabelQuickSwitchingHelp
+            // 
+            this.linkLabelQuickSwitchingHelp.ActiveLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelQuickSwitchingHelp.AutoSize = true;
+            this.linkLabelQuickSwitchingHelp.LinkColor = System.Drawing.Color.Red;
+            this.linkLabelQuickSwitchingHelp.Location = new System.Drawing.Point(142, 6);
+            this.linkLabelQuickSwitchingHelp.Name = "linkLabelQuickSwitchingHelp";
+            this.linkLabelQuickSwitchingHelp.Size = new System.Drawing.Size(47, 13);
+            this.linkLabelQuickSwitchingHelp.TabIndex = 21;
+            this.linkLabelQuickSwitchingHelp.TabStop = true;
+            this.linkLabelQuickSwitchingHelp.Text = "How to?";
+            this.linkLabelQuickSwitchingHelp.VisitedLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelQuickSwitchingHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelQuickSwitchingHelp_LinkClicked);
+            // 
+            // buttonLinkCurrentDAT
+            // 
+            this.buttonLinkCurrentDAT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
+            this.buttonLinkCurrentDAT.FlatAppearance.BorderSize = 0;
+            this.buttonLinkCurrentDAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLinkCurrentDAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.buttonLinkCurrentDAT.ForeColor = System.Drawing.Color.White;
+            this.buttonLinkCurrentDAT.Location = new System.Drawing.Point(334, 21);
+            this.buttonLinkCurrentDAT.Name = "buttonLinkCurrentDAT";
+            this.buttonLinkCurrentDAT.Size = new System.Drawing.Size(100, 20);
+            this.buttonLinkCurrentDAT.TabIndex = 20;
+            this.buttonLinkCurrentDAT.Text = "Link Current";
+            this.buttonLinkCurrentDAT.UseVisualStyleBackColor = false;
+            this.buttonLinkCurrentDAT.Click += new System.EventHandler(this.buttonLinkCurrentDAT_Click);
+            // 
+            // buttonUnlinkDAT
+            // 
+            this.buttonUnlinkDAT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
+            this.buttonUnlinkDAT.FlatAppearance.BorderSize = 0;
+            this.buttonUnlinkDAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUnlinkDAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.buttonUnlinkDAT.ForeColor = System.Drawing.Color.White;
+            this.buttonUnlinkDAT.Location = new System.Drawing.Point(440, 21);
+            this.buttonUnlinkDAT.Name = "buttonUnlinkDAT";
+            this.buttonUnlinkDAT.Size = new System.Drawing.Size(100, 20);
+            this.buttonUnlinkDAT.TabIndex = 19;
+            this.buttonUnlinkDAT.Text = "Unlink";
+            this.buttonUnlinkDAT.UseVisualStyleBackColor = false;
+            this.buttonUnlinkDAT.Click += new System.EventHandler(this.buttonUnlinkDAT_Click);
+            // 
+            // labelDatFile
+            // 
+            this.labelDatFile.AutoSize = true;
+            this.labelDatFile.Location = new System.Drawing.Point(84, 25);
+            this.labelDatFile.Name = "labelDatFile";
+            this.labelDatFile.Size = new System.Drawing.Size(53, 13);
+            this.labelDatFile.TabIndex = 18;
+            this.labelDatFile.Text = "not linked";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Current .DAT:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(130, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Account Quick-Switching:";
             // 
             // groupBox2
             // 
@@ -56,7 +165,7 @@
             this.groupBox2.Controls.Add(this.buttonEditAccount);
             this.groupBox2.Controls.Add(this.buttonRemoveAccount);
             this.groupBox2.Controls.Add(this.apiKeyInfo);
-            this.groupBox2.Location = new System.Drawing.Point(12, 186);
+            this.groupBox2.Location = new System.Drawing.Point(12, 124);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(546, 238);
             this.groupBox2.TabIndex = 1;
@@ -221,11 +330,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Accounts";
             this.Size = new System.Drawing.Size(570, 436);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -250,5 +362,13 @@
         private Controls.ApiKeyInfo apiKeyInfo;
         private System.Windows.Forms.ListBox listBoxAccounts;
         private System.Windows.Forms.Label labelError;
+        private Controls.GroupBox groupBox3;
+        private Controls.HighlightButton buttonLinkCurrentDAT;
+        private Controls.HighlightButton buttonUnlinkDAT;
+        private System.Windows.Forms.Label labelDatFile;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.LinkLabel linkLabelQuickSwitchingHelp;
+        private System.Windows.Forms.Label labelLinkingError;
     }
 }
