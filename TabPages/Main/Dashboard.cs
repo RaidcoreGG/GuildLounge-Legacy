@@ -16,6 +16,7 @@ namespace GuildLounge.TabPages
         {
             InitializeComponent();
 
+            //Default News
             News = new NewsObject[]
             {
                 new NewsObject { Link = "", HeaderImage = Properties.Resources.news_panel1 },
@@ -23,15 +24,15 @@ namespace GuildLounge.TabPages
                 //new NewsObject { Link = "http://guildlounge.com", HeaderImage = Properties.Resources.news_panel3 },
             };
 
+            //Fetch News from API 
             FetchNews();
-
-            NewsIndex = 0;
+            SetNewsImage();
+            
+            //Initialize Timer
             NewsClock = new Timer();
             NewsClock.Interval = 7000;
             NewsClock.Tick += NewsClock_Tick;
             NewsClock.Start();
-
-            SetNewsImage();
         }
 
         #region news
@@ -54,6 +55,7 @@ namespace GuildLounge.TabPages
             {
                 if (News[NewsIndex].HeaderImage == null)
                 {
+                    //Load the image into the pictureBox from the URL, then Cache image into NewsObject
                     pictureBoxNews.Load(News[NewsIndex].HeaderImageLink);
                     News[NewsIndex].HeaderImage = pictureBoxNews.Image;
                 }
@@ -68,12 +70,15 @@ namespace GuildLounge.TabPages
 
         private void NewsClock_Tick(object sender, EventArgs e)
         {
+            //Set the next image each tick
             buttonNewsNext_Click(null, null);
         }
         
         private void buttonNewsPrevious_Click(object sender, EventArgs e)
         {
+            //Reset the timer each time the news are manually switched
             NewsClock.Stop();
+            //Show previous news
             NewsIndex--;
             if (NewsIndex < 0)
                 NewsIndex = News.Length - 1;
@@ -83,7 +88,9 @@ namespace GuildLounge.TabPages
 
         private void buttonNewsNext_Click(object sender, EventArgs e)
         {
+            //Reset the timer each time the news are manually switched
             NewsClock.Stop();
+            //Show next news
             NewsIndex++;
             if (NewsIndex > News.Length - 1)
                 NewsIndex = 0;
@@ -93,11 +100,13 @@ namespace GuildLounge.TabPages
 
         private void pictureBoxNews_Click(object sender, EventArgs e)
         {
+            //If Link Property is set (properly), open the browser with the link
             if(Regex.IsMatch(News[NewsIndex].Link, @"(http(s)?:\/\/)?(www.)?[\w-_\/]"))
                 System.Diagnostics.Process.Start(News[NewsIndex].Link);
         }
         #endregion
 
+        //Open a new browser window per link
         #region links
         private void linkLabelGLReleaseNotes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -135,6 +144,7 @@ namespace GuildLounge.TabPages
         }
         #endregion
 
+        //Change the active tab of the mainform
         #region tools
         private void linkLabelDailies_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
