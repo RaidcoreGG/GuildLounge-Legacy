@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GuildLounge.TabPages
@@ -58,6 +52,8 @@ namespace GuildLounge.TabPages
             buttonSave.Enabled = false;
         }
 
+        //TabControl
+        #region navigation
         protected void SetActiveTab(UserControl tab)
         {
             if (ActiveTab != null)
@@ -72,9 +68,7 @@ namespace GuildLounge.TabPages
                 ActiveTab.Visible = true;
             }
         }
-
-        #region navigation
-
+        
         private void buttonSettingsGeneral_Click(object sender, EventArgs e)
         {
             SetActiveTab(GeneralTab);
@@ -101,6 +95,7 @@ namespace GuildLounge.TabPages
         }
         #endregion
 
+        //Resets all settings to the defaults
         private void buttonRestore_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Reset();
@@ -110,6 +105,7 @@ namespace GuildLounge.TabPages
             buttonSave.Enabled = true;
         }
 
+        //Save the settings and reload the modules in the mainform
         private void buttonSave_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Save();
@@ -118,17 +114,20 @@ namespace GuildLounge.TabPages
             obj.LoadModules();
         }
 
+        //Called from the Main form to get the accounts
         public Account[] GetAccounts()
         {
             return ((SettingsPages.Accounts)AccountsTab).StoredAccounts;
         }
 
+        //Calls the Main form to get the accounts
         public void RefetchAccounts()
         {
             var obj = (Main)Parent;
             obj.GetAccounts();
         }
 
+        //Called from child tabs when a setting was changed to enable the save button
         public void SettingsChanged()
         {
             buttonSave.Enabled = true;
