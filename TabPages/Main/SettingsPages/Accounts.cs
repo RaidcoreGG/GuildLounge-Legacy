@@ -195,7 +195,10 @@ namespace GuildLounge.TabPages.SettingsPages
             }
             catch (Exception exc)
             {
-                labelLinkingError.Text = exc.Message;
+                if (exc is IOException)
+                    labelLinkingError.Text = "Please close the game first.";
+                else
+                    labelLinkingError.Text = exc.Message;
                 Utility.TimeoutToDisappear(labelLinkingError);
             }
         }

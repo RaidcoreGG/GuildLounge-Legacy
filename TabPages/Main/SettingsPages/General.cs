@@ -122,6 +122,11 @@ namespace GuildLounge.TabPages.SettingsPages
                     if (result == DialogResult.Yes)
                         UpdateExecutable();
                 }
+                else
+                {
+                    labelUpdaterInfo.Text = "Up to date!";
+                    Utility.TimeoutToDisappear(labelUpdaterInfo);
+                }
             }
             catch
             {
