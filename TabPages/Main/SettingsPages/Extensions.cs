@@ -1,14 +1,9 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
+using System.IO;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Web.Script.Serialization;
+using System.Windows.Forms;
 
 namespace GuildLounge.TabPages.SettingsPages
 {
@@ -35,13 +30,13 @@ namespace GuildLounge.TabPages.SettingsPages
                 Console.WriteLine(exc.Message);
             }
 
-            //LOADUP FIX
+            //Loadup fix
             labelUpdateInfo.Visible = false;
         }
 
         private void LoadExtensions()
         {
-            //READ ADDONS FROM FILE & ADD THEM TO THE LISTBOX
+            //Deserialize and load into listbox
             StoredExtensions = new JavaScriptSerializer().Deserialize<List<Extension>>(File.ReadAllText(Path.Combine(_appdata, "addons.json"))).ToArray();
             listBoxExtensions.Items.AddRange(StoredExtensions);
             listBoxExtensions.DisplayMember = "link";
@@ -54,7 +49,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
         private void UpdateExtensions(Extension[] addOns, bool checkForLastModified)
         {
-            //CREATE A NEW TASK TO RUN IN THE BACKGROUND SO THE PROGRAM EXECUTION/LOAD UP WON'T BE DELAYED
+            //Create a new task so program execution won't be delayed
             Task.Run(async () =>
             {
                 _updater = new ExtensionUpdater();
@@ -68,18 +63,18 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             if (listBoxExtensions.Items.Count > 0)
             {
-                //REINITIALIZE ARRAY WITH EDITED/UPDATED VALUES FROM THE LISTBOX
+                //Reinitialize array from listbox
                 StoredExtensions = new Extension[listBoxExtensions.Items.Count];
                 for (int i = 0; i < listBoxExtensions.Items.Count; i++)
                     StoredExtensions[i] = (Extension)listBoxExtensions.Items[i];
 
-                //PARSE TO JSON AND WRITE TO FILE
+                //Serialize json and write to file
                 string parsedKeys = new JavaScriptSerializer().Serialize(StoredExtensions);
                 File.WriteAllText(Path.Combine(_appdata, "addons.json"), parsedKeys);
             }
             else
             {
-                //WRITE AN EMPTY JSON OBJECT TO FILE
+                //write empty json
                 File.WriteAllText(Path.Combine(_appdata, "addons.json"), "[]");
                 StoredExtensions = null;
             }
@@ -116,10 +111,14 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             if (listBoxExtensions.SelectedIndex >= 0)
             {
+                //Load values of selected item into textboxes
                 var obj = (Extension)listBoxExtensions.Items[listBoxExtensions.SelectedIndex];
                 textBoxExtensionLink.Text = obj.Link;
                 textBoxExtensionName.Text = obj.Name;
+
+                //Remove selected item
                 listBoxExtensions.Items.Remove(obj);
+
                 SaveExtensions();
             }
             else
@@ -131,12 +130,17 @@ namespace GuildLounge.TabPages.SettingsPages
 
         private void buttonAddExtension_Click(object sender, EventArgs e)
         {
-            //IF LINK VALID (IS DLL FILE)
+            //if link is valid (is DLL file)
             try
             {
+                //Create new object from values
                 listBoxExtensions.Items.Add(new Extension() { Link = textBoxExtensionLink.Text, Name = textBoxExtensionName.Text });
+
+                //Clear textboxes
                 textBoxExtensionLink.Clear();
                 textBoxExtensionName.Clear();
+
+
                 SaveExtensions();
             }
             catch (Exception exc)
