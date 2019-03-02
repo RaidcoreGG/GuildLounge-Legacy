@@ -181,6 +181,11 @@ namespace GuildLounge.TabPages.SettingsPages
                         File.Delete(Path.Combine(_appdata, locl));
                         File.Copy(Path.Combine(gw2appdata, "Local.dat"), Path.Combine(_appdata, locl));
                     }
+
+                    if (File.Exists(Path.Combine(_appdata, locl)))
+                        labelDatFile.Text = locl;
+                    else
+                        labelDatFile.Text = "not linked";
                 }
                 else
                 {
@@ -212,6 +217,11 @@ namespace GuildLounge.TabPages.SettingsPages
                     //Delete USER_Local.dat
                     if (File.Exists(Path.Combine(_appdata, locl)))
                         File.Delete(Path.Combine(_appdata, locl));
+
+                    if (File.Exists(Path.Combine(_appdata, locl)))
+                        labelDatFile.Text = locl;
+                    else
+                        labelDatFile.Text = "not linked";
                 }
                 else
                 {
