@@ -176,10 +176,15 @@ namespace GuildLounge.TabPages.SettingsPages
                     string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
                     if (!File.Exists(Path.Combine(_appdata, locl)))
                         File.Copy(Path.Combine(gw2appdata, "Local.dat"), Path.Combine(_appdata, locl));
+                    else if(MessageBox.Show("Overwrite linked Local.dat?", "Account Quick-Switching", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        File.Delete(Path.Combine(_appdata, locl));
+                        File.Copy(Path.Combine(gw2appdata, "Local.dat"), Path.Combine(_appdata, locl));
+                    }
                 }
                 else
                 {
-                    labelError.Text = "Select an account to link first!";
+                    labelLinkingError.Text = "Select an account to link first!";
                     Utility.TimeoutToDisappear(labelLinkingError);
                 }
             }
@@ -210,7 +215,7 @@ namespace GuildLounge.TabPages.SettingsPages
                 }
                 else
                 {
-                    labelError.Text = "Select an account to unlink first!";
+                    labelLinkingError.Text = "Select an account to unlink first!";
                     Utility.TimeoutToDisappear(labelLinkingError);
                 }
             }
