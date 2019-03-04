@@ -55,7 +55,6 @@
             // 
             this.comboBoxAspectRatio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.comboBoxAspectRatio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAspectRatio.Enabled = false;
             this.comboBoxAspectRatio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxAspectRatio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBoxAspectRatio.ForeColor = System.Drawing.Color.White;
@@ -65,12 +64,12 @@
             this.comboBoxAspectRatio.Size = new System.Drawing.Size(158, 28);
             this.comboBoxAspectRatio.TabIndex = 19;
             this.comboBoxAspectRatio.Tag = "";
+            this.comboBoxAspectRatio.SelectedIndexChanged += new System.EventHandler(this.comboBoxAspectRatio_SelectedIndexChanged);
             // 
             // comboBoxResolution
             // 
             this.comboBoxResolution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.comboBoxResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxResolution.Enabled = false;
             this.comboBoxResolution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxResolution.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBoxResolution.ForeColor = System.Drawing.Color.White;

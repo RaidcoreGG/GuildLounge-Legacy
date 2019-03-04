@@ -9,8 +9,69 @@ namespace GuildLounge.TabPages.Tools
         public WindowedResolution()
         {
             InitializeComponent();
+
+            Resolution[] res16by9 = new Resolution[] {
+                new Resolution { Width = 1280, Height = 720},
+                new Resolution { Width = 1360, Height = 768},
+                new Resolution { Width = 1366, Height = 768},
+                new Resolution { Width = 1600, Height = 900},
+                new Resolution { Width = 1920, Height = 1080},
+            };
+            Resolution[] res16by10 = new Resolution[] {
+                new Resolution { Width = 720, Height = 480},
+                new Resolution { Width = 1280, Height = 768},
+                new Resolution { Width = 1280, Height = 800},
+                new Resolution { Width = 1440, Height = 900},
+                new Resolution { Width = 1600, Height = 1024},
+                new Resolution { Width = 1680, Height = 1050},
+            };
+            Resolution[] res4by3 = new Resolution[] {
+                new Resolution { Width = 640, Height = 480},
+                new Resolution { Width = 720, Height = 576},
+                new Resolution { Width = 800, Height = 600},
+                new Resolution { Width = 1024, Height = 768},
+                new Resolution { Width = 1152, Height = 864},
+                new Resolution { Width = 1280, Height = 960},
+                new Resolution { Width = 1280, Height = 1024},
+            };
+
+            comboBoxAspectRatio.Items.AddRange( new object[] {
+                new AspectRatio() { Name = "16:9", Resolutions = res16by9},
+                new AspectRatio() { Name = "16:10", Resolutions = res16by10},
+                new AspectRatio() { Name = "4:3", Resolutions = res4by3}
+            });
+
+            comboBoxAspectRatio.SelectedItem = comboBoxAspectRatio.Items[0];
+            comboBoxResolution.SelectedItem = comboBoxResolution.Items[0];
         }
-        
+
+        internal class AspectRatio
+        {
+            public string Name { get; set; }
+            public Resolution[] Resolutions { get; set; }
+            public override string ToString()
+            {
+                return Name;
+            }
+        }
+
+        internal class Resolution
+        {
+            public int Width { get; set; }
+            public int Height { get; set; }
+            public override string ToString()
+            {
+                return Width + "x" + Height;
+            }
+        }
+
+        private void comboBoxAspectRatio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBoxResolution.Items.Clear();
+            comboBoxResolution.Items.AddRange(((AspectRatio)comboBoxAspectRatio.SelectedItem).Resolutions);
+            comboBoxResolution.SelectedItem = comboBoxResolution.Items[0];
+        }
+
         private void buttonSet_Click(object sender, EventArgs e)
         {
             //Get window handle
@@ -21,11 +82,24 @@ namespace GuildLounge.TabPages.Tools
             }
 
             //Set position of handle
-            int width = int.Parse(textBoxWidth.Text);
-            int height = int.Parse(textBoxHeight.Text);
+            int width = 0;
+            int height = 0;
+
+            if (textBoxWidth.Text != "" && textBoxHeight.Text != "")
+            {
+                int.TryParse(textBoxWidth.Text, out width);
+                int.TryParse(textBoxHeight.Text, out height);
+            }
+            else
+            {
+                width = ((Resolution)comboBoxResolution.SelectedItem).Width;
+                height = ((Resolution)comboBoxResolution.SelectedItem).Height;
+            }
             int x = 10;
             int y = 10;
-            SetWindowPos(target_hwnd, IntPtr.Zero, x, y, width, height, 0);
+            
+            if (width != 0 && height != 0)
+                SetWindowPos(target_hwnd, IntPtr.Zero, x, y, width, height, 0);
         }
 
         [DllImport("user32.dll", EntryPoint = "FindWindow", SetLastError = true)]
