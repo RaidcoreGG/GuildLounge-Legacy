@@ -27,8 +27,9 @@ namespace GuildLounge.TabPages.Tools
             Achievement[] resolvedDailies = await _api.GetResponse<Achievement[]>("achievements", "ids=" + MergeDailyIDs(APIResponse));
             APIResponse = JoinDailies(APIResponse, resolvedDailies);
             APIResponse.PvE = ReducePvE(APIResponse);
+            APIResponse.PvE = ShortenNamesPvE(APIResponse);
             APIResponse.Fractals = ReduceFractals(APIResponse);
-            AssignDailies(APIResponse);
+            InitializeDailies(APIResponse);
         }
 
         private string MergeDailyIDs(GuildLounge.Dailies dailies)
@@ -84,6 +85,31 @@ namespace GuildLounge.TabPages.Tools
             return pveFix;
         }
 
+        private Achievement[] ShortenNamesPvE(GuildLounge.Dailies dailies)
+        {
+            Achievement[] pve = new Achievement[dailies.PvE.Length];
+            //SET EMPTY OBJECTS TO PREVENT NULL REFERENCE
+            for (int j = 0; j < pve.Length; j++)
+                pve[j] = new Achievement();
+
+            int i = 0;
+            foreach (Achievement a in dailies.PvE)
+            {
+                if (a.Name.Contains("Event Completer"))
+                    a.Name = (a.Name.Remove(a.Name.IndexOf("Event Completer")) + "Events");
+                else if (a.Name.Contains("Jumping Puzzle"))
+                    a.Name = (a.Name.Remove(a.Name.IndexOf("Jumping Puzzle")) + "JP");
+                pve[i] = a;
+                i++;
+            }
+
+            Achievement[] pveFix = new Achievement[i];
+            for (int j = 0; j < pveFix.Length; j++)
+                pveFix[j] = pve[j];
+
+            return pveFix;
+        }
+
         private Achievement[] ReduceFractals(GuildLounge.Dailies dailies)
         {
             Achievement[] fracs = new Achievement[6];
@@ -114,7 +140,7 @@ namespace GuildLounge.TabPages.Tools
             return fracs;
         }
 
-        private void AssignDailies(GuildLounge.Dailies dailies)
+        private void InitializeDailies(GuildLounge.Dailies dailies)
         {
             Point col1 = new Point(70, 30);
             Point col2 = new Point(274, 30);
