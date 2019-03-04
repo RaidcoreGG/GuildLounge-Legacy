@@ -34,6 +34,7 @@ namespace GuildLounge.TabPages.SettingsPages
             }
         }
 
+        #region misc
         private void InitializeExtensions()
         {
             //Deserialize and load into listbox
@@ -42,7 +43,6 @@ namespace GuildLounge.TabPages.SettingsPages
             listBoxExtensions.DisplayMember = "link";
         }
 
-        #region misc
         public void InitializeExtensionSettings()
         {
             checkBoxAutoUpdate.Checked = Properties.Settings.Default.AutoUpdateExtensions;

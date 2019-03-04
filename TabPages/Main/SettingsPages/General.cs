@@ -17,12 +17,13 @@ namespace GuildLounge.TabPages.SettingsPages
 
             labelBuildNumber.Text = "Build: " + Assembly.GetExecutingAssembly().GetName().Version.Build.ToString();
 
-            LoadSettingsGeneral();
+            InitializeGeneralSettings();
             if (checkBoxAutoUpdate.Checked)
                 CheckForUpdate();
         }
 
-        public void LoadSettingsGeneral()
+        #region misc
+        public void InitializeGeneralSettings()
         {
             textBoxGameDirectory.Text = Properties.Settings.Default.GameDir;
             textBoxStartParams.Text = Properties.Settings.Default.StartParams;
@@ -42,7 +43,9 @@ namespace GuildLounge.TabPages.SettingsPages
 
             checkBoxAutoUpdate.Checked = Properties.Settings.Default.CheckForUpdates;
         }
+        #endregion
 
+        #region navigation
         private void buttonBrowseGameDirectory_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
@@ -51,10 +54,17 @@ namespace GuildLounge.TabPages.SettingsPages
                 textBoxGameDirectory.Text = fbd.SelectedPath;
         }
 
+        private void buttonCheckForUpdates_Click(object sender, EventArgs e)
+        {
+            CheckForUpdate();
+        }
+        #endregion
+
+        #region events
         private void textBoxGameDirectory_TextChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.GameDir = textBoxGameDirectory.Text;
-            if(Parent != null)
+            if (Parent != null)
                 ((Settings)Parent).SettingsChanged();
         }
 
@@ -92,12 +102,9 @@ namespace GuildLounge.TabPages.SettingsPages
             if (Parent != null)
                 ((Settings)Parent).SettingsChanged();
         }
+        #endregion
 
-        private void buttonCheckForUpdates_Click(object sender, EventArgs e)
-        {
-            CheckForUpdate();
-        }
-
+        #region updating
         private async void CheckForUpdate()
         {
             try
@@ -149,5 +156,6 @@ namespace GuildLounge.TabPages.SettingsPages
                 Console.WriteLine(exc.Message);
             }
         }
+        #endregion
     }
 }
