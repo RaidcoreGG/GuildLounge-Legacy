@@ -17,11 +17,14 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             InitializeComponent();
 
-            LoadSettingsExtensions();
+            InitializeExtensionSettings();
+
+            //Loadup fix
+            labelUpdateInfo.Visible = false;
 
             try
             {
-                LoadExtensions();
+                InitializeExtensions();
                 if (checkBoxAutoUpdate.Checked)
                     UpdateExtensions(StoredExtensions, true);
             }
@@ -29,12 +32,9 @@ namespace GuildLounge.TabPages.SettingsPages
             {
                 Console.WriteLine(exc.Message);
             }
-
-            //Loadup fix
-            labelUpdateInfo.Visible = false;
         }
 
-        private void LoadExtensions()
+        private void InitializeExtensions()
         {
             //Deserialize and load into listbox
             StoredExtensions = new JavaScriptSerializer().Deserialize<List<Extension>>(File.ReadAllText(Path.Combine(_appdata, "addons.json"))).ToArray();
@@ -42,7 +42,8 @@ namespace GuildLounge.TabPages.SettingsPages
             listBoxExtensions.DisplayMember = "link";
         }
 
-        public void LoadSettingsExtensions()
+        #region misc
+        public void InitializeExtensionSettings()
         {
             checkBoxAutoUpdate.Checked = Properties.Settings.Default.AutoUpdateExtensions;
         }
@@ -79,20 +80,9 @@ namespace GuildLounge.TabPages.SettingsPages
                 StoredExtensions = null;
             }
         }
+        #endregion
 
-        private void checkBoxAutoUpdate_CheckedChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.AutoUpdateExtensions = checkBoxAutoUpdate.Checked;
-            if (checkBoxAutoUpdate.Checked)
-                labelUpdateInfo.Text = "Your add-ons will update automatically, the next time you start Guild Lounge.";
-            else
-                labelUpdateInfo.Text = "Your add-ons will no longer be updated automatically.";
-
-            labelUpdateInfo.Visible = true;
-            if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
-        }
-
+        #region navigation
         private void buttonForceUpdate_Click(object sender, EventArgs e)
         {
             UpdateExtensions(StoredExtensions, false);
@@ -139,8 +129,7 @@ namespace GuildLounge.TabPages.SettingsPages
                 //Clear textboxes
                 textBoxExtensionLink.Clear();
                 textBoxExtensionName.Clear();
-
-
+                
                 SaveExtensions();
             }
             catch (Exception exc)
@@ -149,5 +138,21 @@ namespace GuildLounge.TabPages.SettingsPages
                 Utility.TimeoutToDisappear(labelError);
             }
         }
+        #endregion
+
+        #region events
+        private void checkBoxAutoUpdate_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.AutoUpdateExtensions = checkBoxAutoUpdate.Checked;
+            if (checkBoxAutoUpdate.Checked)
+                labelUpdateInfo.Text = "Your add-ons will update automatically, the next time you start Guild Lounge.";
+            else
+                labelUpdateInfo.Text = "Your add-ons will no longer be updated automatically.";
+
+            labelUpdateInfo.Visible = true;
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
+        }
+        #endregion
     }
 }

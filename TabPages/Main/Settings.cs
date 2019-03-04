@@ -119,7 +119,7 @@ namespace GuildLounge.TabPages
             Properties.Settings.Default.Reset();
             ((SettingsPages.General)GeneralTab).LoadSettingsGeneral();
             ((SettingsPages.Modules)ModulesTab).LoadSettingsModules();
-            ((SettingsPages.Extensions)ExtensionsTab).LoadSettingsExtensions();
+            ((SettingsPages.Extensions)ExtensionsTab).InitializeExtensionSettings();
             buttonSave.Enabled = true;
         }
         
