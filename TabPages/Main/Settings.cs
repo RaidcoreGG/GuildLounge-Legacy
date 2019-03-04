@@ -18,12 +18,35 @@ namespace GuildLounge.TabPages
         {
             InitializeComponent();
 
+            //Initializing tabPages
+            InitializeTabPages();
+
+            //Set General as the current tabPage
+            SetActiveTab(GeneralTab);
+
+            //Fixing save button on loadup
+            buttonSave.Enabled = false;
+        }
+
+        #region misc
+        //Called from the Main form to get the accounts
+        public Account[] GetAccounts()
+        {
+            return ((SettingsPages.Accounts)AccountsTab).StoredAccounts;
+        }
+        #endregion
+
+        #region navigation
+        private void InitializeTabPages()
+        {
+            //Initializing the pages
             GeneralTab = new SettingsPages.General();
             AccountsTab = new SettingsPages.Accounts();
             ModulesTab = new SettingsPages.Modules();
             ExtensionsTab = new SettingsPages.Extensions();
             AboutTab = new SettingsPages.About();
 
+            //Fixing visibility
             GeneralTab.Visible
                 = AccountsTab.Visible
                 = ModulesTab.Visible
@@ -31,6 +54,7 @@ namespace GuildLounge.TabPages
                 = AboutTab.Visible
                 = false;
 
+            //Fixing locations
             GeneralTab.Location
                 = AccountsTab.Location
                 = ModulesTab.Location
@@ -38,6 +62,7 @@ namespace GuildLounge.TabPages
                 = AboutTab.Location
                 = new Point(170, 0);
 
+            //Adding them as controls
             Controls.AddRange(new UserControl[]
             {
                 GeneralTab,
@@ -46,14 +71,8 @@ namespace GuildLounge.TabPages
                 ExtensionsTab,
                 AboutTab
             });
-
-            SetActiveTab(GeneralTab);
-
-            buttonSave.Enabled = false;
         }
 
-        //TabControl
-        #region navigation
         protected void SetActiveTab(UserControl tab)
         {
             if (ActiveTab != null)
@@ -93,35 +112,30 @@ namespace GuildLounge.TabPages
         {
             SetActiveTab(AboutTab);
         }
-        #endregion
-
-        //Resets all settings to the defaults
+        
         private void buttonRestore_Click(object sender, EventArgs e)
         {
+            //Resets all settings to the defaults
             Properties.Settings.Default.Reset();
             ((SettingsPages.General)GeneralTab).LoadSettingsGeneral();
             ((SettingsPages.Modules)ModulesTab).LoadSettingsModules();
             ((SettingsPages.Extensions)ExtensionsTab).LoadSettingsExtensions();
             buttonSave.Enabled = true;
         }
-
-        //Save the settings and reload the modules in the mainform
+        
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            //Save the settings and reload the modules in the mainform
             Properties.Settings.Default.Save();
             buttonSave.Enabled = false;
             var obj = (Main)Parent;
             obj.InitializeModules();
         }
-
-        //Called from the Main form to get the accounts
-        public Account[] GetAccounts()
-        {
-            return ((SettingsPages.Accounts)AccountsTab).StoredAccounts;
-        }
-
+        #endregion
+        
+        #region events
         //Calls the Main form to get the accounts
-        public void RefetchAccounts()
+        public void AccountsChanged()
         {
             var obj = (Main)Parent;
             obj.GetAccounts();
@@ -132,5 +146,6 @@ namespace GuildLounge.TabPages
         {
             buttonSave.Enabled = true;
         }
+        #endregion
     }
 }

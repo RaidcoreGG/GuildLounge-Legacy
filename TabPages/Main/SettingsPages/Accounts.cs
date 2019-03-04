@@ -54,7 +54,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
             //Call parent to refetch accounts
             var obj = (Settings)Parent;
-            obj.RefetchAccounts();
+            obj.AccountsChanged();
         }
         
         private void buttonAddAccount_Click(object sender, EventArgs e)
