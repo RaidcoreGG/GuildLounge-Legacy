@@ -111,7 +111,7 @@ namespace GuildLounge.TabPages
             Properties.Settings.Default.Save();
             buttonSave.Enabled = false;
             var obj = (Main)Parent;
-            obj.LoadModules();
+            obj.InitializeModules();
         }
 
         //Called from the Main form to get the accounts
