@@ -16,16 +16,14 @@ namespace GuildLounge
         public async Task<T> GetResponse<T>(string endPoint, params string[] args)
         {
             Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
-            //Console.WriteLine(String.Join("?", (_apiBase + endPoint), String.Join("&", args)));
             string response = await _client.GetStringAsync(String.Join("?", (_apiBase + endPoint), String.Join("&", args)));
             return new JavaScriptSerializer().Deserialize<T>(response);
         }
         
-        //WILL BE USED TO UPDATE MODULE LIST WHEN NEW ONES GET ADDED
+        //Used to call the guildlounge API
         public async Task<T> GetResponseWithEntryPoint<T>(string entryPoint, string endPoint, params string[] args)
         {
-            Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
-            //Console.WriteLine(String.Join("?", (_apiBase + endPoint), String.Join("&", args)));
+            Console.WriteLine("[API: FETCHING " + entryPoint + endPoint.ToUpper() + "]");
             string response = await _client.GetStringAsync(String.Join("?", (entryPoint + endPoint), String.Join("&", args)));
             return new JavaScriptSerializer().Deserialize<T>(response);
         }
@@ -92,7 +90,7 @@ namespace GuildLounge
             await ProcessCharacters(accessToken);
             await ProcessVault(accessToken);
 
-            //CORRECT LI DUE TO DISCOUNT FOR FIRST SET
+            //Correct LI due to the discount for the first legendary armor set
             if (m_oModuleData.LegendaryArmor >= 300)
                 m_oModuleData.LegendaryArmor -= 150;
             else
