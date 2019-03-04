@@ -16,26 +16,36 @@ namespace GuildLounge.TabPages
         {
             InitializeComponent();
 
-            //Default News
-            News = new NewsObject[]
-            {
-                new NewsObject { Link = "", HeaderImage = Properties.Resources.news_panel1 },
-                new NewsObject { Link = "", HeaderImage = Properties.Resources.news_panel2 },
-                //new NewsObject { Link = "http://guildlounge.com", HeaderImage = Properties.Resources.news_panel3 },
-            };
+            //Initializing default news
+            InitializeDefaultNews();
 
             //Fetch News from API 
             FetchNews();
             SetNewsImage();
-            
-            //Initialize Timer
+
+            //Initializing Timer
+            InitializeTimer();
+        }
+
+        #region news
+        private void InitializeDefaultNews()
+        {
+            News = new NewsObject[]
+            {
+                new NewsObject { Link = "", HeaderImage = Properties.Resources.news_panel1 },
+                new NewsObject { Link = "", HeaderImage = Properties.Resources.news_panel2 },
+                //new NewsObject { Link = "", HeaderImage = Properties.Resources.news_panel3 },
+            };
+        }
+
+        private void InitializeTimer()
+        {
             NewsClock = new Timer();
             NewsClock.Interval = 7000;
             NewsClock.Tick += NewsClock_Tick;
             NewsClock.Start();
         }
 
-        #region news
         private async void FetchNews()
         {
             try
@@ -105,8 +115,7 @@ namespace GuildLounge.TabPages
                 System.Diagnostics.Process.Start(News[NewsIndex].Link);
         }
         #endregion
-
-        //Open a new browser window per link
+        
         #region links
         private void linkLabelGLReleaseNotes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -144,10 +153,10 @@ namespace GuildLounge.TabPages
         }
         #endregion
 
-        //Change the active tab of the mainform
-        #region tools
+        #region toolsPages
         private void linkLabelDailies_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //Change the active tab of the mainform
             var obj = (Main)Parent;
             obj.SetActiveTab(obj.DailiesTab, sender);
         }
