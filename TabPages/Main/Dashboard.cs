@@ -153,12 +153,17 @@ namespace GuildLounge.TabPages
         }
         #endregion
 
-        #region toolsPages
+        #region tools
         private void linkLabelDailies_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Change the active tab of the mainform
             var obj = (Main)Parent;
             obj.SetActiveTab(obj.DailiesTab, sender);
+        }
+
+        private void linkLabelWindowedResolution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var obj = (Main)Parent;
+            obj.SetActiveTab(obj.ResizeTab, sender);
         }
         #endregion
     }

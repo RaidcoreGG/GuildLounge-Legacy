@@ -38,6 +38,7 @@ namespace GuildLounge
 
         //TOOL PAGES
         public UserControl DailiesTab;
+        public UserControl ResizeTab;
 
         //API STUFF
         private static readonly ApiHandler _api = new ApiHandler();
@@ -472,17 +473,23 @@ namespace GuildLounge
         {
             //Initializing the pages
             DailiesTab = new TabPages.Tools.Dailies();
+            ResizeTab = new TabPages.Tools.WindowedResolution();
 
             //Fixing visibility
-            DailiesTab.Visible = false;
+            DailiesTab.Visible
+                = ResizeTab.Visible
+                = false;
 
             //Fixing locations
-            DailiesTab.Location = new Point(0, 104);
+            DailiesTab.Location
+                = ResizeTab.Location
+                = new Point(0, 104);
 
             //Adding them as controls
             Controls.AddRange(new UserControl[]
             {
-                DailiesTab
+                DailiesTab,
+                ResizeTab
             });
         }
 

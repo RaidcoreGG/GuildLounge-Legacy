@@ -32,6 +32,7 @@
             this.buttonNewsNext = new GuildLounge.Controls.Button();
             this.buttonNewsPrevious = new GuildLounge.Controls.Button();
             this.groupBoxTools = new GuildLounge.Controls.GroupBox();
+            this.linkLabelWindowedResolution = new System.Windows.Forms.LinkLabel();
             this.linkLabelDailies = new System.Windows.Forms.LinkLabel();
             this.labelTools = new System.Windows.Forms.Label();
             this.groupBoxLinks = new GuildLounge.Controls.GroupBox();
@@ -101,6 +102,7 @@
             this.groupBoxTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.groupBoxTools.BorderColor = System.Drawing.Color.Gray;
             this.groupBoxTools.BorderSize = 1;
+            this.groupBoxTools.Controls.Add(this.linkLabelWindowedResolution);
             this.groupBoxTools.Controls.Add(this.linkLabelDailies);
             this.groupBoxTools.Controls.Add(this.labelTools);
             this.groupBoxTools.Location = new System.Drawing.Point(386, 188);
@@ -109,6 +111,22 @@
             this.groupBoxTools.TabIndex = 27;
             this.groupBoxTools.TabStop = false;
             this.groupBoxTools.Text = "gL_GroupBox1";
+            // 
+            // linkLabelWindowedResolution
+            // 
+            this.linkLabelWindowedResolution.ActiveLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelWindowedResolution.AutoSize = true;
+            this.linkLabelWindowedResolution.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabelWindowedResolution.LinkColor = System.Drawing.Color.Red;
+            this.linkLabelWindowedResolution.Location = new System.Drawing.Point(7, 42);
+            this.linkLabelWindowedResolution.Name = "linkLabelWindowedResolution";
+            this.linkLabelWindowedResolution.Size = new System.Drawing.Size(111, 13);
+            this.linkLabelWindowedResolution.TabIndex = 21;
+            this.linkLabelWindowedResolution.TabStop = true;
+            this.linkLabelWindowedResolution.Text = "Windowed Resolution";
+            this.linkLabelWindowedResolution.Visible = false;
+            this.linkLabelWindowedResolution.VisitedLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelWindowedResolution.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWindowedResolution_LinkClicked);
             // 
             // linkLabelDailies
             // 
@@ -292,5 +310,6 @@
         private GuildLounge.Controls.GroupBox groupBoxTools;
         private System.Windows.Forms.LinkLabel linkLabelDailies;
         private System.Windows.Forms.Label labelTools;
+        private System.Windows.Forms.LinkLabel linkLabelWindowedResolution;
     }
 }
