@@ -17,7 +17,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
             try
             {
-                LoadAccounts();
+                InitializeAccounts();
             }
             catch (Exception exc)
             {
@@ -25,14 +25,15 @@ namespace GuildLounge.TabPages.SettingsPages
             }
         }
 
-        public void LoadAccounts()
+        #region misc
+        private void InitializeAccounts()
         {
             //Deserialize accounts and load them
             StoredAccounts = new JavaScriptSerializer().Deserialize<List<Account>>(File.ReadAllText(Path.Combine(_appdata, "accounts.json"))).ToArray();
             listBoxAccounts.Items.AddRange(StoredAccounts);
         }
 
-        public void SaveAccounts()
+        private void SaveAccounts()
         {
             if (listBoxAccounts.Items.Count > 0)
             {
@@ -53,36 +54,9 @@ namespace GuildLounge.TabPages.SettingsPages
             }
 
             //Call parent to refetch accounts
-            var obj = (Settings)Parent;
-            obj.AccountsChanged();
+            ((Settings)Parent).AccountsChanged();
         }
         
-        private void buttonAddAccount_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //Create new account object from values
-                listBoxAccounts.Items.Add(new Account {
-                    Name = textBoxName.Text,
-                    Key = textBoxAPIKey.Text
-                });
-
-                //Get permissions of last added key
-                FetchPermissionsProxy();
-                
-                //Clear textboxes
-                textBoxName.Clear();
-                textBoxAPIKey.Clear();
-
-                SaveAccounts();
-            }
-            catch (Exception exc)
-            {
-                labelError.Text = exc.Message;
-                Utility.TimeoutToDisappear(labelError);
-            }
-        }
-
         private async void FetchPermissionsProxy()
         {
             try
@@ -101,6 +75,35 @@ namespace GuildLounge.TabPages.SettingsPages
                 Utility.TimeoutToDisappear(labelError);
             }
             SaveAccounts();
+        }
+        #endregion
+
+        #region navigation
+        private void buttonAddAccount_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Create new account object from values
+                listBoxAccounts.Items.Add(new Account
+                {
+                    Name = textBoxName.Text,
+                    Key = textBoxAPIKey.Text
+                });
+
+                //Get permissions of last added key
+                FetchPermissionsProxy();
+
+                //Clear textboxes
+                textBoxName.Clear();
+                textBoxAPIKey.Clear();
+
+                SaveAccounts();
+            }
+            catch (Exception exc)
+            {
+                labelError.Text = exc.Message;
+                Utility.TimeoutToDisappear(labelError);
+            }
         }
 
         private void buttonRemoveAccount_Click(object sender, EventArgs e)
@@ -133,31 +136,6 @@ namespace GuildLounge.TabPages.SettingsPages
             }
         }
 
-        private void listBoxAccounts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(listBoxAccounts.SelectedIndex >= 0)
-            {
-                //Load permissions of selected key for display
-                var obj = (Account)listBoxAccounts.Items[listBoxAccounts.SelectedIndex];
-                if (obj.Permissions != null)
-                    apiKeyInfo.UpdatePermissions(obj.Permissions);
-
-                //Set linked .DAT file name
-                string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
-                string locl;
-                if (obj.Name != null && obj.Name != "")
-                    locl = obj.Name + "_Local.dat";
-                else
-                    locl = obj.Key.Substring(56) + "_Local.dat";
-
-                //Display if a .DAT file is linked
-                if (File.Exists(Path.Combine(_appdata, locl)))
-                    labelDatFile.Text = locl;
-                else
-                    labelDatFile.Text = "not linked";
-            }
-        }
-
         private void buttonLinkCurrentDAT_Click(object sender, EventArgs e)
         {
             try
@@ -176,7 +154,7 @@ namespace GuildLounge.TabPages.SettingsPages
                     string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
                     if (!File.Exists(Path.Combine(_appdata, locl)))
                         File.Copy(Path.Combine(gw2appdata, "Local.dat"), Path.Combine(_appdata, locl));
-                    else if(MessageBox.Show("Overwrite linked Local.dat?", "Account Quick-Switching", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    else if (MessageBox.Show("Overwrite linked Local.dat?", "Account Quick-Switching", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         File.Delete(Path.Combine(_appdata, locl));
                         File.Copy(Path.Combine(gw2appdata, "Local.dat"), Path.Combine(_appdata, locl));
@@ -207,7 +185,7 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             try
             {
-                if(listBoxAccounts.SelectedIndex >= 0)
+                if (listBoxAccounts.SelectedIndex >= 0)
                 {
                     //Set linked .DAT file name
                     var obj = (Account)listBoxAccounts.Items[listBoxAccounts.SelectedIndex];
@@ -217,7 +195,7 @@ namespace GuildLounge.TabPages.SettingsPages
                     else
                         locl = obj.Key.Substring(56) + "_Local.dat";
 
-                    //Delete USER_Local.dat
+                    //Delete USER_Local.DAT
                     if (File.Exists(Path.Combine(_appdata, locl)))
                         File.Delete(Path.Combine(_appdata, locl));
 
@@ -245,5 +223,33 @@ namespace GuildLounge.TabPages.SettingsPages
             help.StartPosition = FormStartPosition.CenterParent;
             help.ShowDialog();
         }
+        #endregion
+
+        #region events
+        private void listBoxAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxAccounts.SelectedIndex >= 0)
+            {
+                //Load permissions of selected key for display
+                var obj = (Account)listBoxAccounts.Items[listBoxAccounts.SelectedIndex];
+                if (obj.Permissions != null)
+                    apiKeyInfo.UpdatePermissions(obj.Permissions);
+
+                //Set linked .DAT file name
+                string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
+                string locl;
+                if (obj.Name != null && obj.Name != "")
+                    locl = obj.Name + "_Local.dat";
+                else
+                    locl = obj.Key.Substring(56) + "_Local.dat";
+
+                //Display if a .DAT file is linked
+                if (File.Exists(Path.Combine(_appdata, locl)))
+                    labelDatFile.Text = locl;
+                else
+                    labelDatFile.Text = "not linked";
+            }
+        }
+        #endregion
     }
 }
