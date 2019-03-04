@@ -24,7 +24,7 @@ namespace GuildLounge.TabPages.Tools
         private async void FetchDailies()
         {
             GuildLounge.Dailies APIResponse = await _api.GetResponse<GuildLounge.Dailies>("achievements/daily");
-            Achievement[] resolvedDailies = await _api.GetResponse<Achievement[]>("achievements", "ids=" + MergeDailyIDs(APIResponse));
+            Achievement[] resolvedDailies = await _api.GetResponse<Achievement[]>("achievements", "ids=" + GetAllIDs(APIResponse));
             APIResponse = JoinDailies(APIResponse, resolvedDailies);
             APIResponse.PvE = ReducePvE(APIResponse);
             APIResponse.PvE = ShortenNamesPvE(APIResponse);
@@ -32,7 +32,7 @@ namespace GuildLounge.TabPages.Tools
             InitializeDailies(APIResponse);
         }
 
-        private string MergeDailyIDs(GuildLounge.Dailies dailies)
+        private string GetAllIDs(GuildLounge.Dailies dailies)
         {
             string ids = "";
             foreach (Achievement a in dailies.PvE)
