@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Web.Script.Serialization;
 
 namespace GuildLounge.TabPages.SettingsPages
 {
@@ -13,12 +12,13 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             InitializeComponent();
 
-            LoadSettingsModules();
+            InitializeModuleSettings();
         }
 
-        public void LoadSettingsModules()
+        #region misc
+        public void InitializeModuleSettings()
         {
-            //ACTIVE
+            //Add active modules to listbox
             System.Collections.Specialized.StringCollection sca = Properties.Settings.Default.ActiveModules;
             listBoxActive.Items.Clear();
             if (sca != null)
@@ -28,7 +28,7 @@ namespace GuildLounge.TabPages.SettingsPages
                 listBoxActive.Items.AddRange(stra);
             }
 
-            //INACTIVE
+            //Add inactive modules to listbox
             System.Collections.Specialized.StringCollection sci = Properties.Settings.Default.InactiveModules;
             listBoxInactive.Items.Clear();
             if (sci != null)
@@ -43,6 +43,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
         private async void FetchModules()
         {
+            //Fetches selectable modules from the API and injects new ones into inactive
             try
             {
                 string[] APIResponse = await _api.GetResponseWithEntryPoint<string[]>("http://api.guildlounge.com/", "modules");
@@ -101,7 +102,9 @@ namespace GuildLounge.TabPages.SettingsPages
             }
             return modules;
         }
+        #endregion
 
+        #region navigation
         private void buttonMoveToActive_Click(object sender, EventArgs e)
         {
             if(listBoxInactive.SelectedItem != null)
@@ -151,5 +154,6 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             System.Diagnostics.Process.Start("https://discord.gg/MSgPhDv");
         }
+        #endregion
     }
 }

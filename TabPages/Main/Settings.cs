@@ -118,7 +118,7 @@ namespace GuildLounge.TabPages
             //Resets all settings to the defaults
             Properties.Settings.Default.Reset();
             ((SettingsPages.General)GeneralTab).InitializeGeneralSettings();
-            ((SettingsPages.Modules)ModulesTab).LoadSettingsModules();
+            ((SettingsPages.Modules)ModulesTab).InitializeModuleSettings();
             ((SettingsPages.Extensions)ExtensionsTab).InitializeExtensionSettings();
             buttonSave.Enabled = true;
         }
