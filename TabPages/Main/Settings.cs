@@ -128,8 +128,7 @@ namespace GuildLounge.TabPages
             //Save the settings and reload the modules in the mainform
             Properties.Settings.Default.Save();
             buttonSave.Enabled = false;
-            var obj = (Main)Parent;
-            obj.InitializeModules();
+            ((Main)Parent).InitializeModules();
         }
         #endregion
         
@@ -137,8 +136,7 @@ namespace GuildLounge.TabPages
         //Calls the Main form to get the accounts
         public void AccountsChanged()
         {
-            var obj = (Main)Parent;
-            obj.GetAccounts();
+            ((Main)Parent).GetAccounts();
         }
 
         //Called from child tabs when a setting was changed to enable the save button
