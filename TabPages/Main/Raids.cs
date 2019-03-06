@@ -8,34 +8,23 @@ namespace GuildLounge.TabPages
     public partial class Raids : UserControl
     {
         private static readonly ApiHandler _api = new ApiHandler();
-        private Account m_oActiveAccount;
-        public Account ActiveAccount
-        {
-            get { return m_oActiveAccount; }
-            set
-            {
-                //Set value and refetch data
-                m_oActiveAccount = value;
-                UpdateWeeklyRaidProgress();
-            }
-        }
 
         public Raids()
         {
             InitializeComponent();
         }
         
-        private async void UpdateWeeklyRaidProgress()
+        public async void UpdateWeeklyRaidProgress(string key)
         {
             try
             {
                 //Get encounter progress from the API
-                string[] APIResponse = await _api.GetResponse<string[]>("account/raids", "access_token=" + ActiveAccount.Key);
+                string[] APIResponse = await _api.GetResponse<string[]>("account/raids", "access_token=" + key);
 
                 //Updates from API response
                 UpdatePictureBoxes(APIResponse);
                 UpdateLabels(APIResponse);
-                UpdateCMFlags();
+                UpdateCMFlags(key);
             }
             catch (Exception exc)
             {
@@ -132,12 +121,12 @@ namespace GuildLounge.TabPages
             }
         }
 
-        private async void UpdateCMFlags()
+        private async void UpdateCMFlags(string key)
         {
             try
             {
                 //Fetch CM progress from predefined achievements
-                RaidCMs APIResponse = await _api.FetchRaidCMs(ActiveAccount.Key);
+                RaidCMs APIResponse = await _api.FetchRaidCMs(key);
 
                 //Set encounter CM progress according to API response
                 //W3

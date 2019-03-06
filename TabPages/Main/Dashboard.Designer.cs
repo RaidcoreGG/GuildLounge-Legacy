@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.pictureBoxNews = new System.Windows.Forms.PictureBox();
-            this.buttonNewsNext = new GuildLounge.Controls.Button();
-            this.buttonNewsPrevious = new GuildLounge.Controls.Button();
             this.groupBoxTools = new GuildLounge.Controls.GroupBox();
             this.linkLabelWindowedResolution = new System.Windows.Forms.LinkLabel();
             this.linkLabelDailies = new System.Windows.Forms.LinkLabel();
@@ -43,6 +41,8 @@
             this.linkLabelGW2Efficiency = new System.Windows.Forms.LinkLabel();
             this.linkLabelGLReleaseNotes = new System.Windows.Forms.LinkLabel();
             this.labelLinks = new System.Windows.Forms.Label();
+            this.buttonNewsNext = new GuildLounge.Controls.Button();
+            this.buttonNewsPrevious = new GuildLounge.Controls.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNews)).BeginInit();
             this.groupBoxTools.SuspendLayout();
             this.groupBoxLinks.SuspendLayout();
@@ -61,41 +61,6 @@
             this.pictureBoxNews.TabIndex = 0;
             this.pictureBoxNews.TabStop = false;
             this.pictureBoxNews.Click += new System.EventHandler(this.pictureBoxNews_Click);
-            // 
-            // buttonNewsNext
-            // 
-            this.buttonNewsNext.BackColor = System.Drawing.Color.Transparent;
-            this.buttonNewsNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonNewsNext.FlatAppearance.BorderSize = 0;
-            this.buttonNewsNext.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonNewsNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonNewsNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonNewsNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNewsNext.ForeColor = System.Drawing.Color.Gray;
-            this.buttonNewsNext.Image = global::GuildLounge.Properties.Resources.ui_arrow_rt;
-            this.buttonNewsNext.Location = new System.Drawing.Point(648, 12);
-            this.buttonNewsNext.Name = "buttonNewsNext";
-            this.buttonNewsNext.Size = new System.Drawing.Size(80, 164);
-            this.buttonNewsNext.TabIndex = 15;
-            this.buttonNewsNext.UseVisualStyleBackColor = false;
-            this.buttonNewsNext.Click += new System.EventHandler(this.buttonNewsNext_Click);
-            // 
-            // buttonNewsPrevious
-            // 
-            this.buttonNewsPrevious.BackColor = System.Drawing.Color.Transparent;
-            this.buttonNewsPrevious.FlatAppearance.BorderSize = 0;
-            this.buttonNewsPrevious.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonNewsPrevious.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonNewsPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonNewsPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNewsPrevious.ForeColor = System.Drawing.Color.Gray;
-            this.buttonNewsPrevious.Image = global::GuildLounge.Properties.Resources.ui_arrow_lt;
-            this.buttonNewsPrevious.Location = new System.Drawing.Point(12, 12);
-            this.buttonNewsPrevious.Name = "buttonNewsPrevious";
-            this.buttonNewsPrevious.Size = new System.Drawing.Size(80, 164);
-            this.buttonNewsPrevious.TabIndex = 14;
-            this.buttonNewsPrevious.UseVisualStyleBackColor = false;
-            this.buttonNewsPrevious.Click += new System.EventHandler(this.buttonNewsPrevious_Click);
             // 
             // groupBoxTools
             // 
@@ -124,7 +89,6 @@
             this.linkLabelWindowedResolution.TabIndex = 21;
             this.linkLabelWindowedResolution.TabStop = true;
             this.linkLabelWindowedResolution.Text = "Windowed Resolution";
-            this.linkLabelWindowedResolution.Visible = false;
             this.linkLabelWindowedResolution.VisitedLinkColor = System.Drawing.Color.OrangeRed;
             this.linkLabelWindowedResolution.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWindowedResolution_LinkClicked);
             // 
@@ -271,6 +235,41 @@
             this.labelLinks.Size = new System.Drawing.Size(46, 20);
             this.labelLinks.TabIndex = 0;
             this.labelLinks.Text = "Links";
+            // 
+            // buttonNewsNext
+            // 
+            this.buttonNewsNext.BackColor = System.Drawing.Color.Transparent;
+            this.buttonNewsNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonNewsNext.FlatAppearance.BorderSize = 0;
+            this.buttonNewsNext.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonNewsNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonNewsNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonNewsNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNewsNext.ForeColor = System.Drawing.Color.Gray;
+            this.buttonNewsNext.Image = global::GuildLounge.Properties.Resources.ui_arrow_rt;
+            this.buttonNewsNext.Location = new System.Drawing.Point(648, 12);
+            this.buttonNewsNext.Name = "buttonNewsNext";
+            this.buttonNewsNext.Size = new System.Drawing.Size(80, 164);
+            this.buttonNewsNext.TabIndex = 15;
+            this.buttonNewsNext.UseVisualStyleBackColor = false;
+            this.buttonNewsNext.Click += new System.EventHandler(this.buttonNewsNext_Click);
+            // 
+            // buttonNewsPrevious
+            // 
+            this.buttonNewsPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.buttonNewsPrevious.FlatAppearance.BorderSize = 0;
+            this.buttonNewsPrevious.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonNewsPrevious.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonNewsPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonNewsPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNewsPrevious.ForeColor = System.Drawing.Color.Gray;
+            this.buttonNewsPrevious.Image = global::GuildLounge.Properties.Resources.ui_arrow_lt;
+            this.buttonNewsPrevious.Location = new System.Drawing.Point(12, 12);
+            this.buttonNewsPrevious.Name = "buttonNewsPrevious";
+            this.buttonNewsPrevious.Size = new System.Drawing.Size(80, 164);
+            this.buttonNewsPrevious.TabIndex = 14;
+            this.buttonNewsPrevious.UseVisualStyleBackColor = false;
+            this.buttonNewsPrevious.Click += new System.EventHandler(this.buttonNewsPrevious_Click);
             // 
             // Dashboard
             // 

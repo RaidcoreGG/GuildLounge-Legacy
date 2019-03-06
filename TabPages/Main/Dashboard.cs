@@ -163,7 +163,7 @@ namespace GuildLounge.TabPages
         private void linkLabelWindowedResolution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var obj = (Main)Parent;
-            obj.SetActiveTab(obj.ResizeTab, sender);
+            obj.SetActiveTab(obj.WindowedResolutionTab, sender);
         }
         #endregion
     }
