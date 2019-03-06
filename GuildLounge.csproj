@@ -268,12 +268,6 @@
     <Compile Include="TabPages\Main\SettingsPages\General.Designer.cs">
       <DependentUpon>General.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabPages\Tools\ItemSearch.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TabPages\Tools\ItemSearch.Designer.cs">
-      <DependentUpon>ItemSearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="TabPages\Tools\WindowedResolution.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -374,9 +368,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TabPages\Main\SettingsPages\General.resx">
       <DependentUpon>General.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Tools\ItemSearch.resx">
-      <DependentUpon>ItemSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabPages\Tools\WindowedResolution.resx">
       <DependentUpon>WindowedResolution.cs</DependentUpon>

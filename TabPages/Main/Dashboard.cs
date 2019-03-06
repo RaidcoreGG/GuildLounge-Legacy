@@ -165,12 +165,6 @@ namespace GuildLounge.TabPages
             var obj = (Main)Parent;
             obj.SetActiveTab(obj.WindowedResolutionTab, sender);
         }
-
-        private void linkLabelItemSearch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var obj = (Main)Parent;
-            obj.SetActiveTab(obj.ItemSearchTab, sender);
-        }
         #endregion
     }
 }

@@ -30,7 +30,6 @@
         {
             this.pictureBoxNews = new System.Windows.Forms.PictureBox();
             this.groupBoxTools = new GuildLounge.Controls.GroupBox();
-            this.linkLabelItemSearch = new System.Windows.Forms.LinkLabel();
             this.linkLabelWindowedResolution = new System.Windows.Forms.LinkLabel();
             this.linkLabelDailies = new System.Windows.Forms.LinkLabel();
             this.labelTools = new System.Windows.Forms.Label();
@@ -68,7 +67,6 @@
             this.groupBoxTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.groupBoxTools.BorderColor = System.Drawing.Color.Gray;
             this.groupBoxTools.BorderSize = 1;
-            this.groupBoxTools.Controls.Add(this.linkLabelItemSearch);
             this.groupBoxTools.Controls.Add(this.linkLabelWindowedResolution);
             this.groupBoxTools.Controls.Add(this.linkLabelDailies);
             this.groupBoxTools.Controls.Add(this.labelTools);
@@ -78,21 +76,6 @@
             this.groupBoxTools.TabIndex = 27;
             this.groupBoxTools.TabStop = false;
             this.groupBoxTools.Text = "gL_GroupBox1";
-            // 
-            // linkLabelItemSearch
-            // 
-            this.linkLabelItemSearch.ActiveLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabelItemSearch.AutoSize = true;
-            this.linkLabelItemSearch.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabelItemSearch.LinkColor = System.Drawing.Color.Red;
-            this.linkLabelItemSearch.Location = new System.Drawing.Point(7, 58);
-            this.linkLabelItemSearch.Name = "linkLabelItemSearch";
-            this.linkLabelItemSearch.Size = new System.Drawing.Size(64, 13);
-            this.linkLabelItemSearch.TabIndex = 22;
-            this.linkLabelItemSearch.TabStop = true;
-            this.linkLabelItemSearch.Text = "Item Search";
-            this.linkLabelItemSearch.VisitedLinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabelItemSearch.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelItemSearch_LinkClicked);
             // 
             // linkLabelWindowedResolution
             // 
@@ -327,6 +310,5 @@
         private System.Windows.Forms.LinkLabel linkLabelDailies;
         private System.Windows.Forms.Label labelTools;
         private System.Windows.Forms.LinkLabel linkLabelWindowedResolution;
-        private System.Windows.Forms.LinkLabel linkLabelItemSearch;
     }
 }
