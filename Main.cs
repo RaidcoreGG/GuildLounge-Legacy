@@ -253,6 +253,9 @@ namespace GuildLounge
 
             try
             {
+                if (ActiveAccount == null)
+                    return;
+
                 ModuleData APIResponse = await _api.FetchModuleData(ActiveAccount.Key);
 
                 var w = APIResponse.Wallet;
@@ -400,17 +403,17 @@ namespace GuildLounge
         #region events
         private void comboBoxAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ActiveAccount != null)
-            {
-                if (ActiveAccount != StoredAccounts[comboBoxAccount.SelectedIndex])
-                {
-                    ActiveAccount = StoredAccounts[comboBoxAccount.SelectedIndex];
+            if (ActiveAccount == null)
+                return;
 
-                    var obj = (TabPages.Raids)RaidsTab;
-                    obj.UpdateWeeklyRaidProgress(ActiveAccount.Key);
-                    
-                    UpdateModuleData();
-                }
+            if (ActiveAccount != StoredAccounts[comboBoxAccount.SelectedIndex])
+            {
+                ActiveAccount = StoredAccounts[comboBoxAccount.SelectedIndex];
+
+                var obj = (TabPages.Raids)RaidsTab;
+                obj.UpdateWeeklyRaidProgress(ActiveAccount.Key);
+
+                UpdateModuleData();
             }
         }
         #endregion
@@ -550,15 +553,15 @@ namespace GuildLounge
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            if (ActiveAccount != null)
-            {
-                //REFRESH RAID ENCOUNTER PROGRESS BY SETTING THE KEY
-                var obj = (TabPages.Raids)RaidsTab;
-                obj.UpdateWeeklyRaidProgress(ActiveAccount.Key);
+            if (ActiveAccount == null)
+                return;
 
-                //REFRESH OVERVIEW
-                UpdateModuleData();
-            }
+            //REFRESH RAID ENCOUNTER PROGRESS BY SETTING THE KEY
+            var obj = (TabPages.Raids)RaidsTab;
+            obj.UpdateWeeklyRaidProgress(ActiveAccount.Key);
+
+            //REFRESH OVERVIEW
+            UpdateModuleData();
         }
 
         private void buttonLaunch_Click(object sender, EventArgs e)
@@ -572,6 +575,7 @@ namespace GuildLounge
 
             string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
             string locl;
+
             if (ActiveAccount.Name != null && ActiveAccount.Name != "")
                 locl = ActiveAccount.Name + "_Local.dat";
             else
