@@ -38,12 +38,13 @@ namespace GuildLounge
 
         //TOOL PAGES
         public UserControl DailiesTab;
-        public UserControl ResizeTab;
+        public UserControl WindowedResolutionTab;
+        public UserControl ItemSearchTab;
 
         //API STUFF
         private static readonly ApiHandler _api = new ApiHandler();
         public Account[] StoredAccounts { get; set; }
-        private Account ActiveAccount { get; set; }
+        public Account ActiveAccount { get; set; }
 
         //MISC
         private PictureBox LoadingIcon { get; set; }
@@ -189,7 +190,7 @@ namespace GuildLounge
 
             //SET NEW KEY FOR RAIDS TAB
             var obj2 = (TabPages.Raids)RaidsTab;
-            obj2.ActiveAccount = ActiveAccount;
+            obj2.UpdateWeeklyRaidProgress(ActiveAccount.Key);
         }
         #endregion
 
@@ -404,13 +405,11 @@ namespace GuildLounge
             {
                 if (ActiveAccount != StoredAccounts[comboBoxAccount.SelectedIndex])
                 {
-                    //SET MAINTAB ACTIVE ENTRY, REQUESTHANDLER ACTIVE ENTRY & RAIDSTAB ACTIVE ENTRY TO SELECTED ENTRY FROM COMBOBOX
-                    var obj = (TabPages.Raids)RaidsTab;
-                    ActiveAccount =
-                        obj.ActiveAccount =
-                        StoredAccounts[comboBoxAccount.SelectedIndex];
+                    ActiveAccount = StoredAccounts[comboBoxAccount.SelectedIndex];
 
-                    //REFRESH DATA DUE TO NEWLY SELECTED KEY
+                    var obj = (TabPages.Raids)RaidsTab;
+                    obj.UpdateWeeklyRaidProgress(ActiveAccount.Key);
+                    
                     UpdateModuleData();
                 }
             }
@@ -473,23 +472,27 @@ namespace GuildLounge
         {
             //Initializing the pages
             DailiesTab = new TabPages.Tools.Dailies();
-            ResizeTab = new TabPages.Tools.WindowedResolution();
+            WindowedResolutionTab = new TabPages.Tools.WindowedResolution();
+            ItemSearchTab = new TabPages.Tools.ItemSearch();
 
             //Fixing visibility
             DailiesTab.Visible
-                = ResizeTab.Visible
+                = WindowedResolutionTab.Visible
+                = ItemSearchTab.Visible
                 = false;
 
             //Fixing locations
             DailiesTab.Location
-                = ResizeTab.Location
+                = WindowedResolutionTab.Location
+                = ItemSearchTab.Location
                 = new Point(0, 104);
 
             //Adding them as controls
             Controls.AddRange(new UserControl[]
             {
                 DailiesTab,
-                ResizeTab
+                WindowedResolutionTab,
+                ItemSearchTab
             });
         }
 
@@ -556,7 +559,7 @@ namespace GuildLounge
             {
                 //REFRESH RAID ENCOUNTER PROGRESS BY SETTING THE KEY
                 var obj = (TabPages.Raids)RaidsTab;
-                obj.ActiveAccount = ActiveAccount;
+                obj.UpdateWeeklyRaidProgress(ActiveAccount.Key);
 
                 //REFRESH OVERVIEW
                 UpdateModuleData();

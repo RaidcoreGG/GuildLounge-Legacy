@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.pictureBoxNews = new System.Windows.Forms.PictureBox();
-            this.buttonNewsNext = new GuildLounge.Controls.Button();
-            this.buttonNewsPrevious = new GuildLounge.Controls.Button();
             this.groupBoxTools = new GuildLounge.Controls.GroupBox();
+            this.linkLabelItemSearch = new System.Windows.Forms.LinkLabel();
             this.linkLabelWindowedResolution = new System.Windows.Forms.LinkLabel();
             this.linkLabelDailies = new System.Windows.Forms.LinkLabel();
             this.labelTools = new System.Windows.Forms.Label();
@@ -43,6 +42,8 @@
             this.linkLabelGW2Efficiency = new System.Windows.Forms.LinkLabel();
             this.linkLabelGLReleaseNotes = new System.Windows.Forms.LinkLabel();
             this.labelLinks = new System.Windows.Forms.Label();
+            this.buttonNewsNext = new GuildLounge.Controls.Button();
+            this.buttonNewsPrevious = new GuildLounge.Controls.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNews)).BeginInit();
             this.groupBoxTools.SuspendLayout();
             this.groupBoxLinks.SuspendLayout();
@@ -62,46 +63,12 @@
             this.pictureBoxNews.TabStop = false;
             this.pictureBoxNews.Click += new System.EventHandler(this.pictureBoxNews_Click);
             // 
-            // buttonNewsNext
-            // 
-            this.buttonNewsNext.BackColor = System.Drawing.Color.Transparent;
-            this.buttonNewsNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonNewsNext.FlatAppearance.BorderSize = 0;
-            this.buttonNewsNext.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonNewsNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonNewsNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonNewsNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNewsNext.ForeColor = System.Drawing.Color.Gray;
-            this.buttonNewsNext.Image = global::GuildLounge.Properties.Resources.ui_arrow_rt;
-            this.buttonNewsNext.Location = new System.Drawing.Point(648, 12);
-            this.buttonNewsNext.Name = "buttonNewsNext";
-            this.buttonNewsNext.Size = new System.Drawing.Size(80, 164);
-            this.buttonNewsNext.TabIndex = 15;
-            this.buttonNewsNext.UseVisualStyleBackColor = false;
-            this.buttonNewsNext.Click += new System.EventHandler(this.buttonNewsNext_Click);
-            // 
-            // buttonNewsPrevious
-            // 
-            this.buttonNewsPrevious.BackColor = System.Drawing.Color.Transparent;
-            this.buttonNewsPrevious.FlatAppearance.BorderSize = 0;
-            this.buttonNewsPrevious.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonNewsPrevious.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonNewsPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonNewsPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNewsPrevious.ForeColor = System.Drawing.Color.Gray;
-            this.buttonNewsPrevious.Image = global::GuildLounge.Properties.Resources.ui_arrow_lt;
-            this.buttonNewsPrevious.Location = new System.Drawing.Point(12, 12);
-            this.buttonNewsPrevious.Name = "buttonNewsPrevious";
-            this.buttonNewsPrevious.Size = new System.Drawing.Size(80, 164);
-            this.buttonNewsPrevious.TabIndex = 14;
-            this.buttonNewsPrevious.UseVisualStyleBackColor = false;
-            this.buttonNewsPrevious.Click += new System.EventHandler(this.buttonNewsPrevious_Click);
-            // 
             // groupBoxTools
             // 
             this.groupBoxTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.groupBoxTools.BorderColor = System.Drawing.Color.Gray;
             this.groupBoxTools.BorderSize = 1;
+            this.groupBoxTools.Controls.Add(this.linkLabelItemSearch);
             this.groupBoxTools.Controls.Add(this.linkLabelWindowedResolution);
             this.groupBoxTools.Controls.Add(this.linkLabelDailies);
             this.groupBoxTools.Controls.Add(this.labelTools);
@@ -111,6 +78,21 @@
             this.groupBoxTools.TabIndex = 27;
             this.groupBoxTools.TabStop = false;
             this.groupBoxTools.Text = "gL_GroupBox1";
+            // 
+            // linkLabelItemSearch
+            // 
+            this.linkLabelItemSearch.ActiveLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelItemSearch.AutoSize = true;
+            this.linkLabelItemSearch.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabelItemSearch.LinkColor = System.Drawing.Color.Red;
+            this.linkLabelItemSearch.Location = new System.Drawing.Point(7, 58);
+            this.linkLabelItemSearch.Name = "linkLabelItemSearch";
+            this.linkLabelItemSearch.Size = new System.Drawing.Size(64, 13);
+            this.linkLabelItemSearch.TabIndex = 22;
+            this.linkLabelItemSearch.TabStop = true;
+            this.linkLabelItemSearch.Text = "Item Search";
+            this.linkLabelItemSearch.VisitedLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelItemSearch.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelItemSearch_LinkClicked);
             // 
             // linkLabelWindowedResolution
             // 
@@ -124,7 +106,6 @@
             this.linkLabelWindowedResolution.TabIndex = 21;
             this.linkLabelWindowedResolution.TabStop = true;
             this.linkLabelWindowedResolution.Text = "Windowed Resolution";
-            this.linkLabelWindowedResolution.Visible = false;
             this.linkLabelWindowedResolution.VisitedLinkColor = System.Drawing.Color.OrangeRed;
             this.linkLabelWindowedResolution.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWindowedResolution_LinkClicked);
             // 
@@ -272,6 +253,41 @@
             this.labelLinks.TabIndex = 0;
             this.labelLinks.Text = "Links";
             // 
+            // buttonNewsNext
+            // 
+            this.buttonNewsNext.BackColor = System.Drawing.Color.Transparent;
+            this.buttonNewsNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonNewsNext.FlatAppearance.BorderSize = 0;
+            this.buttonNewsNext.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonNewsNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonNewsNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonNewsNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNewsNext.ForeColor = System.Drawing.Color.Gray;
+            this.buttonNewsNext.Image = global::GuildLounge.Properties.Resources.ui_arrow_rt;
+            this.buttonNewsNext.Location = new System.Drawing.Point(648, 12);
+            this.buttonNewsNext.Name = "buttonNewsNext";
+            this.buttonNewsNext.Size = new System.Drawing.Size(80, 164);
+            this.buttonNewsNext.TabIndex = 15;
+            this.buttonNewsNext.UseVisualStyleBackColor = false;
+            this.buttonNewsNext.Click += new System.EventHandler(this.buttonNewsNext_Click);
+            // 
+            // buttonNewsPrevious
+            // 
+            this.buttonNewsPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.buttonNewsPrevious.FlatAppearance.BorderSize = 0;
+            this.buttonNewsPrevious.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonNewsPrevious.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonNewsPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonNewsPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNewsPrevious.ForeColor = System.Drawing.Color.Gray;
+            this.buttonNewsPrevious.Image = global::GuildLounge.Properties.Resources.ui_arrow_lt;
+            this.buttonNewsPrevious.Location = new System.Drawing.Point(12, 12);
+            this.buttonNewsPrevious.Name = "buttonNewsPrevious";
+            this.buttonNewsPrevious.Size = new System.Drawing.Size(80, 164);
+            this.buttonNewsPrevious.TabIndex = 14;
+            this.buttonNewsPrevious.UseVisualStyleBackColor = false;
+            this.buttonNewsPrevious.Click += new System.EventHandler(this.buttonNewsPrevious_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,5 +327,6 @@
         private System.Windows.Forms.LinkLabel linkLabelDailies;
         private System.Windows.Forms.Label labelTools;
         private System.Windows.Forms.LinkLabel linkLabelWindowedResolution;
+        private System.Windows.Forms.LinkLabel linkLabelItemSearch;
     }
 }
