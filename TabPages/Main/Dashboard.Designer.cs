@@ -43,6 +43,7 @@
             this.labelLinks = new System.Windows.Forms.Label();
             this.buttonNewsNext = new GuildLounge.Controls.Button();
             this.buttonNewsPrevious = new GuildLounge.Controls.Button();
+            this.linkLabelDPSLogOverview = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNews)).BeginInit();
             this.groupBoxTools.SuspendLayout();
             this.groupBoxLinks.SuspendLayout();
@@ -67,6 +68,7 @@
             this.groupBoxTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.groupBoxTools.BorderColor = System.Drawing.Color.Gray;
             this.groupBoxTools.BorderSize = 1;
+            this.groupBoxTools.Controls.Add(this.linkLabelDPSLogOverview);
             this.groupBoxTools.Controls.Add(this.linkLabelWindowedResolution);
             this.groupBoxTools.Controls.Add(this.linkLabelDailies);
             this.groupBoxTools.Controls.Add(this.labelTools);
@@ -271,6 +273,21 @@
             this.buttonNewsPrevious.UseVisualStyleBackColor = false;
             this.buttonNewsPrevious.Click += new System.EventHandler(this.buttonNewsPrevious_Click);
             // 
+            // linkLabelDPSLogOverview
+            // 
+            this.linkLabelDPSLogOverview.ActiveLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelDPSLogOverview.AutoSize = true;
+            this.linkLabelDPSLogOverview.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabelDPSLogOverview.LinkColor = System.Drawing.Color.Red;
+            this.linkLabelDPSLogOverview.Location = new System.Drawing.Point(7, 58);
+            this.linkLabelDPSLogOverview.Name = "linkLabelDPSLogOverview";
+            this.linkLabelDPSLogOverview.Size = new System.Drawing.Size(114, 13);
+            this.linkLabelDPSLogOverview.TabIndex = 22;
+            this.linkLabelDPSLogOverview.TabStop = true;
+            this.linkLabelDPSLogOverview.Text = "ArcDPS Log Overview";
+            this.linkLabelDPSLogOverview.VisitedLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelDPSLogOverview.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelDPSLogOverview_LinkClicked);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,5 +327,6 @@
         private System.Windows.Forms.LinkLabel linkLabelDailies;
         private System.Windows.Forms.Label labelTools;
         private System.Windows.Forms.LinkLabel linkLabelWindowedResolution;
+        private System.Windows.Forms.LinkLabel linkLabelDPSLogOverview;
     }
 }

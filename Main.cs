@@ -39,6 +39,7 @@ namespace GuildLounge
         //TOOL PAGES
         public UserControl DailiesTab;
         public UserControl WindowedResolutionTab;
+        public UserControl DPSLogOverviewTab;
 
         //API STUFF
         private static readonly ApiHandler _api = new ApiHandler();
@@ -475,22 +476,26 @@ namespace GuildLounge
             //Initializing the pages
             DailiesTab = new TabPages.Tools.Dailies();
             WindowedResolutionTab = new TabPages.Tools.WindowedResolution();
+            DPSLogOverviewTab = new TabPages.Tools.DPSLogOverview();
 
             //Fixing visibility
             DailiesTab.Visible
                 = WindowedResolutionTab.Visible
+                = DPSLogOverviewTab.Visible
                 = false;
 
             //Fixing locations
             DailiesTab.Location
                 = WindowedResolutionTab.Location
+                = DPSLogOverviewTab.Location
                 = new Point(0, 104);
 
             //Adding them as controls
             Controls.AddRange(new UserControl[]
             {
                 DailiesTab,
-                WindowedResolutionTab
+                WindowedResolutionTab,
+                DPSLogOverviewTab
             });
         }
 

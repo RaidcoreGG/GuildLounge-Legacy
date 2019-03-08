@@ -165,6 +165,12 @@ namespace GuildLounge.TabPages
             var obj = (Main)Parent;
             obj.SetActiveTab(obj.WindowedResolutionTab, sender);
         }
+        
+        private void linkLabelDPSLogOverview_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var obj = (Main)Parent;
+            obj.SetActiveTab(obj.DPSLogOverviewTab, sender);
+        }
         #endregion
     }
 }
