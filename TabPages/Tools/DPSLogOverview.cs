@@ -34,7 +34,8 @@ namespace GuildLounge.TabPages.Tools
                     listBoxEncounters.Items.Add(new EncounterDir() { Path = s, Logs = logFiles });
                 }
 
-                listBoxEncounters.SelectedItem = listBoxEncounters.Items[0];
+                if(listBoxEncounters.Items.Count >= 0)
+                    listBoxEncounters.SelectedItem = listBoxEncounters.Items[0];
             }
         }
 
@@ -114,7 +115,9 @@ namespace GuildLounge.TabPages.Tools
 
             listBoxLogs.Items.Clear();
             listBoxLogs.Items.AddRange(((EncounterDir)listBoxEncounters.SelectedItem).Logs);
-            listBoxLogs.SelectedItem = listBoxLogs.Items[listBoxLogs.Items.Count - 1];
+
+            if (listBoxLogs.Items.Count >= 0)
+                listBoxLogs.SelectedItem = listBoxLogs.Items[listBoxLogs.Items.Count - 1];
         }
 
         private void buttonOpenFolder_Click(object sender, EventArgs e)
