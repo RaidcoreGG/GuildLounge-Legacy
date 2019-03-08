@@ -114,5 +114,13 @@ namespace GuildLounge
         {
             return Regex.IsMatch(l, @"(http(s)?:\/\/)?(www.)?[\w-_\/]*.dll");
         }
+
+        public override string ToString()
+        {
+            if (!string.IsNullOrEmpty(Name) && !string.IsNullOrWhiteSpace(Name))
+                return Name;
+            else
+                return m_sLink;
+        }
     }
 }
