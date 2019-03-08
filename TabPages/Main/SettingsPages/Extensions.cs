@@ -40,7 +40,6 @@ namespace GuildLounge.TabPages.SettingsPages
             //Deserialize and load into listbox
             StoredExtensions = new JavaScriptSerializer().Deserialize<List<Extension>>(File.ReadAllText(Path.Combine(_appdata, "addons.json"))).ToArray();
             listBoxExtensions.Items.AddRange(StoredExtensions);
-            listBoxExtensions.DisplayMember = "link";
         }
 
         public void InitializeExtensionSettings()
