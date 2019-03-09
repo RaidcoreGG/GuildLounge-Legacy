@@ -17,7 +17,7 @@ namespace GuildLounge.TabPages
         public Settings()
         {
             InitializeComponent();
-
+            
             //Initializing tabPages
             InitializeTabPages();
 

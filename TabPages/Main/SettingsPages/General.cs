@@ -17,6 +17,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
             labelBuildNumber.Text = "Build: " + Assembly.GetExecutingAssembly().GetName().Version.Build.ToString();
 
+            InitializeLanguages();
             InitializeGeneralSettings();
             if (checkBoxAutoUpdate.Checked)
                 CheckForUpdate();
@@ -42,6 +43,19 @@ namespace GuildLounge.TabPages.SettingsPages
             }
 
             checkBoxAutoUpdate.Checked = Properties.Settings.Default.CheckForUpdates;
+        }
+
+        public void InitializeLanguages()
+        {
+            comboBoxLanguage.Items.AddRange(new string[] {
+                "English",
+                "Deutsch",
+                "Français",
+                "Polski",
+                "Español",
+                "Русский"
+            });
+            comboBoxLanguage.SelectedItem = comboBoxLanguage.Items[0];
         }
         #endregion
 

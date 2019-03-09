@@ -576,6 +576,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\UI\Navigation\ui_language.png" />
     <None Include="Resources\Misc\tut_accountswitching.png" />
     <None Include="Resources\UI\Navigation\ui_unlocked.png" />
     <None Include="Resources\UI\Navigation\ui_locked.png" />
