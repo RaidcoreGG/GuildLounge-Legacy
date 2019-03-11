@@ -43,6 +43,7 @@ namespace GuildLounge.TabPages.SettingsPages
             }
 
             checkBoxAutoUpdate.Checked = Properties.Settings.Default.CheckForUpdates;
+            textBoxDPSReportToken.Text = Properties.Settings.Default.DPSReportToken;
         }
 
         public void InitializeLanguages()
@@ -53,7 +54,8 @@ namespace GuildLounge.TabPages.SettingsPages
                 "Français",
                 "Polski",
                 "Español",
-                "Русский"
+                "Русский",
+                "עברית"
             });
             comboBoxLanguage.SelectedItem = comboBoxLanguage.Items[0];
         }
@@ -113,6 +115,20 @@ namespace GuildLounge.TabPages.SettingsPages
         private void checkBoxAutoUpdate_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.CheckForUpdates = checkBoxAutoUpdate.Checked;
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged();
+        }
+
+        private void linkLabelDPSReportTokenHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Help.DPSReportUserToken help = new Help.DPSReportUserToken();
+            help.StartPosition = FormStartPosition.CenterParent;
+            help.ShowDialog();
+        }
+
+        private void textBoxDPSReportToken_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.DPSReportToken = textBoxDPSReportToken.Text;
             if (Parent != null)
                 ((Settings)Parent).SettingsChanged();
         }

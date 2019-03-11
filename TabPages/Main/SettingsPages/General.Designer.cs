@@ -30,6 +30,16 @@
         {
             this.labelBuildNumber = new System.Windows.Forms.Label();
             this.groupBox5 = new GuildLounge.Controls.GroupBox();
+            this.linkLabelDPSReportTokenHelp = new System.Windows.Forms.LinkLabel();
+            this.textBoxDPSReportToken = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox6 = new GuildLounge.Controls.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.buttonFontColor = new GuildLounge.Controls.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.buttonAccentColor = new GuildLounge.Controls.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonBackgroundColor = new GuildLounge.Controls.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox0 = new GuildLounge.Controls.GroupBox();
             this.pictureBoxAscendedShardsOfGlory = new System.Windows.Forms.PictureBox();
@@ -51,13 +61,8 @@
             this.radioButtonLaunchClose = new System.Windows.Forms.RadioButton();
             this.radioButtonLaunchMinimize = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonBackgroundColor = new GuildLounge.Controls.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.buttonAccentColor = new GuildLounge.Controls.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.buttonFontColor = new GuildLounge.Controls.Button();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox0.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAscendedShardsOfGlory)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -80,20 +85,147 @@
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.groupBox5.BorderColor = System.Drawing.Color.Gray;
             this.groupBox5.BorderSize = 1;
-            this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Controls.Add(this.buttonFontColor);
-            this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.buttonAccentColor);
-            this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Controls.Add(this.buttonBackgroundColor);
-            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Controls.Add(this.linkLabelDPSReportTokenHelp);
+            this.groupBox5.Controls.Add(this.textBoxDPSReportToken);
+            this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Location = new System.Drawing.Point(12, 173);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(318, 52);
-            this.groupBox5.TabIndex = 27;
+            this.groupBox5.Size = new System.Drawing.Size(222, 52);
+            this.groupBox5.TabIndex = 28;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "gL_GroupBox5";
-            this.groupBox5.Visible = false;
+            // 
+            // linkLabelDPSReportTokenHelp
+            // 
+            this.linkLabelDPSReportTokenHelp.ActiveLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelDPSReportTokenHelp.AutoSize = true;
+            this.linkLabelDPSReportTokenHelp.LinkColor = System.Drawing.Color.Red;
+            this.linkLabelDPSReportTokenHelp.Location = new System.Drawing.Point(181, 6);
+            this.linkLabelDPSReportTokenHelp.Name = "linkLabelDPSReportTokenHelp";
+            this.linkLabelDPSReportTokenHelp.Size = new System.Drawing.Size(35, 13);
+            this.linkLabelDPSReportTokenHelp.TabIndex = 30;
+            this.linkLabelDPSReportTokenHelp.TabStop = true;
+            this.linkLabelDPSReportTokenHelp.Text = "Help?";
+            this.linkLabelDPSReportTokenHelp.VisitedLinkColor = System.Drawing.Color.OrangeRed;
+            this.linkLabelDPSReportTokenHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelDPSReportTokenHelp_LinkClicked);
+            // 
+            // textBoxDPSReportToken
+            // 
+            this.textBoxDPSReportToken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.textBoxDPSReportToken.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxDPSReportToken.ForeColor = System.Drawing.Color.White;
+            this.textBoxDPSReportToken.Location = new System.Drawing.Point(6, 22);
+            this.textBoxDPSReportToken.Name = "textBoxDPSReportToken";
+            this.textBoxDPSReportToken.Size = new System.Drawing.Size(210, 20);
+            this.textBoxDPSReportToken.TabIndex = 13;
+            this.textBoxDPSReportToken.TextChanged += new System.EventHandler(this.textBoxDPSReportToken_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 6);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(113, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "dps.report User Token";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.groupBox6.BorderColor = System.Drawing.Color.Gray;
+            this.groupBox6.BorderSize = 1;
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Controls.Add(this.buttonFontColor);
+            this.groupBox6.Controls.Add(this.label7);
+            this.groupBox6.Controls.Add(this.buttonAccentColor);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.buttonBackgroundColor);
+            this.groupBox6.Controls.Add(this.label5);
+            this.groupBox6.Location = new System.Drawing.Point(240, 173);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(318, 52);
+            this.groupBox6.TabIndex = 27;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "gL_GroupBox6";
+            this.groupBox6.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(251, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(31, 13);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Font:";
+            // 
+            // buttonFontColor
+            // 
+            this.buttonFontColor.BackColor = System.Drawing.Color.Gray;
+            this.buttonFontColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonFontColor.FlatAppearance.BorderSize = 0;
+            this.buttonFontColor.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonFontColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonFontColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonFontColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFontColor.ForeColor = System.Drawing.Color.Gray;
+            this.buttonFontColor.Location = new System.Drawing.Point(288, 22);
+            this.buttonFontColor.Name = "buttonFontColor";
+            this.buttonFontColor.Size = new System.Drawing.Size(24, 24);
+            this.buttonFontColor.TabIndex = 27;
+            this.buttonFontColor.TabStop = false;
+            this.buttonFontColor.UseVisualStyleBackColor = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(134, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Accent:";
+            // 
+            // buttonAccentColor
+            // 
+            this.buttonAccentColor.BackColor = System.Drawing.Color.Gray;
+            this.buttonAccentColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAccentColor.FlatAppearance.BorderSize = 0;
+            this.buttonAccentColor.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonAccentColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonAccentColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonAccentColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAccentColor.ForeColor = System.Drawing.Color.Gray;
+            this.buttonAccentColor.Location = new System.Drawing.Point(184, 22);
+            this.buttonAccentColor.Name = "buttonAccentColor";
+            this.buttonAccentColor.Size = new System.Drawing.Size(24, 24);
+            this.buttonAccentColor.TabIndex = 25;
+            this.buttonAccentColor.TabStop = false;
+            this.buttonAccentColor.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Background:";
+            // 
+            // buttonBackgroundColor
+            // 
+            this.buttonBackgroundColor.BackColor = System.Drawing.Color.Gray;
+            this.buttonBackgroundColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBackgroundColor.FlatAppearance.BorderSize = 0;
+            this.buttonBackgroundColor.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonBackgroundColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonBackgroundColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonBackgroundColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBackgroundColor.ForeColor = System.Drawing.Color.Gray;
+            this.buttonBackgroundColor.Location = new System.Drawing.Point(80, 22);
+            this.buttonBackgroundColor.Name = "buttonBackgroundColor";
+            this.buttonBackgroundColor.Size = new System.Drawing.Size(24, 24);
+            this.buttonBackgroundColor.TabIndex = 23;
+            this.buttonBackgroundColor.TabStop = false;
+            this.buttonBackgroundColor.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -351,90 +483,13 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "When GW2 launches, Guild Lounge should..";
             // 
-            // buttonBackgroundColor
-            // 
-            this.buttonBackgroundColor.BackColor = System.Drawing.Color.Gray;
-            this.buttonBackgroundColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonBackgroundColor.FlatAppearance.BorderSize = 0;
-            this.buttonBackgroundColor.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonBackgroundColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonBackgroundColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonBackgroundColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBackgroundColor.ForeColor = System.Drawing.Color.Gray;
-            this.buttonBackgroundColor.Location = new System.Drawing.Point(80, 22);
-            this.buttonBackgroundColor.Name = "buttonBackgroundColor";
-            this.buttonBackgroundColor.Size = new System.Drawing.Size(24, 24);
-            this.buttonBackgroundColor.TabIndex = 23;
-            this.buttonBackgroundColor.TabStop = false;
-            this.buttonBackgroundColor.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Background:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(134, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 13);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Accent:";
-            // 
-            // buttonAccentColor
-            // 
-            this.buttonAccentColor.BackColor = System.Drawing.Color.Gray;
-            this.buttonAccentColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAccentColor.FlatAppearance.BorderSize = 0;
-            this.buttonAccentColor.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonAccentColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonAccentColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonAccentColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAccentColor.ForeColor = System.Drawing.Color.Gray;
-            this.buttonAccentColor.Location = new System.Drawing.Point(184, 22);
-            this.buttonAccentColor.Name = "buttonAccentColor";
-            this.buttonAccentColor.Size = new System.Drawing.Size(24, 24);
-            this.buttonAccentColor.TabIndex = 25;
-            this.buttonAccentColor.TabStop = false;
-            this.buttonAccentColor.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(251, 28);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Font:";
-            // 
-            // buttonFontColor
-            // 
-            this.buttonFontColor.BackColor = System.Drawing.Color.Gray;
-            this.buttonFontColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonFontColor.FlatAppearance.BorderSize = 0;
-            this.buttonFontColor.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonFontColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonFontColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonFontColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFontColor.ForeColor = System.Drawing.Color.Gray;
-            this.buttonFontColor.Location = new System.Drawing.Point(288, 22);
-            this.buttonFontColor.Name = "buttonFontColor";
-            this.buttonFontColor.Size = new System.Drawing.Size(24, 24);
-            this.buttonFontColor.TabIndex = 27;
-            this.buttonFontColor.TabStop = false;
-            this.buttonFontColor.UseVisualStyleBackColor = false;
-            // 
             // General
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox0);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.labelBuildNumber);
@@ -446,6 +501,8 @@
             this.Size = new System.Drawing.Size(570, 436);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox0.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAscendedShardsOfGlory)).EndInit();
             this.groupBox4.ResumeLayout(false);
@@ -484,7 +541,7 @@
         private Controls.GroupBox groupBox0;
         private System.Windows.Forms.PictureBox pictureBoxAscendedShardsOfGlory;
         private System.Windows.Forms.ComboBox comboBoxLanguage;
-        private Controls.GroupBox groupBox5;
+        private Controls.GroupBox groupBox6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private Controls.Button buttonFontColor;
@@ -492,5 +549,9 @@
         private Controls.Button buttonAccentColor;
         private System.Windows.Forms.Label label6;
         private Controls.Button buttonBackgroundColor;
+        private Controls.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox textBoxDPSReportToken;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.LinkLabel linkLabelDPSReportTokenHelp;
     }
 }

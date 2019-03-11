@@ -533,6 +533,26 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap help_accountswitching {
+            get {
+                object obj = ResourceManager.GetObject("help_accountswitching", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap help_DPSReportToken {
+            get {
+                object obj = ResourceManager.GetObject("help_DPSReportToken", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mat_ld {
             get {
                 object obj = ResourceManager.GetObject("mat_ld", resourceCulture);
@@ -606,16 +626,6 @@ namespace GuildLounge.Properties {
         internal static System.Drawing.Bitmap overlay_cmdone {
             get {
                 object obj = ResourceManager.GetObject("overlay_cmdone", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tut_accountswitching {
-            get {
-                object obj = ResourceManager.GetObject("tut_accountswitching", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

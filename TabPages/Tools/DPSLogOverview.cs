@@ -1,13 +1,17 @@
 ﻿using System;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
-using System.IO;
 using System.Diagnostics;
+using System.IO;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Web.Script.Serialization;
+using System.Windows.Forms;
 
 namespace GuildLounge.TabPages.Tools
 {
     public partial class DPSLogOverview : UserControl
     {
+        private static readonly HttpClient _client = new HttpClient();
         private static string _logs = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Guild Wars 2/addons/arcdps/arcdps.cbtlogs");
 
         public DPSLogOverview()
@@ -133,7 +137,62 @@ namespace GuildLounge.TabPages.Tools
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
+            if (listBoxLogs.SelectedItem == null)
+                return;
 
+            UploadLog(((LogFile)listBoxLogs.SelectedItem).Path);
+        }
+
+        private void UploadLog(string path)
+        {
+            Task.Run(async () =>
+            {
+                //Emulate a form
+                MultipartFormDataContent content = new MultipartFormDataContent();
+
+                //Add a filestream to that form
+                HttpContent fsc = new StreamContent(File.OpenRead(path));
+                content.Add(fsc, "file", path);
+
+                //Extract the token stored in program settings
+                string token = Properties.Settings.Default.DPSReportToken;
+
+                //If the token is set use it, else don't
+                HttpResponseMessage response;
+                if (!string.IsNullOrEmpty(token) && !string.IsNullOrWhiteSpace(token))
+                    response = await _client.PostAsync("https://dps.report/uploadContent?json=1&generator=ei&userToken=" + token, content);
+                else
+                    response = await _client.PostAsync("https://dps.report/uploadContent?json=1&generator=ei", content);
+
+                //Read response and serialize JSON
+                var res = await response.Content.ReadAsStringAsync();
+                DPSReportResponse dpsres = new JavaScriptSerializer().Deserialize<DPSReportResponse>(res);
+
+                //Prompt to save the user token if the user has none saved
+                if (string.IsNullOrEmpty(token) && string.IsNullOrWhiteSpace(token))
+                {
+                    Properties.Settings.Default.DPSReportToken = dpsres.UserToken;
+                    var result = MessageBox.Show("You have no user token saved.\n\n" +
+                        "Save now?", "Guild Lounge DPSLog Overview",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                        Properties.Settings.Default.Save();
+                }
+                
+                //Open the DPS Log in the browser
+                System.Diagnostics.Process.Start(dpsres.Permalink);
+
+                //Collect garbage
+                GC.Collect();
+            });
+        }
+
+        internal class DPSReportResponse
+        {
+            public string Permalink { get; set; }
+            public string UserToken { get; set; }
         }
     }
 }

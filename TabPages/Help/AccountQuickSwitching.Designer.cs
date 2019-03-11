@@ -34,7 +34,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::GuildLounge.Properties.Resources.tut_accountswitching;
+            this.pictureBox1.BackgroundImage = global::GuildLounge.Properties.Resources.help_accountswitching;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";

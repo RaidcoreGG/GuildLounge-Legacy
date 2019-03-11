@@ -80,7 +80,6 @@
             // buttonExport
             // 
             this.buttonExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
-            this.buttonExport.Enabled = false;
             this.buttonExport.FlatAppearance.BorderSize = 0;
             this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
