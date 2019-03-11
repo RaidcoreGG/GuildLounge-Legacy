@@ -33,6 +33,7 @@
             this.buttonRefresh = new GuildLounge.Controls.HighlightButton();
             this.buttonExport = new GuildLounge.Controls.HighlightButton();
             this.buttonOpenFolder = new GuildLounge.Controls.HighlightButton();
+            this.labelLogInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxEncounters
@@ -107,11 +108,22 @@
             this.buttonOpenFolder.UseVisualStyleBackColor = false;
             this.buttonOpenFolder.Click += new System.EventHandler(this.buttonOpenFolder_Click);
             // 
+            // labelLogInfo
+            // 
+            this.labelLogInfo.AutoSize = true;
+            this.labelLogInfo.Location = new System.Drawing.Point(224, 408);
+            this.labelLogInfo.Name = "labelLogInfo";
+            this.labelLogInfo.Size = new System.Drawing.Size(63, 13);
+            this.labelLogInfo.TabIndex = 21;
+            this.labelLogInfo.Text = "[LOG INFO]";
+            this.labelLogInfo.Visible = false;
+            // 
             // DPSLogOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.Controls.Add(this.labelLogInfo);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonExport);
             this.Controls.Add(this.buttonOpenFolder);
@@ -121,6 +133,7 @@
             this.Name = "DPSLogOverview";
             this.Size = new System.Drawing.Size(740, 436);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,5 +144,6 @@
         private Controls.HighlightButton buttonOpenFolder;
         private Controls.HighlightButton buttonExport;
         private Controls.HighlightButton buttonRefresh;
+        private System.Windows.Forms.Label labelLogInfo;
     }
 }

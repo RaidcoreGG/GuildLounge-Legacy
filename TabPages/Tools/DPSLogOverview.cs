@@ -145,6 +145,7 @@ namespace GuildLounge.TabPages.Tools
 
         private void UploadLog(string path)
         {
+            labelLogInfo.Visible = true;
             Task.Run(async () =>
             {
                 //Emulate a form
@@ -157,6 +158,7 @@ namespace GuildLounge.TabPages.Tools
                 //Extract the token stored in program settings
                 string token = Properties.Settings.Default.DPSReportToken;
 
+                Parent.Invoke(new Action(() => labelLogInfo.Text = "Uploading file."));
                 //If the token is set use it, else don't
                 HttpResponseMessage response;
                 if (!string.IsNullOrEmpty(token) && !string.IsNullOrWhiteSpace(token))
@@ -164,6 +166,7 @@ namespace GuildLounge.TabPages.Tools
                 else
                     response = await _client.PostAsync("https://dps.report/uploadContent?json=1&generator=ei", content);
 
+                Parent.Invoke(new Action(() => labelLogInfo.Text = "File processed."));
                 //Read response and serialize JSON
                 var res = await response.Content.ReadAsStringAsync();
                 DPSReportResponse dpsres = new JavaScriptSerializer().Deserialize<DPSReportResponse>(res);
@@ -186,6 +189,7 @@ namespace GuildLounge.TabPages.Tools
 
                 //Collect garbage
                 GC.Collect();
+                Utility.TimeoutToDisappear(labelLogInfo);
             });
         }
 
