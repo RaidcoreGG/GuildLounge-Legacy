@@ -40,16 +40,123 @@ namespace GuildLounge.TabPages.Tools
 
                 if(listBoxEncounters.Items.Count >= 0)
                     listBoxEncounters.SelectedItem = listBoxEncounters.Items[0];
+                else
+                {
+                    labelLogInfo.Text = "No encounters logged.";
+                    Utility.TimeoutToDisappear(labelLogInfo);
+                }
             }
         }
 
+        private void UploadLog(string path, bool open)
+        {
+            labelLogInfo.Visible = true;
+            Task.Run(async () =>
+            {
+                try
+                {
+                    //Emulate a form
+                    MultipartFormDataContent content = new MultipartFormDataContent();
+
+                    //Add a filestream to that form
+                    HttpContent fsc = new StreamContent(File.OpenRead(path));
+                    content.Add(fsc, "file", path);
+
+                    //Extract the token stored in program settings
+                    string token = Properties.Settings.Default.DPSReportToken;
+
+                    Parent.Invoke(new Action(() => labelLogInfo.Text = "Uploading file."));
+                    //If the token is set use it, else don't
+                    HttpResponseMessage response;
+                    if (!string.IsNullOrEmpty(token) && !string.IsNullOrWhiteSpace(token))
+                        response = await _client.PostAsync("https://dps.report/uploadContent?json=1&generator=ei&userToken=" + token, content);
+                    else
+                        response = await _client.PostAsync("https://dps.report/uploadContent?json=1&generator=ei", content);
+
+                    Parent.Invoke(new Action(() => labelLogInfo.Text = "File processed."));
+                    //Read response and serialize JSON
+                    var res = await response.Content.ReadAsStringAsync();
+                    DPSReportResponse dpsres = new JavaScriptSerializer().Deserialize<DPSReportResponse>(res);
+
+                    //Prompt to save the user token if the user has none saved
+                    if (string.IsNullOrEmpty(token) && string.IsNullOrWhiteSpace(token))
+                    {
+                        Properties.Settings.Default.DPSReportToken = dpsres.UserToken;
+                        var result = MessageBox.Show("You have no user token saved.\n\n" +
+                            "Save now?", "Guild Lounge DPSLog Overview",
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                            Properties.Settings.Default.Save();
+                    }
+
+                    //Open the DPS Log in the browser
+                    if (open)
+                        System.Diagnostics.Process.Start(dpsres.Permalink);
+                }
+                catch
+                {
+                    Parent.Invoke(new Action(() => labelLogInfo.Text = "There was an error while uploading the log."));
+                }
+                finally
+                {
+                    Utility.TimeoutToDisappear(labelLogInfo);
+                }
+            });
+        }
+
+        #region events
+        private void listBoxEncounters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxEncounters.SelectedItem == null)
+                return;
+
+            listBoxLogs.Items.Clear();
+            listBoxLogs.Items.AddRange(((EncounterDir)listBoxEncounters.SelectedItem).Logs);
+
+            if (listBoxLogs.Items.Count >= 0)
+                listBoxLogs.SelectedItem = listBoxLogs.Items[listBoxLogs.Items.Count - 1];
+            else
+            {
+                labelLogInfo.Text = "No logs stored for this encounter.";
+                Utility.TimeoutToDisappear(labelLogInfo);
+            }
+        }
+
+        private void buttonOpenFolder_Click(object sender, EventArgs e)
+        {
+            if(Directory.Exists(_logs))
+                Process.Start(_logs);
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            GetEncounters();
+        }
+
+        private void buttonPreviousUploads_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            if (listBoxLogs.SelectedItem == null)
+                return;
+
+            UploadLog(((LogFile)listBoxLogs.SelectedItem).Path, true);
+        }
+        #endregion
+        
+        #region classes
         internal class EncounterDir
         {
             public string Path { get; set; }
             public LogFile[] Logs { get; set; }
             public override string ToString()
             {
-                return Path.Substring(Path.LastIndexOf("\\")+1);
+                return Path.Substring(Path.LastIndexOf("\\") + 1);
             }
         }
 
@@ -112,99 +219,11 @@ namespace GuildLounge.TabPages.Tools
             }
         }
 
-        private void listBoxEncounters_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listBoxEncounters.SelectedItem == null)
-                return;
-
-            listBoxLogs.Items.Clear();
-            listBoxLogs.Items.AddRange(((EncounterDir)listBoxEncounters.SelectedItem).Logs);
-
-            if (listBoxLogs.Items.Count >= 0)
-                listBoxLogs.SelectedItem = listBoxLogs.Items[listBoxLogs.Items.Count - 1];
-        }
-
-        private void buttonOpenFolder_Click(object sender, EventArgs e)
-        {
-            if(Directory.Exists(_logs))
-                Process.Start(_logs);
-        }
-
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            GetEncounters();
-        }
-
-        private void buttonExport_Click(object sender, EventArgs e)
-        {
-            if (listBoxLogs.SelectedItem == null)
-                return;
-
-            UploadLog(((LogFile)listBoxLogs.SelectedItem).Path, true);
-        }
-
-        private void UploadLog(string path, bool open)
-        {
-            labelLogInfo.Visible = true;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    //Emulate a form
-                    MultipartFormDataContent content = new MultipartFormDataContent();
-
-                    //Add a filestream to that form
-                    HttpContent fsc = new StreamContent(File.OpenRead(path));
-                    content.Add(fsc, "file", path);
-
-                    //Extract the token stored in program settings
-                    string token = Properties.Settings.Default.DPSReportToken;
-
-                    Parent.Invoke(new Action(() => labelLogInfo.Text = "Uploading file."));
-                    //If the token is set use it, else don't
-                    HttpResponseMessage response;
-                    if (!string.IsNullOrEmpty(token) && !string.IsNullOrWhiteSpace(token))
-                        response = await _client.PostAsync("https://dps.report/uploadContent?json=1&generator=ei&userToken=" + token, content);
-                    else
-                        response = await _client.PostAsync("https://dps.report/uploadContent?json=1&generator=ei", content);
-
-                    Parent.Invoke(new Action(() => labelLogInfo.Text = "File processed."));
-                    //Read response and serialize JSON
-                    var res = await response.Content.ReadAsStringAsync();
-                    DPSReportResponse dpsres = new JavaScriptSerializer().Deserialize<DPSReportResponse>(res);
-
-                    //Prompt to save the user token if the user has none saved
-                    if (string.IsNullOrEmpty(token) && string.IsNullOrWhiteSpace(token))
-                    {
-                        Properties.Settings.Default.DPSReportToken = dpsres.UserToken;
-                        var result = MessageBox.Show("You have no user token saved.\n\n" +
-                            "Save now?", "Guild Lounge DPSLog Overview",
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
-
-                        if (result == DialogResult.Yes)
-                            Properties.Settings.Default.Save();
-                    }
-
-                    //Open the DPS Log in the browser
-                    if (open)
-                        System.Diagnostics.Process.Start(dpsres.Permalink);
-                }
-                catch
-                {
-                    Parent.Invoke(new Action(() => labelLogInfo.Text = "There was an error while uploading the log."));
-                }
-                finally
-                {
-                    Utility.TimeoutToDisappear(labelLogInfo);
-                }
-            });
-        }
-
         internal class DPSReportResponse
         {
             public string Permalink { get; set; }
             public string UserToken { get; set; }
         }
+        #endregion
     }
 }
