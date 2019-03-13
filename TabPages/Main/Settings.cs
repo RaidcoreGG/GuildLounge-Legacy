@@ -14,6 +14,8 @@ namespace GuildLounge.TabPages
         private UserControl ExtensionsTab;
         private UserControl AboutTab;
 
+        private bool RequiresRestart { get; set; }
+
         public Settings()
         {
             InitializeComponent();
@@ -129,6 +131,16 @@ namespace GuildLounge.TabPages
             Properties.Settings.Default.Save();
             buttonSave.Enabled = false;
             ((Main)Parent).InitializeModules();
+            if(RequiresRestart)
+            {
+                var result = MessageBox.Show("Some settings will only be applied when the application is restarted.\n\n" +
+                    "Restart now?", "Guild Lounge",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                    Application.Restart();
+            }
         }
         #endregion
         
@@ -140,9 +152,10 @@ namespace GuildLounge.TabPages
         }
 
         //Called from child tabs when a setting was changed to enable the save button
-        public void SettingsChanged()
+        public void SettingsChanged(bool needRestart)
         {
             buttonSave.Enabled = true;
+            RequiresRestart = needRestart;
         }
         #endregion
     }

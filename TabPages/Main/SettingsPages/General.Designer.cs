@@ -275,6 +275,7 @@
             this.comboBoxLanguage.Size = new System.Drawing.Size(116, 24);
             this.comboBoxLanguage.TabIndex = 34;
             this.comboBoxLanguage.Tag = "";
+            this.comboBoxLanguage.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguage_SelectedIndexChanged);
             // 
             // groupBox4
             // 

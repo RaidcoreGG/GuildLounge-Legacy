@@ -74,7 +74,7 @@ namespace GuildLounge.TabPages.SettingsPages
             Properties.Settings.Default.InactiveModules = sci;
 
             if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+                ((Settings)Parent).SettingsChanged(false);
         }
 
         private string[] GetActiveModules()

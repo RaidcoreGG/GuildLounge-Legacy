@@ -81,42 +81,42 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             Properties.Settings.Default.GameDir = textBoxGameDirectory.Text;
             if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+                ((Settings)Parent).SettingsChanged(false);
         }
 
         private void textBoxStartParams_TextChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.StartParams = textBoxStartParams.Text;
             if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+                ((Settings)Parent).SettingsChanged(false);
         }
 
         private void radioButtonLaunchStayOpen_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.LaunchBehavior = "STAY_OPEN";
             if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+                ((Settings)Parent).SettingsChanged(false);
         }
 
         private void radioButtonLaunchMinimize_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.LaunchBehavior = "MINIMIZE";
             if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+                ((Settings)Parent).SettingsChanged(false);
         }
 
         private void radioButtonLaunchClose_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.LaunchBehavior = "CLOSE";
             if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+                ((Settings)Parent).SettingsChanged(false);
         }
 
         private void checkBoxAutoUpdate_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.CheckForUpdates = checkBoxAutoUpdate.Checked;
             if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+                ((Settings)Parent).SettingsChanged(false);
         }
 
         private void linkLabelDPSReportTokenHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -130,7 +130,7 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             Properties.Settings.Default.DPSReportToken = textBoxDPSReportToken.Text;
             if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+                ((Settings)Parent).SettingsChanged(false);
         }
         #endregion
 
@@ -187,5 +187,14 @@ namespace GuildLounge.TabPages.SettingsPages
             }
         }
         #endregion
+        
+        //SORT THIS
+        //ADD FUNCTIONALITY
+        //ADD REQUIRE RESTART TO THEMES
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Parent != null)
+                ((Settings)Parent).SettingsChanged(true);
+        }
     }
 }

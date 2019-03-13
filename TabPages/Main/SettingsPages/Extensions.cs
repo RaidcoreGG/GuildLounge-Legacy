@@ -150,7 +150,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
             labelUpdateInfo.Visible = true;
             if (Parent != null)
-                ((Settings)Parent).SettingsChanged();
+                ((Settings)Parent).SettingsChanged(false);
         }
         #endregion
     }
