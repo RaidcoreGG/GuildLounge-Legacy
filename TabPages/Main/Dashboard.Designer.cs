@@ -87,10 +87,10 @@
             this.linkLabelDPSLogOverview.LinkColor = System.Drawing.Color.Red;
             this.linkLabelDPSLogOverview.Location = new System.Drawing.Point(7, 58);
             this.linkLabelDPSLogOverview.Name = "linkLabelDPSLogOverview";
-            this.linkLabelDPSLogOverview.Size = new System.Drawing.Size(98, 13);
+            this.linkLabelDPSLogOverview.Size = new System.Drawing.Size(167, 13);
             this.linkLabelDPSLogOverview.TabIndex = 22;
             this.linkLabelDPSLogOverview.TabStop = true;
-            this.linkLabelDPSLogOverview.Text = "DPS Log Overview";
+            this.linkLabelDPSLogOverview.Text = "DPS Log Overview (Experimental)";
             this.linkLabelDPSLogOverview.VisitedLinkColor = System.Drawing.Color.OrangeRed;
             this.linkLabelDPSLogOverview.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelDPSLogOverview_LinkClicked);
             // 
@@ -102,10 +102,10 @@
             this.linkLabelWindowedResolution.LinkColor = System.Drawing.Color.Red;
             this.linkLabelWindowedResolution.Location = new System.Drawing.Point(7, 42);
             this.linkLabelWindowedResolution.Name = "linkLabelWindowedResolution";
-            this.linkLabelWindowedResolution.Size = new System.Drawing.Size(111, 13);
+            this.linkLabelWindowedResolution.Size = new System.Drawing.Size(180, 13);
             this.linkLabelWindowedResolution.TabIndex = 21;
             this.linkLabelWindowedResolution.TabStop = true;
-            this.linkLabelWindowedResolution.Text = "Windowed Resolution";
+            this.linkLabelWindowedResolution.Text = "Windowed Resolution (Experimental)";
             this.linkLabelWindowedResolution.VisitedLinkColor = System.Drawing.Color.OrangeRed;
             this.linkLabelWindowedResolution.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWindowedResolution_LinkClicked);
             // 

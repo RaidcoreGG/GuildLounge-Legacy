@@ -219,7 +219,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
         private void linkLabelQuickSwitchingHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Help.AccountQuickSwitching help = new Help.AccountQuickSwitching();
+            Popups.AccountQuickSwitchingHelp help = new Popups.AccountQuickSwitchingHelp();
             help.StartPosition = FormStartPosition.CenterParent;
             help.ShowDialog();
         }

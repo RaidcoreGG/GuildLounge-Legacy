@@ -1,6 +1,6 @@
-﻿namespace GuildLounge.TabPages.Help
+﻿namespace GuildLounge.TabPages.Popups
 {
-    partial class DPSReportUserToken
+    partial class UserTokenHelp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DPSReportUserToken));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserTokenHelp));
             this.label2 = new System.Windows.Forms.Label();
             this.linkLabelDPSReportTokenHelp = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();

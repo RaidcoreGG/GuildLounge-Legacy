@@ -202,17 +202,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TabPages\Help\DPSReportUserToken.cs">
+    <Compile Include="TabPages\Popups\UpdateNotification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TabPages\Help\DPSReportUserToken.Designer.cs">
-      <DependentUpon>DPSReportUserToken.cs</DependentUpon>
+    <Compile Include="TabPages\Popups\UpdateNotification.Designer.cs">
+      <DependentUpon>UpdateNotification.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabPages\Help\AccountQuickSwitching.cs">
+    <Compile Include="TabPages\Popups\UserTokenHelp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TabPages\Help\AccountQuickSwitching.Designer.cs">
-      <DependentUpon>AccountQuickSwitching.cs</DependentUpon>
+    <Compile Include="TabPages\Popups\UserTokenHelp.Designer.cs">
+      <DependentUpon>UserTokenHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Popups\AccountQuickSwitchingHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\Popups\AccountQuickSwitchingHelp.Designer.cs">
+      <DependentUpon>AccountQuickSwitchingHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="TabPages\Main\Guides.cs">
       <SubType>UserControl</SubType>
@@ -348,11 +354,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Help\DPSReportUserToken.resx">
-      <DependentUpon>DPSReportUserToken.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Popups\UpdateNotification.resx">
+      <DependentUpon>UpdateNotification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabPages\Help\AccountQuickSwitching.resx">
-      <DependentUpon>AccountQuickSwitching.cs</DependentUpon>
+    <EmbeddedResource Include="TabPages\Popups\UserTokenHelp.resx">
+      <DependentUpon>UserTokenHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Popups\AccountQuickSwitchingHelp.resx">
+      <DependentUpon>AccountQuickSwitchingHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabPages\Main\Guides.resx">
       <DependentUpon>Guides.cs</DependentUpon>

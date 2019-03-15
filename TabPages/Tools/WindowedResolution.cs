@@ -78,6 +78,8 @@ namespace GuildLounge.TabPages.Tools
             IntPtr target_hwnd = FindWindowByCaption(IntPtr.Zero, "Guild Wars 2");
             if (target_hwnd == IntPtr.Zero)
             {
+                labelError.Text = "Guild Wars 2 is not running.";
+                Utility.TimeoutToDisappear(labelError);
                 return;
             }
 

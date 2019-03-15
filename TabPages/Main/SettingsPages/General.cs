@@ -121,7 +121,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
         private void linkLabelDPSReportTokenHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Help.DPSReportUserToken help = new Help.DPSReportUserToken();
+            Popups.UserTokenHelp help = new Popups.UserTokenHelp();
             help.StartPosition = FormStartPosition.CenterParent;
             help.ShowDialog();
         }
@@ -150,13 +150,10 @@ namespace GuildLounge.TabPages.SettingsPages
                     )
                 )
                 {
-                    var result = MessageBox.Show("There is a newer version available.\n" +
-                        "Note: " + APIResponse.Note + "\n\n" +
-                        "Update now?", "Guild Lounge Updater",
-                                 MessageBoxButtons.YesNo,
-                                 MessageBoxIcon.Question);
+                    TabPages.Popups.UpdateNotification un = new TabPages.Popups.UpdateNotification(APIResponse.Note);
+                    un.StartPosition = FormStartPosition.CenterParent;
 
-                    if (result == DialogResult.Yes)
+                    if (un.ShowDialog() == DialogResult.Yes)
                         UpdateExecutable();
                 }
                 else

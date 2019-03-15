@@ -40,6 +40,7 @@
             this.comboBoxResolution = new System.Windows.Forms.ComboBox();
             this.comboBoxAspectRatio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelError = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.groupBox1.BorderColor = System.Drawing.Color.Gray;
             this.groupBox1.BorderSize = 1;
+            this.groupBox1.Controls.Add(this.labelError);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBoxHeight);
@@ -185,6 +187,16 @@
             this.label1.Text = "Since GW2 windowed mode does not support fixed resolutions, you can set them here" +
     ".\r\nPlease note the game has to be running to do this.";
             // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Location = new System.Drawing.Point(12, 237);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(52, 13);
+            this.labelError.TabIndex = 40;
+            this.labelError.Text = "[ERROR]";
+            this.labelError.Visible = false;
+            // 
             // WindowedResolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,5 +226,6 @@
         private System.Windows.Forms.ComboBox comboBoxResolution;
         private System.Windows.Forms.ComboBox comboBoxAspectRatio;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelError;
     }
 }

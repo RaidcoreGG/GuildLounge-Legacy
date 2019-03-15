@@ -1,6 +1,6 @@
-﻿namespace GuildLounge.TabPages.Help
+﻿namespace GuildLounge.TabPages.Popups
 {
-    partial class AccountQuickSwitching
+    partial class AccountQuickSwitchingHelp
     {
         /// <summary>
         /// Required designer variable.
