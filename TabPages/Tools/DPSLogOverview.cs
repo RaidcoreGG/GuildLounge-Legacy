@@ -157,13 +157,17 @@ namespace GuildLounge.TabPages.Tools
                         pvu.Show();
                     }
                 }
+                else
+                {
+                    Parent.Invoke(new Action(() => labelLogInfo.Text = "No user token saved."));
+                }
             }
             catch (Exception exc)
             {
                 Parent.Invoke(new Action(() => labelLogInfo.Text = "There was an error, please retry later."));
                 Parent.Invoke(new Action(() => Utility.TimeoutToDisappear(labelLogInfo)));
             }
-            Parent.Invoke(new Action(() => labelLogInfo.Visible = false));
+            Parent.Invoke(new Action(() => Utility.TimeoutToDisappear(labelLogInfo)));
         }
 
         #region events
