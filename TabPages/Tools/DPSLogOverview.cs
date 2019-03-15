@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Net.Http;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
@@ -68,6 +68,7 @@ namespace GuildLounge.TabPages.Tools
                     Parent.Invoke(new Action(() => labelLogInfo.Text = "Uploading file."));
                     //If the token is set use it, else don't
                     HttpResponseMessage response;
+                    Console.WriteLine("[DPSLOG: UPLOADING FILE]");
                     if (!string.IsNullOrEmpty(token) && !string.IsNullOrWhiteSpace(token))
                         response = await _client.PostAsync("https://dps.report/uploadContent?json=1&generator=ei&userToken=" + token, content);
                     else
@@ -76,7 +77,7 @@ namespace GuildLounge.TabPages.Tools
                     Parent.Invoke(new Action(() => labelLogInfo.Text = "File processed."));
                     //Read response and serialize JSON
                     var res = await response.Content.ReadAsStringAsync();
-                    DPSReportResponse dpsres = new JavaScriptSerializer().Deserialize<DPSReportResponse>(res);
+                    DPSReportLog dpsres = new JavaScriptSerializer().Deserialize<DPSReportLog>(res);
 
                     //Prompt to save the user token if the user has none saved
                     if (string.IsNullOrEmpty(token) && string.IsNullOrWhiteSpace(token))
@@ -93,7 +94,10 @@ namespace GuildLounge.TabPages.Tools
 
                     //Open the DPS Log in the browser
                     if (open)
+                    {
+                        Console.WriteLine("[DPSLOG: OPENING LOG]");
                         System.Diagnostics.Process.Start(dpsres.Permalink);
+                    }
                 }
                 catch
                 {
@@ -104,6 +108,62 @@ namespace GuildLounge.TabPages.Tools
                     Utility.TimeoutToDisappear(labelLogInfo);
                 }
             });
+        }
+
+        private async Task GetPreviousUploads()
+        {
+            Parent.Invoke(new Action(() => labelLogInfo.Visible = true));
+            try
+            {
+                //Extract the token stored in program settings
+                string token = Properties.Settings.Default.DPSReportToken;
+
+                if (!string.IsNullOrEmpty(token) && !string.IsNullOrWhiteSpace(token))
+                {
+                    Console.WriteLine("[DPSLOG: FETCHING PREV UPLOADS]");
+                    Parent.Invoke(new Action(() => labelLogInfo.Text = "Fetching previous uploads."));
+                    string response = await _client.GetStringAsync("https://dps.report/getUploads?userToken=" + token);
+
+                    DPSReportUploads uploads = new JavaScriptSerializer().Deserialize<DPSReportUploads>(response);
+
+                    if (uploads.Uploads.Length > 0)
+                    {
+                        TabPages.Popups.PreviousLogUploads pvu = new TabPages.Popups.PreviousLogUploads();
+                        Point p = new Point(12, 12);
+
+                        foreach (DPSReportLog log in uploads.Uploads)
+                        {
+                            LinkLabel cur = new LinkLabel()
+                            {
+                                Text = log.Permalink,
+                                Location = p,
+                                Width = pvu.Width - 12,
+                                LinkColor = Color.Red,
+                                VisitedLinkColor = Color.OrangeRed
+                            };
+                            cur.Click += pvu.LogLink_Click;
+                            pvu.Controls.Add(cur);
+                            p.Y += 23;
+                            p.Y += 6;
+                        }
+
+                        pvu.Height = p.Y + 6;
+                        pvu.StartPosition = FormStartPosition.CenterParent;
+                        pvu.AutoScroll = false;
+                        pvu.HorizontalScroll.Enabled = false;
+                        pvu.HorizontalScroll.Visible = false;
+                        pvu.HorizontalScroll.Maximum = 0;
+                        pvu.AutoScroll = true;
+                        pvu.Show();
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                Parent.Invoke(new Action(() => labelLogInfo.Text = "There was an error, please retry later."));
+                Parent.Invoke(new Action(() => Utility.TimeoutToDisappear(labelLogInfo)));
+            }
+            Parent.Invoke(new Action(() => labelLogInfo.Visible = false));
         }
 
         #region events
@@ -137,7 +197,7 @@ namespace GuildLounge.TabPages.Tools
 
         private void buttonPreviousUploads_Click(object sender, EventArgs e)
         {
-
+            GetPreviousUploads();
         }
 
         private void buttonExport_Click(object sender, EventArgs e)
@@ -219,10 +279,15 @@ namespace GuildLounge.TabPages.Tools
             }
         }
 
-        internal class DPSReportResponse
+        internal class DPSReportLog
         {
             public string Permalink { get; set; }
             public string UserToken { get; set; }
+        }
+
+        internal class DPSReportUploads
+        {
+            public DPSReportLog[] Uploads { get; set; }
         }
         #endregion
     }

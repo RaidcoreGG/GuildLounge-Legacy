@@ -202,6 +202,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TabPages\Popups\PreviousLogUploads.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\Popups\PreviousLogUploads.Designer.cs">
+      <DependentUpon>PreviousLogUploads.cs</DependentUpon>
+    </Compile>
     <Compile Include="TabPages\Popups\UpdateNotification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +359,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Popups\PreviousLogUploads.resx">
+      <DependentUpon>PreviousLogUploads.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabPages\Popups\UpdateNotification.resx">
       <DependentUpon>UpdateNotification.cs</DependentUpon>

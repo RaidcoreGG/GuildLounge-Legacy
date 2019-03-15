@@ -30,11 +30,11 @@
         {
             this.listBoxEncounters = new System.Windows.Forms.ListBox();
             this.listBoxLogs = new System.Windows.Forms.ListBox();
+            this.labelLogInfo = new System.Windows.Forms.Label();
+            this.buttonPreviousUploads = new GuildLounge.Controls.HighlightButton();
             this.buttonRefresh = new GuildLounge.Controls.HighlightButton();
             this.buttonExport = new GuildLounge.Controls.HighlightButton();
             this.buttonOpenFolder = new GuildLounge.Controls.HighlightButton();
-            this.labelLogInfo = new System.Windows.Forms.Label();
-            this.buttonPreviousUploads = new GuildLounge.Controls.HighlightButton();
             this.SuspendLayout();
             // 
             // listBoxEncounters
@@ -63,6 +63,31 @@
             this.listBoxLogs.Name = "listBoxLogs";
             this.listBoxLogs.Size = new System.Drawing.Size(355, 370);
             this.listBoxLogs.TabIndex = 17;
+            // 
+            // labelLogInfo
+            // 
+            this.labelLogInfo.AutoSize = true;
+            this.labelLogInfo.Location = new System.Drawing.Point(224, 408);
+            this.labelLogInfo.Name = "labelLogInfo";
+            this.labelLogInfo.Size = new System.Drawing.Size(63, 13);
+            this.labelLogInfo.TabIndex = 21;
+            this.labelLogInfo.Text = "[LOG INFO]";
+            this.labelLogInfo.Visible = false;
+            // 
+            // buttonPreviousUploads
+            // 
+            this.buttonPreviousUploads.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
+            this.buttonPreviousUploads.FlatAppearance.BorderSize = 0;
+            this.buttonPreviousUploads.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPreviousUploads.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.buttonPreviousUploads.ForeColor = System.Drawing.Color.White;
+            this.buttonPreviousUploads.Location = new System.Drawing.Point(522, 404);
+            this.buttonPreviousUploads.Name = "buttonPreviousUploads";
+            this.buttonPreviousUploads.Size = new System.Drawing.Size(100, 20);
+            this.buttonPreviousUploads.TabIndex = 22;
+            this.buttonPreviousUploads.Text = "Previous Uploads";
+            this.buttonPreviousUploads.UseVisualStyleBackColor = false;
+            this.buttonPreviousUploads.Click += new System.EventHandler(this.buttonPreviousUploads_Click);
             // 
             // buttonRefresh
             // 
@@ -108,32 +133,6 @@
             this.buttonOpenFolder.Text = "Open Folder";
             this.buttonOpenFolder.UseVisualStyleBackColor = false;
             this.buttonOpenFolder.Click += new System.EventHandler(this.buttonOpenFolder_Click);
-            // 
-            // labelLogInfo
-            // 
-            this.labelLogInfo.AutoSize = true;
-            this.labelLogInfo.Location = new System.Drawing.Point(224, 408);
-            this.labelLogInfo.Name = "labelLogInfo";
-            this.labelLogInfo.Size = new System.Drawing.Size(63, 13);
-            this.labelLogInfo.TabIndex = 21;
-            this.labelLogInfo.Text = "[LOG INFO]";
-            this.labelLogInfo.Visible = false;
-            // 
-            // buttonPreviousUploads
-            // 
-            this.buttonPreviousUploads.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(13)))), ((int)(((byte)(10)))));
-            this.buttonPreviousUploads.Enabled = false;
-            this.buttonPreviousUploads.FlatAppearance.BorderSize = 0;
-            this.buttonPreviousUploads.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPreviousUploads.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.buttonPreviousUploads.ForeColor = System.Drawing.Color.White;
-            this.buttonPreviousUploads.Location = new System.Drawing.Point(522, 404);
-            this.buttonPreviousUploads.Name = "buttonPreviousUploads";
-            this.buttonPreviousUploads.Size = new System.Drawing.Size(100, 20);
-            this.buttonPreviousUploads.TabIndex = 22;
-            this.buttonPreviousUploads.Text = "Previous Uploads";
-            this.buttonPreviousUploads.UseVisualStyleBackColor = false;
-            this.buttonPreviousUploads.Click += new System.EventHandler(this.buttonPreviousUploads_Click);
             // 
             // DPSLogOverview
             // 
