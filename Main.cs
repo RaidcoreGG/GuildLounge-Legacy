@@ -383,7 +383,7 @@ namespace GuildLounge
         #region menustrip
         private void toolStripMenuItemClose_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            Application.Exit();
         }
 
         private void toolStripMenuItemMinimize_Click(object sender, EventArgs e)

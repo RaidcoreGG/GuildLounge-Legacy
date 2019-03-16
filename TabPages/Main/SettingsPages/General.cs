@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
+
 
 namespace GuildLounge.TabPages.SettingsPages
 {
@@ -10,6 +12,7 @@ namespace GuildLounge.TabPages.SettingsPages
     {
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
         private static readonly ApiHandler _api = new ApiHandler();
+        private static readonly WebClient _client = new WebClient();
 
         public General()
         {
@@ -173,10 +176,17 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             try
             {
+                //Redownloading the updater to assure the latest version is used
+                _client.DownloadFile("http://dev.guildlounge.com/updater.exe", Path.Combine(_appdata, "updater.exe"));
+
+                //Run the updater
                 Process Updater = new Process();
                 Updater.StartInfo = new ProcessStartInfo(Path.Combine(_appdata, "updater.exe"));
                 Updater.StartInfo.Arguments = Application.ExecutablePath;
                 Updater.Start();
+
+                //Close GuildLounge
+                Application.Exit();
             }
             catch (Exception exc)
             {
