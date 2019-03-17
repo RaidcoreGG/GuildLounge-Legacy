@@ -179,9 +179,7 @@ namespace GuildLounge.TabPages.Tools
             listBoxLogs.Items.Clear();
             listBoxLogs.Items.AddRange(((EncounterDir)listBoxEncounters.SelectedItem).Logs);
 
-            if (listBoxLogs.Items.Count == 0)
-                listBoxLogs.SelectedItem = listBoxLogs.Items[0];
-            else if (listBoxLogs.Items.Count > 0)
+            if (listBoxLogs.Items.Count > 0)
                 listBoxLogs.SelectedItem = listBoxLogs.Items[listBoxLogs.Items.Count - 1];
             else
             {
