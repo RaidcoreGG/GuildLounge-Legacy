@@ -38,7 +38,7 @@ namespace GuildLounge.TabPages.Tools
                     listBoxEncounters.Items.Add(new EncounterDir() { Path = s, Logs = logFiles });
                 }
 
-                if(listBoxEncounters.Items.Count >= 0)
+                if(listBoxEncounters.Items.Count > 0)
                     listBoxEncounters.SelectedItem = listBoxEncounters.Items[0];
                 else
                 {
