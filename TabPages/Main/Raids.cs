@@ -87,7 +87,7 @@ namespace GuildLounge.TabPages
                 if (APIResponse.Contains(HoT[i]))
                     LI++;
             }
-            labelTotalWeeklyLI.Text = LI + " / 15 LI earned this week.";
+            labelTotalWeeklyLI.Text = LI + " / " + HoT.Length + " LI earned this week.";
 
             //Count LD and set label text
             byte LD = 0;
@@ -99,7 +99,7 @@ namespace GuildLounge.TabPages
                 if (APIResponse.Contains(PoF[i]))
                     LD++;
             }
-            labelTotalWeeklyLD.Text = LD + " / 7 LD earned this week.";
+            labelTotalWeeklyLD.Text = LD + " / " + PoF.Length + " LD earned this week.";
             
             //Recolor labels if wing is completed
             foreach (var gb in Controls.OfType<GroupBox>())

@@ -20,10 +20,8 @@ namespace GuildLounge.TabPages
         {
             InitializeComponent();
             
-            //Initializing tabPages
             InitializeTabPages();
-
-            //Set General as the current tabPage
+            
             SetActiveTab(GeneralTab);
 
             //Fixing save button on loadup

@@ -15,31 +15,31 @@ namespace GuildLounge.TabPages
         public Dashboard()
         {
             InitializeComponent();
-
-            //Initializing default news
+            
             InitializeDefaultNews();
-
-            //Fetch News from API 
+            
             FetchNews();
             SetNewsImage();
-
-            //Initializing Timer
+            
             InitializeTimer();
         }
 
         #region news
         private void InitializeDefaultNews()
         {
+            //this method sets the default news from embedded images, in case the API can't be reached
+
             News = new NewsObject[]
             {
                 new NewsObject { Link = "", HeaderImage = Properties.Resources.news_panel1 },
                 new NewsObject { Link = "", HeaderImage = Properties.Resources.news_panel2 },
-                //new NewsObject { Link = "", HeaderImage = Properties.Resources.news_panel3 },
             };
         }
 
         private void InitializeTimer()
         {
+            //Initializing the timer at an interval of 7 seconds
+
             NewsClock = new Timer();
             NewsClock.Interval = 7000;
             NewsClock.Tick += NewsClock_Tick;
@@ -48,6 +48,7 @@ namespace GuildLounge.TabPages
 
         private async void FetchNews()
         {
+            //fetching the news from the GuildLounge API and serializing them
             try
             {
                 NewsObject[] APIResponse = await _api.GetResponseWithEntryPoint<NewsObject[]>("http://api.guildlounge.com/", "news");
@@ -117,6 +118,7 @@ namespace GuildLounge.TabPages
         #endregion
         
         #region links
+        //Start a new process with the clicked link, aka open it in the browser
         private void linkLabelGLReleaseNotes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://guildlounge.com/");
@@ -154,6 +156,8 @@ namespace GuildLounge.TabPages
         #endregion
 
         #region tools
+        //Cast the parent form (Main)
+        //Use the SetActiveTab method of the parent form to the corresponding tab
         private void linkLabelDailies_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var obj = (Main)Parent;
