@@ -162,7 +162,7 @@ namespace GuildLounge.TabPages.Tools
                     Parent.Invoke(new Action(() => labelLogInfo.Text = "No user token saved."));
                 }
             }
-            catch (Exception exc)
+            catch
             {
                 Parent.Invoke(new Action(() => labelLogInfo.Text = "There was an error, please retry later."));
                 Parent.Invoke(new Action(() => Utility.TimeoutToDisappear(labelLogInfo)));
