@@ -142,10 +142,13 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             try
             {
+                //Fetch the buildinfo from the GuildLounge API
                 BuildInfo APIResponse = await _api.GetResponseWithEntryPoint<BuildInfo>("http://api.guildlounge.com/", "build");
 
+                //temp variables for more readability
                 string updaterPath = Path.Combine(_appdata, "updater.exe");
                 Version updaterLocal = AssemblyName.GetAssemblyName(updaterPath).Version;
+                //check if the updater.exe exists and if it is up-to-date
                 if (File.Exists(updaterPath))
                 {
                     if (APIResponse.UpdaterBuildID > updaterLocal.Build || 
@@ -164,7 +167,9 @@ namespace GuildLounge.TabPages.SettingsPages
                     _client.DownloadFile("http://dev.guildlounge.com/updater.exe", Path.Combine(_appdata, "updater.exe"));
                 }
 
+                //temp variable for readability
                 Version glClient = Assembly.GetExecutingAssembly().GetName().Version;
+                //check if the client is up-to-date
                 if (APIResponse.BuildID > glClient.Build || 
                     (APIResponse.BuildID == glClient.Build &&
                     APIResponse.RevisionID > glClient.Revision))
@@ -183,6 +188,8 @@ namespace GuildLounge.TabPages.SettingsPages
             }
             catch
             {
+                //The API can't be reached, or some other error occured,
+                //so we will just assume it is up-to-date
                 labelUpdaterInfo.Text = "Up to date!";
                 Utility.TimeoutToDisappear(labelUpdaterInfo);
             }
