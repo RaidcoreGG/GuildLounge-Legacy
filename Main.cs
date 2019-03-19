@@ -619,8 +619,19 @@ namespace GuildLounge
                 //else use the copy
                 if (File.Exists(Path.Combine(_appdata, locl)))
                 {
-                    File.Delete(Path.Combine(gw2appdata, "Local.dat"));
-                    File.Copy(Path.Combine(_appdata, locl), Path.Combine(gw2appdata, "Local.dat"));
+                    if(locl == "Local.dat")
+                    {
+                        if(!File.Exists(Path.Combine(gw2appdata, "Local.dat")))
+                        {
+                            File.Delete(Path.Combine(gw2appdata, "Local.dat"));
+                            File.Copy(Path.Combine(_appdata, locl), Path.Combine(gw2appdata, "Local.dat"));
+                        }
+                    }
+                    else
+                    {
+                        File.Delete(Path.Combine(gw2appdata, "Local.dat"));
+                        File.Copy(Path.Combine(_appdata, locl), Path.Combine(gw2appdata, "Local.dat"));
+                    }
                 }
                 else
                 {
