@@ -25,8 +25,7 @@ namespace GuildLounge
             for (int i = 0; i < extensions.Length; i++)
             {
                 //Renaming duplicate d3d9.DLLs
-                string name = extensions[i].Link.ToString();
-                
+                string name = extensions[i].Link;
                 if (d3d9 && name.EndsWith("d3d9.dll"))
                 {
                     if(extensions[i].Name != null || extensions[i].Name != "")
