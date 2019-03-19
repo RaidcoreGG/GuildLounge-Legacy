@@ -27,15 +27,46 @@ namespace GuildLounge.TabPages.Tools
             {
                 listBoxEncounters.Items.Clear();
 
-                foreach (string s in Directory.GetDirectories(_logs))
+                //subLvl1 = Encounter names or IDs
+                //subLvl2 = Character (or Guildname)
+                //subLvl3 = Guildname
+
+                //Basically:
+                //Get the subdirs from the base cbtlogs folder
+                //Iterate through each folder
+                //Get the subfiles
+                //Get all subdirs
+                //-Get their subfiles
+                //-Get their subdirs
+                //--and lastly get those subfiles
+                foreach (string subLvl1 in Directory.GetDirectories(_logs))
                 {
-                    string[] subFiles = Directory.GetFiles(s);
+                    string[] subFiles = Directory.GetFiles(subLvl1);
+                    foreach (string subLvl2 in Directory.GetDirectories(subLvl1))
+                    {
+                        string[] subLvl2Files = Directory.GetFiles(subLvl2);
+                        string[] temp = new string[subFiles.Length + subLvl2Files.Length];
+                        Array.Copy(subFiles, temp, subFiles.Length);
+                        Array.Copy(subLvl2Files, 0, temp, subFiles.Length, subLvl2Files.Length);
+                        subFiles = temp;
+
+                        foreach (string subLvl3 in Directory.GetDirectories(subLvl2))
+                        {
+                            string[] subLvl3Files = Directory.GetFiles(subLvl3);
+                            temp = new string[subFiles.Length + subLvl3Files.Length];
+                            Array.Copy(subFiles, temp, subFiles.Length);
+                            Array.Copy(subLvl3Files, 0, temp, subFiles.Length, subLvl3Files.Length);
+                            subFiles = temp;
+                        }
+                    }
+                    
+                    //"Convert" each path to a "LogFile" and add them to the listbox
                     LogFile[] logFiles = new LogFile[subFiles.Length];
 
                     for (int i = 0; i < logFiles.Length; i++)
                         logFiles[i] = new LogFile() { Path = subFiles[i] };
 
-                    listBoxEncounters.Items.Add(new EncounterDir() { Path = s, Logs = logFiles });
+                    listBoxEncounters.Items.Add(new EncounterDir() { Path = subLvl1, Logs = logFiles });
                 }
 
                 if(listBoxEncounters.Items.Count > 0)
