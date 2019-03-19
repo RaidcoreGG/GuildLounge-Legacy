@@ -26,6 +26,7 @@ namespace GuildLounge
             {
                 //Renaming duplicate d3d9.DLLs
                 string name = extensions[i].Link.ToString();
+                
                 if (d3d9 && name.EndsWith("d3d9.dll"))
                 {
                     if(extensions[i].Name != null || extensions[i].Name != "")
@@ -43,8 +44,12 @@ namespace GuildLounge
                     }
                 }
                 else
+                {
                     name = name.Substring(name.LastIndexOf("/") + 1);
-
+                    if(name == "d3d9.dll")
+                        d3d9 = true;
+                }
+                
                 if (checkForLastModified)
                 {
                     HttpWebRequest req = (HttpWebRequest)WebRequest.Create(new Uri(extensions[i].Link));
@@ -79,9 +84,6 @@ namespace GuildLounge
                 }
 
                 extensions[i].LastChecked = DateTime.Now;
-
-                if (extensions[i].Link.Contains("deltaconnected.com/arcdps/x64/d3d9.dll"))
-                    d3d9 = true;
             }
             StoredExtensions = extensions;
             Console.WriteLine("[ADDONS: " + (DateTime.Now - dt).TotalSeconds + "]");
