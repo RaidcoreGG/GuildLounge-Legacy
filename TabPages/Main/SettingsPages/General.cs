@@ -144,14 +144,30 @@ namespace GuildLounge.TabPages.SettingsPages
             {
                 BuildInfo APIResponse = await _api.GetResponseWithEntryPoint<BuildInfo>("http://api.guildlounge.com/", "build");
 
-                if
-                (
-                    APIResponse.BuildID > Assembly.GetExecutingAssembly().GetName().Version.Build ||
-                    (
-                        APIResponse.BuildID == Assembly.GetExecutingAssembly().GetName().Version.Build &&
-                        APIResponse.RevisionID > Assembly.GetExecutingAssembly().GetName().Version.Revision
-                    )
-                )
+                string updaterPath = Path.Combine(_appdata, "updater.exe");
+                Version updaterLocal = AssemblyName.GetAssemblyName(updaterPath).Version;
+                if (File.Exists(updaterPath))
+                {
+                    if (APIResponse.UpdaterBuildID > updaterLocal.Build || 
+                        (APIResponse.UpdaterBuildID == updaterLocal.Build &&
+                        APIResponse.UpdaterRevisionID > updaterLocal.Revision))
+                    {
+                        labelUpdaterInfo.Text = "Updating updater!";
+                        Utility.TimeoutToDisappear(labelUpdaterInfo);
+                        _client.DownloadFile("http://dev.guildlounge.com/updater.exe", Path.Combine(_appdata, "updater.exe"));
+                    }
+                }
+                else
+                {
+                    labelUpdaterInfo.Text = "Downloading updater!";
+                    Utility.TimeoutToDisappear(labelUpdaterInfo);
+                    _client.DownloadFile("http://dev.guildlounge.com/updater.exe", Path.Combine(_appdata, "updater.exe"));
+                }
+
+                Version glClient = Assembly.GetExecutingAssembly().GetName().Version;
+                if (APIResponse.BuildID > glClient.Build || 
+                    (APIResponse.BuildID == glClient.Build &&
+                    APIResponse.RevisionID > glClient.Revision))
                 {
                     TabPages.Popups.UpdateNotification un = new TabPages.Popups.UpdateNotification(APIResponse.Note);
                     un.StartPosition = FormStartPosition.CenterParent;
@@ -176,9 +192,6 @@ namespace GuildLounge.TabPages.SettingsPages
         {
             try
             {
-                //Redownloading the updater to assure the latest version is used
-                _client.DownloadFile("http://dev.guildlounge.com/updater.exe", Path.Combine(_appdata, "updater.exe"));
-
                 //Run the updater
                 Process Updater = new Process();
                 Updater.StartInfo = new ProcessStartInfo(Path.Combine(_appdata, "updater.exe"));

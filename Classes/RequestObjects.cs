@@ -76,6 +76,8 @@ namespace GuildLounge
     {
         public int BuildID { get; set; }
         public int RevisionID { get; set; }
+        public int UpdaterBuildID { get; set; }
+        public int UpdaterRevisionID { get; set; }
         public string Note { get; set; }
     }
 
