@@ -11,6 +11,7 @@ namespace GuildLounge
     public partial class Main : Form
     {
         #region dragging
+        //related to dragging for the menustrip
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -21,32 +22,31 @@ namespace GuildLounge
         #endregion
 
         #region variables
-        //APPDATA FOLDER PATH
+        //GuildLounge appdata folder
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
-        private static readonly WebClient _client = new WebClient();
 
-        //TAB CONTROL
+        //tab control related
         private UserControl ActiveTab;
         private Controls.NavigationButton ActiveTabButton;
 
-        //MAIN PAGES
+        //main pages
         private UserControl DashboardTab;
         private UserControl LFGTab;
         private UserControl RaidsTab;
         private UserControl GuidesTab;
         private UserControl SettingsTab;
 
-        //TOOL PAGES
+        //tool pages
         public UserControl DailiesTab;
         public UserControl WindowedResolutionTab;
         public UserControl DPSLogOverviewTab;
 
-        //API STUFF
+        //api stuff
         private static readonly ApiHandler _api = new ApiHandler();
         public Account[] StoredAccounts { get; set; }
         public Account ActiveAccount { get; set; }
 
-        //MISC
+        //misc
         private PictureBox LoadingIcon { get; set; }
         #endregion
         
@@ -54,31 +54,26 @@ namespace GuildLounge
         {
             InitializeComponent();
 
-            //Initialize settings
-            InitializeSettings();
+            InitializeFiles();
 
-            //Initialize loading icon
+            InitializeSettings();
+            
             InitializeLoadingIcon();
             
-            //Initializing modules
-            InitializeModules();
-            InitializeModuleScrolling();
-
-            //Initializing tabPages
             InitializeTabPages();
             InitializeToolPages();
 
             //Set Dashboard as the current tabPage
             SetActiveTab(DashboardTab, buttonDashboard);
+            
+            InitializeModuleScrolling();
 
-            //Initializing required files
-            InitializeFiles();
-
-            //Automatically fetch API data on loadup
+            //Fetch accounts from the sub-page
+            //Initialize modules, which also updates its data
             try
             {
                 GetAccounts();
-                UpdateModuleData();
+                InitializeModules();
             }
             catch (Exception exc)
             {
@@ -100,7 +95,7 @@ namespace GuildLounge
         
         private void InitializeFiles()
         {
-            //Check if the required tree exists, and create relevant files
+            //Check if the required tree exists, and create relevant files if they don't exist
 
             //Base Directory
             if (!Directory.Exists(_appdata))
@@ -118,37 +113,27 @@ namespace GuildLounge
             string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
             if (!File.Exists(Path.Combine(_appdata, "Local.dat")))
                 File.Copy(Path.Combine(gw2appdata, "Local.dat"), Path.Combine(_appdata, "Local.dat"));
-
-            //updater.exe
-            try
-            {
-                if (!File.Exists(Path.Combine(_appdata, "updater.exe")))
-                    _client.DownloadFile("http://dev.guildlounge.com/updater.exe", Path.Combine(_appdata, "updater.exe"));
-            }
-            catch (Exception exc)
-            {
-                Console.WriteLine(exc.Message);
-            }
         }
         
         public void GetAccounts()
         {
-            //GET KEYS FROM KEYSTAB
-            var obj = (TabPages.Settings)SettingsTab;
-            StoredAccounts = obj.GetAccounts();
+            //Fetch keys from accoungs page (over settings as a proxy)
+            StoredAccounts = ((TabPages.Settings)SettingsTab).GetAccounts();
 
             if (StoredAccounts != null)
             {
+                //Set the first one in the list as the active
                 ActiveAccount = StoredAccounts[0];
 
-                //UPDATE COMBOBOX ITEMS
+                //Update combobox items
                 comboBoxAccount.Items.Clear();
                 comboBoxAccount.Items.AddRange(StoredAccounts);
 
-                //CORRECT DISPLAY
+                //Correct display of combobox
                 comboBoxAccount.DisplayMember = "Name";
                 comboBoxAccount.SelectedIndex = 0;
 
+                //(Re-)enable combobox
                 comboBoxAccount.Enabled = true;
                 buttonRefresh.Enabled = true;
                 labelAPIError.Visible = false;
@@ -157,27 +142,34 @@ namespace GuildLounge
             {
                 ActiveAccount = null;
                 
+                //Disable combobox
                 comboBoxAccount.Enabled = false;
                 buttonRefresh.Enabled = false;
                 labelAPIError.Visible = true;
             }
 
+            //Show refreshbutton again / hide loadingicon
             buttonRefresh.Visible = true;
             LoadingIcon.Visible = false;
 
-            //SET NEW KEY FOR RAIDS TAB
-            var obj2 = (TabPages.Raids)RaidsTab;
-            obj2.UpdateWeeklyRaidProgress(ActiveAccount.Key);
+            //Set new key for raids page
+            ((TabPages.Raids)RaidsTab).UpdateWeeklyRaidProgress(ActiveAccount.Key);
         }
         #endregion
 
         #region modules
         public void InitializeModules()
         {
+            //This method loads the modules into the side panel
+            
+            //If any control (module) is added already, they will be removed
             for (int i = panelModulesInner.Controls.Count - 1; i >= 0; i--)
                 panelModulesInner.Controls.RemoveAt(i);
 
+            //Create a new point which will be shifted
+            //to set the location of each module with a padding of 12
             Point loc = new Point(0, 0);
+            //For each entry in ActiveModules load a module depending on what the saved string is
             foreach (string s in Properties.Settings.Default.ActiveModules)
             {
                 switch (s)
@@ -201,15 +193,32 @@ namespace GuildLounge
                         panelModulesInner.Controls.Add(new Modules.WvW() { Location = loc });
                         break;
                 }
+                //Shift the location down by last added module height + padding of 12
                 loc.Y += panelModulesInner.Controls[panelModulesInner.Controls.Count - 1].Height + 12;
             }
 
+            //Recalculate for the scrollbar to be displayed properly and refetch from the API
             scrollbarModules.Recalculate(panelModulesInner.Height, GetModulesOverflow());
             UpdateModuleData();
         }
 
+        private int GetModulesOverflow()
+        {
+            //This method returns the the total height of the inner panel for the modules
+            //The overflow is calculated by taking the last object (furthest down)
+            //and adding its height to its location
+
+            if (panelModulesInner.Controls.Count <= 0)
+                return panelModulesInner.Height;
+
+            return panelModulesInner.Controls[panelModulesInner.Controls.Count - 1].Location.Y +
+                panelModulesInner.Controls[panelModulesInner.Controls.Count - 1].Height;
+        }
+
         private void InitializeModuleScrolling()
         {
+            //Since this uses a custom scrollbar, some tweaking is required
+
             //Fixing scrolling for modules
             panelModulesOuter.HorizontalScroll.Maximum = panelModulesInner.HorizontalScroll.Maximum = 0;
             panelModulesOuter.HorizontalScroll.Visible = panelModulesInner.HorizontalScroll.Visible = false;
@@ -224,6 +233,10 @@ namespace GuildLounge
 
         private async void UpdateModuleData()
         {
+            //This method fetches the data from the API and assigns it to the modules
+
+            //Disable the combobox and refresh button
+            //Hide refresh button and show loading icon
             comboBoxAccount.Enabled = false;
             buttonRefresh.Enabled = false;
             buttonRefresh.Visible = false;
@@ -231,58 +244,58 @@ namespace GuildLounge
 
             try
             {
-                if (ActiveAccount == null)
-                    return;
-
                 ModuleData APIResponse = await _api.FetchModuleData(ActiveAccount.Key);
 
+                //Assign temporary variables to make the assigning easier
                 var w = APIResponse.Wallet;
                 var tp = APIResponse.TradingPost;
 
-                foreach (Control m in panelModulesInner.Controls)
+                //For each module assign the proper data
+                foreach (Control mod in panelModulesInner.Controls)
                 {
-                    if (m is Modules.BaseCurrencies)
+                    if (mod is Modules.BaseCurrencies)
                     {
-                        ((Modules.BaseCurrencies)m).Coins = w.Coins;
-                        ((Modules.BaseCurrencies)m).Karma = w.Karma;
-                        ((Modules.BaseCurrencies)m).Laurels = w.Laurels;
-                        ((Modules.BaseCurrencies)m).Gems = w.Gems;
+                        ((Modules.BaseCurrencies)mod).Coins = w.Coins;
+                        ((Modules.BaseCurrencies)mod).Karma = w.Karma;
+                        ((Modules.BaseCurrencies)mod).Laurels = w.Laurels;
+                        ((Modules.BaseCurrencies)mod).Gems = w.Gems;
                     }
-                    else if (m is Modules.Fractals)
+                    else if (mod is Modules.Fractals)
                     {
-                        ((Modules.Fractals)m).FractalRelics = w.FractalRelics;
-                        ((Modules.Fractals)m).PristineFractalRelics = w.PristineFractalRelics;
+                        ((Modules.Fractals)mod).FractalRelics = w.FractalRelics;
+                        ((Modules.Fractals)mod).PristineFractalRelics = w.PristineFractalRelics;
                     }
-                    else if (m is Modules.PvP)
+                    else if (mod is Modules.PvP)
                     {
-                        ((Modules.PvP)m).AscendedShardsOfGlory = w.AscendedShardsOfGlory;
-                        ((Modules.PvP)m).LeagueTicket = w.LeagueTicket;
+                        ((Modules.PvP)mod).AscendedShardsOfGlory = w.AscendedShardsOfGlory;
+                        ((Modules.PvP)mod).LeagueTicket = w.LeagueTicket;
                     }
-                    else if (m is Modules.Raids)
+                    else if (mod is Modules.Raids)
                     {
-                        ((Modules.Raids)m).LegendaryInsights = APIResponse.TotalLegendaryInsights;
-                        ((Modules.Raids)m).LegendaryDivinations = APIResponse.TotalLegendaryDivinations;
-                        ((Modules.Raids)m).MagnetiteShards = w.MagnetiteShards;
-                        ((Modules.Raids)m).GaetingCrystals = w.GaetingCrystals;
+                        ((Modules.Raids)mod).LegendaryInsights = APIResponse.TotalLegendaryInsights;
+                        ((Modules.Raids)mod).LegendaryDivinations = APIResponse.TotalLegendaryDivinations;
+                        ((Modules.Raids)mod).MagnetiteShards = w.MagnetiteShards;
+                        ((Modules.Raids)mod).GaetingCrystals = w.GaetingCrystals;
 
-                        ((Modules.Raids)m).LIDetail = SetToolTipTextLI(APIResponse);
-                        ((Modules.Raids)m).LDDetail = SetToolTipTextLD(APIResponse);
+                        ((Modules.Raids)mod).LIDetail = SetToolTipTextLI(APIResponse);
+                        ((Modules.Raids)mod).LDDetail = SetToolTipTextLD(APIResponse);
                     }
-                    else if (m is Modules.TPPickup)
+                    else if (mod is Modules.TPPickup)
                     {
-                        ((Modules.TPPickup)m).Coins = tp.Coins;
-                        ((Modules.TPPickup)m).Items = tp.Items.Length;
+                        ((Modules.TPPickup)mod).Coins = tp.Coins;
+                        ((Modules.TPPickup)mod).Items = tp.Items.Length;
                     }
-                    else if (m is Modules.WvW)
+                    else if (mod is Modules.WvW)
                     {
-                        ((Modules.WvW)m).BadgesOfHonor = w.BadgeOfHonor;
-                        ((Modules.WvW)m).SkirmishTickets = w.SkirmishTicket;
+                        ((Modules.WvW)mod).BadgesOfHonor = w.BadgeOfHonor;
+                        ((Modules.WvW)mod).SkirmishTickets = w.SkirmishTicket;
                     }
                 }
 
             }
             catch (Exception exc)
             {
+                //Show "somewhat" accurate error messages
                 if (exc.Message.Contains("400 (Bad Request)"))
                 {
                     labelAPIError.Text = "Invalid API-Key.";
@@ -306,6 +319,9 @@ namespace GuildLounge
             }
             finally
             {
+                //If an account is saved re-enable combobox + refreshbutton
+                //show refreshbutton
+                //hide loadingicon and error label
                 if (ActiveAccount != null)
                 {
                     comboBoxAccount.Enabled = true;
@@ -316,24 +332,18 @@ namespace GuildLounge
                 }
             }
         }
-
-        private int GetModulesOverflow()
-        {
-            if (panelModulesInner.Controls.Count <= 0)
-                return panelModulesInner.Height;
-
-            return panelModulesInner.Controls[panelModulesInner.Controls.Count - 1].Location.Y +
-                panelModulesInner.Controls[panelModulesInner.Controls.Count - 1].Height;
-        }
-
+        
         protected void OnMouseWheelModules(object sender, MouseEventArgs e)
         {
+            //Scrolling
             scrollbarModules.OnMouseWheel(sender, e);
             panelModulesInner.AutoScrollPosition = new Point(0, scrollbarModules.Value);
         }
 
         private string SetToolTipTextLI(ModuleData APIResponse)
         {
+            //Set the detailed info message on hover for LI
+
             string detailedInfo = "";
             if (APIResponse.OnHandLI > 0)
                 detailedInfo += "On hand: " + APIResponse.OnHandLI + "\n";
@@ -350,6 +360,8 @@ namespace GuildLounge
 
         private string SetToolTipTextLD(ModuleData APIResponse)
         {
+            //Set the detailed info message on hover for LD
+
             string detailedInfo = "";
             if (APIResponse.OnHandLD > 0)
                 detailedInfo += "On hand: " + APIResponse.OnHandLD + "\n";
@@ -370,6 +382,7 @@ namespace GuildLounge
 
         private void menuStrip_MouseDown(object sender, MouseEventArgs e)
         {
+            //Dragging
             if (e.Button == MouseButtons.Left)
             {
                 ReleaseCapture();
@@ -381,16 +394,17 @@ namespace GuildLounge
         #region events
         private void comboBoxAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //This method updates the active account if a new one was selected
+            //it also updates the key for the raid page
+            //and refetches the module data from the API
+
             if (ActiveAccount == null)
                 return;
 
             if (ActiveAccount != StoredAccounts[comboBoxAccount.SelectedIndex])
             {
                 ActiveAccount = StoredAccounts[comboBoxAccount.SelectedIndex];
-
-                var obj = (TabPages.Raids)RaidsTab;
-                obj.UpdateWeeklyRaidProgress(ActiveAccount.Key);
-
+                ((TabPages.Raids)RaidsTab).UpdateWeeklyRaidProgress(ActiveAccount.Key);
                 UpdateModuleData();
             }
         }
@@ -399,6 +413,12 @@ namespace GuildLounge
         #region navigation
         private void InitializeLoadingIcon()
         {
+            //This method initializes the loading icon
+            //which is shown when the API is called
+
+            //this is a workaround to changing the button icon
+            //because GIFs won't play if the button is disabled
+
             //Initializing loading icon
             LoadingIcon = new PictureBox()
             {
@@ -478,6 +498,12 @@ namespace GuildLounge
 
         public void SetActiveTab(UserControl tab, object button)
         {
+            //This method is part of the tab control
+            //It handles the hiding of the old tab
+            //and the showing of the new tab
+            //it also handles the red underline for the navigation buttons
+            //it does that by setting the button to Active (a custom property)
+
             if (ActiveTab != null)
             {
                 ActiveTab.Visible = false;
@@ -535,29 +561,36 @@ namespace GuildLounge
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
+            //this method refreshes the module data and the raids page data
+
             if (ActiveAccount == null)
                 return;
 
-            //REFRESH RAID ENCOUNTER PROGRESS BY SETTING THE KEY
-            var obj = (TabPages.Raids)RaidsTab;
-            obj.UpdateWeeklyRaidProgress(ActiveAccount.Key);
-
-            //REFRESH OVERVIEW
+            //Refresh raids by setting the key
+            ((TabPages.Raids)RaidsTab).UpdateWeeklyRaidProgress(ActiveAccount.Key);
+            
             UpdateModuleData();
         }
 
         private void buttonLaunch_Click(object sender, EventArgs e)
         {
+            //Create a new process to launch GW2
             Process GW2 = new Process();
+            //Use 64-Bit version of GW2 if it exists, else fallback to 32-Bit
             if (File.Exists(Path.Combine(Properties.Settings.Default.GameDir, "Gw2-64.exe")))
                 GW2.StartInfo = new ProcessStartInfo(Path.Combine(Properties.Settings.Default.GameDir, "Gw2-64.exe"));
             else
                 GW2.StartInfo = new ProcessStartInfo(Path.Combine(Properties.Settings.Default.GameDir, "Gw2.exe"));
+            //Set the start parameters
             GW2.StartInfo.Arguments = Properties.Settings.Default.StartParams;
 
+            //"Generate" the Local.dat that is used
             string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
             string locl;
 
+            //If no account is set, use the copy of Local.dat
+            //else, if the name of the current account is set, use the name
+            //else use the ending 16 characters of the API-Key stored
             if (ActiveAccount == null)
                 locl = "Local.dat";
             else
@@ -570,6 +603,8 @@ namespace GuildLounge
 
             try
             {
+                //If a file is found with the "generated" Local.dat name, copy it to the gw2appdata directory
+                //else use the copy
                 if (File.Exists(Path.Combine(_appdata, locl)))
                 {
                     File.Delete(Path.Combine(gw2appdata, "Local.dat"));
@@ -581,27 +616,32 @@ namespace GuildLounge
                     File.Copy(Path.Combine(_appdata, "Local.dat"), Path.Combine(gw2appdata, "Local.dat"));
                 }
 
-                //RUN PROCESS
+                //Start the process
                 GW2.Start();
+                //Depending on the setting hide, close or do nothing with GuildLounge
                 if (Properties.Settings.Default.LaunchBehavior == "MINIMIZE")
                 {
-                    //HIDE GUILD LOUNGE UNTIL GW2 IS CLOSED
+                    //Hide GuildLounge until GW2 is exited
                     Hide();
                     GW2.WaitForExit();
 
+                    //Copy the Local.dat if it wasn't created already for the current account
                     if (!File.Exists(Path.Combine(_appdata, locl)))
                         File.Copy(Path.Combine(gw2appdata, "Local.dat"), Path.Combine(_appdata, locl));
 
+                    //Display GuildLounge again
                     Show();
 
-                    //REFRESH DATA AS SOON AS THE GAME IS CLOSED
+                    //Refresh the module data and the dpslog data
                     UpdateModuleData();
+                    ((TabPages.Tools.DPSLogOverview)DPSLogOverviewTab).GetEncounters();
                 }
                 else if (Properties.Settings.Default.LaunchBehavior == "CLOSE")
                     Environment.Exit(0);
             }
             catch (Exception exc)
             {
+                //"somewhat" accurate error messages
                 if (exc is DirectoryNotFoundException || exc is FileNotFoundException || exc is System.ComponentModel.Win32Exception)
                     labelLaunchError.Text = "Invalid Game Directory.";
                 else if (exc is IOException)
