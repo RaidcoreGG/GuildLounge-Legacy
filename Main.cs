@@ -22,8 +22,9 @@ namespace GuildLounge
         #endregion
 
         #region variables
-        //GuildLounge appdata folder
+        //GuildLounge appdata folder and _client for updater
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
+        private static readonly WebClient _client = new WebClient();
 
         //tab control related
         private UserControl ActiveTab;
@@ -113,6 +114,17 @@ namespace GuildLounge
             string gw2appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Guild Wars 2");
             if (!File.Exists(Path.Combine(_appdata, "Local.dat")))
                 File.Copy(Path.Combine(gw2appdata, "Local.dat"), Path.Combine(_appdata, "Local.dat"));
+
+            //updater.exe
+            try
+            {
+                if (!File.Exists(Path.Combine(_appdata, "updater.exe")))
+                    _client.DownloadFile("http://dev.guildlounge.com/updater.exe", Path.Combine(_appdata, "updater.exe"));
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
         }
         
         public void GetAccounts()
