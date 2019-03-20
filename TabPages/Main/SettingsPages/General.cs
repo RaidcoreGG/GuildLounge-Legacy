@@ -202,7 +202,7 @@ namespace GuildLounge.TabPages.SettingsPages
                 //Run the updater
                 Process Updater = new Process();
                 Updater.StartInfo = new ProcessStartInfo(Path.Combine(_appdata, "updater.exe"));
-                Updater.StartInfo.Arguments = Application.ExecutablePath;
+                Updater.StartInfo.Arguments = "\"" + Application.ExecutablePath + "\"";
                 Updater.Start();
 
                 //Close GuildLounge
