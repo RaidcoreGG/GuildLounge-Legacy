@@ -68,7 +68,7 @@
             this.panelNavigation.Location = new System.Drawing.Point(0, 24);
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(740, 80);
-            this.panelNavigation.TabIndex = 0;
+            this.panelNavigation.TabIndex = 1;
             // 
             // buttonSettings
             // 
@@ -85,7 +85,7 @@
             this.buttonSettings.Location = new System.Drawing.Point(660, 19);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Size = new System.Drawing.Size(40, 40);
-            this.buttonSettings.TabIndex = 6;
+            this.buttonSettings.TabIndex = 5;
             this.buttonSettings.UseVisualStyleBackColor = false;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
@@ -95,7 +95,8 @@
             this.gL_HorizontalLine1.Location = new System.Drawing.Point(12, 78);
             this.gL_HorizontalLine1.Name = "gL_HorizontalLine1";
             this.gL_HorizontalLine1.Size = new System.Drawing.Size(716, 2);
-            this.gL_HorizontalLine1.TabIndex = 5;
+            this.gL_HorizontalLine1.TabIndex = 0;
+            this.gL_HorizontalLine1.TabStop = false;
             this.gL_HorizontalLine1.Text = "gL_HorizontalLine1";
             // 
             // buttonGuides
@@ -192,7 +193,7 @@
             this.panelModulesInner.Location = new System.Drawing.Point(12, 12);
             this.panelModulesInner.Name = "panelModulesInner";
             this.panelModulesInner.Size = new System.Drawing.Size(196, 342);
-            this.panelModulesInner.TabIndex = 30;
+            this.panelModulesInner.TabIndex = 0;
             // 
             // scrollbarModules
             // 
@@ -201,7 +202,8 @@
             this.scrollbarModules.Location = new System.Drawing.Point(212, 0);
             this.scrollbarModules.Name = "scrollbarModules";
             this.scrollbarModules.Size = new System.Drawing.Size(8, 366);
-            this.scrollbarModules.TabIndex = 29;
+            this.scrollbarModules.TabIndex = 0;
+            this.scrollbarModules.TabStop = false;
             this.scrollbarModules.Value = 0;
             // 
             // menuStrip
@@ -244,7 +246,7 @@
             this.panelAccount.Location = new System.Drawing.Point(740, 24);
             this.panelAccount.Name = "panelAccount";
             this.panelAccount.Size = new System.Drawing.Size(220, 80);
-            this.panelAccount.TabIndex = 1;
+            this.panelAccount.TabIndex = 2;
             // 
             // buttonRefresh
             // 
@@ -260,8 +262,7 @@
             this.buttonRefresh.Location = new System.Drawing.Point(176, 24);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(32, 32);
-            this.buttonRefresh.TabIndex = 22;
-            this.buttonRefresh.TabStop = false;
+            this.buttonRefresh.TabIndex = 2;
             this.buttonRefresh.UseVisualStyleBackColor = false;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
@@ -271,7 +272,7 @@
             this.labelAPIError.Location = new System.Drawing.Point(9, 10);
             this.labelAPIError.Name = "labelAPIError";
             this.labelAPIError.Size = new System.Drawing.Size(72, 13);
-            this.labelAPIError.TabIndex = 21;
+            this.labelAPIError.TabIndex = 0;
             this.labelAPIError.Text = "[API ERROR]";
             this.labelAPIError.Visible = false;
             // 
@@ -287,7 +288,7 @@
             this.comboBoxAccount.Location = new System.Drawing.Point(12, 26);
             this.comboBoxAccount.Name = "comboBoxAccount";
             this.comboBoxAccount.Size = new System.Drawing.Size(158, 28);
-            this.comboBoxAccount.TabIndex = 18;
+            this.comboBoxAccount.TabIndex = 1;
             this.comboBoxAccount.Tag = "";
             this.comboBoxAccount.SelectedIndexChanged += new System.EventHandler(this.comboBoxAccount_SelectedIndexChanged);
             // 
@@ -299,7 +300,7 @@
             this.panelLaunch.Location = new System.Drawing.Point(740, 470);
             this.panelLaunch.Name = "panelLaunch";
             this.panelLaunch.Size = new System.Drawing.Size(220, 70);
-            this.panelLaunch.TabIndex = 2;
+            this.panelLaunch.TabIndex = 0;
             // 
             // labelLaunchError
             // 
@@ -307,7 +308,7 @@
             this.labelLaunchError.Location = new System.Drawing.Point(9, 12);
             this.labelLaunchError.Name = "labelLaunchError";
             this.labelLaunchError.Size = new System.Drawing.Size(99, 13);
-            this.labelLaunchError.TabIndex = 9;
+            this.labelLaunchError.TabIndex = 0;
             this.labelLaunchError.Text = "[LAUNCH ERROR]";
             this.labelLaunchError.Visible = false;
             // 
@@ -321,7 +322,7 @@
             this.buttonLaunch.Location = new System.Drawing.Point(12, 28);
             this.buttonLaunch.Name = "buttonLaunch";
             this.buttonLaunch.Size = new System.Drawing.Size(196, 30);
-            this.buttonLaunch.TabIndex = 10;
+            this.buttonLaunch.TabIndex = 1;
             this.buttonLaunch.Text = "Launch";
             this.buttonLaunch.UseVisualStyleBackColor = false;
             this.buttonLaunch.Click += new System.EventHandler(this.buttonLaunch_Click);

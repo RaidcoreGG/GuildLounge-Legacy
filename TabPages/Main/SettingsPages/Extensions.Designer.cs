@@ -76,7 +76,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(546, 356);
-            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "gL_GroupBox3";
             // 
@@ -86,7 +86,7 @@
             this.label3.Location = new System.Drawing.Point(6, 268);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(263, 13);
-            this.label3.TabIndex = 23;
+            this.label3.TabIndex = 0;
             this.label3.Text = "This name will be used if there are multiple d3d9-DLLs.";
             // 
             // textBoxExtensionName
@@ -97,7 +97,7 @@
             this.textBoxExtensionName.Location = new System.Drawing.Point(6, 284);
             this.textBoxExtensionName.Name = "textBoxExtensionName";
             this.textBoxExtensionName.Size = new System.Drawing.Size(534, 20);
-            this.textBoxExtensionName.TabIndex = 22;
+            this.textBoxExtensionName.TabIndex = 3;
             // 
             // label2
             // 
@@ -105,7 +105,7 @@
             this.label2.Location = new System.Drawing.Point(6, 250);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(334, 13);
-            this.label2.TabIndex = 21;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Please enter a substitional name (e.g. \"arcdps\" for \"d3d9_arcdps.dll\")";
             // 
             // buttonForceUpdate
@@ -118,7 +118,7 @@
             this.buttonForceUpdate.Location = new System.Drawing.Point(122, 330);
             this.buttonForceUpdate.Name = "buttonForceUpdate";
             this.buttonForceUpdate.Size = new System.Drawing.Size(100, 20);
-            this.buttonForceUpdate.TabIndex = 20;
+            this.buttonForceUpdate.TabIndex = 4;
             this.buttonForceUpdate.Text = "Force Update";
             this.buttonForceUpdate.UseVisualStyleBackColor = false;
             this.buttonForceUpdate.Click += new System.EventHandler(this.buttonForceUpdate_Click);
@@ -133,7 +133,7 @@
             this.buttonRemoveExtension.Location = new System.Drawing.Point(228, 330);
             this.buttonRemoveExtension.Name = "buttonRemoveExtension";
             this.buttonRemoveExtension.Size = new System.Drawing.Size(100, 20);
-            this.buttonRemoveExtension.TabIndex = 19;
+            this.buttonRemoveExtension.TabIndex = 5;
             this.buttonRemoveExtension.Text = "Remove";
             this.buttonRemoveExtension.UseVisualStyleBackColor = false;
             this.buttonRemoveExtension.Click += new System.EventHandler(this.buttonRemoveExtension_Click);
@@ -148,7 +148,7 @@
             this.buttonEditExtension.Location = new System.Drawing.Point(334, 330);
             this.buttonEditExtension.Name = "buttonEditExtension";
             this.buttonEditExtension.Size = new System.Drawing.Size(100, 20);
-            this.buttonEditExtension.TabIndex = 18;
+            this.buttonEditExtension.TabIndex = 6;
             this.buttonEditExtension.Text = "Edit";
             this.buttonEditExtension.UseVisualStyleBackColor = false;
             this.buttonEditExtension.Click += new System.EventHandler(this.buttonEditExtension_Click);
@@ -173,7 +173,7 @@
             this.buttonAddExtension.Location = new System.Drawing.Point(440, 330);
             this.buttonAddExtension.Name = "buttonAddExtension";
             this.buttonAddExtension.Size = new System.Drawing.Size(100, 20);
-            this.buttonAddExtension.TabIndex = 17;
+            this.buttonAddExtension.TabIndex = 7;
             this.buttonAddExtension.Text = "Add";
             this.buttonAddExtension.UseVisualStyleBackColor = false;
             this.buttonAddExtension.Click += new System.EventHandler(this.buttonAddExtension_Click);
@@ -186,7 +186,7 @@
             this.textBoxExtensionLink.Location = new System.Drawing.Point(6, 218);
             this.textBoxExtensionLink.Name = "textBoxExtensionLink";
             this.textBoxExtensionLink.Size = new System.Drawing.Size(534, 20);
-            this.textBoxExtensionLink.TabIndex = 16;
+            this.textBoxExtensionLink.TabIndex = 2;
             // 
             // label1
             // 
@@ -209,7 +209,7 @@
             this.listBoxExtensions.Location = new System.Drawing.Point(6, 29);
             this.listBoxExtensions.Name = "listBoxExtensions";
             this.listBoxExtensions.Size = new System.Drawing.Size(534, 162);
-            this.listBoxExtensions.TabIndex = 15;
+            this.listBoxExtensions.TabIndex = 1;
             // 
             // checkBoxAutoUpdate
             // 
@@ -217,7 +217,7 @@
             this.checkBoxAutoUpdate.Location = new System.Drawing.Point(9, 9);
             this.checkBoxAutoUpdate.Name = "checkBoxAutoUpdate";
             this.checkBoxAutoUpdate.Size = new System.Drawing.Size(168, 17);
-            this.checkBoxAutoUpdate.TabIndex = 14;
+            this.checkBoxAutoUpdate.TabIndex = 0;
             this.checkBoxAutoUpdate.Text = "Automatically update Add-Ons";
             this.checkBoxAutoUpdate.UseVisualStyleBackColor = true;
             this.checkBoxAutoUpdate.CheckedChanged += new System.EventHandler(this.checkBoxAutoUpdate_CheckedChanged);

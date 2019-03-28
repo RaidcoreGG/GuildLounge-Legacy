@@ -48,7 +48,7 @@
             this.listBoxEncounters.Location = new System.Drawing.Point(12, 12);
             this.listBoxEncounters.Name = "listBoxEncounters";
             this.listBoxEncounters.Size = new System.Drawing.Size(355, 370);
-            this.listBoxEncounters.TabIndex = 16;
+            this.listBoxEncounters.TabIndex = 0;
             this.listBoxEncounters.SelectedIndexChanged += new System.EventHandler(this.listBoxEncounters_SelectedIndexChanged);
             // 
             // listBoxLogs
@@ -62,7 +62,7 @@
             this.listBoxLogs.Location = new System.Drawing.Point(373, 12);
             this.listBoxLogs.Name = "listBoxLogs";
             this.listBoxLogs.Size = new System.Drawing.Size(355, 370);
-            this.listBoxLogs.TabIndex = 17;
+            this.listBoxLogs.TabIndex = 1;
             // 
             // labelLogInfo
             // 
@@ -70,7 +70,7 @@
             this.labelLogInfo.Location = new System.Drawing.Point(224, 408);
             this.labelLogInfo.Name = "labelLogInfo";
             this.labelLogInfo.Size = new System.Drawing.Size(63, 13);
-            this.labelLogInfo.TabIndex = 21;
+            this.labelLogInfo.TabIndex = 0;
             this.labelLogInfo.Text = "[LOG INFO]";
             this.labelLogInfo.Visible = false;
             // 
@@ -84,7 +84,7 @@
             this.buttonPreviousUploads.Location = new System.Drawing.Point(522, 404);
             this.buttonPreviousUploads.Name = "buttonPreviousUploads";
             this.buttonPreviousUploads.Size = new System.Drawing.Size(100, 20);
-            this.buttonPreviousUploads.TabIndex = 22;
+            this.buttonPreviousUploads.TabIndex = 4;
             this.buttonPreviousUploads.Text = "Previous Uploads";
             this.buttonPreviousUploads.UseVisualStyleBackColor = false;
             this.buttonPreviousUploads.Click += new System.EventHandler(this.buttonPreviousUploads_Click);
@@ -99,7 +99,7 @@
             this.buttonRefresh.Location = new System.Drawing.Point(118, 404);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(100, 20);
-            this.buttonRefresh.TabIndex = 20;
+            this.buttonRefresh.TabIndex = 3;
             this.buttonRefresh.Text = "Refresh";
             this.buttonRefresh.UseVisualStyleBackColor = false;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
@@ -114,7 +114,7 @@
             this.buttonExport.Location = new System.Drawing.Point(628, 404);
             this.buttonExport.Name = "buttonExport";
             this.buttonExport.Size = new System.Drawing.Size(100, 20);
-            this.buttonExport.TabIndex = 19;
+            this.buttonExport.TabIndex = 5;
             this.buttonExport.Text = "Export";
             this.buttonExport.UseVisualStyleBackColor = false;
             this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
@@ -129,7 +129,7 @@
             this.buttonOpenFolder.Location = new System.Drawing.Point(12, 404);
             this.buttonOpenFolder.Name = "buttonOpenFolder";
             this.buttonOpenFolder.Size = new System.Drawing.Size(100, 20);
-            this.buttonOpenFolder.TabIndex = 18;
+            this.buttonOpenFolder.TabIndex = 2;
             this.buttonOpenFolder.Text = "Open Folder";
             this.buttonOpenFolder.UseVisualStyleBackColor = false;
             this.buttonOpenFolder.Click += new System.EventHandler(this.buttonOpenFolder_Click);

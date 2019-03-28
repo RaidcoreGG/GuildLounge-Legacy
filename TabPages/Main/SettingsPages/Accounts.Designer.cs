@@ -80,7 +80,7 @@
             this.labelLinkingError.Location = new System.Drawing.Point(331, 6);
             this.labelLinkingError.Name = "labelLinkingError";
             this.labelLinkingError.Size = new System.Drawing.Size(52, 13);
-            this.labelLinkingError.TabIndex = 25;
+            this.labelLinkingError.TabIndex = 0;
             this.labelLinkingError.Text = "[ERROR]";
             this.labelLinkingError.Visible = false;
             // 
@@ -92,7 +92,7 @@
             this.linkLabelQuickSwitchingHelp.Location = new System.Drawing.Point(142, 6);
             this.linkLabelQuickSwitchingHelp.Name = "linkLabelQuickSwitchingHelp";
             this.linkLabelQuickSwitchingHelp.Size = new System.Drawing.Size(47, 13);
-            this.linkLabelQuickSwitchingHelp.TabIndex = 21;
+            this.linkLabelQuickSwitchingHelp.TabIndex = 1;
             this.linkLabelQuickSwitchingHelp.TabStop = true;
             this.linkLabelQuickSwitchingHelp.Text = "How to?";
             this.linkLabelQuickSwitchingHelp.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -108,7 +108,7 @@
             this.buttonLinkCurrentDAT.Location = new System.Drawing.Point(334, 21);
             this.buttonLinkCurrentDAT.Name = "buttonLinkCurrentDAT";
             this.buttonLinkCurrentDAT.Size = new System.Drawing.Size(100, 20);
-            this.buttonLinkCurrentDAT.TabIndex = 20;
+            this.buttonLinkCurrentDAT.TabIndex = 2;
             this.buttonLinkCurrentDAT.Text = "Link Current";
             this.buttonLinkCurrentDAT.UseVisualStyleBackColor = false;
             this.buttonLinkCurrentDAT.Click += new System.EventHandler(this.buttonLinkCurrentDAT_Click);
@@ -123,7 +123,7 @@
             this.buttonUnlinkDAT.Location = new System.Drawing.Point(440, 21);
             this.buttonUnlinkDAT.Name = "buttonUnlinkDAT";
             this.buttonUnlinkDAT.Size = new System.Drawing.Size(100, 20);
-            this.buttonUnlinkDAT.TabIndex = 19;
+            this.buttonUnlinkDAT.TabIndex = 3;
             this.buttonUnlinkDAT.Text = "Unlink";
             this.buttonUnlinkDAT.UseVisualStyleBackColor = false;
             this.buttonUnlinkDAT.Click += new System.EventHandler(this.buttonUnlinkDAT_Click);
@@ -134,7 +134,7 @@
             this.labelDatFile.Location = new System.Drawing.Point(84, 25);
             this.labelDatFile.Name = "labelDatFile";
             this.labelDatFile.Size = new System.Drawing.Size(53, 13);
-            this.labelDatFile.TabIndex = 18;
+            this.labelDatFile.TabIndex = 0;
             this.labelDatFile.Text = "not linked";
             // 
             // label4
@@ -143,7 +143,7 @@
             this.label4.Location = new System.Drawing.Point(6, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 17;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Current .DAT:";
             // 
             // label5
@@ -152,7 +152,7 @@
             this.label5.Location = new System.Drawing.Point(6, 6);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 13);
-            this.label5.TabIndex = 16;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Account Quick-Switching:";
             // 
             // groupBox2
@@ -183,7 +183,7 @@
             this.listBoxAccounts.Location = new System.Drawing.Point(6, 6);
             this.listBoxAccounts.Name = "listBoxAccounts";
             this.listBoxAccounts.Size = new System.Drawing.Size(352, 226);
-            this.listBoxAccounts.TabIndex = 22;
+            this.listBoxAccounts.TabIndex = 1;
             this.listBoxAccounts.SelectedIndexChanged += new System.EventHandler(this.listBoxAccounts_SelectedIndexChanged);
             // 
             // label6
@@ -192,7 +192,7 @@
             this.label6.Location = new System.Drawing.Point(364, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(140, 13);
-            this.label6.TabIndex = 21;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Permissions of selected key:";
             // 
             // buttonEditAccount
@@ -205,7 +205,7 @@
             this.buttonEditAccount.Location = new System.Drawing.Point(364, 212);
             this.buttonEditAccount.Name = "buttonEditAccount";
             this.buttonEditAccount.Size = new System.Drawing.Size(176, 20);
-            this.buttonEditAccount.TabIndex = 20;
+            this.buttonEditAccount.TabIndex = 3;
             this.buttonEditAccount.Text = "Edit";
             this.buttonEditAccount.UseVisualStyleBackColor = false;
             this.buttonEditAccount.Click += new System.EventHandler(this.buttonEditAccount_Click);
@@ -220,7 +220,7 @@
             this.buttonRemoveAccount.Location = new System.Drawing.Point(364, 186);
             this.buttonRemoveAccount.Name = "buttonRemoveAccount";
             this.buttonRemoveAccount.Size = new System.Drawing.Size(176, 20);
-            this.buttonRemoveAccount.TabIndex = 19;
+            this.buttonRemoveAccount.TabIndex = 2;
             this.buttonRemoveAccount.Text = "Remove";
             this.buttonRemoveAccount.UseVisualStyleBackColor = false;
             this.buttonRemoveAccount.Click += new System.EventHandler(this.buttonRemoveAccount_Click);
@@ -232,7 +232,7 @@
             this.apiKeyInfo.Location = new System.Drawing.Point(364, 22);
             this.apiKeyInfo.Name = "apiKeyInfo";
             this.apiKeyInfo.Size = new System.Drawing.Size(176, 156);
-            this.apiKeyInfo.TabIndex = 1;
+            this.apiKeyInfo.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -259,7 +259,7 @@
             this.labelError.Location = new System.Drawing.Point(73, 84);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(52, 13);
-            this.labelError.TabIndex = 24;
+            this.labelError.TabIndex = 0;
             this.labelError.Text = "[ERROR]";
             this.labelError.Visible = false;
             // 
@@ -273,7 +273,7 @@
             this.buttonAddAccount.Location = new System.Drawing.Point(440, 80);
             this.buttonAddAccount.Name = "buttonAddAccount";
             this.buttonAddAccount.Size = new System.Drawing.Size(100, 20);
-            this.buttonAddAccount.TabIndex = 18;
+            this.buttonAddAccount.TabIndex = 3;
             this.buttonAddAccount.Text = "Add";
             this.buttonAddAccount.UseVisualStyleBackColor = false;
             this.buttonAddAccount.Click += new System.EventHandler(this.buttonAddAccount_Click);
@@ -284,7 +284,7 @@
             this.label1.Location = new System.Drawing.Point(6, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 13);
-            this.label1.TabIndex = 16;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Save a new account:";
             // 
             // textBoxAPIKey
@@ -295,7 +295,7 @@
             this.textBoxAPIKey.Location = new System.Drawing.Point(76, 54);
             this.textBoxAPIKey.Name = "textBoxAPIKey";
             this.textBoxAPIKey.Size = new System.Drawing.Size(464, 20);
-            this.textBoxAPIKey.TabIndex = 11;
+            this.textBoxAPIKey.TabIndex = 2;
             // 
             // label3
             // 
@@ -303,7 +303,7 @@
             this.label3.Location = new System.Drawing.Point(22, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 10;
+            this.label3.TabIndex = 0;
             this.label3.Text = "API-Key:";
             // 
             // textBoxName
@@ -314,7 +314,7 @@
             this.textBoxName.Location = new System.Drawing.Point(76, 28);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(464, 20);
-            this.textBoxName.TabIndex = 9;
+            this.textBoxName.TabIndex = 1;
             // 
             // label2
             // 

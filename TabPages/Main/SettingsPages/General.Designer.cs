@@ -77,7 +77,7 @@
             this.labelBuildNumber.Location = new System.Drawing.Point(9, 411);
             this.labelBuildNumber.Name = "labelBuildNumber";
             this.labelBuildNumber.Size = new System.Drawing.Size(66, 13);
-            this.labelBuildNumber.TabIndex = 26;
+            this.labelBuildNumber.TabIndex = 0;
             this.labelBuildNumber.Text = "Build: 00000";
             // 
             // groupBox5
@@ -91,7 +91,7 @@
             this.groupBox5.Location = new System.Drawing.Point(12, 173);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(222, 52);
-            this.groupBox5.TabIndex = 28;
+            this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "gL_GroupBox5";
             // 
@@ -103,7 +103,7 @@
             this.linkLabelDPSReportTokenHelp.Location = new System.Drawing.Point(181, 6);
             this.linkLabelDPSReportTokenHelp.Name = "linkLabelDPSReportTokenHelp";
             this.linkLabelDPSReportTokenHelp.Size = new System.Drawing.Size(35, 13);
-            this.linkLabelDPSReportTokenHelp.TabIndex = 30;
+            this.linkLabelDPSReportTokenHelp.TabIndex = 2;
             this.linkLabelDPSReportTokenHelp.TabStop = true;
             this.linkLabelDPSReportTokenHelp.Text = "Help?";
             this.linkLabelDPSReportTokenHelp.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -117,7 +117,7 @@
             this.textBoxDPSReportToken.Location = new System.Drawing.Point(6, 22);
             this.textBoxDPSReportToken.Name = "textBoxDPSReportToken";
             this.textBoxDPSReportToken.Size = new System.Drawing.Size(210, 20);
-            this.textBoxDPSReportToken.TabIndex = 13;
+            this.textBoxDPSReportToken.TabIndex = 1;
             this.textBoxDPSReportToken.TextChanged += new System.EventHandler(this.textBoxDPSReportToken_TextChanged);
             // 
             // label9
@@ -144,7 +144,7 @@
             this.groupBox6.Location = new System.Drawing.Point(240, 173);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(318, 52);
-            this.groupBox6.TabIndex = 27;
+            this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "gL_GroupBox6";
             this.groupBox6.Visible = false;
@@ -155,7 +155,7 @@
             this.label8.Location = new System.Drawing.Point(251, 28);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 28;
+            this.label8.TabIndex = 0;
             this.label8.Text = "Font:";
             // 
             // buttonFontColor
@@ -171,7 +171,7 @@
             this.buttonFontColor.Location = new System.Drawing.Point(288, 22);
             this.buttonFontColor.Name = "buttonFontColor";
             this.buttonFontColor.Size = new System.Drawing.Size(24, 24);
-            this.buttonFontColor.TabIndex = 27;
+            this.buttonFontColor.TabIndex = 3;
             this.buttonFontColor.TabStop = false;
             this.buttonFontColor.UseVisualStyleBackColor = false;
             // 
@@ -181,7 +181,7 @@
             this.label7.Location = new System.Drawing.Point(134, 28);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 13);
-            this.label7.TabIndex = 26;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Accent:";
             // 
             // buttonAccentColor
@@ -197,7 +197,7 @@
             this.buttonAccentColor.Location = new System.Drawing.Point(184, 22);
             this.buttonAccentColor.Name = "buttonAccentColor";
             this.buttonAccentColor.Size = new System.Drawing.Size(24, 24);
-            this.buttonAccentColor.TabIndex = 25;
+            this.buttonAccentColor.TabIndex = 2;
             this.buttonAccentColor.TabStop = false;
             this.buttonAccentColor.UseVisualStyleBackColor = false;
             // 
@@ -207,7 +207,7 @@
             this.label6.Location = new System.Drawing.Point(6, 28);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 24;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Background:";
             // 
             // buttonBackgroundColor
@@ -223,7 +223,7 @@
             this.buttonBackgroundColor.Location = new System.Drawing.Point(80, 22);
             this.buttonBackgroundColor.Name = "buttonBackgroundColor";
             this.buttonBackgroundColor.Size = new System.Drawing.Size(24, 24);
-            this.buttonBackgroundColor.TabIndex = 23;
+            this.buttonBackgroundColor.TabIndex = 1;
             this.buttonBackgroundColor.TabStop = false;
             this.buttonBackgroundColor.UseVisualStyleBackColor = false;
             // 
@@ -246,7 +246,7 @@
             this.groupBox0.Location = new System.Drawing.Point(400, 388);
             this.groupBox0.Name = "groupBox0";
             this.groupBox0.Size = new System.Drawing.Size(158, 36);
-            this.groupBox0.TabIndex = 24;
+            this.groupBox0.TabIndex = 6;
             this.groupBox0.TabStop = false;
             this.groupBox0.Text = "gL_GroupBox0";
             this.groupBox0.Visible = false;
@@ -273,7 +273,7 @@
             this.comboBoxLanguage.Location = new System.Drawing.Point(36, 6);
             this.comboBoxLanguage.Name = "comboBoxLanguage";
             this.comboBoxLanguage.Size = new System.Drawing.Size(116, 24);
-            this.comboBoxLanguage.TabIndex = 34;
+            this.comboBoxLanguage.TabIndex = 0;
             this.comboBoxLanguage.Tag = "";
             this.comboBoxLanguage.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguage_SelectedIndexChanged);
             // 
@@ -289,7 +289,7 @@
             this.groupBox4.Location = new System.Drawing.Point(296, 120);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(262, 47);
-            this.groupBox4.TabIndex = 24;
+            this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "gL_GroupBox4";
             // 
@@ -299,7 +299,7 @@
             this.labelUpdaterInfo.Location = new System.Drawing.Point(62, 6);
             this.labelUpdaterInfo.Name = "labelUpdaterInfo";
             this.labelUpdaterInfo.Size = new System.Drawing.Size(90, 13);
-            this.labelUpdaterInfo.TabIndex = 16;
+            this.labelUpdaterInfo.TabIndex = 0;
             this.labelUpdaterInfo.Text = "[UPDATERINFO]";
             this.labelUpdaterInfo.Visible = false;
             // 
@@ -313,7 +313,7 @@
             this.buttonCheckForUpdates.Location = new System.Drawing.Point(156, 21);
             this.buttonCheckForUpdates.Name = "buttonCheckForUpdates";
             this.buttonCheckForUpdates.Size = new System.Drawing.Size(100, 20);
-            this.buttonCheckForUpdates.TabIndex = 10;
+            this.buttonCheckForUpdates.TabIndex = 2;
             this.buttonCheckForUpdates.Text = "Check Now";
             this.buttonCheckForUpdates.UseVisualStyleBackColor = false;
             this.buttonCheckForUpdates.Click += new System.EventHandler(this.buttonCheckForUpdates_Click);
@@ -326,7 +326,7 @@
             this.checkBoxAutoUpdate.Location = new System.Drawing.Point(9, 23);
             this.checkBoxAutoUpdate.Name = "checkBoxAutoUpdate";
             this.checkBoxAutoUpdate.Size = new System.Drawing.Size(113, 17);
-            this.checkBoxAutoUpdate.TabIndex = 15;
+            this.checkBoxAutoUpdate.TabIndex = 1;
             this.checkBoxAutoUpdate.Text = "Check for updates";
             this.checkBoxAutoUpdate.UseVisualStyleBackColor = true;
             this.checkBoxAutoUpdate.CheckedChanged += new System.EventHandler(this.checkBoxAutoUpdate_CheckedChanged);
@@ -350,7 +350,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 66);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(546, 48);
-            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "gL_GroupBox2";
             // 
@@ -362,7 +362,7 @@
             this.textBoxStartParams.Location = new System.Drawing.Point(6, 22);
             this.textBoxStartParams.Name = "textBoxStartParams";
             this.textBoxStartParams.Size = new System.Drawing.Size(534, 20);
-            this.textBoxStartParams.TabIndex = 13;
+            this.textBoxStartParams.TabIndex = 1;
             this.textBoxStartParams.TextChanged += new System.EventHandler(this.textBoxStartParams_TextChanged);
             // 
             // label2
@@ -385,7 +385,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(546, 48);
-            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "gL_GroupBox1";
             // 
@@ -399,7 +399,7 @@
             this.buttonBrowseGameDirectory.Location = new System.Drawing.Point(440, 22);
             this.buttonBrowseGameDirectory.Name = "buttonBrowseGameDirectory";
             this.buttonBrowseGameDirectory.Size = new System.Drawing.Size(100, 20);
-            this.buttonBrowseGameDirectory.TabIndex = 9;
+            this.buttonBrowseGameDirectory.TabIndex = 2;
             this.buttonBrowseGameDirectory.Text = "Browse";
             this.buttonBrowseGameDirectory.UseVisualStyleBackColor = false;
             this.buttonBrowseGameDirectory.Click += new System.EventHandler(this.buttonBrowseGameDirectory_Click);
@@ -412,7 +412,7 @@
             this.textBoxGameDirectory.Location = new System.Drawing.Point(6, 22);
             this.textBoxGameDirectory.Name = "textBoxGameDirectory";
             this.textBoxGameDirectory.Size = new System.Drawing.Size(428, 20);
-            this.textBoxGameDirectory.TabIndex = 8;
+            this.textBoxGameDirectory.TabIndex = 1;
             this.textBoxGameDirectory.TextChanged += new System.EventHandler(this.textBoxGameDirectory_TextChanged);
             // 
             // label1
@@ -436,7 +436,7 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 120);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(278, 47);
-            this.groupBox3.TabIndex = 23;
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "gL_GroupBox3";
             // 
@@ -446,7 +446,7 @@
             this.radioButtonLaunchStayOpen.Location = new System.Drawing.Point(6, 22);
             this.radioButtonLaunchStayOpen.Name = "radioButtonLaunchStayOpen";
             this.radioButtonLaunchStayOpen.Size = new System.Drawing.Size(71, 17);
-            this.radioButtonLaunchStayOpen.TabIndex = 10;
+            this.radioButtonLaunchStayOpen.TabIndex = 1;
             this.radioButtonLaunchStayOpen.Text = "stay open";
             this.radioButtonLaunchStayOpen.UseVisualStyleBackColor = true;
             this.radioButtonLaunchStayOpen.CheckedChanged += new System.EventHandler(this.radioButtonLaunchStayOpen_CheckedChanged);
@@ -457,7 +457,7 @@
             this.radioButtonLaunchClose.Location = new System.Drawing.Point(182, 22);
             this.radioButtonLaunchClose.Name = "radioButtonLaunchClose";
             this.radioButtonLaunchClose.Size = new System.Drawing.Size(50, 17);
-            this.radioButtonLaunchClose.TabIndex = 12;
+            this.radioButtonLaunchClose.TabIndex = 3;
             this.radioButtonLaunchClose.Text = "close";
             this.radioButtonLaunchClose.UseVisualStyleBackColor = true;
             this.radioButtonLaunchClose.CheckedChanged += new System.EventHandler(this.radioButtonLaunchClose_CheckedChanged);
@@ -469,7 +469,7 @@
             this.radioButtonLaunchMinimize.Location = new System.Drawing.Point(107, 22);
             this.radioButtonLaunchMinimize.Name = "radioButtonLaunchMinimize";
             this.radioButtonLaunchMinimize.Size = new System.Drawing.Size(45, 17);
-            this.radioButtonLaunchMinimize.TabIndex = 11;
+            this.radioButtonLaunchMinimize.TabIndex = 2;
             this.radioButtonLaunchMinimize.TabStop = true;
             this.radioButtonLaunchMinimize.Text = "hide";
             this.radioButtonLaunchMinimize.UseVisualStyleBackColor = true;

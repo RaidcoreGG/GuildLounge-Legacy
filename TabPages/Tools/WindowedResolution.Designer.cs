@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new GuildLounge.Controls.GroupBox();
+            this.labelError = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxHeight = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.comboBoxResolution = new System.Windows.Forms.ComboBox();
             this.comboBoxAspectRatio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelError = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,9 +64,19 @@
             this.groupBox1.Location = new System.Drawing.Point(120, 84);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(499, 267);
-            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Location = new System.Drawing.Point(12, 237);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(52, 13);
+            this.labelError.TabIndex = 0;
+            this.labelError.Text = "[ERROR]";
+            this.labelError.Visible = false;
             // 
             // label4
             // 
@@ -74,7 +84,7 @@
             this.label4.Location = new System.Drawing.Point(12, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(463, 13);
-            this.label4.TabIndex = 39;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Enter a custom resolution into the input fields below, or leave them empty to set" +
     " the selected one.";
             // 
@@ -84,7 +94,7 @@
             this.label6.Location = new System.Drawing.Point(12, 196);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 38;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Height:";
             // 
             // textBoxHeight
@@ -95,7 +105,7 @@
             this.textBoxHeight.Location = new System.Drawing.Point(128, 194);
             this.textBoxHeight.Name = "textBoxHeight";
             this.textBoxHeight.Size = new System.Drawing.Size(158, 20);
-            this.textBoxHeight.TabIndex = 37;
+            this.textBoxHeight.TabIndex = 4;
             // 
             // label5
             // 
@@ -103,7 +113,7 @@
             this.label5.Location = new System.Drawing.Point(12, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 36;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Width:";
             // 
             // textBoxWidth
@@ -114,7 +124,7 @@
             this.textBoxWidth.Location = new System.Drawing.Point(128, 168);
             this.textBoxWidth.Name = "textBoxWidth";
             this.textBoxWidth.Size = new System.Drawing.Size(158, 20);
-            this.textBoxWidth.TabIndex = 35;
+            this.textBoxWidth.TabIndex = 3;
             // 
             // buttonSet
             // 
@@ -125,7 +135,7 @@
             this.buttonSet.Location = new System.Drawing.Point(341, 232);
             this.buttonSet.Name = "buttonSet";
             this.buttonSet.Size = new System.Drawing.Size(146, 23);
-            this.buttonSet.TabIndex = 34;
+            this.buttonSet.TabIndex = 5;
             this.buttonSet.Text = "Set";
             this.buttonSet.UseVisualStyleBackColor = false;
             this.buttonSet.Click += new System.EventHandler(this.buttonSet_Click);
@@ -136,7 +146,7 @@
             this.label3.Location = new System.Drawing.Point(12, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 33;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Resolution:";
             // 
             // label2
@@ -145,7 +155,7 @@
             this.label2.Location = new System.Drawing.Point(12, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 32;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Aspect Ratio:";
             // 
             // comboBoxResolution
@@ -159,7 +169,7 @@
             this.comboBoxResolution.Location = new System.Drawing.Point(128, 85);
             this.comboBoxResolution.Name = "comboBoxResolution";
             this.comboBoxResolution.Size = new System.Drawing.Size(158, 28);
-            this.comboBoxResolution.TabIndex = 31;
+            this.comboBoxResolution.TabIndex = 2;
             this.comboBoxResolution.Tag = "";
             // 
             // comboBoxAspectRatio
@@ -173,7 +183,7 @@
             this.comboBoxAspectRatio.Location = new System.Drawing.Point(128, 51);
             this.comboBoxAspectRatio.Name = "comboBoxAspectRatio";
             this.comboBoxAspectRatio.Size = new System.Drawing.Size(158, 28);
-            this.comboBoxAspectRatio.TabIndex = 30;
+            this.comboBoxAspectRatio.TabIndex = 1;
             this.comboBoxAspectRatio.Tag = "";
             this.comboBoxAspectRatio.SelectedIndexChanged += new System.EventHandler(this.comboBoxAspectRatio_SelectedIndexChanged);
             // 
@@ -183,19 +193,9 @@
             this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(416, 26);
-            this.label1.TabIndex = 29;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Since GW2 windowed mode does not support fixed resolutions, you can set them here" +
     ".\r\nPlease note the game has to be running to do this.";
-            // 
-            // labelError
-            // 
-            this.labelError.AutoSize = true;
-            this.labelError.Location = new System.Drawing.Point(12, 237);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(52, 13);
-            this.labelError.TabIndex = 40;
-            this.labelError.Text = "[ERROR]";
-            this.labelError.Visible = false;
             // 
             // WindowedResolution
             // 

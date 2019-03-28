@@ -84,7 +84,7 @@
             this.groupBoxAdditional.Location = new System.Drawing.Point(177, 71);
             this.groupBoxAdditional.Name = "groupBoxAdditional";
             this.groupBoxAdditional.Size = new System.Drawing.Size(216, 91);
-            this.groupBoxAdditional.TabIndex = 9;
+            this.groupBoxAdditional.TabIndex = 2;
             this.groupBoxAdditional.TabStop = false;
             this.groupBoxAdditional.Text = "groupBox2";
             // 
@@ -95,7 +95,7 @@
             this.labelTwitterName.Location = new System.Drawing.Point(79, 72);
             this.labelTwitterName.Name = "labelTwitterName";
             this.labelTwitterName.Size = new System.Drawing.Size(99, 13);
-            this.labelTwitterName.TabIndex = 21;
+            this.labelTwitterName.TabIndex = 7;
             this.labelTwitterName.Text = "currently banned lol";
             // 
             // linkLabelRedditName
@@ -106,7 +106,7 @@
             this.linkLabelRedditName.Location = new System.Drawing.Point(79, 50);
             this.linkLabelRedditName.Name = "linkLabelRedditName";
             this.linkLabelRedditName.Size = new System.Drawing.Size(85, 13);
-            this.linkLabelRedditName.TabIndex = 20;
+            this.linkLabelRedditName.TabIndex = 5;
             this.linkLabelRedditName.TabStop = true;
             this.linkLabelRedditName.Text = "/u/DeltaxHunter";
             this.linkLabelRedditName.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -119,7 +119,7 @@
             this.labelDiscordName.Location = new System.Drawing.Point(79, 28);
             this.labelDiscordName.Name = "labelDiscordName";
             this.labelDiscordName.Size = new System.Drawing.Size(63, 13);
-            this.labelDiscordName.TabIndex = 9;
+            this.labelDiscordName.TabIndex = 3;
             this.labelDiscordName.Text = "Delta#0729";
             // 
             // labelIngameName
@@ -129,7 +129,7 @@
             this.labelIngameName.Location = new System.Drawing.Point(79, 6);
             this.labelIngameName.Name = "labelIngameName";
             this.labelIngameName.Size = new System.Drawing.Size(120, 13);
-            this.labelIngameName.TabIndex = 8;
+            this.labelIngameName.TabIndex = 1;
             this.labelIngameName.Text = "Tribun der Weisse.3427";
             // 
             // labelTwitter
@@ -149,7 +149,7 @@
             this.labelReddit.Location = new System.Drawing.Point(35, 50);
             this.labelReddit.Name = "labelReddit";
             this.labelReddit.Size = new System.Drawing.Size(41, 13);
-            this.labelReddit.TabIndex = 6;
+            this.labelReddit.TabIndex = 4;
             this.labelReddit.Text = "Reddit:";
             // 
             // labelDiscord
@@ -159,7 +159,7 @@
             this.labelDiscord.Location = new System.Drawing.Point(30, 28);
             this.labelDiscord.Name = "labelDiscord";
             this.labelDiscord.Size = new System.Drawing.Size(46, 13);
-            this.labelDiscord.TabIndex = 4;
+            this.labelDiscord.TabIndex = 2;
             this.labelDiscord.Text = "Discord:";
             // 
             // labelIngame
@@ -169,7 +169,7 @@
             this.labelIngame.Location = new System.Drawing.Point(26, 6);
             this.labelIngame.Name = "labelIngame";
             this.labelIngame.Size = new System.Drawing.Size(50, 13);
-            this.labelIngame.TabIndex = 2;
+            this.labelIngame.TabIndex = 0;
             this.labelIngame.Text = "In-Game:";
             // 
             // label3
@@ -178,7 +178,7 @@
             this.label3.Location = new System.Drawing.Point(237, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 13);
-            this.label3.TabIndex = 10;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Special Thanks to:";
             // 
             // label4
@@ -187,7 +187,7 @@
             this.label4.Location = new System.Drawing.Point(147, 208);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(272, 39);
-            this.label4.TabIndex = 11;
+            this.label4.TabIndex = 4;
             this.label4.Text = "Crafty, my Guild Leader from [SUN] The Sunlight Blades.\r\nHe was trying to support" +
     " me and review my code,\r\nbut I am stubborn! :D";
             // 
@@ -197,7 +197,7 @@
             this.label5.Location = new System.Drawing.Point(147, 271);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(257, 26);
-            this.label5.TabIndex = 14;
+            this.label5.TabIndex = 5;
             this.label5.Text = "If you\'d like to support the project so I can maintain it,\r\nyou can donate over P" +
     "ayPal or Patreon below!";
             this.label5.Visible = false;
@@ -208,7 +208,7 @@
             this.label6.Location = new System.Drawing.Point(183, 321);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(204, 13);
-            this.label6.TabIndex = 16;
+            this.label6.TabIndex = 6;
             this.label6.Text = "Thank you very much for your support! <3";
             this.label6.Visible = false;
             // 
@@ -223,7 +223,7 @@
             this.buttonPayPal.Location = new System.Drawing.Point(150, 360);
             this.buttonPayPal.Name = "buttonPayPal";
             this.buttonPayPal.Size = new System.Drawing.Size(128, 28);
-            this.buttonPayPal.TabIndex = 17;
+            this.buttonPayPal.TabIndex = 7;
             this.buttonPayPal.UseVisualStyleBackColor = false;
             this.buttonPayPal.Visible = false;
             this.buttonPayPal.Click += new System.EventHandler(this.buttonPayPal_Click);
@@ -239,7 +239,7 @@
             this.buttonPatreon.Location = new System.Drawing.Point(291, 360);
             this.buttonPatreon.Name = "buttonPatreon";
             this.buttonPatreon.Size = new System.Drawing.Size(128, 28);
-            this.buttonPatreon.TabIndex = 18;
+            this.buttonPatreon.TabIndex = 8;
             this.buttonPatreon.UseVisualStyleBackColor = false;
             this.buttonPatreon.Visible = false;
             this.buttonPatreon.Click += new System.EventHandler(this.buttonPatreon_Click);
@@ -250,7 +250,8 @@
             this.horizontalLine1.Location = new System.Drawing.Point(150, 171);
             this.horizontalLine1.Name = "horizontalLine1";
             this.horizontalLine1.Size = new System.Drawing.Size(269, 2);
-            this.horizontalLine1.TabIndex = 19;
+            this.horizontalLine1.TabIndex = 0;
+            this.horizontalLine1.TabStop = false;
             this.horizontalLine1.Text = "horizontalLine1";
             // 
             // horizontalLine2
@@ -259,7 +260,8 @@
             this.horizontalLine2.Location = new System.Drawing.Point(150, 262);
             this.horizontalLine2.Name = "horizontalLine2";
             this.horizontalLine2.Size = new System.Drawing.Size(269, 2);
-            this.horizontalLine2.TabIndex = 20;
+            this.horizontalLine2.TabIndex = 0;
+            this.horizontalLine2.TabStop = false;
             this.horizontalLine2.Text = "horizontalLine2";
             this.horizontalLine2.Visible = false;
             // 

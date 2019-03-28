@@ -75,7 +75,7 @@
             this.groupBoxTools.Location = new System.Drawing.Point(386, 188);
             this.groupBoxTools.Name = "groupBoxTools";
             this.groupBoxTools.Size = new System.Drawing.Size(256, 145);
-            this.groupBoxTools.TabIndex = 27;
+            this.groupBoxTools.TabIndex = 1;
             this.groupBoxTools.TabStop = false;
             this.groupBoxTools.Text = "gL_GroupBox1";
             // 
@@ -88,7 +88,7 @@
             this.linkLabelDPSLogOverview.Location = new System.Drawing.Point(7, 58);
             this.linkLabelDPSLogOverview.Name = "linkLabelDPSLogOverview";
             this.linkLabelDPSLogOverview.Size = new System.Drawing.Size(167, 13);
-            this.linkLabelDPSLogOverview.TabIndex = 22;
+            this.linkLabelDPSLogOverview.TabIndex = 3;
             this.linkLabelDPSLogOverview.TabStop = true;
             this.linkLabelDPSLogOverview.Text = "DPS Log Overview (Experimental)";
             this.linkLabelDPSLogOverview.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -103,7 +103,7 @@
             this.linkLabelWindowedResolution.Location = new System.Drawing.Point(7, 42);
             this.linkLabelWindowedResolution.Name = "linkLabelWindowedResolution";
             this.linkLabelWindowedResolution.Size = new System.Drawing.Size(180, 13);
-            this.linkLabelWindowedResolution.TabIndex = 21;
+            this.linkLabelWindowedResolution.TabIndex = 2;
             this.linkLabelWindowedResolution.TabStop = true;
             this.linkLabelWindowedResolution.Text = "Windowed Resolution (Experimental)";
             this.linkLabelWindowedResolution.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -118,7 +118,7 @@
             this.linkLabelDailies.Location = new System.Drawing.Point(7, 26);
             this.linkLabelDailies.Name = "linkLabelDailies";
             this.linkLabelDailies.Size = new System.Drawing.Size(38, 13);
-            this.linkLabelDailies.TabIndex = 20;
+            this.linkLabelDailies.TabIndex = 1;
             this.linkLabelDailies.TabStop = true;
             this.linkLabelDailies.Text = "Dailies";
             this.linkLabelDailies.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -149,7 +149,7 @@
             this.groupBoxLinks.Location = new System.Drawing.Point(98, 188);
             this.groupBoxLinks.Name = "groupBoxLinks";
             this.groupBoxLinks.Size = new System.Drawing.Size(256, 145);
-            this.groupBoxLinks.TabIndex = 16;
+            this.groupBoxLinks.TabIndex = 0;
             this.groupBoxLinks.TabStop = false;
             this.groupBoxLinks.Text = "gL_GroupBox1";
             // 
@@ -162,7 +162,7 @@
             this.linkLabelGLDiscord.Location = new System.Drawing.Point(7, 42);
             this.linkLabelGLDiscord.Name = "linkLabelGLDiscord";
             this.linkLabelGLDiscord.Size = new System.Drawing.Size(109, 13);
-            this.linkLabelGLDiscord.TabIndex = 26;
+            this.linkLabelGLDiscord.TabIndex = 2;
             this.linkLabelGLDiscord.TabStop = true;
             this.linkLabelGLDiscord.Text = "Guild Lounge Discord";
             this.linkLabelGLDiscord.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -177,7 +177,7 @@
             this.linkLabelGW2Forums.Location = new System.Drawing.Point(7, 106);
             this.linkLabelGW2Forums.Name = "linkLabelGW2Forums";
             this.linkLabelGW2Forums.Size = new System.Drawing.Size(104, 13);
-            this.linkLabelGW2Forums.TabIndex = 24;
+            this.linkLabelGW2Forums.TabIndex = 6;
             this.linkLabelGW2Forums.TabStop = true;
             this.linkLabelGW2Forums.Text = "Official GW2 Forums";
             this.linkLabelGW2Forums.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -192,7 +192,7 @@
             this.linkLabelGW2ReleaseNotes.Location = new System.Drawing.Point(7, 90);
             this.linkLabelGW2ReleaseNotes.Name = "linkLabelGW2ReleaseNotes";
             this.linkLabelGW2ReleaseNotes.Size = new System.Drawing.Size(140, 13);
-            this.linkLabelGW2ReleaseNotes.TabIndex = 23;
+            this.linkLabelGW2ReleaseNotes.TabIndex = 5;
             this.linkLabelGW2ReleaseNotes.TabStop = true;
             this.linkLabelGW2ReleaseNotes.Text = "Official GW2 Release Notes";
             this.linkLabelGW2ReleaseNotes.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -207,7 +207,7 @@
             this.linkLabelGW2Wiki.Location = new System.Drawing.Point(7, 74);
             this.linkLabelGW2Wiki.Name = "linkLabelGW2Wiki";
             this.linkLabelGW2Wiki.Size = new System.Drawing.Size(91, 13);
-            this.linkLabelGW2Wiki.TabIndex = 22;
+            this.linkLabelGW2Wiki.TabIndex = 4;
             this.linkLabelGW2Wiki.TabStop = true;
             this.linkLabelGW2Wiki.Text = "Official GW2 Wiki";
             this.linkLabelGW2Wiki.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -222,7 +222,7 @@
             this.linkLabelGW2Efficiency.Location = new System.Drawing.Point(7, 58);
             this.linkLabelGW2Efficiency.Name = "linkLabelGW2Efficiency";
             this.linkLabelGW2Efficiency.Size = new System.Drawing.Size(81, 13);
-            this.linkLabelGW2Efficiency.TabIndex = 21;
+            this.linkLabelGW2Efficiency.TabIndex = 3;
             this.linkLabelGW2Efficiency.TabStop = true;
             this.linkLabelGW2Efficiency.Text = "GW2 Efficiency";
             this.linkLabelGW2Efficiency.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -237,7 +237,7 @@
             this.linkLabelGLReleaseNotes.Location = new System.Drawing.Point(7, 26);
             this.linkLabelGLReleaseNotes.Name = "linkLabelGLReleaseNotes";
             this.linkLabelGLReleaseNotes.Size = new System.Drawing.Size(143, 13);
-            this.linkLabelGLReleaseNotes.TabIndex = 20;
+            this.linkLabelGLReleaseNotes.TabIndex = 1;
             this.linkLabelGLReleaseNotes.TabStop = true;
             this.linkLabelGLReleaseNotes.Text = "Guild Lounge Release Notes";
             this.linkLabelGLReleaseNotes.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -267,7 +267,7 @@
             this.buttonNewsNext.Location = new System.Drawing.Point(648, 12);
             this.buttonNewsNext.Name = "buttonNewsNext";
             this.buttonNewsNext.Size = new System.Drawing.Size(80, 164);
-            this.buttonNewsNext.TabIndex = 15;
+            this.buttonNewsNext.TabIndex = 3;
             this.buttonNewsNext.UseVisualStyleBackColor = false;
             this.buttonNewsNext.Click += new System.EventHandler(this.buttonNewsNext_Click);
             // 
@@ -284,7 +284,7 @@
             this.buttonNewsPrevious.Location = new System.Drawing.Point(12, 12);
             this.buttonNewsPrevious.Name = "buttonNewsPrevious";
             this.buttonNewsPrevious.Size = new System.Drawing.Size(80, 164);
-            this.buttonNewsPrevious.TabIndex = 14;
+            this.buttonNewsPrevious.TabIndex = 2;
             this.buttonNewsPrevious.UseVisualStyleBackColor = false;
             this.buttonNewsPrevious.Click += new System.EventHandler(this.buttonNewsPrevious_Click);
             // 

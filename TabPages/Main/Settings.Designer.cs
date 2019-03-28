@@ -54,7 +54,7 @@
             this.panelCategories.Location = new System.Drawing.Point(0, 0);
             this.panelCategories.Name = "panelCategories";
             this.panelCategories.Size = new System.Drawing.Size(170, 436);
-            this.panelCategories.TabIndex = 1;
+            this.panelCategories.TabIndex = 0;
             // 
             // horizontalLine1
             // 
@@ -62,7 +62,8 @@
             this.horizontalLine1.Location = new System.Drawing.Point(12, 364);
             this.horizontalLine1.Name = "horizontalLine1";
             this.horizontalLine1.Size = new System.Drawing.Size(146, 2);
-            this.horizontalLine1.TabIndex = 7;
+            this.horizontalLine1.TabIndex = 0;
+            this.horizontalLine1.TabStop = false;
             this.horizontalLine1.Text = "horizontalLine1";
             // 
             // buttonRestore
@@ -88,7 +89,7 @@
             this.buttonSave.Location = new System.Drawing.Point(12, 401);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(146, 23);
-            this.buttonSave.TabIndex = 5;
+            this.buttonSave.TabIndex = 7;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -102,7 +103,7 @@
             this.buttonAbout.Location = new System.Drawing.Point(12, 335);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(146, 23);
-            this.buttonAbout.TabIndex = 4;
+            this.buttonAbout.TabIndex = 5;
             this.buttonAbout.Text = "About";
             this.buttonAbout.UseVisualStyleBackColor = false;
             this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
@@ -116,7 +117,7 @@
             this.buttonSettingsExtensions.Location = new System.Drawing.Point(12, 99);
             this.buttonSettingsExtensions.Name = "buttonSettingsExtensions";
             this.buttonSettingsExtensions.Size = new System.Drawing.Size(146, 23);
-            this.buttonSettingsExtensions.TabIndex = 3;
+            this.buttonSettingsExtensions.TabIndex = 4;
             this.buttonSettingsExtensions.Text = "Add-Ons";
             this.buttonSettingsExtensions.UseVisualStyleBackColor = false;
             this.buttonSettingsExtensions.Click += new System.EventHandler(this.buttonSettingsExtensions_Click);
@@ -130,7 +131,7 @@
             this.buttonSettingsModules.Location = new System.Drawing.Point(12, 70);
             this.buttonSettingsModules.Name = "buttonSettingsModules";
             this.buttonSettingsModules.Size = new System.Drawing.Size(146, 23);
-            this.buttonSettingsModules.TabIndex = 2;
+            this.buttonSettingsModules.TabIndex = 3;
             this.buttonSettingsModules.Text = "Modules";
             this.buttonSettingsModules.UseVisualStyleBackColor = false;
             this.buttonSettingsModules.Click += new System.EventHandler(this.buttonSettingsModules_Click);
@@ -144,7 +145,7 @@
             this.buttonSettingsAccounts.Location = new System.Drawing.Point(12, 41);
             this.buttonSettingsAccounts.Name = "buttonSettingsAccounts";
             this.buttonSettingsAccounts.Size = new System.Drawing.Size(146, 23);
-            this.buttonSettingsAccounts.TabIndex = 1;
+            this.buttonSettingsAccounts.TabIndex = 2;
             this.buttonSettingsAccounts.Text = "Accounts";
             this.buttonSettingsAccounts.UseVisualStyleBackColor = false;
             this.buttonSettingsAccounts.Click += new System.EventHandler(this.buttonSettingsAccounts_Click);
@@ -158,7 +159,7 @@
             this.buttonSettingsGeneral.Location = new System.Drawing.Point(12, 12);
             this.buttonSettingsGeneral.Name = "buttonSettingsGeneral";
             this.buttonSettingsGeneral.Size = new System.Drawing.Size(146, 23);
-            this.buttonSettingsGeneral.TabIndex = 0;
+            this.buttonSettingsGeneral.TabIndex = 1;
             this.buttonSettingsGeneral.Text = "General";
             this.buttonSettingsGeneral.UseVisualStyleBackColor = false;
             this.buttonSettingsGeneral.Click += new System.EventHandler(this.buttonSettingsGeneral_Click);

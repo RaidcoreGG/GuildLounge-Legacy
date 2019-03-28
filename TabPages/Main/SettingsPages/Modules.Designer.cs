@@ -46,7 +46,7 @@
             this.label1.Location = new System.Drawing.Point(13, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
-            this.label1.TabIndex = 24;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Active Modules:";
             // 
             // label2
@@ -55,7 +55,7 @@
             this.label2.Location = new System.Drawing.Point(359, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
-            this.label2.TabIndex = 26;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Inactive Modules:";
             // 
             // listBoxActive
@@ -70,7 +70,7 @@
             this.listBoxActive.Location = new System.Drawing.Point(16, 28);
             this.listBoxActive.Name = "listBoxActive";
             this.listBoxActive.Size = new System.Drawing.Size(192, 194);
-            this.listBoxActive.TabIndex = 27;
+            this.listBoxActive.TabIndex = 1;
             this.listBoxActive.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBoxActive_DragDrop);
             this.listBoxActive.DragOver += new System.Windows.Forms.DragEventHandler(this.listBoxActive_DragOver);
             this.listBoxActive.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBoxActive_MouseDown);
@@ -86,7 +86,7 @@
             this.listBoxInactive.Location = new System.Drawing.Point(362, 28);
             this.listBoxInactive.Name = "listBoxInactive";
             this.listBoxInactive.Size = new System.Drawing.Size(192, 194);
-            this.listBoxInactive.TabIndex = 28;
+            this.listBoxInactive.TabIndex = 4;
             // 
             // label4
             // 
@@ -94,7 +94,7 @@
             this.label4.Location = new System.Drawing.Point(13, 275);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(348, 13);
-            this.label4.TabIndex = 31;
+            this.label4.TabIndex = 0;
             this.label4.Text = "If you have any ideas for more Modules, you can submit them to me over";
             // 
             // linkLabelGLDiscord
@@ -106,7 +106,7 @@
             this.linkLabelGLDiscord.Location = new System.Drawing.Point(359, 275);
             this.linkLabelGLDiscord.Name = "linkLabelGLDiscord";
             this.linkLabelGLDiscord.Size = new System.Drawing.Size(46, 13);
-            this.linkLabelGLDiscord.TabIndex = 32;
+            this.linkLabelGLDiscord.TabIndex = 5;
             this.linkLabelGLDiscord.TabStop = true;
             this.linkLabelGLDiscord.Text = "Discord.";
             this.linkLabelGLDiscord.VisitedLinkColor = System.Drawing.Color.OrangeRed;
@@ -118,7 +118,7 @@
             this.label5.Location = new System.Drawing.Point(13, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(342, 13);
-            this.label5.TabIndex = 33;
+            this.label5.TabIndex = 0;
             this.label5.Text = "If there\'s enough interest, they will soon be added with the next update!";
             // 
             // label3
@@ -128,7 +128,7 @@
             this.label3.Location = new System.Drawing.Point(13, 241);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(273, 13);
-            this.label3.TabIndex = 34;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Tip: You can change the order by dragging the modules.";
             // 
             // buttonMoveToInactive
@@ -140,7 +140,7 @@
             this.buttonMoveToInactive.Location = new System.Drawing.Point(273, 130);
             this.buttonMoveToInactive.Name = "buttonMoveToInactive";
             this.buttonMoveToInactive.Size = new System.Drawing.Size(24, 24);
-            this.buttonMoveToInactive.TabIndex = 30;
+            this.buttonMoveToInactive.TabIndex = 3;
             this.buttonMoveToInactive.UseVisualStyleBackColor = false;
             this.buttonMoveToInactive.Click += new System.EventHandler(this.buttonMoveToInactive_Click);
             // 
@@ -153,7 +153,7 @@
             this.buttonMoveToActive.Location = new System.Drawing.Point(273, 100);
             this.buttonMoveToActive.Name = "buttonMoveToActive";
             this.buttonMoveToActive.Size = new System.Drawing.Size(24, 24);
-            this.buttonMoveToActive.TabIndex = 29;
+            this.buttonMoveToActive.TabIndex = 2;
             this.buttonMoveToActive.UseVisualStyleBackColor = false;
             this.buttonMoveToActive.Click += new System.EventHandler(this.buttonMoveToActive_Click);
             // 
