@@ -17,7 +17,7 @@ namespace GuildLounge
 
         public Task UpdateExtensions(Extension[] extensions, bool checkForLastModified)
         {
-            Console.WriteLine("[ADDONS: INIT]");
+            Console.WriteLine("[EXT: INIT]");
             DateTime dt = DateTime.Now;
             bool d3d9 = false;
 
@@ -61,17 +61,17 @@ namespace GuildLounge
                         if (dtOnline > extensions[i].LastChecked)
                         {
                             _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, name));
-                            Console.WriteLine("[ADDON: OUTDATED]");
+                            Console.WriteLine("[EXT: OUTDATED]");
                         }
                         else
                         {
-                            Console.WriteLine("[ADDON: UP-TO-DATE]");
+                            Console.WriteLine("[EXT: UP-TO-DATE]");
                         }
                     }
                     else
                     {
                         _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, name));
-                        Console.WriteLine("[ADDON: NOT CHECKED]");
+                        Console.WriteLine("[EXT: NOT CHECKED]");
                     }
 
                     resp.Close();
@@ -79,13 +79,13 @@ namespace GuildLounge
                 else
                 {
                     _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, name));
-                    Console.WriteLine("[ADDON: DOWNLOADED]");
+                    Console.WriteLine("[EXT: DOWNLOADED]");
                 }
 
                 extensions[i].LastChecked = DateTime.Now;
             }
             StoredExtensions = extensions;
-            Console.WriteLine("[ADDONS: " + (DateTime.Now - dt).TotalSeconds + "]");
+            Console.WriteLine("[EXT: " + (DateTime.Now - dt).TotalSeconds + "]");
             return Task.FromResult(0);
         }
     }
