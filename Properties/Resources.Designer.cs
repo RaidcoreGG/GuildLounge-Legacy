@@ -263,9 +263,29 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap brand_hot_wide {
+            get {
+                object obj = ResourceManager.GetObject("brand_hot_wide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap brand_pof {
             get {
                 object obj = ResourceManager.GetObject("brand_pof", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap brand_pof_wide {
+            get {
+                object obj = ResourceManager.GetObject("brand_pof_wide", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

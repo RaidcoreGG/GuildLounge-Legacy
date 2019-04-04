@@ -603,6 +603,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Brand\brand_pof_wide.png" />
+    <None Include="Resources\Brand\brand_hot_wide.png" />
     <None Include="Resources\Help\DPSReportToken.png" />
     <None Include="Resources\UI\Navigation\ui_language.png" />
     <None Include="Resources\Misc\tut_accountswitching.png" />

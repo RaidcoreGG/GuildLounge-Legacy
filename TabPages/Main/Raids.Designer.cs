@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raids));
+            this.pictureBoxPoF = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHoT = new System.Windows.Forms.PictureBox();
+            this.groupBoxCounters = new GuildLounge.Controls.GroupBox();
+            this.pictureBoxLI = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLD = new System.Windows.Forms.PictureBox();
             this.labelTotalWeeklyLI = new System.Windows.Forms.Label();
             this.labelTotalWeeklyLD = new System.Windows.Forms.Label();
-            this.pictureBoxHoT = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPoF = new System.Windows.Forms.PictureBox();
             this.gL_GroupBox6 = new GuildLounge.Controls.GroupBox();
             this.labelW6 = new System.Windows.Forms.Label();
             this.pictureBoxConjuredAmalgamate = new GuildLounge.Controls.PictureBoxEncounter();
@@ -67,8 +70,11 @@
             this.pictureBoxGorseval = new GuildLounge.Controls.PictureBoxEncounter();
             this.pictureBoxSpiritWoods = new GuildLounge.Controls.PictureBoxEncounter();
             this.pictureBoxValeGuardian = new GuildLounge.Controls.PictureBoxEncounter();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).BeginInit();
+            this.groupBoxCounters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLD)).BeginInit();
             this.gL_GroupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConjuredAmalgamate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLargosTwins)).BeginInit();
@@ -99,45 +105,83 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValeGuardian)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelTotalWeeklyLI
+            // pictureBoxPoF
             // 
-            this.labelTotalWeeklyLI.AutoSize = true;
-            this.labelTotalWeeklyLI.Location = new System.Drawing.Point(77, 396);
-            this.labelTotalWeeklyLI.Name = "labelTotalWeeklyLI";
-            this.labelTotalWeeklyLI.Size = new System.Drawing.Size(135, 13);
-            this.labelTotalWeeklyLI.TabIndex = 0;
-            this.labelTotalWeeklyLI.Text = "0 / 15 LI earned this week.";
-            // 
-            // labelTotalWeeklyLD
-            // 
-            this.labelTotalWeeklyLD.AutoSize = true;
-            this.labelTotalWeeklyLD.Location = new System.Drawing.Point(447, 232);
-            this.labelTotalWeeklyLD.Name = "labelTotalWeeklyLD";
-            this.labelTotalWeeklyLD.Size = new System.Drawing.Size(134, 13);
-            this.labelTotalWeeklyLD.TabIndex = 0;
-            this.labelTotalWeeklyLD.Text = "0 / 7 LD earned this week.";
+            this.pictureBoxPoF.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPoF.BackgroundImage = global::GuildLounge.Properties.Resources.brand_pof_wide;
+            this.pictureBoxPoF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxPoF.Location = new System.Drawing.Point(444, 3);
+            this.pictureBoxPoF.Name = "pictureBoxPoF";
+            this.pictureBoxPoF.Size = new System.Drawing.Size(222, 97);
+            this.pictureBoxPoF.TabIndex = 61;
+            this.pictureBoxPoF.TabStop = false;
             // 
             // pictureBoxHoT
             // 
             this.pictureBoxHoT.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxHoT.BackgroundImage = global::GuildLounge.Properties.Resources.brand_hot;
+            this.pictureBoxHoT.BackgroundImage = global::GuildLounge.Properties.Resources.brand_hot_wide;
             this.pictureBoxHoT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxHoT.Location = new System.Drawing.Point(161, 12);
+            this.pictureBoxHoT.Location = new System.Drawing.Point(74, 3);
             this.pictureBoxHoT.Name = "pictureBoxHoT";
-            this.pictureBoxHoT.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxHoT.Size = new System.Drawing.Size(222, 97);
             this.pictureBoxHoT.TabIndex = 60;
             this.pictureBoxHoT.TabStop = false;
             // 
-            // pictureBoxPoF
+            // groupBoxCounters
             // 
-            this.pictureBoxPoF.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPoF.BackgroundImage = global::GuildLounge.Properties.Resources.brand_pof;
-            this.pictureBoxPoF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxPoF.Location = new System.Drawing.Point(531, 12);
-            this.pictureBoxPoF.Name = "pictureBoxPoF";
-            this.pictureBoxPoF.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxPoF.TabIndex = 61;
-            this.pictureBoxPoF.TabStop = false;
+            this.groupBoxCounters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.groupBoxCounters.BorderColor = System.Drawing.Color.Gray;
+            this.groupBoxCounters.BorderSize = 1;
+            this.groupBoxCounters.Controls.Add(this.pictureBoxLI);
+            this.groupBoxCounters.Controls.Add(this.pictureBoxLD);
+            this.groupBoxCounters.Controls.Add(this.labelTotalWeeklyLI);
+            this.groupBoxCounters.Controls.Add(this.labelTotalWeeklyLD);
+            this.groupBoxCounters.Location = new System.Drawing.Point(302, 20);
+            this.groupBoxCounters.Name = "groupBoxCounters";
+            this.groupBoxCounters.Size = new System.Drawing.Size(136, 58);
+            this.groupBoxCounters.TabIndex = 64;
+            this.groupBoxCounters.TabStop = false;
+            this.groupBoxCounters.Text = "groupBox1";
+            // 
+            // pictureBoxLI
+            // 
+            this.pictureBoxLI.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLI.BackgroundImage = global::GuildLounge.Properties.Resources.mat_li;
+            this.pictureBoxLI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxLI.Location = new System.Drawing.Point(6, 6);
+            this.pictureBoxLI.Name = "pictureBoxLI";
+            this.pictureBoxLI.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxLI.TabIndex = 62;
+            this.pictureBoxLI.TabStop = false;
+            // 
+            // pictureBoxLD
+            // 
+            this.pictureBoxLD.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLD.BackgroundImage = global::GuildLounge.Properties.Resources.mat_ld;
+            this.pictureBoxLD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxLD.Location = new System.Drawing.Point(6, 32);
+            this.pictureBoxLD.Name = "pictureBoxLD";
+            this.pictureBoxLD.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxLD.TabIndex = 63;
+            this.pictureBoxLD.TabStop = false;
+            // 
+            // labelTotalWeeklyLI
+            // 
+            this.labelTotalWeeklyLI.AutoSize = true;
+            this.labelTotalWeeklyLI.Location = new System.Drawing.Point(32, 9);
+            this.labelTotalWeeklyLI.Name = "labelTotalWeeklyLI";
+            this.labelTotalWeeklyLI.Size = new System.Drawing.Size(87, 13);
+            this.labelTotalWeeklyLI.TabIndex = 0;
+            this.labelTotalWeeklyLI.Text = "0 / 15 LI earned.";
+            // 
+            // labelTotalWeeklyLD
+            // 
+            this.labelTotalWeeklyLD.AutoSize = true;
+            this.labelTotalWeeklyLD.Location = new System.Drawing.Point(32, 35);
+            this.labelTotalWeeklyLD.Name = "labelTotalWeeklyLD";
+            this.labelTotalWeeklyLD.Size = new System.Drawing.Size(86, 13);
+            this.labelTotalWeeklyLD.TabIndex = 0;
+            this.labelTotalWeeklyLD.Text = "0 / 7 LD earned.";
             // 
             // gL_GroupBox6
             // 
@@ -148,7 +192,7 @@
             this.gL_GroupBox6.Controls.Add(this.pictureBoxConjuredAmalgamate);
             this.gL_GroupBox6.Controls.Add(this.pictureBoxLargosTwins);
             this.gL_GroupBox6.Controls.Add(this.pictureBoxQadim);
-            this.gL_GroupBox6.Location = new System.Drawing.Point(444, 148);
+            this.gL_GroupBox6.Location = new System.Drawing.Point(444, 185);
             this.gL_GroupBox6.Name = "gL_GroupBox6";
             this.gL_GroupBox6.Size = new System.Drawing.Size(222, 76);
             this.gL_GroupBox6.TabIndex = 0;
@@ -223,7 +267,7 @@
             this.gL_GroupBox5.Controls.Add(this.pictureBoxStatuesofGrenth);
             this.gL_GroupBox5.Controls.Add(this.pictureBoxRiverofSouls);
             this.gL_GroupBox5.Controls.Add(this.pictureBoxSoullessHorror);
-            this.gL_GroupBox5.Location = new System.Drawing.Point(444, 66);
+            this.gL_GroupBox5.Location = new System.Drawing.Point(444, 103);
             this.gL_GroupBox5.Name = "gL_GroupBox5";
             this.gL_GroupBox5.Size = new System.Drawing.Size(222, 76);
             this.gL_GroupBox5.TabIndex = 0;
@@ -312,7 +356,7 @@
             this.gL_GroupBox4.Controls.Add(this.pictureBoxMursaatOverseer);
             this.gL_GroupBox4.Controls.Add(this.pictureBoxSamarog);
             this.gL_GroupBox4.Controls.Add(this.pictureBoxDeimos);
-            this.gL_GroupBox4.Location = new System.Drawing.Point(74, 312);
+            this.gL_GroupBox4.Location = new System.Drawing.Point(74, 349);
             this.gL_GroupBox4.Name = "gL_GroupBox4";
             this.gL_GroupBox4.Size = new System.Drawing.Size(222, 76);
             this.gL_GroupBox4.TabIndex = 0;
@@ -403,7 +447,7 @@
             this.gL_GroupBox3.Controls.Add(this.pictureBoxTwistedCastle);
             this.gL_GroupBox3.Controls.Add(this.pictureBoxKeepConstruct);
             this.gL_GroupBox3.Controls.Add(this.pictureBoxEscort);
-            this.gL_GroupBox3.Location = new System.Drawing.Point(74, 230);
+            this.gL_GroupBox3.Location = new System.Drawing.Point(74, 267);
             this.gL_GroupBox3.Name = "gL_GroupBox3";
             this.gL_GroupBox3.Size = new System.Drawing.Size(222, 76);
             this.gL_GroupBox3.TabIndex = 0;
@@ -490,7 +534,7 @@
             this.gL_GroupBox2.Controls.Add(this.pictureBoxMatthias);
             this.gL_GroupBox2.Controls.Add(this.pictureBoxTrio);
             this.gL_GroupBox2.Controls.Add(this.pictureBoxSlothasor);
-            this.gL_GroupBox2.Location = new System.Drawing.Point(74, 148);
+            this.gL_GroupBox2.Location = new System.Drawing.Point(74, 185);
             this.gL_GroupBox2.Name = "gL_GroupBox2";
             this.gL_GroupBox2.Size = new System.Drawing.Size(222, 76);
             this.gL_GroupBox2.TabIndex = 0;
@@ -562,7 +606,7 @@
             this.gL_GroupBox1.Controls.Add(this.pictureBoxGorseval);
             this.gL_GroupBox1.Controls.Add(this.pictureBoxSpiritWoods);
             this.gL_GroupBox1.Controls.Add(this.pictureBoxValeGuardian);
-            this.gL_GroupBox1.Location = new System.Drawing.Point(74, 66);
+            this.gL_GroupBox1.Location = new System.Drawing.Point(74, 103);
             this.gL_GroupBox1.Name = "gL_GroupBox1";
             this.gL_GroupBox1.Size = new System.Drawing.Size(222, 76);
             this.gL_GroupBox1.TabIndex = 0;
@@ -644,6 +688,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.Controls.Add(this.groupBoxCounters);
             this.Controls.Add(this.pictureBoxPoF);
             this.Controls.Add(this.pictureBoxHoT);
             this.Controls.Add(this.gL_GroupBox6);
@@ -652,13 +697,15 @@
             this.Controls.Add(this.gL_GroupBox3);
             this.Controls.Add(this.gL_GroupBox2);
             this.Controls.Add(this.gL_GroupBox1);
-            this.Controls.Add(this.labelTotalWeeklyLD);
-            this.Controls.Add(this.labelTotalWeeklyLI);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Raids";
             this.Size = new System.Drawing.Size(740, 436);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).EndInit();
+            this.groupBoxCounters.ResumeLayout(false);
+            this.groupBoxCounters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLD)).EndInit();
             this.gL_GroupBox6.ResumeLayout(false);
             this.gL_GroupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConjuredAmalgamate)).EndInit();
@@ -694,7 +741,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSpiritWoods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValeGuardian)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -737,5 +783,8 @@
         private System.Windows.Forms.Label labelTotalWeeklyLD;
         private System.Windows.Forms.PictureBox pictureBoxHoT;
         private System.Windows.Forms.PictureBox pictureBoxPoF;
+        private System.Windows.Forms.PictureBox pictureBoxLI;
+        private System.Windows.Forms.PictureBox pictureBoxLD;
+        private Controls.GroupBox groupBoxCounters;
     }
 }
