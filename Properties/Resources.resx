@@ -331,4 +331,16 @@
   <data name="brand_pof_wide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Brand\brand_pof_wide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="boss_riverofsouls" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Raids\Bosses\W5_HallOfChains\boss_riverofsouls.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boss_spiritrun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Raids\Bosses\W1_SpiritVale\boss_spiritrun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boss_twistedcastle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Raids\Bosses\W3_StrongholdOfTheFaithful\boss_twistedcastle.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boss_conjuredamalgamate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Raids\Bosses\W6_MythwrightGambit\boss_conjuredamalgamate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

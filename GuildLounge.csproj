@@ -603,6 +603,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Raids\Bosses\W6_MythwrightGambit\boss_conjuredamalgamate.png" />
+    <None Include="Resources\Raids\Bosses\W3_StrongholdOfTheFaithful\boss_twistedcastle.jpg" />
+    <None Include="Resources\Raids\Bosses\W1_SpiritVale\boss_spiritrun.png" />
+    <None Include="Resources\Raids\Bosses\W5_HallOfChains\boss_riverofsouls.png" />
     <None Include="Resources\Brand\brand_pof_wide.png" />
     <None Include="Resources\Brand\brand_hot_wide.png" />
     <None Include="Resources\Help\DPSReportToken.png" />
