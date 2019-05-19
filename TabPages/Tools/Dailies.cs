@@ -17,13 +17,22 @@ namespace GuildLounge.TabPages.Tools
 
         private async void FetchDailies()
         {
-            GuildLounge.Dailies APIResponse = await _api.GetResponse<GuildLounge.Dailies>("achievements/daily");
-            Achievement[] resolvedDailies = await _api.GetResponse<Achievement[]>("achievements", "ids=" + GetAllIDs(APIResponse));
-            APIResponse = JoinDailies(APIResponse, resolvedDailies);
-            APIResponse.PvE = ReducePvE(APIResponse);
-            APIResponse.PvE = ShortenNamesPvE(APIResponse);
-            APIResponse.Fractals = ReduceFractals(APIResponse);
-            InitializeDailies(APIResponse);
+            try
+            {
+                GuildLounge.Dailies APIResponse = await _api.GetResponse<GuildLounge.Dailies>("achievements/daily");
+                Achievement[] resolvedDailies = await _api.GetResponse<Achievement[]>("achievements", "ids=" + GetAllIDs(APIResponse));
+                APIResponse = JoinDailies(APIResponse, resolvedDailies);
+                APIResponse.PvE = ReducePvE(APIResponse);
+                APIResponse.PvE = ShortenNamesPvE(APIResponse);
+                APIResponse.Fractals = ReduceFractals(APIResponse);
+                InitializeDailies(APIResponse);
+            }
+            catch (Exception exc)
+            {
+                labelInfo.Location = new Point(labelInfo.Location.X, 12);
+                labelInfo.Text = "An error occured while fetching the dailies. \n" +
+                    $"{exc.Message}";
+            }
         }
 
         private string GetAllIDs(GuildLounge.Dailies dailies)
