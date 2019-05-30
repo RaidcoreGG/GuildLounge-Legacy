@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace GuildLounge.TabPages.Tools
 {
@@ -41,10 +42,10 @@ namespace GuildLounge.TabPages.Tools
                 //--and lastly get those subfiles
                 foreach (string subLvl1 in Directory.GetDirectories(_logs))
                 {
-                    string[] subFiles = Directory.GetFiles(subLvl1);
+                    string[] subFiles = Directory.GetFiles(subLvl1, "*.*evtc*");
                     foreach (string subLvl2 in Directory.GetDirectories(subLvl1))
                     {
-                        string[] subLvl2Files = Directory.GetFiles(subLvl2);
+                        string[] subLvl2Files = Directory.GetFiles(subLvl2, "*.*evtc*");
                         string[] temp = new string[subFiles.Length + subLvl2Files.Length];
                         Array.Copy(subFiles, temp, subFiles.Length);
                         Array.Copy(subLvl2Files, 0, temp, subFiles.Length, subLvl2Files.Length);
@@ -52,7 +53,7 @@ namespace GuildLounge.TabPages.Tools
 
                         foreach (string subLvl3 in Directory.GetDirectories(subLvl2))
                         {
-                            string[] subLvl3Files = Directory.GetFiles(subLvl3);
+                            string[] subLvl3Files = Directory.GetFiles(subLvl3, "*.*evtc*");
                             temp = new string[subFiles.Length + subLvl3Files.Length];
                             Array.Copy(subFiles, temp, subFiles.Length);
                             Array.Copy(subLvl3Files, 0, temp, subFiles.Length, subLvl3Files.Length);
@@ -264,6 +265,9 @@ namespace GuildLounge.TabPages.Tools
 
                 string s = Path.Substring(Path.LastIndexOf("\\") + 1);
                 s = s.Remove(s.LastIndexOf("."));
+
+                if (!Regex.IsMatch(s, @"\d{8}-\d{6}"))
+                    return s;
 
                 string n = "";
                 n += s.Substring(0, 4) + ", "; //Year
