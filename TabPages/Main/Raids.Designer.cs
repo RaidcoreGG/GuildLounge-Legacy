@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raids));
+            this.pictureBoxPoF = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHoT = new System.Windows.Forms.PictureBox();
+            this.gL_GroupBox7 = new GuildLounge.Controls.GroupBox();
+            this.pictureBoxEncounter4 = new GuildLounge.Controls.PictureBoxEncounter();
+            this.labelW7 = new System.Windows.Forms.Label();
+            this.pictureBoxEncounter1 = new GuildLounge.Controls.PictureBoxEncounter();
+            this.pictureBoxEncounter2 = new GuildLounge.Controls.PictureBoxEncounter();
+            this.pictureBoxEncounter3 = new GuildLounge.Controls.PictureBoxEncounter();
             this.groupBoxCounters = new GuildLounge.Controls.GroupBox();
             this.pictureBoxLI = new System.Windows.Forms.PictureBox();
             this.pictureBoxLD = new System.Windows.Forms.PictureBox();
@@ -68,8 +76,13 @@
             this.pictureBoxGorseval = new GuildLounge.Controls.PictureBoxEncounter();
             this.pictureBoxSpiritWoods = new GuildLounge.Controls.PictureBoxEncounter();
             this.pictureBoxValeGuardian = new GuildLounge.Controls.PictureBoxEncounter();
-            this.pictureBoxPoF = new System.Windows.Forms.PictureBox();
-            this.pictureBoxHoT = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).BeginInit();
+            this.gL_GroupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEncounter4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEncounter1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEncounter2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEncounter3)).BeginInit();
             this.groupBoxCounters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLD)).BeginInit();
@@ -101,9 +114,120 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGorseval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSpiritWoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValeGuardian)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBoxPoF
+            // 
+            this.pictureBoxPoF.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPoF.BackgroundImage = global::GuildLounge.Properties.Resources.brand_pof_wide;
+            this.pictureBoxPoF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxPoF.Location = new System.Drawing.Point(444, 3);
+            this.pictureBoxPoF.Name = "pictureBoxPoF";
+            this.pictureBoxPoF.Size = new System.Drawing.Size(222, 97);
+            this.pictureBoxPoF.TabIndex = 61;
+            this.pictureBoxPoF.TabStop = false;
+            // 
+            // pictureBoxHoT
+            // 
+            this.pictureBoxHoT.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHoT.BackgroundImage = global::GuildLounge.Properties.Resources.brand_hot_wide;
+            this.pictureBoxHoT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxHoT.Location = new System.Drawing.Point(74, 3);
+            this.pictureBoxHoT.Name = "pictureBoxHoT";
+            this.pictureBoxHoT.Size = new System.Drawing.Size(222, 97);
+            this.pictureBoxHoT.TabIndex = 60;
+            this.pictureBoxHoT.TabStop = false;
+            // 
+            // gL_GroupBox7
+            // 
+            this.gL_GroupBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.gL_GroupBox7.BorderColor = System.Drawing.Color.Gray;
+            this.gL_GroupBox7.BorderSize = 1;
+            this.gL_GroupBox7.Controls.Add(this.pictureBoxEncounter4);
+            this.gL_GroupBox7.Controls.Add(this.labelW7);
+            this.gL_GroupBox7.Controls.Add(this.pictureBoxEncounter1);
+            this.gL_GroupBox7.Controls.Add(this.pictureBoxEncounter2);
+            this.gL_GroupBox7.Controls.Add(this.pictureBoxEncounter3);
+            this.gL_GroupBox7.Location = new System.Drawing.Point(444, 267);
+            this.gL_GroupBox7.Name = "gL_GroupBox7";
+            this.gL_GroupBox7.Size = new System.Drawing.Size(222, 76);
+            this.gL_GroupBox7.TabIndex = 65;
+            this.gL_GroupBox7.TabStop = false;
+            this.gL_GroupBox7.Text = "gL_GroupBox7";
+            // 
+            // pictureBoxEncounter4
+            // 
+            this.pictureBoxEncounter4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxEncounter4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxEncounter4.BackgroundImage")));
+            this.pictureBoxEncounter4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEncounter4.CM = true;
+            this.pictureBoxEncounter4.CMdone = false;
+            this.pictureBoxEncounter4.EncounterFinished = false;
+            this.pictureBoxEncounter4.EncounterName = "[[ENCOUNTER_NAME]]";
+            this.pictureBoxEncounter4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEncounter4.Image")));
+            this.pictureBoxEncounter4.Location = new System.Drawing.Point(168, 22);
+            this.pictureBoxEncounter4.Name = "pictureBoxEncounter4";
+            this.pictureBoxEncounter4.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxEncounter4.TabIndex = 38;
+            this.pictureBoxEncounter4.TabStop = false;
+            // 
+            // labelW7
+            // 
+            this.labelW7.AutoSize = true;
+            this.labelW7.BackColor = System.Drawing.Color.Transparent;
+            this.labelW7.Location = new System.Drawing.Point(6, 6);
+            this.labelW7.Name = "labelW7";
+            this.labelW7.Size = new System.Drawing.Size(86, 13);
+            this.labelW7.TabIndex = 0;
+            this.labelW7.Text = "Key of Ahdashim";
+            // 
+            // pictureBoxEncounter1
+            // 
+            this.pictureBoxEncounter1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxEncounter1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxEncounter1.BackgroundImage")));
+            this.pictureBoxEncounter1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEncounter1.CM = true;
+            this.pictureBoxEncounter1.CMdone = false;
+            this.pictureBoxEncounter1.EncounterFinished = false;
+            this.pictureBoxEncounter1.EncounterName = "[[ENCOUNTER_NAME]]";
+            this.pictureBoxEncounter1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEncounter1.Image")));
+            this.pictureBoxEncounter1.Location = new System.Drawing.Point(6, 22);
+            this.pictureBoxEncounter1.Name = "pictureBoxEncounter1";
+            this.pictureBoxEncounter1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxEncounter1.TabIndex = 35;
+            this.pictureBoxEncounter1.TabStop = false;
+            // 
+            // pictureBoxEncounter2
+            // 
+            this.pictureBoxEncounter2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxEncounter2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxEncounter2.BackgroundImage")));
+            this.pictureBoxEncounter2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEncounter2.CM = true;
+            this.pictureBoxEncounter2.CMdone = false;
+            this.pictureBoxEncounter2.EncounterFinished = false;
+            this.pictureBoxEncounter2.EncounterName = "[[ENCOUNTER_NAME]]";
+            this.pictureBoxEncounter2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEncounter2.Image")));
+            this.pictureBoxEncounter2.Location = new System.Drawing.Point(60, 22);
+            this.pictureBoxEncounter2.Name = "pictureBoxEncounter2";
+            this.pictureBoxEncounter2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxEncounter2.TabIndex = 36;
+            this.pictureBoxEncounter2.TabStop = false;
+            // 
+            // pictureBoxEncounter3
+            // 
+            this.pictureBoxEncounter3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxEncounter3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxEncounter3.BackgroundImage")));
+            this.pictureBoxEncounter3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxEncounter3.CM = true;
+            this.pictureBoxEncounter3.CMdone = false;
+            this.pictureBoxEncounter3.EncounterFinished = false;
+            this.pictureBoxEncounter3.EncounterName = "[[ENCOUNTER_NAME]]";
+            this.pictureBoxEncounter3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEncounter3.Image")));
+            this.pictureBoxEncounter3.Location = new System.Drawing.Point(114, 22);
+            this.pictureBoxEncounter3.Name = "pictureBoxEncounter3";
+            this.pictureBoxEncounter3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxEncounter3.TabIndex = 37;
+            this.pictureBoxEncounter3.TabStop = false;
             // 
             // groupBoxCounters
             // 
@@ -661,33 +785,12 @@
             this.pictureBoxValeGuardian.TabIndex = 14;
             this.pictureBoxValeGuardian.TabStop = false;
             // 
-            // pictureBoxPoF
-            // 
-            this.pictureBoxPoF.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPoF.BackgroundImage = global::GuildLounge.Properties.Resources.brand_pof_wide;
-            this.pictureBoxPoF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxPoF.Location = new System.Drawing.Point(444, 3);
-            this.pictureBoxPoF.Name = "pictureBoxPoF";
-            this.pictureBoxPoF.Size = new System.Drawing.Size(222, 97);
-            this.pictureBoxPoF.TabIndex = 61;
-            this.pictureBoxPoF.TabStop = false;
-            // 
-            // pictureBoxHoT
-            // 
-            this.pictureBoxHoT.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxHoT.BackgroundImage = global::GuildLounge.Properties.Resources.brand_hot_wide;
-            this.pictureBoxHoT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxHoT.Location = new System.Drawing.Point(74, 3);
-            this.pictureBoxHoT.Name = "pictureBoxHoT";
-            this.pictureBoxHoT.Size = new System.Drawing.Size(222, 97);
-            this.pictureBoxHoT.TabIndex = 60;
-            this.pictureBoxHoT.TabStop = false;
-            // 
             // Raids
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.Controls.Add(this.gL_GroupBox7);
             this.Controls.Add(this.groupBoxCounters);
             this.Controls.Add(this.pictureBoxPoF);
             this.Controls.Add(this.pictureBoxHoT);
@@ -700,6 +803,14 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Raids";
             this.Size = new System.Drawing.Size(740, 436);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).EndInit();
+            this.gL_GroupBox7.ResumeLayout(false);
+            this.gL_GroupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEncounter4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEncounter1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEncounter2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEncounter3)).EndInit();
             this.groupBoxCounters.ResumeLayout(false);
             this.groupBoxCounters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLI)).EndInit();
@@ -738,8 +849,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGorseval)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSpiritWoods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValeGuardian)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -786,5 +895,11 @@
         private System.Windows.Forms.PictureBox pictureBoxLI;
         private System.Windows.Forms.PictureBox pictureBoxLD;
         private Controls.GroupBox groupBoxCounters;
+        private Controls.GroupBox gL_GroupBox7;
+        private Controls.PictureBoxEncounter pictureBoxEncounter4;
+        private System.Windows.Forms.Label labelW7;
+        private Controls.PictureBoxEncounter pictureBoxEncounter1;
+        private Controls.PictureBoxEncounter pictureBoxEncounter2;
+        private Controls.PictureBoxEncounter pictureBoxEncounter3;
     }
 }
