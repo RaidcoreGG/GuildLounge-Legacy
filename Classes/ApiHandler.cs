@@ -20,9 +20,12 @@ namespace GuildLounge
         int[] legyArmorIds = { 80111, 80131, 80145, 80161, 80190, 80205, 80248, 80252, 80254, 80277, 80281, 80296, 80356, 80384, 80399, 80435, 80557, 80578 };
         int[] refArmorIds = { 80177, 80648, 80441, 80673, 80460, 80127, 80387, 80607, 80675, 80264, 80634, 80275, 80236, 80583, 80366, 80427, 80658, 80120 };
 
-        //Relevant ids: LD
+        //Relevant ids: LD, Gift of Compassion, Coalescence
         const int ldId = 88485;
-        
+        const int gocId = 91225;
+        const int coalescenceId = 91234;
+
+
         public async Task<T> GetResponse<T>(string endPoint, params string[] args)
         {
             Console.WriteLine("[API: FETCHING " + endPoint.ToUpper() + "]");
@@ -42,7 +45,7 @@ namespace GuildLounge
         {
             RaidCMs resp = new RaidCMs();
             //ID 247 = DUMMY ACHIEVEMENT, GLADIATOR IS BOUND TO EVERY ACCOUNT
-            Achievement[] achievements = await GetResponse<Achievement[]>("account/achievements", "access_token=" + accessToken, "ids=247,3019,3334,3287,3342,3292,3392,3993,4037,3979,4416,4429,4355");
+            Achievement[] achievements = await GetResponse<Achievement[]>("account/achievements", "access_token=" + accessToken, "ids=247,3019,3334,3287,3342,3292,3392,3993,4037,3979,4416,4429,4355,4803,4779,4800");
             
             foreach (Achievement a in achievements)
             {
@@ -78,6 +81,15 @@ namespace GuildLounge
                         break;
                     case 4355:
                         resp.Qadim = a.Done;
+                        break;
+                    case 4803:
+                        resp.Adina = a.Done;
+                        break;
+                    case 4779:
+                        resp.Sabir = a.Done;
+                        break;
+                    case 4800:
+                        resp.QadimThePeerless = a.Done;
                         break;
                 }
             }
@@ -233,6 +245,12 @@ namespace GuildLounge
                                     case ldId:
                                         m_oModuleData.OnHandLD += it.Count;
                                         break;
+                                    case gocId:
+                                        m_oModuleData.GiftOfCompassion += 150;
+                                        break;
+                                    case coalescenceId:
+                                        m_oModuleData.Coalescence += 150;
+                                        break;
                                     default:
                                         if (legyArmorIds.Contains(it.Id))
                                             m_oModuleData.LegendaryArmor += 50;
@@ -269,6 +287,12 @@ namespace GuildLounge
                             break;
                         case ldId:
                             m_oModuleData.OnHandLD += it.Count;
+                            break;
+                        case gocId:
+                            m_oModuleData.GiftOfCompassion += 150;
+                            break;
+                        case coalescenceId:
+                            m_oModuleData.Coalescence += 150;
                             break;
                         default:
                             if (legyArmorIds.Contains(it.Id))

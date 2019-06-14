@@ -21,9 +21,11 @@ namespace GuildLounge
 
         //LD
         public int OnHandLD { get; set; }
+        public int GiftOfCompassion { get; set; }
+        public int Coalescence { get; set; }
         public int TotalLegendaryDivinations
         {
-            get { return OnHandLD; }
+            get { return OnHandLD + GiftOfCompassion + Coalescence; }
         }
     }
 
@@ -52,16 +54,23 @@ namespace GuildLounge
     public class RaidCMs
     {
         public bool KeepConstruct { get; set; }
+
         public bool Cairn { get; set; }
         public bool MursaatOverseer { get; set; }
         public bool Samarog { get; set; }
         public bool Deimos { get; set; }
+
         public bool SoullessHorror { get; set; }
         public bool Statues { get; set; }
         public bool Dhuum { get; set; }
+
         public bool ConjuredAmalgamate { get; set; }
         public bool LargosTwins { get; set; }
         public bool Qadim { get; set; }
+
+        public bool Adina { get; set; }
+        public bool Sabir { get; set; }
+        public bool QadimThePeerless { get; set; }
     }
 
     //GUILDLOUNGE API

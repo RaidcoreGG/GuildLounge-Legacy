@@ -71,6 +71,12 @@ namespace GuildLounge.TabPages
             pictureBoxConjuredAmalgamate.EncounterFinished = APIResponse.Contains("conjured_amalgamate");
             pictureBoxLargosTwins.EncounterFinished = APIResponse.Contains("twin_largos");
             pictureBoxQadim.EncounterFinished = APIResponse.Contains("qadim");
+
+            //W7
+            pictureBoxGate.EncounterFinished = APIResponse.Contains("gate");
+            pictureBoxAdina.EncounterFinished = APIResponse.Contains("adina");
+            pictureBoxSabir.EncounterFinished = APIResponse.Contains("sabir");
+            pictureBoxQadimThePeerless.EncounterFinished = APIResponse.Contains("qadim_the_peerless");
         }
         
         private void UpdateLabels(string[] APIResponse)
@@ -92,7 +98,7 @@ namespace GuildLounge.TabPages
             //Count LD and set label text
             byte LD = 0;
             string[] PoF = {"soulless_horror", "river_of_souls", "statues_of_grenth", "voice_in_the_void",
-                            "conjured_amalgamate", "twin_largos", "qadim"};
+                            "conjured_amalgamate", "twin_largos", "qadim", "gate", "adina", "sabir", "qadim_the_peerless"};
             
             for (int i = 0; i < PoF.Length; i++)
             {
@@ -147,6 +153,12 @@ namespace GuildLounge.TabPages
                 pictureBoxConjuredAmalgamate.CMdone = APIResponse.ConjuredAmalgamate;
                 pictureBoxLargosTwins.CMdone = APIResponse.LargosTwins;
                 pictureBoxQadim.CMdone = APIResponse.Qadim;
+
+                //W7
+                pictureBoxAdina.EncounterFinished = APIResponse.Adina;
+                pictureBoxSabir.EncounterFinished = APIResponse.Sabir;
+                pictureBoxQadimThePeerless.EncounterFinished = APIResponse.QadimThePeerless;
+
             }
             catch (Exception exc)
             {
@@ -171,6 +183,11 @@ namespace GuildLounge.TabPages
                 pictureBoxConjuredAmalgamate.CMdone = false;
                 pictureBoxLargosTwins.CMdone = false;
                 pictureBoxQadim.CMdone = false;
+
+                //W7
+                pictureBoxAdina.EncounterFinished = false;
+                pictureBoxSabir.EncounterFinished = false;
+                pictureBoxQadimThePeerless.EncounterFinished = false;
             }
         }
     }
