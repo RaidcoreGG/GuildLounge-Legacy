@@ -165,29 +165,10 @@ namespace GuildLounge.TabPages
                 Console.WriteLine(exc.Message);
 
                 //Set each encounter CM to false if API fails
-                //W3
-                pictureBoxKeepConstruct.CMdone = false;
-
-                //W4
-                pictureBoxCairn.CMdone = false;
-                pictureBoxMursaatOverseer.CMdone = false;
-                pictureBoxSamarog.CMdone = false;
-                pictureBoxDeimos.CMdone = false;
-
-                //W5
-                pictureBoxSoullessHorror.CMdone = false;
-                pictureBoxStatuesofGrenth.CMdone = false;
-                pictureBoxDhuum.CMdone = false;
-
-                //W6
-                pictureBoxConjuredAmalgamate.CMdone = false;
-                pictureBoxLargosTwins.CMdone = false;
-                pictureBoxQadim.CMdone = false;
-
-                //W7
-                pictureBoxAdina.EncounterFinished = false;
-                pictureBoxSabir.EncounterFinished = false;
-                pictureBoxQadimThePeerless.EncounterFinished = false;
+                foreach (var pbe in Controls.OfType<GuildLounge.Controls.PictureBoxEncounter>())
+                {
+                    pbe.CMdone = false;
+                }
             }
         }
     }
