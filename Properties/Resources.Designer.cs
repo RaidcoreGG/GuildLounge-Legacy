@@ -123,6 +123,16 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boss_gate {
+            get {
+                object obj = ResourceManager.GetObject("boss_gate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap boss_gorseval {
             get {
                 object obj = ResourceManager.GetObject("boss_gorseval", resourceCulture);

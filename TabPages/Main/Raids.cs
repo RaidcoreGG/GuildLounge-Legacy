@@ -93,7 +93,7 @@ namespace GuildLounge.TabPages
                 if (APIResponse.Contains(HoT[i]))
                     LI++;
             }
-            labelTotalWeeklyLI.Text = LI + " / " + HoT.Length + " LI earned.";
+            labelTotalWeeklyLI.Text = LI + " / " + HoT.Length + " cleared.";
 
             //Count LD and set label text
             byte LD = 0;
@@ -105,7 +105,7 @@ namespace GuildLounge.TabPages
                 if (APIResponse.Contains(PoF[i]))
                     LD++;
             }
-            labelTotalWeeklyLD.Text = LD + " / " + PoF.Length + " LD earned.";
+            labelTotalWeeklyLD.Text = LD + " / " + PoF.Length + " cleared.";
             
             //Recolor labels if wing is completed
             foreach (var gb in Controls.OfType<GroupBox>())
@@ -155,9 +155,9 @@ namespace GuildLounge.TabPages
                 pictureBoxQadim.CMdone = APIResponse.Qadim;
 
                 //W7
-                pictureBoxAdina.EncounterFinished = APIResponse.Adina;
-                pictureBoxSabir.EncounterFinished = APIResponse.Sabir;
-                pictureBoxQadimThePeerless.EncounterFinished = APIResponse.QadimThePeerless;
+                pictureBoxAdina.CMdone = APIResponse.Adina;
+                pictureBoxSabir.CMdone = APIResponse.Sabir;
+                pictureBoxQadimThePeerless.CMdone = APIResponse.QadimThePeerless;
 
             }
             catch (Exception exc)
