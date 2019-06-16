@@ -13,11 +13,13 @@ namespace GuildLounge.TabPages.SettingsPages
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
         private static readonly ApiHandler _api = new ApiHandler();
         private static readonly WebClient _client = new WebClient();
+        public bool DPSReportTokenHidden = true;
 
         public General()
         {
             InitializeComponent();
 
+            textBoxDPSReportToken.UseSystemPasswordChar = DPSReportTokenHidden;
             labelBuildNumber.Text = "Build: " + Assembly.GetExecutingAssembly().GetName().Version.Build.ToString();
 
             InitializeLanguages();
@@ -127,6 +129,16 @@ namespace GuildLounge.TabPages.SettingsPages
             Popups.UserTokenHelp help = new Popups.UserTokenHelp();
             help.StartPosition = FormStartPosition.CenterParent;
             help.ShowDialog();
+        }
+
+        private void buttonToggleHideDPSReportToken_Click(object sender, EventArgs e)
+        {
+            DPSReportTokenHidden = !DPSReportTokenHidden;
+            textBoxDPSReportToken.UseSystemPasswordChar = DPSReportTokenHidden;
+            if (DPSReportTokenHidden)
+                buttonToggleHideDPSReportToken.BackgroundImage = Properties.Resources.ui_locked;
+            else
+                buttonToggleHideDPSReportToken.BackgroundImage = Properties.Resources.ui_unlocked;
         }
 
         private void textBoxDPSReportToken_TextChanged(object sender, EventArgs e)

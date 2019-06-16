@@ -603,6 +603,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_gate.png" />
     <None Include="Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_qadimthepeerless.png" />
     <None Include="Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_adina.png" />
     <None Include="Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_sabir.png" />
