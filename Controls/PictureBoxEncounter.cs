@@ -40,7 +40,7 @@ namespace GuildLounge.Controls
                     Image = Properties.Resources.overlay_cmdone;
                 else if (!m_bDoneCM && m_bHasCM)
                     Image = Properties.Resources.overlay_cm;
-                else if (!m_bHasCM)
+                else
                     Image = null;
             }
         }

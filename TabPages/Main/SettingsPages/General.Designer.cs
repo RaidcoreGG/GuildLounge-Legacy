@@ -30,6 +30,7 @@
         {
             this.labelBuildNumber = new System.Windows.Forms.Label();
             this.groupBox5 = new GuildLounge.Controls.GroupBox();
+            this.buttonToggleHideDPSReportToken = new GuildLounge.Controls.Button();
             this.linkLabelDPSReportTokenHelp = new System.Windows.Forms.LinkLabel();
             this.textBoxDPSReportToken = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -85,6 +86,7 @@
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.groupBox5.BorderColor = System.Drawing.Color.Gray;
             this.groupBox5.BorderSize = 1;
+            this.groupBox5.Controls.Add(this.buttonToggleHideDPSReportToken);
             this.groupBox5.Controls.Add(this.linkLabelDPSReportTokenHelp);
             this.groupBox5.Controls.Add(this.textBoxDPSReportToken);
             this.groupBox5.Controls.Add(this.label9);
@@ -94,6 +96,24 @@
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "gL_GroupBox5";
+            // 
+            // buttonToggleHideDPSReportToken
+            // 
+            this.buttonToggleHideDPSReportToken.BackColor = System.Drawing.Color.Transparent;
+            this.buttonToggleHideDPSReportToken.BackgroundImage = global::GuildLounge.Properties.Resources.ui_locked;
+            this.buttonToggleHideDPSReportToken.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonToggleHideDPSReportToken.FlatAppearance.BorderSize = 0;
+            this.buttonToggleHideDPSReportToken.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonToggleHideDPSReportToken.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonToggleHideDPSReportToken.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonToggleHideDPSReportToken.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonToggleHideDPSReportToken.ForeColor = System.Drawing.Color.Gray;
+            this.buttonToggleHideDPSReportToken.Location = new System.Drawing.Point(196, 22);
+            this.buttonToggleHideDPSReportToken.Name = "buttonToggleHideDPSReportToken";
+            this.buttonToggleHideDPSReportToken.Size = new System.Drawing.Size(20, 20);
+            this.buttonToggleHideDPSReportToken.TabIndex = 9;
+            this.buttonToggleHideDPSReportToken.UseVisualStyleBackColor = false;
+            this.buttonToggleHideDPSReportToken.Click += new System.EventHandler(this.buttonToggleHideDPSReportToken_Click);
             // 
             // linkLabelDPSReportTokenHelp
             // 
@@ -116,8 +136,9 @@
             this.textBoxDPSReportToken.ForeColor = System.Drawing.Color.White;
             this.textBoxDPSReportToken.Location = new System.Drawing.Point(6, 22);
             this.textBoxDPSReportToken.Name = "textBoxDPSReportToken";
-            this.textBoxDPSReportToken.Size = new System.Drawing.Size(210, 20);
+            this.textBoxDPSReportToken.Size = new System.Drawing.Size(184, 20);
             this.textBoxDPSReportToken.TabIndex = 1;
+            this.textBoxDPSReportToken.UseSystemPasswordChar = true;
             this.textBoxDPSReportToken.TextChanged += new System.EventHandler(this.textBoxDPSReportToken_TextChanged);
             // 
             // label9
@@ -554,5 +575,6 @@
         private System.Windows.Forms.TextBox textBoxDPSReportToken;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.LinkLabel linkLabelDPSReportTokenHelp;
+        private Controls.Button buttonToggleHideDPSReportToken;
     }
 }

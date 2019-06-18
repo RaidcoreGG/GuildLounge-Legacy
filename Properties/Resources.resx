@@ -343,4 +343,16 @@
   <data name="boss_conjuredamalgamate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Raids\Bosses\W6_MythwrightGambit\boss_conjuredamalgamate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="boss_adina" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_adina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boss_qadimthepeerless" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_qadimthepeerless.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boss_sabir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_sabir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boss_gate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_gate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

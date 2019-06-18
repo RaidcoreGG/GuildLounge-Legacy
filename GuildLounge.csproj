@@ -603,6 +603,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_gate.png" />
+    <None Include="Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_qadimthepeerless.png" />
+    <None Include="Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_adina.png" />
+    <None Include="Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_sabir.png" />
     <None Include="Resources\Raids\Bosses\W6_MythwrightGambit\boss_conjuredamalgamate.png" />
     <None Include="Resources\Raids\Bosses\W3_StrongholdOfTheFaithful\boss_twistedcastle.jpg" />
     <None Include="Resources\Raids\Bosses\W1_SpiritVale\boss_spiritrun.png" />

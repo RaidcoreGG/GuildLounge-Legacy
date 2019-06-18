@@ -71,6 +71,12 @@ namespace GuildLounge.TabPages
             pictureBoxConjuredAmalgamate.EncounterFinished = APIResponse.Contains("conjured_amalgamate");
             pictureBoxLargosTwins.EncounterFinished = APIResponse.Contains("twin_largos");
             pictureBoxQadim.EncounterFinished = APIResponse.Contains("qadim");
+
+            //W7
+            pictureBoxGate.EncounterFinished = APIResponse.Contains("gate");
+            pictureBoxAdina.EncounterFinished = APIResponse.Contains("adina");
+            pictureBoxSabir.EncounterFinished = APIResponse.Contains("sabir");
+            pictureBoxQadimThePeerless.EncounterFinished = APIResponse.Contains("qadim_the_peerless");
         }
         
         private void UpdateLabels(string[] APIResponse)
@@ -87,19 +93,19 @@ namespace GuildLounge.TabPages
                 if (APIResponse.Contains(HoT[i]))
                     LI++;
             }
-            labelTotalWeeklyLI.Text = LI + " / " + HoT.Length + " LI earned.";
+            labelTotalWeeklyLI.Text = LI + " / " + HoT.Length + " cleared.";
 
             //Count LD and set label text
             byte LD = 0;
             string[] PoF = {"soulless_horror", "river_of_souls", "statues_of_grenth", "voice_in_the_void",
-                            "conjured_amalgamate", "twin_largos", "qadim"};
+                            "conjured_amalgamate", "twin_largos", "qadim", "gate", "adina", "sabir", "qadim_the_peerless"};
             
             for (int i = 0; i < PoF.Length; i++)
             {
                 if (APIResponse.Contains(PoF[i]))
                     LD++;
             }
-            labelTotalWeeklyLD.Text = LD + " / " + PoF.Length + " LD earned.";
+            labelTotalWeeklyLD.Text = LD + " / " + PoF.Length + " cleared.";
             
             //Recolor labels if wing is completed
             foreach (var gb in Controls.OfType<GroupBox>())
@@ -147,30 +153,22 @@ namespace GuildLounge.TabPages
                 pictureBoxConjuredAmalgamate.CMdone = APIResponse.ConjuredAmalgamate;
                 pictureBoxLargosTwins.CMdone = APIResponse.LargosTwins;
                 pictureBoxQadim.CMdone = APIResponse.Qadim;
+
+                //W7
+                pictureBoxAdina.CMdone = APIResponse.Adina;
+                pictureBoxSabir.CMdone = APIResponse.Sabir;
+                pictureBoxQadimThePeerless.CMdone = APIResponse.QadimThePeerless;
+
             }
             catch (Exception exc)
             {
                 Console.WriteLine(exc.Message);
 
                 //Set each encounter CM to false if API fails
-                //W3
-                pictureBoxKeepConstruct.CMdone = false;
-
-                //W4
-                pictureBoxCairn.CMdone = false;
-                pictureBoxMursaatOverseer.CMdone = false;
-                pictureBoxSamarog.CMdone = false;
-                pictureBoxDeimos.CMdone = false;
-
-                //W5
-                pictureBoxSoullessHorror.CMdone = false;
-                pictureBoxStatuesofGrenth.CMdone = false;
-                pictureBoxDhuum.CMdone = false;
-
-                //W6
-                pictureBoxConjuredAmalgamate.CMdone = false;
-                pictureBoxLargosTwins.CMdone = false;
-                pictureBoxQadim.CMdone = false;
+                foreach (var pbe in Controls.OfType<GuildLounge.Controls.PictureBoxEncounter>())
+                {
+                    pbe.CMdone = false;
+                }
             }
         }
     }

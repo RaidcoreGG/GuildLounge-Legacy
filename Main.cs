@@ -377,6 +377,10 @@ namespace GuildLounge
             string detailedInfo = "";
             if (APIResponse.OnHandLD > 0)
                 detailedInfo += "On hand: " + APIResponse.OnHandLD + "\n";
+            if (APIResponse.GiftOfCompassion > 0)
+                detailedInfo += "Gift of Compassion: " + APIResponse.GiftOfCompassion + "\n";
+            if (APIResponse.Coalescence > 0)
+                detailedInfo += "Coalescence: " + APIResponse.Coalescence + "\n";
             return detailedInfo;
         }
         #endregion

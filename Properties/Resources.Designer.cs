@@ -63,6 +63,16 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boss_adina {
+            get {
+                object obj = ResourceManager.GetObject("boss_adina", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap boss_cairn {
             get {
                 object obj = ResourceManager.GetObject("boss_cairn", resourceCulture);
@@ -106,6 +116,16 @@ namespace GuildLounge.Properties {
         internal static System.Drawing.Bitmap boss_escort {
             get {
                 object obj = ResourceManager.GetObject("boss_escort", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boss_gate {
+            get {
+                object obj = ResourceManager.GetObject("boss_gate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +193,16 @@ namespace GuildLounge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boss_qadimthepeerless {
+            get {
+                object obj = ResourceManager.GetObject("boss_qadimthepeerless", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap boss_riverofsouls {
             get {
                 object obj = ResourceManager.GetObject("boss_riverofsouls", resourceCulture);
@@ -186,6 +216,16 @@ namespace GuildLounge.Properties {
         internal static System.Drawing.Bitmap boss_sabetha {
             get {
                 object obj = ResourceManager.GetObject("boss_sabetha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boss_sabir {
+            get {
+                object obj = ResourceManager.GetObject("boss_sabir", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

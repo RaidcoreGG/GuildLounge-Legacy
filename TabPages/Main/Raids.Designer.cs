@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raids));
+            this.pictureBoxPoF = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHoT = new System.Windows.Forms.PictureBox();
+            this.gL_GroupBox7 = new GuildLounge.Controls.GroupBox();
+            this.pictureBoxQadimThePeerless = new GuildLounge.Controls.PictureBoxEncounter();
+            this.labelW7 = new System.Windows.Forms.Label();
+            this.pictureBoxGate = new GuildLounge.Controls.PictureBoxEncounter();
+            this.pictureBoxAdina = new GuildLounge.Controls.PictureBoxEncounter();
+            this.pictureBoxSabir = new GuildLounge.Controls.PictureBoxEncounter();
             this.groupBoxCounters = new GuildLounge.Controls.GroupBox();
             this.pictureBoxLI = new System.Windows.Forms.PictureBox();
             this.pictureBoxLD = new System.Windows.Forms.PictureBox();
@@ -68,8 +76,13 @@
             this.pictureBoxGorseval = new GuildLounge.Controls.PictureBoxEncounter();
             this.pictureBoxSpiritWoods = new GuildLounge.Controls.PictureBoxEncounter();
             this.pictureBoxValeGuardian = new GuildLounge.Controls.PictureBoxEncounter();
-            this.pictureBoxPoF = new System.Windows.Forms.PictureBox();
-            this.pictureBoxHoT = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).BeginInit();
+            this.gL_GroupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQadimThePeerless)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSabir)).BeginInit();
             this.groupBoxCounters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLD)).BeginInit();
@@ -101,9 +114,119 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGorseval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSpiritWoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValeGuardian)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBoxPoF
+            // 
+            this.pictureBoxPoF.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPoF.BackgroundImage = global::GuildLounge.Properties.Resources.brand_pof_wide;
+            this.pictureBoxPoF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxPoF.Location = new System.Drawing.Point(444, 3);
+            this.pictureBoxPoF.Name = "pictureBoxPoF";
+            this.pictureBoxPoF.Size = new System.Drawing.Size(222, 97);
+            this.pictureBoxPoF.TabIndex = 61;
+            this.pictureBoxPoF.TabStop = false;
+            // 
+            // pictureBoxHoT
+            // 
+            this.pictureBoxHoT.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHoT.BackgroundImage = global::GuildLounge.Properties.Resources.brand_hot_wide;
+            this.pictureBoxHoT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxHoT.Location = new System.Drawing.Point(74, 3);
+            this.pictureBoxHoT.Name = "pictureBoxHoT";
+            this.pictureBoxHoT.Size = new System.Drawing.Size(222, 97);
+            this.pictureBoxHoT.TabIndex = 60;
+            this.pictureBoxHoT.TabStop = false;
+            // 
+            // gL_GroupBox7
+            // 
+            this.gL_GroupBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.gL_GroupBox7.BorderColor = System.Drawing.Color.Gray;
+            this.gL_GroupBox7.BorderSize = 1;
+            this.gL_GroupBox7.Controls.Add(this.pictureBoxQadimThePeerless);
+            this.gL_GroupBox7.Controls.Add(this.labelW7);
+            this.gL_GroupBox7.Controls.Add(this.pictureBoxGate);
+            this.gL_GroupBox7.Controls.Add(this.pictureBoxAdina);
+            this.gL_GroupBox7.Controls.Add(this.pictureBoxSabir);
+            this.gL_GroupBox7.Location = new System.Drawing.Point(444, 267);
+            this.gL_GroupBox7.Name = "gL_GroupBox7";
+            this.gL_GroupBox7.Size = new System.Drawing.Size(222, 76);
+            this.gL_GroupBox7.TabIndex = 65;
+            this.gL_GroupBox7.TabStop = false;
+            this.gL_GroupBox7.Text = "gL_GroupBox7";
+            // 
+            // pictureBoxQadimThePeerless
+            // 
+            this.pictureBoxQadimThePeerless.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxQadimThePeerless.BackgroundImage = global::GuildLounge.Properties.Resources.boss_qadimthepeerless;
+            this.pictureBoxQadimThePeerless.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxQadimThePeerless.CM = true;
+            this.pictureBoxQadimThePeerless.CMdone = false;
+            this.pictureBoxQadimThePeerless.EncounterFinished = false;
+            this.pictureBoxQadimThePeerless.EncounterName = "Qadim The Peerless";
+            this.pictureBoxQadimThePeerless.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxQadimThePeerless.Image")));
+            this.pictureBoxQadimThePeerless.Location = new System.Drawing.Point(168, 22);
+            this.pictureBoxQadimThePeerless.Name = "pictureBoxQadimThePeerless";
+            this.pictureBoxQadimThePeerless.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxQadimThePeerless.TabIndex = 38;
+            this.pictureBoxQadimThePeerless.TabStop = false;
+            // 
+            // labelW7
+            // 
+            this.labelW7.AutoSize = true;
+            this.labelW7.BackColor = System.Drawing.Color.Transparent;
+            this.labelW7.Location = new System.Drawing.Point(6, 6);
+            this.labelW7.Name = "labelW7";
+            this.labelW7.Size = new System.Drawing.Size(108, 13);
+            this.labelW7.TabIndex = 0;
+            this.labelW7.Text = "The Key of Ahdashim";
+            // 
+            // pictureBoxGate
+            // 
+            this.pictureBoxGate.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxGate.BackgroundImage = global::GuildLounge.Properties.Resources.boss_gate;
+            this.pictureBoxGate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxGate.CM = false;
+            this.pictureBoxGate.CMdone = false;
+            this.pictureBoxGate.EncounterFinished = false;
+            this.pictureBoxGate.EncounterName = "Gate of Ahdashim";
+            this.pictureBoxGate.Location = new System.Drawing.Point(6, 22);
+            this.pictureBoxGate.Name = "pictureBoxGate";
+            this.pictureBoxGate.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxGate.TabIndex = 35;
+            this.pictureBoxGate.TabStop = false;
+            // 
+            // pictureBoxAdina
+            // 
+            this.pictureBoxAdina.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxAdina.BackgroundImage = global::GuildLounge.Properties.Resources.boss_adina;
+            this.pictureBoxAdina.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxAdina.CM = true;
+            this.pictureBoxAdina.CMdone = false;
+            this.pictureBoxAdina.EncounterFinished = false;
+            this.pictureBoxAdina.EncounterName = "Adina";
+            this.pictureBoxAdina.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAdina.Image")));
+            this.pictureBoxAdina.Location = new System.Drawing.Point(60, 22);
+            this.pictureBoxAdina.Name = "pictureBoxAdina";
+            this.pictureBoxAdina.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxAdina.TabIndex = 36;
+            this.pictureBoxAdina.TabStop = false;
+            // 
+            // pictureBoxSabir
+            // 
+            this.pictureBoxSabir.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxSabir.BackgroundImage = global::GuildLounge.Properties.Resources.boss_sabir;
+            this.pictureBoxSabir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxSabir.CM = true;
+            this.pictureBoxSabir.CMdone = false;
+            this.pictureBoxSabir.EncounterFinished = false;
+            this.pictureBoxSabir.EncounterName = "Sabir";
+            this.pictureBoxSabir.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSabir.Image")));
+            this.pictureBoxSabir.Location = new System.Drawing.Point(114, 22);
+            this.pictureBoxSabir.Name = "pictureBoxSabir";
+            this.pictureBoxSabir.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxSabir.TabIndex = 37;
+            this.pictureBoxSabir.TabStop = false;
             // 
             // groupBoxCounters
             // 
@@ -148,18 +271,18 @@
             this.labelTotalWeeklyLI.AutoSize = true;
             this.labelTotalWeeklyLI.Location = new System.Drawing.Point(32, 9);
             this.labelTotalWeeklyLI.Name = "labelTotalWeeklyLI";
-            this.labelTotalWeeklyLI.Size = new System.Drawing.Size(87, 13);
+            this.labelTotalWeeklyLI.Size = new System.Drawing.Size(72, 13);
             this.labelTotalWeeklyLI.TabIndex = 0;
-            this.labelTotalWeeklyLI.Text = "0 / 15 LI earned.";
+            this.labelTotalWeeklyLI.Text = "0 / X cleared.";
             // 
             // labelTotalWeeklyLD
             // 
             this.labelTotalWeeklyLD.AutoSize = true;
             this.labelTotalWeeklyLD.Location = new System.Drawing.Point(32, 35);
             this.labelTotalWeeklyLD.Name = "labelTotalWeeklyLD";
-            this.labelTotalWeeklyLD.Size = new System.Drawing.Size(86, 13);
+            this.labelTotalWeeklyLD.Size = new System.Drawing.Size(72, 13);
             this.labelTotalWeeklyLD.TabIndex = 0;
-            this.labelTotalWeeklyLD.Text = "0 / 7 LD earned.";
+            this.labelTotalWeeklyLD.Text = "0 / X cleared.";
             // 
             // gL_GroupBox6
             // 
@@ -661,33 +784,12 @@
             this.pictureBoxValeGuardian.TabIndex = 14;
             this.pictureBoxValeGuardian.TabStop = false;
             // 
-            // pictureBoxPoF
-            // 
-            this.pictureBoxPoF.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPoF.BackgroundImage = global::GuildLounge.Properties.Resources.brand_pof_wide;
-            this.pictureBoxPoF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxPoF.Location = new System.Drawing.Point(444, 3);
-            this.pictureBoxPoF.Name = "pictureBoxPoF";
-            this.pictureBoxPoF.Size = new System.Drawing.Size(222, 97);
-            this.pictureBoxPoF.TabIndex = 61;
-            this.pictureBoxPoF.TabStop = false;
-            // 
-            // pictureBoxHoT
-            // 
-            this.pictureBoxHoT.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxHoT.BackgroundImage = global::GuildLounge.Properties.Resources.brand_hot_wide;
-            this.pictureBoxHoT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxHoT.Location = new System.Drawing.Point(74, 3);
-            this.pictureBoxHoT.Name = "pictureBoxHoT";
-            this.pictureBoxHoT.Size = new System.Drawing.Size(222, 97);
-            this.pictureBoxHoT.TabIndex = 60;
-            this.pictureBoxHoT.TabStop = false;
-            // 
             // Raids
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.Controls.Add(this.gL_GroupBox7);
             this.Controls.Add(this.groupBoxCounters);
             this.Controls.Add(this.pictureBoxPoF);
             this.Controls.Add(this.pictureBoxHoT);
@@ -700,6 +802,14 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Raids";
             this.Size = new System.Drawing.Size(740, 436);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).EndInit();
+            this.gL_GroupBox7.ResumeLayout(false);
+            this.gL_GroupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQadimThePeerless)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSabir)).EndInit();
             this.groupBoxCounters.ResumeLayout(false);
             this.groupBoxCounters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLI)).EndInit();
@@ -738,8 +848,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGorseval)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSpiritWoods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValeGuardian)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoT)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -786,5 +894,11 @@
         private System.Windows.Forms.PictureBox pictureBoxLI;
         private System.Windows.Forms.PictureBox pictureBoxLD;
         private Controls.GroupBox groupBoxCounters;
+        private Controls.GroupBox gL_GroupBox7;
+        private Controls.PictureBoxEncounter pictureBoxQadimThePeerless;
+        private System.Windows.Forms.Label labelW7;
+        private Controls.PictureBoxEncounter pictureBoxGate;
+        private Controls.PictureBoxEncounter pictureBoxAdina;
+        private Controls.PictureBoxEncounter pictureBoxSabir;
     }
 }
