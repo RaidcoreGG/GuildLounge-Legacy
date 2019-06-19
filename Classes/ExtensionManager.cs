@@ -7,61 +7,59 @@ using System.Threading.Tasks;
 
 namespace GuildLounge
 {
-    public class ExtensionUpdater
+    public class ExtensionManager
     {
-        private static readonly WebClient _client = new WebClient();
-        private static string _extDir = Path.Combine(Properties.Settings.Default.GameDir, "bin64");
-        public Extension[] StoredExtensions { get; set; }
+        internal string _extDir = Path.Combine(Properties.Settings.Default.GameDir, "bin64");
+        internal WebClient _client = new WebClient();
+        public string Status { get; set; }
+        public bool Working { get; set; }
 
-        public ExtensionUpdater() { }
+        public ExtensionManager() { }
 
         public Task UpdateExtensions(Extension[] extensions, bool checkForLastModified)
         {
-            Console.WriteLine("[EXT: INIT]");
-            DateTime dt = DateTime.Now;
-            bool d3d9 = false;
+            Working = true;
 
-            int j = 1;
+            bool d3d9 = false;
+            int amtUpdated = 0;
+            int chainload = 1;
+
             for (int i = 0; i < extensions.Length; i++)
             {
-                //Renaming duplicate d3d9.DLLs
+                Status = $"{i + 1}/{extensions.Length} done.";
+                
                 string name = extensions[i].Link;
-                if (d3d9 && name.EndsWith("d3d9.dll"))
+                name = name.Substring(name.LastIndexOf("/") + 1);
+
+                //If there's already an extension called "d3d9.dll" we give it a substitutional name
+                if (d3d9 && (name == "d3d9.dll"))
                 {
-                    if(extensions[i].Name != null || extensions[i].Name != "")
-                    {
-                        //Substitutional name
-                        name = name.Substring(name.LastIndexOf("/") + 1);
+                    //Either use the provided alternative name or a generic suffix
+                    if (!String.IsNullOrEmpty(extensions[i].Name))
                         name = name.Insert(name.IndexOf("."), "_" + extensions[i].Name);
-                    }
                     else
-                    {
-                        //"_chainload" suffix
-                        name = name.Substring(name.LastIndexOf("/") + 1);
-                        name = name.Insert(name.IndexOf("."), "_chainload" + j.ToString());
-                        j++;
-                    }
+                        name = name.Insert(name.IndexOf("."), "_chainload" + chainload++);
                 }
                 else
                 {
-                    name = name.Substring(name.LastIndexOf("/") + 1);
-                    if(name == "d3d9.dll")
+                    if (name == "d3d9.dll")
                         d3d9 = true;
                 }
-                
+
                 if (checkForLastModified)
                 {
                     HttpWebRequest req = (HttpWebRequest)WebRequest.Create(new Uri(extensions[i].Link));
                     WebResponse resp = (HttpWebResponse)req.GetResponse();
-                    
+
                     if (resp.Headers.AllKeys.Contains("Last-Modified")
                         && File.Exists(Path.Combine(_extDir, name)))
                     {
                         DateTime dtOnline = Convert.ToDateTime(resp.Headers.Get("Last-Modified"));
-                        if (dtOnline > extensions[i].LastChecked)
+                        if (dtOnline > File.GetLastWriteTime(Path.Combine(_extDir, name)))
                         {
                             _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, name));
                             Console.WriteLine("[EXT: OUTDATED]");
+                            amtUpdated++;
                         }
                         else
                         {
@@ -72,6 +70,7 @@ namespace GuildLounge
                     {
                         _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, name));
                         Console.WriteLine("[EXT: NOT CHECKED]");
+                        amtUpdated++;
                     }
 
                     resp.Close();
@@ -80,12 +79,16 @@ namespace GuildLounge
                 {
                     _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, name));
                     Console.WriteLine("[EXT: DOWNLOADED]");
+                    amtUpdated++;
                 }
-
-                extensions[i].LastChecked = DateTime.Now;
             }
-            StoredExtensions = extensions;
-            Console.WriteLine("[EXT: " + (DateTime.Now - dt).TotalSeconds + "]");
+
+            if (amtUpdated > 0)
+                Status = $"{amtUpdated} updated.";
+            else
+                Status = $"Up-To-Date.";
+            
+            Working = false;
             return Task.FromResult(0);
         }
     }
@@ -95,7 +98,6 @@ namespace GuildLounge
         private string m_sLink { get; set; }
 
         public string Name { get; set; }
-        public DateTime LastChecked { get; set; }
         public string Link
         {
             get

@@ -9,7 +9,7 @@ namespace GuildLounge.TabPages.SettingsPages
 {
     public partial class Extensions : UserControl
     {
-        private static ExtensionUpdater _updater;
+        private static ExtensionManager _updater;
         private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
         private Extension[] StoredExtensions { get; set; }
 
@@ -52,10 +52,8 @@ namespace GuildLounge.TabPages.SettingsPages
             //Create a new task so program execution won't be delayed
             Task.Run(async () =>
             {
-                _updater = new ExtensionUpdater();
+                _updater = new ExtensionManager();
                 await _updater.UpdateExtensions(addOns, checkForLastModified);
-                StoredExtensions = _updater.StoredExtensions;
-                SaveExtensions();
             });
         }
 
