@@ -18,6 +18,7 @@ namespace GuildLounge
 
         public Task UpdateExtensions(Extension[] extensions, bool checkForLastModified)
         {
+            DateTime dt = DateTime.Now;
             Working = true;
 
             bool d3d9 = false;
@@ -89,6 +90,7 @@ namespace GuildLounge
                 Status = $"Up-To-Date.";
             
             Working = false;
+            Console.WriteLine("[EXT: " + (DateTime.Now - dt).TotalSeconds + "]");
             return Task.FromResult(0);
         }
     }
