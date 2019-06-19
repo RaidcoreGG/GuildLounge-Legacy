@@ -21,8 +21,7 @@ namespace GuildLounge.TabPages.SettingsPages
 
             textBoxDPSReportToken.UseSystemPasswordChar = DPSReportTokenHidden;
             labelBuildNumber.Text = "Build: " + Assembly.GetExecutingAssembly().GetName().Version.Build.ToString();
-
-            InitializeLanguages();
+            
             InitializeGeneralSettings();
             if (checkBoxAutoUpdate.Checked)
                 CheckForUpdate();
@@ -49,20 +48,6 @@ namespace GuildLounge.TabPages.SettingsPages
 
             checkBoxAutoUpdate.Checked = Properties.Settings.Default.CheckForUpdates;
             textBoxDPSReportToken.Text = Properties.Settings.Default.DPSReportToken;
-        }
-
-        public void InitializeLanguages()
-        {
-            comboBoxLanguage.Items.AddRange(new string[] {
-                "English",
-                "Deutsch",
-                "Français",
-                "Polski",
-                "Español",
-                "Русский",
-                "עברית"
-            });
-            comboBoxLanguage.SelectedItem = comboBoxLanguage.Items[0];
         }
         #endregion
 
@@ -226,14 +211,5 @@ namespace GuildLounge.TabPages.SettingsPages
             }
         }
         #endregion
-        
-        //SORT THIS
-        //ADD FUNCTIONALITY
-        //ADD REQUIRE RESTART TO THEMES
-        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Parent != null)
-                ((Settings)Parent).SettingsChanged(true);
-        }
     }
 }
