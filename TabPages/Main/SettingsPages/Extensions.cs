@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace GuildLounge.TabPages.SettingsPages
 {
     public partial class Extensions : UserControl
     {
-        private static ExtensionManager _updater = new ExtensionManager();
-        private static string _appdata = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
+        private string _AppData = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GuildLounge");
         private Extension[] StoredExtensions { get; set; }
 
         public Extensions()
@@ -22,7 +19,7 @@ namespace GuildLounge.TabPages.SettingsPages
             {
                 InitializeExtensions();
                 if (checkBoxAutoUpdate.Checked)
-                    UpdateExtensions(StoredExtensions, true);
+                    ExtensionManager.UpdateExtensions(StoredExtensions, true);
             }
             catch (Exception exc)
             {
@@ -34,7 +31,7 @@ namespace GuildLounge.TabPages.SettingsPages
         private void InitializeExtensions()
         {
             //Deserialize and load into listbox
-            StoredExtensions = Utility.ReadJSON<Extension>(Path.Combine(_appdata, "addons.json"));
+            StoredExtensions = Utility.ReadJSON<Extension>(Path.Combine(_AppData, "addons.json"));
             listBoxExtensions.Items.AddRange(StoredExtensions);
         }
 
@@ -45,12 +42,7 @@ namespace GuildLounge.TabPages.SettingsPages
             //Loadup fix
             labelUpdateInfo.Visible = false;
         }
-
-        private async void UpdateExtensions(Extension[] addOns, bool checkForLastModified)
-        {
-            await _updater.UpdateExtensions(addOns, checkForLastModified);
-        }
-
+        
         private void SaveExtensions()
         {
             if (listBoxExtensions.Items.Count > 0)
@@ -61,12 +53,12 @@ namespace GuildLounge.TabPages.SettingsPages
                     StoredExtensions[i] = (Extension)listBoxExtensions.Items[i];
 
                 //Serialize json and write to file
-                Utility.WriteJSON(Path.Combine(_appdata, "addons.json"), StoredExtensions);
+                Utility.WriteJSON(Path.Combine(_AppData, "addons.json"), StoredExtensions);
             }
             else
             {
                 //write empty json
-                File.WriteAllText(Path.Combine(_appdata, "addons.json"), "[]");
+                File.WriteAllText(Path.Combine(_AppData, "addons.json"), "[]");
                 StoredExtensions = null;
             }
         }
@@ -75,7 +67,7 @@ namespace GuildLounge.TabPages.SettingsPages
         #region events
         private void buttonForceUpdate_Click(object sender, EventArgs e)
         {
-            UpdateExtensions(StoredExtensions, false);
+            ExtensionManager.UpdateExtensions(StoredExtensions, false);
         }
 
         private void buttonRemoveExtension_Click(object sender, EventArgs e)

@@ -7,91 +7,91 @@ using System.Threading.Tasks;
 
 namespace GuildLounge
 {
-    public class ExtensionManager
+    public static class ExtensionManager
     {
-        internal string _extDir = Path.Combine(Properties.Settings.Default.GameDir, "bin64");
-        internal WebClient _client = new WebClient();
-        public string Status { get; set; }
-        public bool Working { get; set; }
+        private static string _ExtDir = Path.Combine(Properties.Settings.Default.GameDir, "bin64");
+        private static WebClient _Client = new WebClient();
+        public static string Status { get; set; }
+        public static bool Working { get; set; }
 
-        public ExtensionManager() { }
-
-        public Task UpdateExtensions(Extension[] extensions, bool checkForLastModified)
+        public static async void UpdateExtensions(Extension[] extensions, bool checkForLastModified)
         {
-            DateTime dt = DateTime.Now;
-            Working = true;
-
-            bool d3d9 = false;
-            int amtUpdated = 0;
-            int chainload = 1;
-
-            for (int i = 0; i < extensions.Length; i++)
+            await Task.Run(() =>
             {
-                Status = $"{i + 1}/{extensions.Length} done.";
-                
-                string name = extensions[i].Link;
-                name = name.Substring(name.LastIndexOf("/") + 1);
+                DateTime dt = DateTime.Now;
+                Working = true;
 
-                //If there's already an extension called "d3d9.dll" we give it a substitutional name
-                if (d3d9 && (name == "d3d9.dll"))
-                {
-                    //Either use the provided alternative name or a generic suffix
-                    if (!String.IsNullOrEmpty(extensions[i].Name))
-                        name = name.Insert(name.IndexOf("."), "_" + extensions[i].Name);
-                    else
-                        name = name.Insert(name.IndexOf("."), "_chainload" + chainload++);
-                }
-                else
-                {
-                    if (name == "d3d9.dll")
-                        d3d9 = true;
-                }
+                bool d3d9 = false;
+                int amtUpdated = 0;
+                int chainload = 1;
 
-                if (checkForLastModified)
+                for (int i = 0; i < extensions.Length; i++)
                 {
-                    HttpWebRequest req = (HttpWebRequest)WebRequest.Create(new Uri(extensions[i].Link));
-                    WebResponse resp = (HttpWebResponse)req.GetResponse();
+                    Status = $"{i + 1}/{extensions.Length} done.";
 
-                    if (resp.Headers.AllKeys.Contains("Last-Modified")
-                        && File.Exists(Path.Combine(_extDir, name)))
+                    string name = extensions[i].Link;
+                    name = name.Substring(name.LastIndexOf("/") + 1);
+
+                    //If there's already an extension called "d3d9.dll" we give it a substitutional name
+                    if (d3d9 && (name == "d3d9.dll"))
                     {
-                        DateTime dtOnline = Convert.ToDateTime(resp.Headers.Get("Last-Modified"));
-                        if (dtOnline > File.GetLastWriteTime(Path.Combine(_extDir, name)))
+                        //Either use the provided alternative name or a generic suffix
+                        if (!String.IsNullOrEmpty(extensions[i].Name))
+                            name = name.Insert(name.IndexOf("."), "_" + extensions[i].Name);
+                        else
+                            name = name.Insert(name.IndexOf("."), "_chainload" + chainload++);
+                    }
+                    else
+                    {
+                        if (name == "d3d9.dll")
+                            d3d9 = true;
+                    }
+
+                    if (checkForLastModified)
+                    {
+                        HttpWebRequest req = (HttpWebRequest)WebRequest.Create(new Uri(extensions[i].Link));
+                        WebResponse resp = (HttpWebResponse)req.GetResponse();
+
+                        if (resp.Headers.AllKeys.Contains("Last-Modified")
+                            && File.Exists(Path.Combine(_ExtDir, name)))
                         {
-                            _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, name));
-                            Console.WriteLine("[EXT: OUTDATED]");
-                            amtUpdated++;
+                            DateTime dtOnline = Convert.ToDateTime(resp.Headers.Get("Last-Modified"));
+                            if (dtOnline > File.GetLastWriteTime(Path.Combine(_ExtDir, name)))
+                            {
+                                _Client.DownloadFile(extensions[i].Link, Path.Combine(_ExtDir, name));
+                                Console.WriteLine("[EXT: OUTDATED]");
+                                amtUpdated++;
+                            }
+                            else
+                            {
+                                Console.WriteLine("[EXT: UP-TO-DATE]");
+                            }
                         }
                         else
                         {
-                            Console.WriteLine("[EXT: UP-TO-DATE]");
+                            _Client.DownloadFile(extensions[i].Link, Path.Combine(_ExtDir, name));
+                            Console.WriteLine("[EXT: NOT CHECKED]");
+                            amtUpdated++;
                         }
+
+                        resp.Close();
                     }
                     else
                     {
-                        _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, name));
-                        Console.WriteLine("[EXT: NOT CHECKED]");
+                        _Client.DownloadFile(extensions[i].Link, Path.Combine(_ExtDir, name));
+                        Console.WriteLine("[EXT: DOWNLOADED]");
                         amtUpdated++;
                     }
-
-                    resp.Close();
                 }
+
+                if (amtUpdated > 0)
+                    Status = $"{amtUpdated} updated.";
                 else
-                {
-                    _client.DownloadFile(extensions[i].Link, Path.Combine(_extDir, name));
-                    Console.WriteLine("[EXT: DOWNLOADED]");
-                    amtUpdated++;
-                }
-            }
+                    Status = $"Up-To-Date.";
 
-            if (amtUpdated > 0)
-                Status = $"{amtUpdated} updated.";
-            else
-                Status = $"Up-To-Date.";
-            
-            Working = false;
-            Console.WriteLine("[EXT: " + (DateTime.Now - dt).TotalSeconds + "]");
-            return Task.FromResult(0);
+                Working = false;
+                Console.WriteLine("[EXT: " + (DateTime.Now - dt).TotalSeconds + "]");
+            });
         }
     }
 
