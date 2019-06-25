@@ -29,7 +29,7 @@ namespace GuildLounge.TabPages.SettingsPages
         private void InitializeAccounts()
         {
             //Deserialize accounts and load them
-            StoredAccounts = new JavaScriptSerializer().Deserialize<List<Account>>(File.ReadAllText(Path.Combine(_appdata, "accounts.json"))).ToArray();
+            StoredAccounts = Utility.ReadJSON<Account>(Path.Combine(_appdata, "accounts.json"));
             listBoxAccounts.Items.AddRange(StoredAccounts);
         }
 
@@ -43,8 +43,7 @@ namespace GuildLounge.TabPages.SettingsPages
                     StoredAccounts[i] = (Account)listBoxAccounts.Items[i];
 
                 //Serialize json and write to file
-                string parsedKeys = new JavaScriptSerializer().Serialize(StoredAccounts);
-                File.WriteAllText(Path.Combine(_appdata, "accounts.json"), parsedKeys);
+                Utility.WriteJSON(Path.Combine(_appdata, "addons.json"), StoredAccounts);
             }
             else
             {

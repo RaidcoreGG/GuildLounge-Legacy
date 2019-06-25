@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace GuildLounge
@@ -43,6 +46,17 @@ namespace GuildLounge
                 Font newFont = new Font(control.Font.FontFamily, sip, control.Font.Style);
                 control.Font = newFont;
             }
+        }
+
+        public static void WriteJSON<T>(string path, T data)
+        {
+            string serializedData = new JavaScriptSerializer().Serialize(data);
+            File.WriteAllText(path, serializedData);
+        }
+
+        public static T[] ReadJSON<T>(string path)
+        {
+            return new JavaScriptSerializer().Deserialize<List<T>>(File.ReadAllText(path)).ToArray();
         }
     }
 }

@@ -34,7 +34,7 @@ namespace GuildLounge.TabPages.SettingsPages
         private void InitializeExtensions()
         {
             //Deserialize and load into listbox
-            StoredExtensions = new JavaScriptSerializer().Deserialize<List<Extension>>(File.ReadAllText(Path.Combine(_appdata, "addons.json"))).ToArray();
+            StoredExtensions = Utility.ReadJSON<Extension>(Path.Combine(_appdata, "addons.json"));
             listBoxExtensions.Items.AddRange(StoredExtensions);
         }
 
@@ -61,8 +61,7 @@ namespace GuildLounge.TabPages.SettingsPages
                     StoredExtensions[i] = (Extension)listBoxExtensions.Items[i];
 
                 //Serialize json and write to file
-                string extSerialized = new JavaScriptSerializer().Serialize(StoredExtensions);
-                File.WriteAllText(Path.Combine(_appdata, "addons.json"), extSerialized);
+                Utility.WriteJSON(Path.Combine(_appdata, "addons.json"), StoredExtensions);
             }
             else
             {
