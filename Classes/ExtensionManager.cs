@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
+using System.Linq;  
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -13,7 +13,7 @@ namespace GuildLounge
         private static WebClient _Client = new WebClient();
         public static string Status { get; set; }
         public static bool Working { get; set; }
-
+        
         public static async void UpdateExtensions(Extension[] extensions, bool checkForLastModified)
         {
             await Task.Run(() =>
@@ -92,40 +92,6 @@ namespace GuildLounge
                 Working = false;
                 Console.WriteLine("[EXT: " + (DateTime.Now - dt).TotalSeconds + "]");
             });
-        }
-    }
-
-    public class Extension
-    {
-        private string m_sLink { get; set; }
-
-        public string Name { get; set; }
-        public string Link
-        {
-            get
-            {
-                return m_sLink;
-            }
-            set
-            {
-                if (CheckLink(value))
-                    m_sLink = value;
-                else
-                    throw new Exception("Invalid Link!");
-            }
-        }
-
-        private bool CheckLink(string l)
-        {
-            return Regex.IsMatch(l, @"(http(s)?:\/\/)?(www.)?[\w-_\/]*.dll");
-        }
-
-        public override string ToString()
-        {
-            if (!string.IsNullOrEmpty(Name) && !string.IsNullOrWhiteSpace(Name))
-                return Name;
-            else
-                return m_sLink;
         }
     }
 }

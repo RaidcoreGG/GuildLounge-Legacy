@@ -11,11 +11,11 @@ namespace GuildLounge.Controls
 
         public void UpdatePermissions(string permissions)
         {
-            panelAccount.Allowed = permissions.Contains("account");
-            panelInventories.Allowed = permissions.Contains("inventories");
-            panelCharacters.Allowed = permissions.Contains("characters");
-            panelTradingPost.Allowed = permissions.Contains("tradingpost");
-            panelWallet.Allowed = permissions.Contains("wallet");
+            panelAccount.Active = permissions.Contains("account");
+            panelInventories.Active = permissions.Contains("inventories");
+            panelCharacters.Active = permissions.Contains("characters");
+            panelTradingPost.Active = permissions.Contains("tradingpost");
+            panelWallet.Active = permissions.Contains("wallet");
         }
     }
 }

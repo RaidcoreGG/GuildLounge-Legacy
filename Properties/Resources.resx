@@ -355,4 +355,7 @@
   <data name="boss_gate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_gate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ui_chain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UI\Navigation\ui_chain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

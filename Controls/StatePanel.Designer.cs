@@ -1,6 +1,6 @@
 ﻿namespace GuildLounge.Controls
 {
-    partial class PermissionPanel
+    partial class StatePanel
     {
         /// <summary>
         /// Required designer variable.

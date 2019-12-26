@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBoxContainer = new GuildLounge.Controls.GroupBox();
-            this.panelWallet = new GuildLounge.Controls.PermissionPanel();
+            this.panelWallet = new GuildLounge.Controls.StatePanel();
             this.labelWallet = new System.Windows.Forms.Label();
-            this.panelTradingPost = new GuildLounge.Controls.PermissionPanel();
+            this.panelTradingPost = new GuildLounge.Controls.StatePanel();
             this.labelTradingPost = new System.Windows.Forms.Label();
-            this.panelCharacters = new GuildLounge.Controls.PermissionPanel();
+            this.panelCharacters = new GuildLounge.Controls.StatePanel();
             this.labelCharacters = new System.Windows.Forms.Label();
-            this.panelInventories = new GuildLounge.Controls.PermissionPanel();
+            this.panelInventories = new GuildLounge.Controls.StatePanel();
             this.labelInventories = new System.Windows.Forms.Label();
-            this.panelAccount = new GuildLounge.Controls.PermissionPanel();
+            this.panelAccount = new GuildLounge.Controls.StatePanel();
             this.labelAccount = new System.Windows.Forms.Label();
             this.labelRequired = new System.Windows.Forms.Label();
             this.groupBoxContainer.SuspendLayout();
@@ -70,7 +70,7 @@
             // 
             // panelWallet
             // 
-            this.panelWallet.Allowed = false;
+            this.panelWallet.Active = false;
             this.panelWallet.BackColor = System.Drawing.Color.Red;
             this.panelWallet.Location = new System.Drawing.Point(94, 120);
             this.panelWallet.Name = "panelWallet";
@@ -89,7 +89,7 @@
             // 
             // panelTradingPost
             // 
-            this.panelTradingPost.Allowed = false;
+            this.panelTradingPost.Active = false;
             this.panelTradingPost.BackColor = System.Drawing.Color.Red;
             this.panelTradingPost.Location = new System.Drawing.Point(94, 98);
             this.panelTradingPost.Name = "panelTradingPost";
@@ -108,7 +108,7 @@
             // 
             // panelCharacters
             // 
-            this.panelCharacters.Allowed = false;
+            this.panelCharacters.Active = false;
             this.panelCharacters.BackColor = System.Drawing.Color.Red;
             this.panelCharacters.Location = new System.Drawing.Point(94, 76);
             this.panelCharacters.Name = "panelCharacters";
@@ -127,7 +127,7 @@
             // 
             // panelInventories
             // 
-            this.panelInventories.Allowed = false;
+            this.panelInventories.Active = false;
             this.panelInventories.BackColor = System.Drawing.Color.Red;
             this.panelInventories.Location = new System.Drawing.Point(94, 54);
             this.panelInventories.Name = "panelInventories";
@@ -146,7 +146,7 @@
             // 
             // panelAccount
             // 
-            this.panelAccount.Allowed = false;
+            this.panelAccount.Active = false;
             this.panelAccount.BackColor = System.Drawing.Color.Red;
             this.panelAccount.Location = new System.Drawing.Point(94, 32);
             this.panelAccount.Name = "panelAccount";
@@ -192,15 +192,15 @@
 
         private GroupBox groupBoxContainer;
         private System.Windows.Forms.Label labelRequired;
-        private PermissionPanel panelWallet;
+        private StatePanel panelWallet;
         private System.Windows.Forms.Label labelWallet;
-        private PermissionPanel panelTradingPost;
+        private StatePanel panelTradingPost;
         private System.Windows.Forms.Label labelTradingPost;
-        private PermissionPanel panelCharacters;
+        private StatePanel panelCharacters;
         private System.Windows.Forms.Label labelCharacters;
-        private PermissionPanel panelInventories;
+        private StatePanel panelInventories;
         private System.Windows.Forms.Label labelInventories;
-        private PermissionPanel panelAccount;
+        private StatePanel panelAccount;
         private System.Windows.Forms.Label labelAccount;
     }
 }

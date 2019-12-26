@@ -68,7 +68,7 @@ namespace GuildLounge
             SetActiveTab(DashboardTab, buttonDashboard);
             
             InitializeModuleScrolling();
-
+            
             //Fetch accounts from the sub-page
             //Initialize modules, which also updates its data
             try
@@ -81,7 +81,7 @@ namespace GuildLounge
                 Console.WriteLine(exc.Message);
             }
         }
-
+        
         #region misc
         private void InitializeSettings()
         {

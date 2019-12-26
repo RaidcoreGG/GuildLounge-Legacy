@@ -10,35 +10,37 @@ using System.Windows.Forms;
 
 namespace GuildLounge.Controls
 {
-    public partial class PermissionPanel : Control
+    public partial class StatePanel : Control
     {
-        private bool m_bAllowed { get; set; }
-        public bool Allowed
+        private bool _Active;
+        public bool Active
         {
             get
             {
-                return m_bAllowed;
+                return _Active;
             }
             set
             {
-                m_bAllowed = value;
-                if (m_bAllowed)
-                    m_oColor = Color.Green;
+                _Active = value;
+                if (_Active)
+                    _Color = Color.Green;
                 else
-                    m_oColor = Color.Red;
+                    _Color = Color.Red;
                 Refresh();
             }
         }
-        private Color m_oColor { get; set; }
+        private Color _Color { get; set; }
 
-        public PermissionPanel()
+        public StatePanel()
         {
             InitializeComponent();
+
+            Active = false;
         }
 
         protected override void OnPaint(PaintEventArgs pe)
         {
-            pe.Graphics.FillRectangle(new SolidBrush(m_oColor), 0, 0, Width, Height);
+            pe.Graphics.FillRectangle(new SolidBrush(_Color), 0, 0, Width, Height);
         }
     }
 }

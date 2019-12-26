@@ -76,11 +76,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Extension.cs" />
     <Compile Include="Classes\ExtensionManager.cs" />
     <Compile Include="Classes\Utility.cs" />
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\ApiHandler.cs" />
     <Compile Include="Classes\RequestObjects.cs" />
+    <Compile Include="Controls\ExtensionItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ExtensionItem.Designer.cs">
+      <DependentUpon>ExtensionItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ApiKeyInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,11 +130,11 @@
     <Compile Include="Controls\MenuStrip.Designer.cs">
       <DependentUpon>MenuStrip.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\PermissionPanel.cs">
+    <Compile Include="Controls\StatePanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\PermissionPanel.Designer.cs">
-      <DependentUpon>PermissionPanel.cs</DependentUpon>
+    <Compile Include="Controls\StatePanel.Designer.cs">
+      <DependentUpon>StatePanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\PictureBoxEncounter.cs">
       <SubType>Component</SubType>
@@ -146,6 +153,12 @@
     </Compile>
     <Compile Include="Controls\Scrollbar.Designer.cs">
       <DependentUpon>Scrollbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TabControl.Designer.cs">
+      <DependentUpon>TabControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ToolTip.cs">
       <SubType>Component</SubType>
@@ -304,6 +317,9 @@
     <Compile Include="TabPages\Tools\Dailies.Designer.cs">
       <DependentUpon>Dailies.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\ExtensionItem.resx">
+      <DependentUpon>ExtensionItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ApiKeyInfo.resx">
       <DependentUpon>ApiKeyInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -603,6 +619,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\UI\Navigation\ui_chain.png" />
     <None Include="Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_gate.png" />
     <None Include="Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_qadimthepeerless.png" />
     <None Include="Resources\Raids\Bosses\W7_TheKeyOfAhdashim\boss_adina.png" />

@@ -49,6 +49,7 @@
             this.panelLaunch = new System.Windows.Forms.Panel();
             this.labelLaunchError = new System.Windows.Forms.Label();
             this.buttonLaunch = new GuildLounge.Controls.HighlightButton();
+            this.tabControl1 = new GuildLounge.Controls.TabControl();
             this.panelNavigation.SuspendLayout();
             this.panelModulesOuter.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -327,6 +328,13 @@
             this.buttonLaunch.UseVisualStyleBackColor = false;
             this.buttonLaunch.Click += new System.EventHandler(this.buttonLaunch_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Size = new System.Drawing.Size(0, 0);
+            this.tabControl1.TabIndex = 0;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +387,7 @@
         private Controls.NavigationButton buttonSettings;
         private Controls.Scrollbar scrollbarModules;
         private System.Windows.Forms.Panel panelModulesInner;
+        private Controls.TabControl tabControl1;
     }
 }
 
