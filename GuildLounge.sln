@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuildLounge", "GuildLounge.csproj", "{445D729E-F4D5-42CD-B7A9-C094B88E6D98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuildLounge", "GuildLounge\GuildLounge.csproj", "{445D729E-F4D5-42CD-B7A9-C094B88E6D98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuildLoungeUpdater", "..\GuildLoungeUpdater\GuildLoungeUpdater.csproj", "{85844F55-0C27-443C-AA11-E8957163D4A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuildLoungeUpdater", "GuildLoungeUpdater\GuildLoungeUpdater.csproj", "{85844F55-0C27-443C-AA11-E8957163D4A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
